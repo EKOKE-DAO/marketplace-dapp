@@ -4,6 +4,9 @@ import * as Icon from 'react-feather';
 import Container from './reusable/Container';
 import Heading from './reusable/Heading';
 import Link from './reusable/Link';
+import X from './svg/X';
+import TikTok from './svg/TikTok';
+import Telegram from './svg/Telegram';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -37,15 +40,7 @@ const Footer = () => {
             </Link.Default>
           </Container.FlexCols>
           <Container.FlexCols className="gap-4">
-            <Heading.H2 className="text-white">Socials</Heading.H2>
-            <Link.IconLink
-              href={'https://twitter.com/ekoketoken'}
-              target="_blank"
-              className="text-white"
-            >
-              <Icon.Twitter className="mr-2 inline text-white" />
-              Twitter
-            </Link.IconLink>
+            <Heading.H2 className="text-white">Follow Us On</Heading.H2>
             <Link.IconLink
               href={'https://github.com/EKOKEtoken'}
               target="_blank"
@@ -55,12 +50,44 @@ const Footer = () => {
               GitHub
             </Link.IconLink>
             <Link.IconLink
-              href={'https://github.com/EKOKEtoken'}
+              href={'https://www.instagram.com/ekoketoken'}
               target="_blank"
               className="text-white"
             >
-              <Icon.Send className="mr-2 inline text-white" />
-              Telegram
+              <Icon.Instagram className="mr-2 inline text-white" />
+              Instagram
+            </Link.IconLink>
+            <Link.IconLink
+              href={'https://www.linkedin.com/company/ekoketoken'}
+              target="_blank"
+              className="text-white"
+            >
+              <Icon.Linkedin className="mr-2 inline text-white" />
+              LinkedIn
+            </Link.IconLink>
+            <Link.IconLink
+              href={'https://t.me/ekokeTOKENgroup'}
+              target="_blank"
+              className="text-white"
+            >
+              <Telegram fill="#ffffff" />
+              <span className="ml-2">Telegram</span>
+            </Link.IconLink>
+            <Link.IconLink
+              href={'https://www.tiktok.com/@ekoketoken?lang=en'}
+              target="_blank"
+              className="text-white"
+            >
+              <TikTok fill="#ffffff" />
+              <span className="ml-2">TikTok</span>
+            </Link.IconLink>
+            <Link.IconLink
+              href={'https://twitter.com/ekoketoken'}
+              target="_blank"
+              className="text-white"
+            >
+              <X />
+              <span className="ml-2">Twitter</span>
             </Link.IconLink>
           </Container.FlexCols>
         </Container.FlexResponsiveRow>
