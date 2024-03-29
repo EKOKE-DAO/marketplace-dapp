@@ -1,5 +1,4 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
 import { Doughnut } from 'react-chartjs-2';
 import { Chart, ArcElement, Tooltip } from 'chart.js';
 
