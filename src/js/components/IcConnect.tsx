@@ -47,7 +47,7 @@ const IcConnect = () => {
   const text = () => {
     if (status === 'initializing') return 'Initializing...';
     if (status === 'unavailable') return 'IC Wallet not available';
-    if (status === 'notConnected') return 'Connect IC Wallet';
+    if (status === 'notConnected') return 'Login';
     if (status === 'connecting') return 'Connecting...';
     if (status === 'connected')
       return `${principal.toString().substring(0, 18)}...`;

@@ -13,8 +13,10 @@ const config: Config = {
     },
     extend: {
       colors: {
-        brand: '#31363b',
-        brandAlt: '#31363b',
+        brand: '#000000',
+        brandRed: '#fd6262',
+        brandGray: '#8a8a8a',
+        brandBtn: '#242c46',
         page: '#f1eef5',
         text: '#606060',
       },

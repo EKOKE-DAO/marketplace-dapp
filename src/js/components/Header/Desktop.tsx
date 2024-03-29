@@ -3,25 +3,30 @@ import * as React from 'react';
 import Container from '../reusable/Container';
 import IcConnect from '../IcConnect';
 
-import EkokeLogo from '../../../assets/images/ekoke-logo.webp';
 import Link from '../reusable/Link';
 
 const Desktop = () => (
-  <Container.FlexRow className="block sm:hidden justify-between items-center py-4 bg-white border-b border-gray-300 shadow-lg px-4">
+  <Container.FlexRow className="block sm:hidden justify-center items-center py-4 px-4">
     <Container.FlexRow className="items-center gap-8">
       <Container.FlexRow className="items-center">
-        <img src={EkokeLogo} alt="Ekoke Logo" className="h-[64px] mr-4" />
-        <span className="text-xl text-brand">EKOKE Marketplace</span>
+        <Container.Container className="border-brandRed border-b-4 py-2">
+          <span className="text-lg font-medium text-brand">Home</span>
+        </Container.Container>
       </Container.FlexRow>
-      <Link.Default
-        href={'https://ekoketoken.com'}
-        target="_blank"
-        className="text-xl"
-      >
-        EKOKE Token
-      </Link.Default>
-    </Container.FlexRow>
-    <Container.FlexRow className="items-center">
+      <Container.Container className="py-2">
+        <Link.Default disabled className="text-lg hover:cursor-not-allowed">
+          Real Estate
+        </Link.Default>
+      </Container.Container>
+      <Container.Container className="py-2">
+        <Link.Default
+          href={'https://ekoketoken.com'}
+          target="_blank"
+          className="text-lg"
+        >
+          EKOKE Token
+        </Link.Default>
+      </Container.Container>
       <IcConnect />
     </Container.FlexRow>
   </Container.FlexRow>

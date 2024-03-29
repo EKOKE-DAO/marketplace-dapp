@@ -17,7 +17,7 @@ const Default = (props: React.HTMLProps<HTMLAnchorElement>) => (
 const Button = (props: React.HTMLProps<HTMLAnchorElement>) => (
   <a
     href={props.href}
-    className={`${props.className} font-medium bg-brand text-white hover:underline focus:ring-4 focus:ring-brand rounded-full`}
+    className={`${props.className} font-medium px-6 py-3 bg-brandBtn text-white hover:underline focus:ring-4 focus:ring-brand rounded-full`}
     itemScope={props.itemScope}
     itemType={props.itemType}
     itemProp={props.itemProp}
@@ -31,7 +31,7 @@ const Button = (props: React.HTMLProps<HTMLAnchorElement>) => (
 const Paragraph = (props: React.HTMLProps<HTMLAnchorElement>) => (
   <a
     href={props.href}
-    className={`${props.className} font-medium text-brand cursor-pointer underline hover:no-underline`}
+    className={`${props.className} font-medium text-brandRed cursor-pointer underline hover:no-underline`}
     itemScope={props.itemScope}
     itemType={props.itemType}
     itemProp={props.itemProp}

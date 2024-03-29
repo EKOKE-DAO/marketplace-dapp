@@ -9,7 +9,7 @@ const Footer = () => {
   const year = new Date().getFullYear();
   return (
     <footer>
-      <Container.Container className="bg-brand text-white m-0 p-8">
+      <Container.Container className="bg-brandRed text-white m-0 p-8">
         <div className="bg-white content-none h-[1px] mx-auto w-page"></div>
         <Container.FlexResponsiveRow className="justify-between w-page sm:w-full mx-auto">
           <Container.FlexCols>
@@ -64,7 +64,7 @@ const Footer = () => {
             </Link.IconLink>
           </Container.FlexCols>
         </Container.FlexResponsiveRow>
-        <p className="text-xs text-center font-thin my-4">
+        <p className="text-xs text-center text-white my-4">
           Copyright © {year} by ekoke token | Powered and secured by ICP
           Blockchain
         </p>

@@ -1,0 +1,46 @@
+import * as React from 'react';
+import * as Icon from 'react-feather';
+
+import Container from '../../../reusable/Container';
+import Heading from '../../../reusable/Heading';
+
+const Roadmap = () => (
+  <Container.FlexCols className="items-center justify-center w-3/6 sm:w-full mx-auto gap-2">
+    <Container.Container>
+      <Heading.H2>
+        <span className="text-brandRed font-bold">Project</span> Roadmap
+      </Heading.H2>
+    </Container.Container>
+    <Container.FlexCols className="gap-4 w-full">
+      <Container.Container>
+        <span className="text-xl font-bold text-brandRed">2024</span>
+        <Container.FlexResponsiveRow className="gap-4">
+          <Milestone title="Project development" date="Q1" />
+          <Milestone title="DAO and SNS Launch" date="Q2" />
+          <Milestone title="Airdrop" date="Q3" />
+          <Milestone title="Exchange Listing" date="Q4" />
+        </Container.FlexResponsiveRow>
+      </Container.Container>
+      <Container.Container>
+        <span className="text-xl font-bold text-brandRed">2025</span>
+        <Container.FlexResponsiveRow className="gap-4">
+          <Milestone title="Gold-backed token" date="Q1" />
+          <Milestone title="Real estate tokenization" date="Q2" />
+          <Milestone title="NFT Marketplace" date="Q3" />
+          <Milestone title="Real estate global network" date="Q4" />
+        </Container.FlexResponsiveRow>
+      </Container.Container>
+    </Container.FlexCols>
+  </Container.FlexCols>
+);
+
+const Milestone = ({ title, date }: { title: string; date: string }) => (
+  <Container.Card className="transition-transform transform scale-100 hover:scale-105 text-center flex-1">
+    <Container.FlexCols className="justify-between h-full">
+      <span className="block text-lg font-bold text-brandRed">{title}</span>
+      <span className="block">{date}</span>
+    </Container.FlexCols>
+  </Container.Card>
+);
+
+export default Roadmap;
