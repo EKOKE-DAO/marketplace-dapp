@@ -2,7 +2,6 @@
 
 # build frontend
 yarn
-yarn build:release
-cd -
+yarn build
 
 dfx build

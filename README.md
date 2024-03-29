@@ -34,7 +34,7 @@ Before getting started with ekoke, you need to install these dependencies:
 ### Build
 
 ```sh
-yarn build:release
+yarn build
 ```
 
 ## Changelog
