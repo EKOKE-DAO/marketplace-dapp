@@ -15,7 +15,7 @@ const Desktop = () => (
       </Container.FlexRow>
       <Container.Container className="py-2">
         <Link.Default disabled className="text-lg hover:cursor-not-allowed">
-          Real Estate
+          Game
         </Link.Default>
       </Container.Container>
       <Container.Container className="py-2">
@@ -25,6 +25,11 @@ const Desktop = () => (
           className="text-lg"
         >
           EKOKE Token
+        </Link.Default>
+      </Container.Container>
+      <Container.Container className="py-2">
+        <Link.Default disabled className="text-lg hover:cursor-not-allowed">
+          Market place
         </Link.Default>
       </Container.Container>
       <IcConnect />

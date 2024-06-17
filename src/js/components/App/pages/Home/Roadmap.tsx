@@ -14,7 +14,7 @@ const Roadmap = () => (
       <Container.Container>
         <span className="text-xl font-bold text-brandRed">2024</span>
         <Container.FlexResponsiveRow className="gap-4">
-          <Milestone title="Project development" date="Q1" />
+          <Milestone title="Token development" date="Q1" />
           <Milestone title="DAO and SNS Launch" date="Q2" />
           <Milestone title="Airdrop" date="Q3" />
           <Milestone title="Exchange Listing" date="Q4" />
