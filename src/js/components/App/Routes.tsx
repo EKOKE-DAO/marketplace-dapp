@@ -6,14 +6,16 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 
-import Home from './pages/Home';
 import { Route } from '../../utils/routes';
+import Home from './pages/Home';
+import Timeline from './pages/Timeline';
 import UserStories from './pages/UserStories';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       <RouterRoute path={Route.url(Route.HOME)} element={<Home />} />
+      <RouterRoute path={Route.url(Route.TIMELINE)} element={<Timeline />} />
       <RouterRoute
         path={Route.url(Route.USER_STORIES)}
         element={<UserStories />}

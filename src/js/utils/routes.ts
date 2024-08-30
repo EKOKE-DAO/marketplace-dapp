@@ -1,5 +1,6 @@
 export enum Route {
   HOME = 'home',
+  TIMELINE = 'timeline',
   USER_STORIES = 'user-stories',
 }
 
