@@ -10,7 +10,7 @@ import { BrowserRouter } from 'react-router-dom';
 const AppLayout = () => (
   <Page.BlankPage>
     <Header />
-    <Container.PageContent className="w-page min-h-[80vh] pb-16">
+    <Container.PageContent className="bg-page w-page min-h-[80vh] pb-16 mt-[80px] pt-[20px] sm:pt-[80px]">
       <BrowserRouter>
         <Routes />
       </BrowserRouter>
