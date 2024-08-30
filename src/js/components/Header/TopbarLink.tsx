@@ -11,8 +11,10 @@ interface Props {
 
 const TopbarLink = ({ href, name }: Props) => {
   const currentPath = document.location.pathname;
+  // get first part of the path
+  const path = `/${currentPath.split('/')[1]}`;
 
-  if (currentPath === Route.url(href)) {
+  if (path === Route.url(href)) {
     return (
       <Container.Container className="border-brandRed border-b-4 py-2">
         <Link.Default href={href} className="text-lg">

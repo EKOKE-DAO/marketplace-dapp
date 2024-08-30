@@ -12,6 +12,9 @@ const config: Config = {
       '2xl': '1536px',
     },
     extend: {
+      backgroundImage: {
+        map: 'url("/assets/images/map.webp")',
+      },
       colors: {
         brand: '#000000',
         brandRed: '#fd6262',

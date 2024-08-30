@@ -1,5 +1,7 @@
 export enum Route {
   HOME = 'home',
+  MARKETPLACE = 'marketplace',
+  MARKETPLACE_CONTRACT = 'marketplace/real-estate',
   TIMELINE = 'timeline',
   USER_STORIES = 'user-stories',
 }
@@ -16,6 +18,10 @@ export namespace Route {
 
   export function isRoute(keyOrValue: any): boolean {
     return isEnumKey(keyOrValue) || isEnumValue(keyOrValue);
+  }
+
+  export function marketplaceRealEstateUrl(id: number): string {
+    return `/marketplace/real-estate/${id}`;
   }
 }
 
