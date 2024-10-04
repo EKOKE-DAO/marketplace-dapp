@@ -11,6 +11,17 @@ const H1 = (props: React.HTMLProps<HTMLHeadingElement>) => (
   </h1>
 );
 
+const H1L = (props: React.HTMLProps<HTMLHeadingElement>) => (
+  <h1
+    itemProp={props.itemProp}
+    itemScope={props.itemScope}
+    itemType={props.itemType}
+    className={`${props.className} py-4 text-2xl text-left text-brand tracking-wide font-normal leading-10`}
+  >
+    {props.children}
+  </h1>
+);
+
 const H2 = (props: React.HTMLProps<HTMLHeadingElement>) => (
   <h2
     itemProp={props.itemProp}
@@ -57,6 +68,7 @@ const Jumbo = (props: React.HTMLProps<HTMLHeadingElement>) => (
 
 export default {
   H1,
+  H1L,
   H2,
   H3,
   H4,
