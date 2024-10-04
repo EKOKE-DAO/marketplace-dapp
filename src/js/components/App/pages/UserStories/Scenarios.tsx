@@ -12,66 +12,66 @@ const Scenarios = () => (
     <Container.FlexCols className="gap-8">
       <CardStory title={'Robert'} person={<Persons.Robert />}>
         <Paragraph.Leading>
-          Robert is a young man, that wants to buy a nice flat in the city
-          center of his city. His rent is very high but he is able to manage to
-          pay it every months. The bank is reluctant to grant him a morgage,
-          with instalment similar in amount to his rent. Robert thinks this is
-          ridicouls since is already paying an equal amount in rent every
-          mounth. Robert decide to give a try to the Ekoke method. <br />
-          Robert is a tecnology guy, he was able to understand the functionament
-          of Ekoke, and ready to start. He made the payment of the deposit and
-          the NFT collection was issued.
+          Robert is a young man who dreams of buying a nice apartment in the
+          city center. Although his rent is quite high, he manages to pay it
+          every month. However, the bank is hesitant to give him a mortgage,
+          even though the monthly installments would be similar to his rent.
+          Robert finds this absurd, as he’s already proving he can afford the
+          same amount every month. Frustrated, he decides to try the Ekoke
+          method.
           <br />
-          People from all around the world, the third parties, bought the NFTs
-          that rapresent robert&apos; mortgage. Robert is able to move in, and
-          start to enjoy the house. He startes to buy each month a NFT, and in a
-          couple of years he was able to buy them all. Robert, now, is a pride
-          real estate owner, paying a little fraction of interests compared to
-          the ones that he would have paid with some method that are more
-          &quot;main streem&quot;.
+          Being tech-savvy, Robert quickly understands how Ekoke works and is
+          ready to begin. He pays the deposit, and an NFT collection
+          representing his mortgage is issued. People from around the
+          world—third-party investors—buy these NFTs. Robert moves into his new
+          home and begins purchasing an NFT each month. Within a couple of
+          years, he manages to buy them all.
+          <br />
+          Now, Robert proudly owns his property, having paid far less in
+          interest than he would have with more "mainstream" methods. &quot;main
+          streem&quot;.
         </Paragraph.Leading>
       </CardStory>
       <CardStory title={'Alice'} person={<Persons.Alice />} reversedLayout>
         <Paragraph.Leading>
-          Alice is a middle age woman, she want to buy a bigger house for her
-          family. Also in her case, the bank is reclunt to grant her a mortgage
-          due to the fact she do not have enought for the down-payment.
-          <br />
-          She decided to use the Ekoke method only for a share of the
-          house&apos;s value instead of buying the property entirly. Then her
-          intentiions are to rely on a bank for the remening part of the
-          mortgage.
-          <br />
-          Also for Alice a NFT collection is being issued, but it does not
-          represent the entire value of the property but only a part, let's say
-          30%. She payed also a deposit calculated on that part, so on 30%. Her
-          goal is buy all the NFTs too. Once she've bought all of them, she have
-          been to the bank that realise her the mortgage for the remaing part,
-          so 70%. In this way she is able to obtain lower instalment and a lower
-          interest rate.
+          Alice is a middle-aged woman who wants to buy a larger home for her
+          family. However, the bank is reluctant to give her a mortgage because
+          she doesn't have enough money for the entire down payment. She decides
+          to use the Ekoke method for a portion of the property's value, rather
+          than the entire purchase, with the intention of getting a traditional
+          mortgage from the bank for the remaining amount. For Alice, an NFT
+          collection is issued, but it only represents 30% of the property's
+          value. \ She puts down a deposit based on that 30%. Her plan is to
+          gradually buy all the NFTs related to that portion of the house. Once
+          that's done, Alice approaches the bank, which gives her a mortgage for
+          the remaining 70% of the property's value. This way, she gets her
+          dream home without the risk of losing it due to lack of capital and
+          time.
         </Paragraph.Leading>
       </CardStory>
       <CardStory title={'Darius'} person={<Persons.Darius />}>
         <Paragraph.Leading>
-          Darius found the house of his dream, but he does not want to rely on a
-          bank to buy it, so he used Ekoke. Darius paid the deposit and started
-          to repay back the third parties buying the NFTs back.
+          Darius found his dream home but didn't want to rely on a bank to
+          purchase it, so he turned to Ekoke. After paying the deposit, he began
+          repaying the third parties by buying back the NFTs tied to the
+          property. However, Darius, not being a reliable person, stopped making
+          his installment payments, which meant he no longer repaid the NFTs.
+          This upset the third parties, and since the repayment deadline passed,
+          Ekoke had to step in.
           <br />
-          Darius is not a nice guy, and for some reason he have stopped to pay
-          his instalment, meaning he is no longer pay back any NFTs. The third
-          party are upset, and the maximum time avaiable to pay them has passe
-          so the Ekoke organization intervene. Since all the NFTs are owned by
-          third parties, Darius already moved in. The Ekoke organization have
-          used the deposit Darius payed at the beginning to repay the thirds
-          parties, but this is not enought to repay all of them. So Ekoke used
-          their reserves to pay back the remaing ones.
+          DDarius had already moved into the house, but because the NFTs were
+          still owned by third parties, Ekoke used the deposit Darius initially
+          paid to cover part of the debt. Unfortunately, it wasn’t enough to
+          fully repay everyone, so Ekoke dipped into its own reserves to settle
+          the remaining balances. As a result, Ekoke legally took ownership of
+          the property and began the eviction process.
           <br />
-          Now Ekoke is legally the owner of the property, and they have started
-          the evicting proccess towards Darius. Later Ekoke will sell the house,
-          the extra profit they did by selling the house is being put in the
-          same reserve that they used before, in the case some other
-          untrustworthy people joined Ekoke. Unlucky for Darius, he have lost
-          all of his investemnt due to the fact he have broke the contract.
+          Once the eviction is complete, Ekoke plans to sell the house. Any
+          extra profit made from the sale will be added back to the reserve they
+          used, ensuring they are prepared for future cases of unreliable
+          buyers. Darius, having breached the contract, lost all of his
+          investment.
+          <br />
         </Paragraph.Leading>
       </CardStory>
     </Container.FlexCols>
