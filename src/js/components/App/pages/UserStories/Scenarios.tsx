@@ -16,7 +16,7 @@ const Scenarios = () => (
           city center. Although his rent is quite high, he manages to pay it
           every month. However, the bank is hesitant to give him a mortgage,
           even though the monthly installments would be similar to his rent.
-          Robert finds this absurd, as he’s already proving he can afford the
+          Robert finds this absurd, as he is already proving he can afford the
           same amount every month. Frustrated, he decides to try the Ekoke
           method.
           <br />
