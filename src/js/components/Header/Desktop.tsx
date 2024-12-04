@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import Container from '../reusable/Container';
-import IcConnect from '../IcConnect';
+import MetamaskConnect from '../MetamaskConnect';
 
 import Link from '../reusable/Link';
 import { Route } from '../../utils/routes';
@@ -24,7 +24,7 @@ const Desktop = () => (
             EKOKE Token
           </Link.Default>
         </Container.Container>
-        <IcConnect />
+        <MetamaskConnect />
       </Container.FlexRow>
     </Container.FlexRow>
   </div>

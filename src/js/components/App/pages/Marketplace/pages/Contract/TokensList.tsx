@@ -9,10 +9,8 @@ interface Props {
   contract: Contract;
 }
 
-const INSTALLMENT_VALUE = 100;
-
 const TokensList = ({ contract }: Props) => {
-  const tokenValue = contract.realEstate.price / INSTALLMENT_VALUE;
+  const tokenValue = contract.price / contract.installments;
   const tokens = Array.from({ length: 10 }, (_, i) => ({
     id: i,
     value: tokenValue,

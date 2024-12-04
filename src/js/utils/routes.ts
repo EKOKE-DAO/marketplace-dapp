@@ -20,8 +20,8 @@ export namespace Route {
     return isEnumKey(keyOrValue) || isEnumValue(keyOrValue);
   }
 
-  export function marketplaceRealEstateUrl(id: number): string {
-    return `/marketplace/real-estate/${id}`;
+  export function marketplaceRealEstateUrl(id: bigint): string {
+    return `/marketplace/real-estate/${id.toString()}`;
   }
 }
 

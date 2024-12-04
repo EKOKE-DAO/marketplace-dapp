@@ -8,6 +8,7 @@ import UserStories from './pages/UserStories';
 import SeoEngine from '../SeoEngine';
 import Marketplace from './pages/Marketplace';
 import ContractPage from './pages/Marketplace/pages/Contract';
+import NotFound from './pages/NotFound';
 
 const AppRouter = () => (
   <>
@@ -28,6 +29,7 @@ const AppRouter = () => (
           path={Route.url(Route.USER_STORIES)}
           element={<UserStories />}
         />
+        <RouterRoute path="*" element={<NotFound />} />
       </Routes>
     </main>
   </>

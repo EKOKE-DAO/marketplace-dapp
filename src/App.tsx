@@ -1,25 +1,20 @@
 import * as React from 'react';
-import { IcWalletProvider } from 'react-ic-wallet';
+import { MetaMaskProvider } from 'metamask-react';
+import 'react-loading-skeleton/dist/skeleton.css';
 
 import AppLayout from './js/components/AppLayout';
-import AppContextProvider, {
-  useAppContext,
-} from './js/components/App/AppContext';
+import AppContextProvider from './js/components/App/AppContext';
+import AppError from './js/components/Status/AppError';
+import AppSuccess from './js/components/Status/AppSuccess';
 
 const App = () => (
   <AppContextProvider>
-    <AppLayoutWrapper />
+    <MetaMaskProvider>
+      <AppError />
+      <AppSuccess />
+      <AppLayout />
+    </MetaMaskProvider>
   </AppContextProvider>
 );
-
-const AppLayoutWrapper = () => {
-  const { icWallet } = useAppContext();
-
-  return (
-    <IcWalletProvider provider={icWallet}>
-      <AppLayout />
-    </IcWalletProvider>
-  );
-};
 
 export default App;

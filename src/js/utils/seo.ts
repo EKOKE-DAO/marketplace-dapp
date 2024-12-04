@@ -55,9 +55,6 @@ export const pageOgSiteName = (pathname: string | Route): string => {
   return data?.ogSiteName ? data.ogSiteName : pageTitle(pathname);
 };
 
-export const isPageNotFound = (pathname: string | Route): boolean =>
-  seoData(pathname) === undefined;
-
 export const noIndex = (pathname: string | Route): boolean => {
   return seoData(pathname)?.noindex ?? false;
 };

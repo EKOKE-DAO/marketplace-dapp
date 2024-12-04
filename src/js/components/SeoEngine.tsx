@@ -2,13 +2,7 @@ import * as React from 'react';
 import { useLocation } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
 
-import {
-  isPageNotFound,
-  noIndex,
-  pageDescription,
-  pageOgSiteName,
-  pageTitle,
-} from '../utils/seo';
+import { pageDescription, pageOgSiteName, pageTitle } from '../utils/seo';
 
 const SITE_URL = 'https://dapp.ekoketoken.com';
 
@@ -20,7 +14,6 @@ const SeoEngine = () => {
     pageDescription(pathname),
   );
   const [ogSiteName, setOgSiteName] = React.useState(pageDescription(pathname));
-  const [noindex, setNoindex] = React.useState(noIndex(pathname));
 
   const canonicalUrl = `${SITE_URL}${pathname}`;
 
@@ -28,7 +21,6 @@ const SeoEngine = () => {
     setTitle(pageTitle(pathname));
     setDescription(pageDescription(pathname));
     setOgSiteName(pageOgSiteName(pathname));
-    setNoindex(noIndex(pathname));
   }, [pathname]);
 
   return (
@@ -43,9 +35,6 @@ const SeoEngine = () => {
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={ogSiteName} />
       <meta property="og:locale" content={'en_US'} />
-      {(isPageNotFound(pathname) || noindex) && (
-        <meta name="googlebot" content="noindex, nofollow" />
-      )}
     </Helmet>
   );
 };

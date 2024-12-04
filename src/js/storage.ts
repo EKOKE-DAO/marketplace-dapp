@@ -1,8 +1,5 @@
-import { WalletProvider } from 'react-ic-wallet';
-
-interface UserPreferences {
-  icWallet?: WalletProvider;
-}
+/*
+interface UserPreferences {}
 
 const getPreferences = (): UserPreferences | null => {
   try {
@@ -15,14 +12,4 @@ const getPreferences = (): UserPreferences | null => {
     return null;
   }
 };
-
-export const getUserIcWallet = (): WalletProvider | undefined => {
-  const preferences = getPreferences();
-  return preferences?.icWallet;
-};
-
-export const setUserIcWallet = (icWallet: WalletProvider | undefined): void => {
-  const preferences = getPreferences() || {};
-  preferences.icWallet = icWallet;
-  localStorage.setItem('userPreferences', JSON.stringify(preferences));
-};
+*/
