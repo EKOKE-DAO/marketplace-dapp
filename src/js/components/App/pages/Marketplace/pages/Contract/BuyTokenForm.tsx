@@ -24,7 +24,7 @@ interface Props {
 }
 
 const BuyTokenForm = (props: Props) => (
-  <Container.Card className="px-0 py-0 pt-4">
+  <Container.Card className="px-0 py-4">
     <Heading.H2 className="px-4 text-center">Buy contract tokens</Heading.H2>
     <WaitForMetamask otherwise={<LogWithMetamask />}>
       <BuyTokenFormInner {...props} />
@@ -34,9 +34,9 @@ const BuyTokenForm = (props: Props) => (
 
 const LogWithMetamask = () => (
   <Container.FlexCols className="items-center gap-4">
-    <Paragraph.Center>
+    <Paragraph.Default className="!text-center">
       Please connect to MetaMask to buy tokens.
-    </Paragraph.Center>
+    </Paragraph.Default>
     <MetamaskConnect />
   </Container.FlexCols>
 );

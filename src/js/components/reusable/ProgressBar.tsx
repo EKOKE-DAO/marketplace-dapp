@@ -11,7 +11,7 @@ interface Props {
 }
 
 const ProgressBar = (props: Props) => {
-  const percentage = Math.round((props.progress * 100) / props.max);
+  const percentage = Math.ceil((props.progress * 100) / props.max);
   let label = `${props.progress}/${props.max}`;
   if (props.percentage) {
     label = `${percentage.toString()}%`;

@@ -52,6 +52,11 @@ input {
   line-height: inherit;
 }
 
+strong {
+  color: #fd6262;
+  font-weight: 600;
+}
+
 .lazyload-wrapper {
   display: flex;
   justify-content: center;

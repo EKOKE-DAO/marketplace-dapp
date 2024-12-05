@@ -6,7 +6,7 @@ import Heading from '../../../reusable/Heading';
 import Link from '../../../reusable/Link';
 
 const Launchpad = () => (
-  <Container.FlexCols className="items-center justify-center w-3/6 sm:w-full mx-auto gap-2">
+  <Container.FlexCols className="items-center justify-center sm:w-full gap-2">
     <Container.Container>
       <Heading.H2>
         <span className="text-brandRed font-bold">SNS</span> Launchpad

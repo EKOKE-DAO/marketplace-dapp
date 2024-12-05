@@ -7,6 +7,7 @@ import Link from './reusable/Link';
 import X from './svg/X';
 import TikTok from './svg/TikTok';
 import Telegram from './svg/Telegram';
+import { Route } from '../utils/routes';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -15,13 +16,19 @@ const Footer = () => {
       <Container.Container className="bg-brandRed text-white m-0 p-8">
         <div className="bg-white content-none h-[1px] mx-auto w-page"></div>
         <Container.FlexResponsiveRow className="justify-between w-page sm:w-full mx-auto">
-          <Container.FlexCols>
+          <Container.FlexCols className="gap-4">
             <Heading.H2 className="text-white">EKOKE Token</Heading.H2>
-            <Link.Default
-              href={'https://www.ekoketoken.com/'}
-              className="text-white"
-            >
+            <Link.Default href={Route.HOME} className="text-white">
               Home
+            </Link.Default>
+            <Link.Default href={Route.MARKETPLACE} className="text-white">
+              Marketplace
+            </Link.Default>
+            <Link.Default href={Route.PRESALE} className="text-white">
+              EKOKE Presale
+            </Link.Default>
+            <Link.Default href={Route.ABOUT} className="text-white">
+              About
             </Link.Default>
           </Container.FlexCols>
           <Container.FlexCols className="gap-4">

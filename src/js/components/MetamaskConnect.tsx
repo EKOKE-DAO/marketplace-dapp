@@ -40,16 +40,16 @@ const MetamaskConnect = () => {
   };
 
   const addressText = (address: string) => {
-    return `${address.substring(0, 6)}...${address.substring(
+    return `${address.substring(0, 6)}…${address.substring(
       address.length - 4,
     )}`;
   };
 
   const text = () => {
-    if (status === 'initializing') return 'Initializing...';
+    if (status === 'initializing') return 'Initializing…';
     if (status === 'unavailable') return 'MetaMask not available';
-    if (status === 'notConnected') return 'Connect to MetaMask';
-    if (status === 'connecting') return 'Connecting...';
+    if (status === 'notConnected') return 'Login';
+    if (status === 'connecting') return 'Connecting…';
     if (status === 'connected') return addressText(account);
     return undefined;
   };
@@ -63,7 +63,7 @@ const MetamaskConnect = () => {
   return (
     <Container.FlexRow className="items-center gap-8">
       <Button.Alternative
-        className="my-0 !mb-0"
+        className="my-0 !mb-0 sm:text-xs"
         onClick={onClick}
         disabled={disabled}
       >

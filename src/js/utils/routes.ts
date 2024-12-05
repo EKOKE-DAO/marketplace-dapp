@@ -1,4 +1,5 @@
 export enum Route {
+  ABOUT = 'about',
   HOME = 'home',
   MARKETPLACE = 'marketplace',
   MARKETPLACE_CONTRACT = 'marketplace/real-estate',

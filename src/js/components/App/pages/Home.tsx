@@ -9,10 +9,12 @@ import Whitepaper from './Home/Whitepaper';
 import Presale from './Home/Presale';
 
 const Home = () => (
-  <Container.FlexCols className="gap-8">
+  <Container.FlexCols className="gap-8 items-center">
     <Intro />
-    <Presale />
-    <Launchpad />
+    <Container.FlexResponsiveRow className="items-center justify-around w-3/6">
+      <Presale />
+      <Launchpad />
+    </Container.FlexResponsiveRow>
     <Tokenomics />
     <Roadmap />
     <Whitepaper />

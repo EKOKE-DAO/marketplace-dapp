@@ -4,6 +4,11 @@ import { Chart, ArcElement, Tooltip } from 'chart.js';
 
 import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
+import Link from '../../../reusable/Link';
+
+const EKOKE_SUPPLY = 8_880_101.01;
+const EKOKE_DECIMALS = 8;
+const EKOKE_ADDRESS = '0x';
 
 const colors = [
   '#36a2eb',
@@ -17,23 +22,11 @@ const colors = [
 ];
 
 const tokenomicsData = {
-  labels: [
-    'DAO Pool - NFT Rewards',
-    'SNS Treasury',
-    'Dev Team',
-    'SNS Swap',
-    'DAO Pool - ERC20 Swap',
-    'Seed Funders',
-    'LBP Pool',
-    'Airdrop',
-  ],
+  labels: ['Reward Pool - Deferred NFT Rewards', 'Admin mintable'],
   datasets: [
     {
       label: 'e8s',
-      data: [
-        266403000000000, 213122400000000, 133201487000000, 106561210000000,
-        106561212000000, 26640300000000, 26640300000000, 8880101000000,
-      ],
+      data: [592_006_734_000_000, 296_003_367_000_000],
       backgroundColor: colors,
     },
   ],
@@ -66,13 +59,29 @@ const Tokenomics = () => {
           <Container.Container>
             <span className="block text-center text-xl">Total supply</span>
             <span className="block text-center text-xl font-bold text-brandRed">
-              8,880,101.010
+              {EKOKE_SUPPLY.toLocaleString('en-US', {
+                maximumFractionDigits: 3,
+              })}
+            </span>
+          </Container.Container>
+          <Container.Container>
+            <span className="block text-center text-xl">
+              ERC20 Contract Address
+            </span>
+            <span className="block text-center text-xl font-bold text-brandRed">
+              <Link.Default
+                className="text-brandRed !font-bold"
+                href={`https://etherscan.io/address/${EKOKE_ADDRESS}`}
+                target="_blank"
+              >
+                {EKOKE_ADDRESS}
+              </Link.Default>
             </span>
           </Container.Container>
           <Container.Container>
             <span className="block text-center text-xl">Decimals</span>
             <span className="block text-center text-xl font-bold text-brandRed">
-              8
+              {EKOKE_DECIMALS}
             </span>
           </Container.Container>
         </Container.FlexCols>
@@ -84,28 +93,14 @@ const Tokenomics = () => {
           <Container.FlexCols>
             <LegendEntry
               color={colors[0]}
-              label="DAO Pool - NFT Rewards"
-              percentage={30}
+              label="Reward Pool - Deferred NFT Rewards"
+              percentage={66}
             />
             <LegendEntry
               color={colors[1]}
-              label="SNS Treasury"
-              percentage={24}
+              label="Admin mintable"
+              percentage={33}
             />
-            <LegendEntry color={colors[2]} label="Dev Team" percentage={15} />
-            <LegendEntry color={colors[3]} label="SNS Swap" percentage={12} />
-            <LegendEntry
-              color={colors[4]}
-              label="DAO Pool - ERC20 Swap"
-              percentage={12}
-            />
-            <LegendEntry
-              color={colors[5]}
-              label="Seed Funders"
-              percentage={3}
-            />
-            <LegendEntry color={colors[6]} label="LBP Pool" percentage={3} />
-            <LegendEntry color={colors[7]} label="Airdrop" percentage={1} />
           </Container.FlexCols>
         </Container.FlexCols>
       </Container.FlexResponsiveRow>
