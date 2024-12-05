@@ -19,9 +19,12 @@ const inputValidationStyle = (
   required?: boolean,
   disabled?: boolean,
 ): string => {
+  if (disabled === true) {
+    return 'hover:cursor-not-allowed';
+  }
+
   if (
     required === true &&
-    disabled !== true &&
     (input === undefined || input.toString().length === 0)
   ) {
     return 'ring-yellow-500 ring-2';

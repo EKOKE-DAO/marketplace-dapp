@@ -6,6 +6,8 @@ interface Props {
   percentage?: boolean;
   bgColor?: string;
   textColor?: string;
+  className?: string;
+  hideLabel?: boolean;
 }
 
 const ProgressBar = (props: Props) => {
@@ -15,22 +17,30 @@ const ProgressBar = (props: Props) => {
     label = `${percentage.toString()}%`;
   }
 
+  if (props.hideLabel) {
+    label = '';
+  }
+
   const bgColor = props.bgColor || 'bg-brand';
   const textColor = props.textColor || 'text-gray-300';
 
   const className = `${
     props.progress > 0 ? bgColor : ''
-  } text-lg font-medium ${textColor} text-center p-0.5 leading-none rounded-full`;
+  } ${props.className} absolute inset-0 bg-gradient-to-r from-brandRed to-brandRed ${textColor} text-center`;
 
   const fillerStyles = {
     width: `${percentage}%`,
   };
 
   return (
-    <div className="w-full bg-gray-200 rounded-full">
+    <div className="w-full relative overflow-hidden h-[24px] bg-gray-200 rounded-lg">
       <div className={className} style={fillerStyles}>
         {label}
       </div>
+      <div
+        className="absolute inset-0 bg-stripes opacity-20"
+        style={fillerStyles}
+      />
     </div>
   );
 };

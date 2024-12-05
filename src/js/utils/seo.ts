@@ -28,6 +28,10 @@ const PAGE_TITLES: SeoPages = {
     title: 'EKOKE Token DAO - Marketplace',
     description: '',
   },
+  '/presale': {
+    title: 'EKOKE Token DAO - Presale',
+    description: 'Join the EKOKE Token DAO presale',
+  },
 };
 
 const seoData = (pathname: string | Route): SeoData | undefined => {

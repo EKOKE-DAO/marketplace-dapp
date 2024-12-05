@@ -16,8 +16,7 @@ const Mobile = () => (
     <Container.FlexRow className="h-[60px] w-full items-center justify-center gap-4">
       <TopbarLink name={'Home'} href={Route.HOME} />
       <TopbarLink name={'Marketplace'} href={Route.MARKETPLACE} />
-      <TopbarLink name={'Buy Process'} href={Route.TIMELINE} />
-      <TopbarLink name={'User Stories'} href={Route.USER_STORIES} />
+      <TopbarLink name={'EKOKE Presale'} href={Route.PRESALE} />
     </Container.FlexRow>
   </div>
 );

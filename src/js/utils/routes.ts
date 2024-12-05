@@ -2,6 +2,7 @@ export enum Route {
   HOME = 'home',
   MARKETPLACE = 'marketplace',
   MARKETPLACE_CONTRACT = 'marketplace/real-estate',
+  PRESALE = 'presale',
   TIMELINE = 'timeline',
   USER_STORIES = 'user-stories',
 }

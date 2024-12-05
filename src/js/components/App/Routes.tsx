@@ -9,6 +9,7 @@ import SeoEngine from '../SeoEngine';
 import Marketplace from './pages/Marketplace';
 import ContractPage from './pages/Marketplace/pages/Contract';
 import NotFound from './pages/NotFound';
+import Presale from './pages/Presale';
 
 const AppRouter = () => (
   <>
@@ -24,6 +25,7 @@ const AppRouter = () => (
           path={`${Route.url(Route.MARKETPLACE_CONTRACT)}/:id`}
           element={<ContractPage />}
         />
+        <RouterRoute path={Route.url(Route.PRESALE)} element={<Presale />} />
         <RouterRoute path={Route.url(Route.TIMELINE)} element={<Timeline />} />
         <RouterRoute
           path={Route.url(Route.USER_STORIES)}
