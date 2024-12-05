@@ -10,6 +10,9 @@ export enum ChainId {
   Sepolia = '0xaa36a7',
 }
 
+const DEFAULT_CHAIN_ID =
+  process.env.NODE_ENV === 'development' ? ChainId.Sepolia : ChainId.Mainnet;
+
 const MetamaskConnect = () => {
   const {
     status,
@@ -28,8 +31,8 @@ const MetamaskConnect = () => {
 
   const onClick = () => {
     if (status === 'notConnected') {
-      if (ChainId.Mainnet !== currentChainId) {
-        switchChain(ChainId.Mainnet);
+      if (DEFAULT_CHAIN_ID !== currentChainId) {
+        switchChain(DEFAULT_CHAIN_ID);
       }
       return connect();
     }
@@ -52,8 +55,8 @@ const MetamaskConnect = () => {
   };
 
   React.useEffect(() => {
-    if (currentChainId && currentChainId !== ChainId.Mainnet) {
-      switchChain(ChainId.Mainnet);
+    if (currentChainId && currentChainId !== DEFAULT_CHAIN_ID) {
+      switchChain(DEFAULT_CHAIN_ID);
     }
   }, [switchChain]);
 

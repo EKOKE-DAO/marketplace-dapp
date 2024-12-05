@@ -3,13 +3,10 @@ import * as Icon from 'react-feather';
 
 import Container from '../reusable/Container';
 import { useAppContext } from '../App/AppContext';
-import ProgressBar from '../reusable/ProgressBar';
 
 const AppSuccess = () => {
   const { appSuccess, setAppSuccess } = useAppContext();
-  const [dismissInterval, setDismissInterval] =
-    React.useState<NodeJS.Timeout>();
-  const [progress, setProgress] = React.useState<number>(0);
+  const [dismissTimeout, setDismissTimeout] = React.useState<NodeJS.Timeout>();
 
   const onDismiss = () => {
     setAppSuccess(undefined);
@@ -17,22 +14,21 @@ const AppSuccess = () => {
 
   React.useEffect(() => {
     return () => {
-      if (dismissInterval) {
-        clearInterval(dismissInterval);
+      if (dismissTimeout) {
+        clearInterval(dismissTimeout);
       }
     };
   }, []);
 
   React.useEffect(() => {
-    setDismissInterval(
-      setInterval(() => {
-        if (progress < 5000) {
-          setProgress(progress + 10);
-        } else {
-          onDismiss();
-          clearInterval(dismissInterval);
-        }
-      }, 10),
+    if (appSuccess === undefined) {
+      return;
+    }
+    setDismissTimeout(
+      setTimeout(() => {
+        onDismiss();
+        clearTimeout(dismissTimeout);
+      }, 5_000),
     );
   }, [appSuccess]);
 
@@ -48,7 +44,6 @@ const AppSuccess = () => {
             <Icon.X size={16} className="text-green-800" onClick={onDismiss} />
           </Container.Container>
         </Container.FlexRow>
-        <ProgressBar progress={progress} max={5000} />
       </Container.FlexCols>
     );
   } else {

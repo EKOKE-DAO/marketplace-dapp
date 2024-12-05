@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom';
 import { Contract } from '../../../../../data/contract';
 import Container from '../../../../reusable/Container';
 import RealEstateCard from './Contract/RealEstateCard';
-import TokensList from './Contract/TokensList';
+import BuyTokenForm from './Contract/BuyTokenForm';
 import getContractById from '../../../../../api/getContractById';
 import { useAppContext } from '../../../AppContext';
 import { Helmet } from 'react-helmet';
@@ -44,7 +44,7 @@ const ContractPage = () => {
       <Container.Container>
         <Container.FlexResponsiveRow className="gap-4 w-full sm:flex-col-reverse">
           <Container.Container className="w-2/6 sm:w-full">
-            <TokensList contract={contract} />
+            <BuyTokenForm contract={contract} />
           </Container.Container>
           <Container.Container className="flex-1">
             <RealEstateCard contract={contract} />

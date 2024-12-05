@@ -14,6 +14,23 @@ export default class DeferredClient {
     this.chainId = chainId;
   }
 
+  async nextTokenIdToBuy(contractId: bigint): Promise<bigint> {
+    const contract = this.getContract();
+    return contract.methods.nextTokenIdToBuy(contractId).call({
+      from: this.address,
+    });
+  }
+
+  async contractProgress(contractId: bigint): Promise<bigint> {
+    const contract = this.getContract();
+    return contract.methods.contractProgress(contractId).call();
+  }
+
+  async contractCompleted(contractId: bigint): Promise<boolean> {
+    const contract = this.getContract();
+    return contract.methods.contractCompleted(contractId).call();
+  }
+
   async tokenUri(tokenId: bigint): Promise<string> {
     const contract = this.getContract();
     return contract.methods.tokenUri(tokenId).call();

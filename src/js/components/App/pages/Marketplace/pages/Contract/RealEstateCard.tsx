@@ -5,7 +5,7 @@ import { Contract } from '../../../../../../data/contract';
 import Container from '../../../../../reusable/Container';
 import Heading from '../../../../../reusable/Heading';
 import Paragraph from '../../../../../reusable/Paragraph';
-import ProgressBar from '../../../../../reusable/ProgressBar';
+import Progress from './RealEstateCard/Progress';
 
 interface Props {
   contract: Contract;
@@ -48,10 +48,7 @@ const RealEstateCard = ({ contract }: Props) => (
           </Container.Container>
         </Container.FlexCols>
       </Container.FlexResponsiveRow>
-      <Container.Container>
-        <span className="text-text">Mortgage payment progress</span>
-        <ProgressBar progress={0} max={contract.installments} />
-      </Container.Container>
+      <Progress contractId={contract.id} installments={contract.installments} />
       <Paragraph.Leading>{contract.realEstate.description}</Paragraph.Leading>
     </Container.FlexCols>
   </Container.Card>

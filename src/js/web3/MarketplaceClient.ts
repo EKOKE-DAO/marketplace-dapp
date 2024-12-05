@@ -14,14 +14,18 @@ export default class MarketplaceClient {
     this.chainId = chainId;
   }
 
-  async buyToken(tokenId: bigint) {
+  async buyNextToken(contractId: bigint) {
     const contract = this.getContract();
-    return contract.methods.buyToken(tokenId).send({ from: this.address });
+    return contract.methods
+      .buyNextToken(contractId)
+      .send({ from: this.address });
   }
 
-  async tokenPriceForCaller(): Promise<bigint> {
+  async tokenPriceForCaller(contractId: bigint): Promise<bigint> {
     const contract = this.getContract();
-    return contract.methods.tokenPriceForCaller().call();
+    return contract.methods.tokenPriceForCaller(contractId).call({
+      from: this.address,
+    });
   }
 
   async interestRate(): Promise<number> {
@@ -32,6 +36,10 @@ export default class MarketplaceClient {
   async usdErc20(): Promise<string> {
     const contract = this.getContract();
     return contract.methods.usdErc20().call();
+  }
+
+  marketplaceAddress(): string {
+    return CONTRACT_ADDRESS[this.chainId];
   }
 
   private getContract() {

@@ -4,6 +4,8 @@ interface Props {
   progress: number;
   max: number;
   percentage?: boolean;
+  bgColor?: string;
+  textColor?: string;
 }
 
 const ProgressBar = (props: Props) => {
@@ -13,16 +15,19 @@ const ProgressBar = (props: Props) => {
     label = `${percentage.toString()}%`;
   }
 
+  const bgColor = props.bgColor || 'bg-brand';
+  const textColor = props.textColor || 'text-gray-300';
+
   const className = `${
-    props.progress > 0 ? 'bg-brand' : ''
-  } text-lg font-medium text-blue-100 text-center p-0.5 leading-none rounded-full`;
+    props.progress > 0 ? bgColor : ''
+  } text-lg font-medium ${textColor} text-center p-0.5 leading-none rounded-full`;
 
   const fillerStyles = {
     width: `${percentage}%`,
   };
 
   return (
-    <div className="w-full bg-gray-200 rounded-full 700">
+    <div className="w-full bg-gray-200 rounded-full">
       <div className={className} style={fillerStyles}>
         {label}
       </div>

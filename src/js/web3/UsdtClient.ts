@@ -19,7 +19,7 @@ export default class UsdtClient {
     return contract.methods.allowance(owner, spender).call();
   }
 
-  async approve(spender: string, amount: number) {
+  async approve(spender: string, amount: bigint) {
     const contract = this.getContract();
     return contract.methods
       .approve(spender, amount)
