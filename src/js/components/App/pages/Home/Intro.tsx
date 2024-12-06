@@ -20,11 +20,20 @@ const Intro = () => (
     </Container.Container>
     <Container.Container>
       <Paragraph.Leading className="sm:w-5/6 mx-auto">
-        <strong>EKOKE</strong> is an innovative tool that aims to revolutionize
-        the real estate industry. The <strong>EKOKE-DAO</strong> project emerges
-        as the evolutionary response to the traditional real estate landscape,
-        originating from a Milan-based agency's immersion into the realms of
-        blockchain and cryptocurrencies. This innovative venture aspires to
+        We're revolutionizing home financing by replacing traditional mortgages
+        with a fair, decentralized alternative. Through our{' '}
+        <Link.Paragraph href={'https://ethereum.org/'} target="_blank">
+          Ethereum
+        </Link.Paragraph>{' '}
+        powered <strong>Deferred NFT</strong> system, buyers can pay for their
+        homes in manageable installments. Each NFT represents a payment, and
+        once all are completed, ownership of the property is fully transferred.
+        <strong>EKOKE DAO</strong> empowers members to invest in these NFTs,
+        earning deflationary <strong>EKOKE</strong> tokens as{' '}
+        <strong>rewards</strong> while supporting buyers with transparent and
+        sustainable interest rates. By fostering community-driven home
+        ownership, we eliminate the burden of excessive mortgage rates and
+        create value for everyone involved. This innovative venture aspires to
         redefine real estate transactions by embracing the potential of the{' '}
         <Link.Paragraph href={'https://ethereum.org/'} target="_blank">
           Ethereum

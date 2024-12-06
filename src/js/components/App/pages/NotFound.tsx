@@ -1,12 +1,20 @@
 import * as React from 'react';
 import { Helmet } from 'react-helmet';
+import Container from '../../reusable/Container';
+import Heading from '../../reusable/Heading';
+import Link from '../../reusable/Link';
+import { Route } from '../../../utils/routes';
 
 const NotFound = () => (
   <>
     <Helmet>
       <meta name="googlebot" content="noindex, nofollow" />
     </Helmet>
-    <div>404</div>
+    <Container.Container className="text-center">
+      <Heading.H1>404</Heading.H1>
+      <Heading.H2 className="text-center">Page not found</Heading.H2>
+      <Link.Paragraph href={Route.HOME}>Go back to home</Link.Paragraph>
+    </Container.Container>
   </>
 );
 

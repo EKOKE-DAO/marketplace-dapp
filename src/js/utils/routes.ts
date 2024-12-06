@@ -4,8 +4,7 @@ export enum Route {
   MARKETPLACE = 'marketplace',
   MARKETPLACE_CONTRACT = 'marketplace/real-estate',
   PRESALE = 'presale',
-  TIMELINE = 'timeline',
-  USER_STORIES = 'user-stories',
+  PROFILE = 'profile',
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace

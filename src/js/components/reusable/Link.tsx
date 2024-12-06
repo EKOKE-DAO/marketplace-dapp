@@ -30,7 +30,7 @@ const Default = (props: Props) => (
 const Button = (props: Props) => (
   <a
     href={resolve(props.href)}
-    className={`${props.className} font-medium px-6 py-3 bg-brandBtn text-white hover:underline focus:ring-4 focus:ring-brand rounded-full`}
+    className={`${props.className} font-medium px-5 py-3 bg-brandBtn text-white hover:underline focus:ring-2 focus:ring-gray-300 rounded-xl text-sm mr-2 mb-2`}
     itemScope={props.itemScope}
     itemType={props.itemType}
     itemProp={props.itemProp}

@@ -13,7 +13,7 @@ interface Props {
 const CardStory = ({ title, person, reversedLayout, children }: Props) => (
   <Container.Card className="p-8">
     <Container.FlexResponsiveRow
-      className={`gap-8 ${reversedLayout ? '!flex-row-reverse sm:!flex-col' : ''}`}
+      className={`gap-8 sm:gap-2 sm:items-center ${reversedLayout ? '!flex-row-reverse sm:!flex-col' : ''}`}
     >
       <Container.Container>{person}</Container.Container>
       <Container.Container className="w-full">

@@ -14,15 +14,8 @@ interface SeoData {
 const PAGE_TITLES: SeoPages = {
   '/': {
     title: 'EKOKE Token DAO',
-    description: '',
-  },
-  '/timeline': {
-    title: 'EKOKE Token DAO - Timeline',
-    description: '',
-  },
-  '/user-stories': {
-    title: 'EKOKE Token DAO - User Stories',
-    description: '',
+    description:
+      'EKOKE is an innovative tool that aims to revolutionize the real estate industry. The EKOKE-DAO project emerges as the evolutionary response to the traditional real estate landscape',
   },
   '/marketplace': {
     title: 'EKOKE Token DAO - Marketplace',
@@ -31,6 +24,11 @@ const PAGE_TITLES: SeoPages = {
   '/presale': {
     title: 'EKOKE Token DAO - Presale',
     description: 'Join the EKOKE Token DAO presale',
+  },
+  '/about': {
+    title: 'EKOKE Token DAO - About',
+    description:
+      'EKOKE is an innovative tool that aims to revolutionize the real estate industry. The EKOKE-DAO project emerges as the evolutionary response to the traditional real estate landscape',
   },
 };
 
