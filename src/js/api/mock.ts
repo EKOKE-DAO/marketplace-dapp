@@ -158,7 +158,7 @@ export const mockContract = (id: bigint): ContractData => {
       [
         'contract:pool',
         {
-          BoolContent: false,
+          BoolContent: true,
         },
       ],
       [
@@ -177,6 +177,12 @@ export const mockContract = (id: bigint): ContractData => {
         'contract:energyClass',
         {
           TextContent: 'A',
+        },
+      ],
+      [
+        'contract:youtubeUrl',
+        {
+          TextContent: 'https://www.youtube.com/watch?v=hMUXxBvBiAo',
         },
       ],
     ],

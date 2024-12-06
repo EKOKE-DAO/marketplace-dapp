@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
 import { Task, TaskStatus } from './TaskList';
 import Container from '../reusable/Container';
 
@@ -15,19 +15,19 @@ const TaskEntry = ({ task, state }: Props) => (
     </Container.Container>
     <Container.Container>
       {state === TaskStatus.Pending && (
-        <Icon.Clock className="text-text" size={24} />
+        <Icon.FiClock className="text-text" size={24} />
       )}
       {state === TaskStatus.Running && (
-        <Icon.Loader className="text-text animate-spin" size={24} />
+        <Icon.FiLoader className="text-text animate-spin" size={24} />
       )}
       {state === TaskStatus.Success && (
-        <Icon.CheckCircle className="text-green-700" size={24} />
+        <Icon.FiCheckCircle className="text-green-700" size={24} />
       )}
       {state === TaskStatus.Error && (
-        <Icon.XCircle className="text-red-700" size={24} />
+        <Icon.FiXCircle className="text-red-700" size={24} />
       )}
       {state === TaskStatus.Aborted && (
-        <Icon.Clock className="text-text" size={24} />
+        <Icon.FiClock className="text-text" size={24} />
       )}
     </Container.Container>
   </Container.FlexRow>

@@ -24,7 +24,7 @@ interface Props {
 }
 
 const BuyTokenForm = (props: Props) => (
-  <Container.Card className="px-0 py-4">
+  <Container.Card className="p-4">
     <Heading.H2 className="px-4 text-center">Buy contract tokens</Heading.H2>
     <WaitForMetamask otherwise={<LogWithMetamask />}>
       <BuyTokenFormInner {...props} />
@@ -45,6 +45,8 @@ const BuyTokenFormInner = ({ contract }: Props) => {
   const { setAppError, setAppSuccess } = useAppContext();
   const { account, ethereum, chainId } = useConnectedMetaMask();
 
+  const [tokenPriceForCaller, setTokenPriceForCaller] =
+    React.useState<bigint>();
   const [tokenPrice, setTokenPrice] = React.useState<bigint>();
   const [tokenId, setTokenId] = React.useState<bigint | null>(null);
   const [fetchedData, setFetchedData] = React.useState(false);
@@ -56,7 +58,7 @@ const BuyTokenFormInner = ({ contract }: Props) => {
   };
 
   const approveUsdt = async (): Promise<Result> => {
-    if (tokenPrice === undefined) {
+    if (tokenPriceForCaller === undefined) {
       return { error: 'Token price is not available' };
     }
     // get current approval for marketplace
@@ -71,17 +73,17 @@ const BuyTokenFormInner = ({ contract }: Props) => {
     // get allowance
     const allowance = await usdtClient.allowance(account, marketplaceAddress);
     // check if allowance is enough
-    if (allowance >= tokenPrice) {
+    if (allowance >= tokenPriceForCaller) {
       return true;
     }
 
     // approve
     try {
-      await usdtClient.approve(marketplaceAddress, tokenPrice);
+      await usdtClient.approve(marketplaceAddress, tokenPriceForCaller);
     } catch (e) {
       console.error(`Failed to approve marketplace: ${e}`);
       return {
-        error: `Failed to approve marketplace to spend ${convertToHumanReadable(tokenPrice, USDT_DECIMALS)} USDT`,
+        error: `Failed to approve marketplace to spend ${convertToHumanReadable(tokenPriceForCaller, USDT_DECIMALS)} USDT`,
       };
     }
 
@@ -141,6 +143,12 @@ const BuyTokenFormInner = ({ contract }: Props) => {
       });
     marketplaceClient
       .tokenPriceForCaller(contract.id)
+      .then(setTokenPriceForCaller)
+      .catch((e) => {
+        console.error(`Failed to load token data: ${e.message}`);
+      });
+    marketplaceClient
+      .tokenPrice(contract.id)
       .then(setTokenPrice)
       .catch((e) => {
         console.error(`Failed to load token data: ${e.message}`);
@@ -159,7 +167,11 @@ const BuyTokenFormInner = ({ contract }: Props) => {
     );
   }
 
-  if (tokenId === null || tokenPrice === undefined) {
+  if (
+    tokenId === null ||
+    tokenPriceForCaller === undefined ||
+    tokenPrice === undefined
+  ) {
     return (
       <Container.FlexCols className="items-center justify-center gap-4 px-4">
         <Paragraph.Default>
@@ -169,8 +181,19 @@ const BuyTokenFormInner = ({ contract }: Props) => {
     );
   }
 
+  const tokenPriceForCallerUsd = Number(
+    convertToHumanReadable(tokenPriceForCaller, USDT_DECIMALS, true),
+  );
   const tokenPriceUsd = Number(
     convertToHumanReadable(tokenPrice, USDT_DECIMALS, true),
+  );
+  const tokenPriceForCallerUsdString = tokenPriceForCallerUsd.toLocaleString(
+    'en-US',
+    {
+      style: 'currency',
+      currency: contract.currency,
+      minimumFractionDigits: 2,
+    },
   );
   const tokenPriceUsdString = tokenPriceUsd.toLocaleString('en-US', {
     style: 'currency',
@@ -179,15 +202,21 @@ const BuyTokenFormInner = ({ contract }: Props) => {
   });
 
   return (
-    <Container.FlexCols className="items-center gap-4">
+    <Container.FlexCols className="items-center gap-2">
       <span className="block text-lg">
         Buy token <strong>#{tokenId.toString()}</strong>
       </span>
       <span className="block text-text">
-        Token Price: {tokenPriceUsdString}
+        Token Price: <strong>{tokenPriceForCallerUsdString}</strong>
       </span>
+      {tokenPriceForCaller !== tokenPrice && (
+        <Paragraph.Default className="!text-center text-xs text-text">
+          Interests are applied to the contract buyer.
+          <br /> Original price: {tokenPriceUsdString}
+        </Paragraph.Default>
+      )}
       <Button.Primary disabled={pendingTx} onClick={onBuyToken}>
-        Buy token for {tokenPriceUsdString}
+        Buy token for {tokenPriceForCallerUsdString}
       </Button.Primary>
       <TaskList
         run={pendingTx}
@@ -195,7 +224,7 @@ const BuyTokenFormInner = ({ contract }: Props) => {
         onDone={onTokenBought}
         tasks={[
           {
-            label: `Approve USDT to spend ${tokenPriceUsd} USDT`,
+            label: `Approve USDT to spend ${tokenPriceForCallerUsd} USDT`,
             action: approveUsdt,
           },
           {

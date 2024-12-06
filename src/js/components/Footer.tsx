@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
 
 import Container from './reusable/Container';
 import Heading from './reusable/Heading';
@@ -53,7 +53,7 @@ const Footer = () => {
               target="_blank"
               className="text-white"
             >
-              <Icon.GitHub className="mr-2 inline text-white" />
+              <Icon.FiGithub className="mr-2 inline text-white" />
               GitHub
             </Link.IconLink>
             <Link.IconLink
@@ -61,7 +61,7 @@ const Footer = () => {
               target="_blank"
               className="text-white"
             >
-              <Icon.Instagram className="mr-2 inline text-white" />
+              <Icon.FiInstagram className="mr-2 inline text-white" />
               Instagram
             </Link.IconLink>
             <Link.IconLink
@@ -69,7 +69,7 @@ const Footer = () => {
               target="_blank"
               className="text-white"
             >
-              <Icon.Linkedin className="mr-2 inline text-white" />
+              <Icon.FiLinkedin className="mr-2 inline text-white" />
               LinkedIn
             </Link.IconLink>
             <Link.IconLink
@@ -89,12 +89,12 @@ const Footer = () => {
               <span className="ml-2">TikTok</span>
             </Link.IconLink>
             <Link.IconLink
-              href={'https://twitter.com/ekoketoken'}
+              href={'https://x.com/ekoketoken'}
               target="_blank"
               className="text-white"
             >
               <X />
-              <span className="ml-2">Twitter</span>
+              <span className="ml-2">X.com</span>
             </Link.IconLink>
           </Container.FlexCols>
         </Container.FlexResponsiveRow>

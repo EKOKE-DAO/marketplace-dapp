@@ -4,10 +4,10 @@ import { useParams } from 'react-router-dom';
 import { Contract } from '../../../../../data/contract';
 import Container from '../../../../reusable/Container';
 import RealEstateCard from './Contract/RealEstateCard';
-import BuyTokenForm from './Contract/BuyTokenForm';
 import getContractById from '../../../../../api/getContractById';
 import { useAppContext } from '../../../AppContext';
 import { Helmet } from 'react-helmet';
+import Sidebar from './Contract/Sidebar';
 
 const ContractPage = () => {
   const { setAppError } = useAppContext();
@@ -43,8 +43,8 @@ const ContractPage = () => {
       </Helmet>
       <Container.Container>
         <Container.FlexResponsiveRow className="gap-4 w-full sm:flex-col-reverse">
-          <Container.Container className="w-2/6 sm:w-full">
-            <BuyTokenForm contract={contract} />
+          <Container.Container className="w-3/12 sm:w-full">
+            <Sidebar contract={contract} />
           </Container.Container>
           <Container.Container className="flex-1">
             <RealEstateCard contract={contract} />

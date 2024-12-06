@@ -1,11 +1,13 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
+import * as MdIcon from 'react-icons/md';
 
 import { Contract } from '../../../../../../data/contract';
 import Container from '../../../../../reusable/Container';
 import Heading from '../../../../../reusable/Heading';
 import Paragraph from '../../../../../reusable/Paragraph';
 import Progress from './RealEstateCard/Progress';
+import YoutubeVideo from '../../../../../reusable/YoutubeVideo';
 
 interface Props {
   contract: Contract;
@@ -27,29 +29,106 @@ const RealEstateCard = ({ contract }: Props) => (
         <Container.FlexCols className="gap-2">
           <Heading.H1L>{contract.realEstate.name}</Heading.H1L>
           <Container.Container className="text-sm text-gray-500">
-            <Icon.DollarSign size={16} className="text-gray-500 mr-2 inline" />
+            <Icon.FiDollarSign
+              size={16}
+              className="text-gray-500 mr-2 inline"
+            />
             {contract.price.toLocaleString('en-US', {
               style: 'currency',
               currency: contract.currency,
             })}
           </Container.Container>
           <Container.Container className="text-sm text-gray-500">
-            <Icon.MapPin size={16} className="inline mr-2" />
-            {contract.realEstate.address}
+            <Icon.FiMapPin size={16} className="inline mr-2" />
+            {contract.realEstate.address}{' '}
+            {contract.realEstate.zone && `, ${contract.realEstate.zone}`}
+            {contract.realEstate.city && `, ${contract.realEstate.city}`}
+            {contract.realEstate.region && `, ${contract.realEstate.region}`}
+            {contract.realEstate.country && `, ${contract.realEstate.country}`}
           </Container.Container>
-          <Container.Container className="text-sm text-gray-500">
-            <Icon.Box size={16} className="text-gray-500 mr-2 inline" />
-            {contract.realEstate.rooms
-              ? `${contract.realEstate.rooms} Rooms - `
-              : ''}
-            {contract.realEstate.bathrooms
-              ? `${contract.realEstate.bathrooms} Bathrooms`
-              : ''}
+          <Container.Container className="grid grid-cols-2 sm:grid-cols-1">
+            {contract.realEstate.rooms !== undefined && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdBedroomParent
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                {contract.realEstate.rooms} Rooms
+              </Container.Container>
+            )}
+            {contract.realEstate.squareMeters !== undefined && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdSquareFoot
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                {contract.realEstate.squareMeters} Square Meters
+              </Container.Container>
+            )}
+            {contract.realEstate.bathrooms !== undefined && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdBathtub
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                {contract.realEstate.bathrooms} Bathrooms
+              </Container.Container>
+            )}
+            {contract.realEstate.balconies !== undefined && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdBalcony
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                {contract.realEstate.balconies} Balconies
+              </Container.Container>
+            )}
+            {contract.realEstate.garden === true && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdLocalFlorist
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                Garden
+              </Container.Container>
+            )}
+            {contract.realEstate.pool === true && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdPool
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                Swimming Pool
+              </Container.Container>
+            )}
+            {contract.realEstate.garage === true && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdGarage
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                Garage
+              </Container.Container>
+            )}
+            {contract.realEstate.parking === true && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdLocalParking
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                Outside Parking
+              </Container.Container>
+            )}
           </Container.Container>
         </Container.FlexCols>
       </Container.FlexResponsiveRow>
       <Progress contractId={contract.id} installments={contract.installments} />
       <Paragraph.Leading>{contract.realEstate.description}</Paragraph.Leading>
+      {contract.realEstate.youtubeUrl && (
+        <Container.Container className="mx-auto">
+          <YoutubeVideo url={contract.realEstate.youtubeUrl} />
+        </Container.Container>
+      )}
     </Container.FlexCols>
   </Container.Card>
 );

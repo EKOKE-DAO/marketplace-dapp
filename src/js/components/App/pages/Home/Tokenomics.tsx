@@ -7,7 +7,7 @@ import Heading from '../../../reusable/Heading';
 import Link from '../../../reusable/Link';
 
 const EKOKE_SUPPLY = 8_880_101.01;
-const EKOKE_DECIMALS = 8;
+const EKOKE_DECIMALS = 9;
 const EKOKE_ADDRESS = '0x';
 
 const colors = [
@@ -22,11 +22,23 @@ const colors = [
 ];
 
 const tokenomicsData = {
-  labels: ['Reward Pool - Deferred NFT Rewards', 'Admin mintable'],
+  labels: [
+    'Reward Pool - Deferred NFT Rewards',
+    'Liquidity Bootstrapping Pool (LBP)',
+    'Team',
+    'Presale',
+    'Investors',
+    'Partner Agencies',
+    'Airdrop',
+  ],
   datasets: [
     {
-      label: 'e8s',
-      data: [592_006_734_000_000, 296_003_367_000_000],
+      label: 'EKOKE',
+      data: [
+        5_920_067_340_000_000, 1_086_332_356_800_000, 888_010_101_000_000,
+        444_005_050_500_000, 266_403_030_300_000, 266_403_030_300_000,
+        8_880_101_100_000,
+      ],
       backgroundColor: colors,
     },
   ],
@@ -98,9 +110,18 @@ const Tokenomics = () => {
             />
             <LegendEntry
               color={colors[1]}
-              label="Admin mintable"
-              percentage={33}
+              label="Liquidity Bootstrapping Pool (LBP)"
+              percentage={12}
             />
+            <LegendEntry color={colors[2]} label="Team" percentage={10} />
+            <LegendEntry color={colors[3]} label="Presale" percentage={5} />
+            <LegendEntry color={colors[4]} label="Investors" percentage={3} />
+            <LegendEntry
+              color={colors[5]}
+              label="Partner Agencies"
+              percentage={3}
+            />
+            <LegendEntry color={colors[7]} label="Airdrops" percentage={1} />
           </Container.FlexCols>
         </Container.FlexCols>
       </Container.FlexResponsiveRow>

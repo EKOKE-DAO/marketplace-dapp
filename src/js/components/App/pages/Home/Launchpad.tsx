@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
 
 import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
@@ -14,7 +14,8 @@ const Launchpad = () => (
     </Container.Container>
     <Container.Container>
       <Link.Button className="hover:cursor-not-allowed">
-        Coming soon... <Icon.ExternalLink className="inline mr-2 text-white" />
+        Coming soon...{' '}
+        <Icon.FiExternalLink className="inline mr-2 text-white" />
       </Link.Button>
     </Container.Container>
   </Container.FlexCols>

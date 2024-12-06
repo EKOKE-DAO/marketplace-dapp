@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
 
 import { Contract } from '../../../../../data/contract';
 import Container from '../../../../reusable/Container';
@@ -25,18 +25,18 @@ const Item = ({ contract: { price, currency, realEstate } }: Props) => (
         {realEstate.name}
       </span>
       <span className="text-gray-500">
-        <Icon.DollarSign size={16} className="text-gray-500 mr-2 inline" />
+        <Icon.FiDollarSign size={16} className="text-gray-500 mr-2 inline" />
         {price.toLocaleString('en-US', {
           style: 'currency',
           currency,
         })}
       </span>
       <span className="text-gray-500">
-        <Icon.MapPin size={16} className="text-gray-500 mr-2 inline" />
+        <Icon.FiMapPin size={16} className="text-gray-500 mr-2 inline" />
         {realEstate.address}
       </span>
       <span className="text-gray-500">
-        <Icon.Box size={16} className="text-gray-500 mr-2 inline" />
+        <Icon.FiBox size={16} className="text-gray-500 mr-2 inline" />
         {Math.floor(Math.random() * 6) + 1} Rooms -{' '}
         {Math.floor(Math.random() * 2) + 1} Bathrooms
       </span>

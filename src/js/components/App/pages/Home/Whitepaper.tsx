@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
 
 import Container from '../../../reusable/Container';
 import Link from '../../../reusable/Link';
@@ -9,7 +9,7 @@ const Whitepaper = () => (
     <Container.Container>
       <Link.Button href={'https://www.ekoketoken.com/whitepaper'}>
         Read the Whitepaper{' '}
-        <Icon.ExternalLink className="inline mr-2 text-white" />
+        <Icon.FiExternalLink className="inline mr-2 text-white" />
       </Link.Button>
     </Container.Container>
   </Container.FlexCols>

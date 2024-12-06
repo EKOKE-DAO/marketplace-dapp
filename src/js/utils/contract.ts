@@ -43,6 +43,7 @@ export const convertCanisterContractToContract = (
       garage: getPropertyBoolean(data, 'contract:garage'),
       parking: getPropertyBoolean(data, 'contract:parking'),
       energyClass: getPropertyText(data, 'contract:energyClass'),
+      youtubeUrl: getPropertyText(data, 'contract:youtubeUrl'),
     },
   };
 };

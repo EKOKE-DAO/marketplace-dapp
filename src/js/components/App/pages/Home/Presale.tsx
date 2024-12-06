@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
 
 import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
@@ -17,7 +17,7 @@ const Presale = () => (
     <Container.Container>
       <Link.Button href={Route.PRESALE}>
         Join the Presale NOW
-        <Icon.ArrowRight className="inline ml-2" />
+        <Icon.FiArrowRight className="inline ml-2" />
       </Link.Button>
     </Container.Container>
   </Container.FlexCols>

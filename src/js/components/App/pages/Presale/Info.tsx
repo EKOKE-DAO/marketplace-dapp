@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
 
 import Container from '../../../reusable/Container';
 import Paragraph from '../../../reusable/Paragraph';
@@ -45,9 +45,9 @@ const Info = () => {
             />
             <button onClick={onAddressCopy}>
               {copied ? (
-                <Icon.Check className="cursor-pointer" />
+                <Icon.FiCheck className="cursor-pointer" />
               ) : (
-                <Icon.Copy className="cursor-pointer" />
+                <Icon.FiCopy className="cursor-pointer" />
               )}
             </button>
           </Container.FlexRow>

@@ -21,4 +21,5 @@ export interface RealEstate {
   garage: boolean;
   parking: boolean;
   energyClass?: string;
+  youtubeUrl?: string;
 }

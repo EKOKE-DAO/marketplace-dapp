@@ -1,4 +1,4 @@
-export const EKOKE_DECIMALS = 8;
+export const EKOKE_DECIMALS = 9;
 export const USDT_DECIMALS = 6;
 
 export const convertToHumanReadable = (

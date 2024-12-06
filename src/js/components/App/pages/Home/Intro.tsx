@@ -1,5 +1,6 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
+import { FaXTwitter } from 'react-icons/fa6';
 
 import Container from '../../../reusable/Container';
 import Ekoke from '../../../svg/Ekoke';
@@ -37,10 +38,10 @@ const Intro = () => (
     </Container.Container>
     <Container.FlexResponsiveRow className="justify-center items-center gap-4">
       <Link.Button href={'https://twitter.com/ekoketoken'} target={'_blank'}>
-        <Icon.Twitter className="inline mr-2 text-white" /> Twitter
+        <FaXTwitter className="inline mr-2 text-white" /> X.com
       </Link.Button>
       <Link.Button href={'https://t.me/ekokeTOKENgroup'} target={'_blank'}>
-        <Icon.Send className="inline mr-2 text-white" /> Telegram
+        <Icon.FiSend className="inline mr-2 text-white" /> Telegram
       </Link.Button>
     </Container.FlexResponsiveRow>
   </Container.FlexCols>

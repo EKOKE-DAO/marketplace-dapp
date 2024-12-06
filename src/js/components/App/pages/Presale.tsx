@@ -18,7 +18,7 @@ import Info from './Presale/Info';
 import Paragraph from '../../reusable/Paragraph';
 
 const BASE_PRICE = 1_000_000;
-const STEP = 100_000_000_000;
+const STEP = 5_000_000_000_000;
 
 const Presale = () => (
   <Container.Container>

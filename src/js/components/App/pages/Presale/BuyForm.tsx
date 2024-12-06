@@ -1,5 +1,6 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
+import * as MdIcon from 'react-icons/md';
 import { useConnectedMetaMask } from 'metamask-react';
 
 import { useAppContext } from '../../AppContext';
@@ -153,7 +154,7 @@ const BuyForm = ({ tokenPrice }: Props) => {
           <Heading.H3>Buy EKOKE</Heading.H3>
           <Input.IconInput
             id="presale-buy-form-amount"
-            icon={<Icon.ShoppingBag />}
+            icon={<MdIcon.MdGeneratingTokens />}
             type="number"
             min={1}
             max={1_000}
@@ -165,7 +166,7 @@ const BuyForm = ({ tokenPrice }: Props) => {
           />
           <Input.IconInput
             id="presale-buy-dollars-amount"
-            icon={<Icon.DollarSign />}
+            icon={<Icon.FiDollarSign />}
             disabled
             label="You Pay"
             value={usdToPay.toString()}

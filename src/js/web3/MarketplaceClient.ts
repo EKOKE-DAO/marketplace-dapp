@@ -28,6 +28,11 @@ export default class MarketplaceClient {
     });
   }
 
+  async tokenPrice(contractId: bigint): Promise<bigint> {
+    const contract = this.getContract();
+    return contract.methods.tokenPriceForCaller(contractId).call();
+  }
+
   async interestRate(): Promise<number> {
     const contract = this.getContract();
     return contract.methods.interestRate().call();

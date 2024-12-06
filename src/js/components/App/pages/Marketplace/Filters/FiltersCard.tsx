@@ -1,5 +1,5 @@
 import * as React from 'react';
-import * as Icon from 'react-feather';
+import * as Icon from 'react-icons/fi';
 
 import Container from '../../../../reusable/Container';
 import Range from '../../../../reusable/Range';
@@ -16,7 +16,7 @@ const FiltersCard = () => (
           id="filters--location"
           containerClassName="!mb-0"
           placeholder="Downing Street 10, London"
-          icon={<Icon.MapPin className="text-brand" size={20} />}
+          icon={<Icon.FiMapPin className="text-brand" size={20} />}
         />
       </Container.FlexCols>
       <Container.FlexCols className="gap-2">
