@@ -6,10 +6,8 @@ import PropertyTable from './Marketplace/PropertyTable';
 
 const Marketplace = () => (
   <Container.Container>
-    <Container.FlexResponsiveRow className="gap-8">
-      <Container.Container className="w-2/6 xl:w-3/12 sm:w-full">
-        <Filters />
-      </Container.Container>
+    <Container.FlexResponsiveRow className="flex-1 gap-8">
+      <Filters />
       <Container.Container className="flex-1 py-4">
         <PropertyTable />
       </Container.Container>

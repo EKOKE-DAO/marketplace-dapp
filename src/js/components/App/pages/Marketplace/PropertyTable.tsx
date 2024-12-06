@@ -34,6 +34,9 @@ const PropertyTable = () => {
       });
   }, [page]);
 
+  const minPage = Math.max(1, page - 2);
+  const maxPageToPaginate = Math.min(Math.max(4, page + 2), maxPage);
+
   return (
     <Container.FlexCols className="w-full items-center justify-between h-full gap-8">
       <Container.Container className="grid grid-cols-3 2xl:grid-cols-4 sm:grid-cols-1 gap-4">
@@ -44,8 +47,8 @@ const PropertyTable = () => {
       <Pagination
         page={page}
         onChange={setPage}
-        min={1}
-        max={maxPage}
+        min={minPage}
+        max={maxPageToPaginate}
         onNext={() => setPage(Math.min(maxPage, page + 1))}
         onPrev={() => setPage(Math.max(maxPage, page - 1))}
       />

@@ -3,6 +3,7 @@ import * as Icon from 'react-icons/fi';
 
 import Container from '../../../../reusable/Container';
 import Button from '../../../../reusable/Button';
+import Link from '../../../../reusable/Link';
 
 const Map = () => {
   return (
@@ -19,4 +20,13 @@ const Map = () => {
   );
 };
 
-export default Map;
+const MapLink = () => {
+  return (
+    <Link.Default className="!text-brand">
+      <Icon.FiMapPin className="text-brand inline mr-2" size={24} />
+      See on map
+    </Link.Default>
+  );
+};
+
+export { Map, MapLink };
