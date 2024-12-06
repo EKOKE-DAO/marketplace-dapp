@@ -14,7 +14,7 @@ const Intro = () => (
     </Container.Container>
     <Container.Container>
       <Heading.H1>
-        <span className="text-brandRed font-bold">EKOKE</span> DAO Marketplace
+        <span className="text-brandRed font-bold">EKOKE</span> DAO
       </Heading.H1>
     </Container.Container>
     <Container.Container>

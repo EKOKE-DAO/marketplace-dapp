@@ -8,7 +8,36 @@ import BuyForm from './BuyForm';
 const BASE_PRICE_USD = 1;
 
 const PresaleForm = (stats: PresaleStats) => {
-  const capToUse = Number(stats.softCap);
+  const softCap = Number(stats.softCap);
+  const usdtRaised = Number(stats.usdtRaised);
+  const tokensSold = Number(stats.tokensSold);
+  const softCapReached = usdtRaised >= softCap;
+  const capToUse = softCapReached ? Number(stats.presaleCap) : softCap;
+  const progressToUse = softCapReached ? tokensSold : usdtRaised;
+
+  const usdtProgress = (
+    <>
+      {stats.usdtRaised.toLocaleString('en-US', {
+        maximumFractionDigits: 0,
+        currency: 'USD',
+        style: 'currency',
+      })}{' '}
+      /{' '}
+      {capToUse.toLocaleString('en-US', {
+        maximumFractionDigits: 0,
+        currency: 'USD',
+        style: 'currency',
+      })}
+    </>
+  );
+
+  const progressBarDescription = softCapReached ? (
+    <strong>
+      {stats.tokensSold}/ {stats.presaleCap} EKOKE - {usdtProgress}
+    </strong>
+  ) : (
+    <strong>{usdtProgress}</strong>
+  );
 
   return (
     <Container.Container>
@@ -28,25 +57,11 @@ const PresaleForm = (stats: PresaleStats) => {
           <Container.FlexRow className="gap-2">
             <ProgressBar
               hideLabel
-              progress={Number(stats.tokensSold)}
+              progress={progressToUse}
               max={capToUse}
               className="h-[64px]"
             />
-            <span className="text-brandRed w-2/6">
-              <strong>
-                {stats.usdtRaised.toLocaleString('en-US', {
-                  maximumFractionDigits: 0,
-                  currency: 'USD',
-                  style: 'currency',
-                })}{' '}
-                /{' '}
-                {capToUse.toLocaleString('en-US', {
-                  maximumFractionDigits: 0,
-                  currency: 'USD',
-                  style: 'currency',
-                })}
-              </strong>
-            </span>
+            <span className="w-2/6">{progressBarDescription}</span>
           </Container.FlexRow>
         </Container.Container>
         <Container.Container className="p-8">

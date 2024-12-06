@@ -148,8 +148,8 @@ const BuyForm = ({ tokenPrice }: Props) => {
 
   return (
     <Container.FlexCols className="text-left gap-4">
-      <Container.Container>
-        <form onSubmit={onBuyTokens}>
+      <form onSubmit={onBuyTokens}>
+        <Container.FlexCols className="justify-center items-center">
           <Heading.H3>Buy EKOKE</Heading.H3>
           <Input.IconInput
             id="presale-buy-form-amount"
@@ -176,11 +176,11 @@ const BuyForm = ({ tokenPrice }: Props) => {
           >
             Buy {amount} EKOKE for {usdToPay.toString()} USDT
           </Button.Primary>
-        </form>
-      </Container.Container>
+        </Container.FlexCols>
+      </form>
       <hr />
       <Container.Container>
-        <span className="text-text">
+        <span className="text-text text-center block">
           You currently have a balance of{' '}
           <strong>
             {convertToHumanReadable(balance, EKOKE_DECIMALS, true)} EKOKE

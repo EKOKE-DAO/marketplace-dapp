@@ -24,26 +24,26 @@ const Roadmap = () => (
             will be open to everyone. It will continue until the end of the
             first quarter.
           </Milestone>
-          <Milestone title="SNS Launch" date="Q2">
-            The SNS will be launched in the second quarter. We'll base our DAO
-            on the the{' '}
-            <Link.Paragraph href={'https://nns.ic0.app'}>
-              Internet Computer SNS
-            </Link.Paragraph>
-            . The SNS will be the place where the EKOKE-DAO will be able to
-            discuss and vote on the decisions of the EKOKE-DAO.
-          </Milestone>
-          <Milestone title="EKOKE-DAO is registered" date="Q3">
+          <Milestone title="EKOKE-DAO is registered" date="Q2">
             EKOKE-DAO will be registered in the second quarter. The DAO will be
             registered as a DAO as recognized in the Wyoming state. The DAO will
             be able to buy and sell real-estate and to manage the funds of the
             EKOKE-DAO token holders. The DAO will be able to vote on the
             decisions of the EKOKE-DAO.
           </Milestone>
-          <Milestone title="First real-estate sold on EKOKE-DAO" date="Q4">
+          <Milestone title="First real-estate sold on EKOKE-DAO" date="Q3">
             We expect to sell the first real-estate on the EKOKE-DAO marketplace
-            in the fourth quarter. The real-estate will be sold in USDT and the
+            in the third quarter. The real-estate will be sold in USDT and the
             transaction will be done on the blockchain. The real-estate will be
+          </Milestone>
+          <Milestone title="SNS Launch" date="Q4">
+            The SNS will be launched in the fourth quarter. We'll base our DAO
+            on the the{' '}
+            <Link.Paragraph href={'https://nns.ic0.app'}>
+              Internet Computer SNS
+            </Link.Paragraph>
+            . The SNS will be the place where the EKOKE-DAO will be able to
+            discuss and vote on the decisions of the EKOKE-DAO.
           </Milestone>
         </Container.FlexResponsiveRow>
       </Container.Container>

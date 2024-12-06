@@ -15,6 +15,7 @@ import {
 } from '../../../utils/format';
 import PresaleForm from './Presale/PresaleForm';
 import Info from './Presale/Info';
+import Paragraph from '../../reusable/Paragraph';
 
 const BASE_PRICE = 1_000_000;
 const STEP = 100_000_000_000;
@@ -22,19 +23,30 @@ const STEP = 100_000_000_000;
 const Presale = () => (
   <Container.Container>
     <Heading.H1>EKOKE Presale</Heading.H1>
-    <WaitForMetamask otherwise={<LoginWithMetamask />}>
-      <PresaleBody />
-    </WaitForMetamask>
+    <Container.FlexResponsiveRow className="gap-4 items-start justify-around w-full">
+      <Container.Container className="flex-1">
+        <Container.Card className="!p-0">
+          <Info />
+        </Container.Card>
+      </Container.Container>
+      <Container.Container className="flex-1">
+        <Container.Card>
+          <WaitForMetamask otherwise={<LoginWithMetamask />}>
+            <PresaleBody />
+          </WaitForMetamask>
+        </Container.Card>
+      </Container.Container>
+    </Container.FlexResponsiveRow>
   </Container.Container>
 );
 
 const LoginWithMetamask = () => (
-  <Container.Container>
-    <span className="block text-lg">
-      Please login with Metamask to join the presale.
-    </span>
+  <Container.FlexCols className="items-center">
+    <Paragraph.Default className="!text-center text-lg">
+      Please login with <strong>Metamask</strong> to join the presale.
+    </Paragraph.Default>
     <MetamaskConnect />
-  </Container.Container>
+  </Container.FlexCols>
 );
 
 export interface PresaleStats {
@@ -131,36 +143,10 @@ const PresaleBody = () => {
   }, []);
 
   if (!stats) {
-    return (
-      <Container.FlexResponsiveRow className="gap-4 items-start justify-around">
-        <Container.Card>
-          <Container.Container className="p-8">
-            <Skeleton count={5} />
-          </Container.Container>
-        </Container.Card>
-        <Container.Card>
-          <Container.Container className="p-8">
-            <Skeleton count={5} />
-          </Container.Container>
-        </Container.Card>
-      </Container.FlexResponsiveRow>
-    );
+    return <Skeleton count={5} />;
   }
 
-  return (
-    <Container.FlexResponsiveRow className="gap-4 items-start justify-around w-full">
-      <Container.Container className="flex-1">
-        <Container.Card className="!p-0">
-          <Info />
-        </Container.Card>
-      </Container.Container>
-      <Container.Container className="flex-1">
-        <Container.Card>
-          <PresaleForm {...stats} />
-        </Container.Card>
-      </Container.Container>
-    </Container.FlexResponsiveRow>
-  );
+  return <PresaleForm {...stats} />;
 };
 
 export default Presale;
