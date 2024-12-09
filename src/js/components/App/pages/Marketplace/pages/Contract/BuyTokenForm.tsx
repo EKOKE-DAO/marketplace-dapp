@@ -11,6 +11,7 @@ import DeferredClient from '../../../../../../web3/DeferredClient';
 import MarketplaceClient from '../../../../../../web3/MarketplaceClient';
 import {
   convertToHumanReadable,
+  EKOKE_DECIMALS,
   USDT_DECIMALS,
 } from '../../../../../../utils/format';
 import Button from '../../../../../reusable/Button';
@@ -49,6 +50,7 @@ const BuyTokenFormInner = ({ contract }: Props) => {
     React.useState<bigint>();
   const [tokenPrice, setTokenPrice] = React.useState<bigint>();
   const [tokenId, setTokenId] = React.useState<bigint | null>(null);
+  const [reward, setReward] = React.useState<bigint | null>(null);
   const [fetchedData, setFetchedData] = React.useState(false);
 
   const [pendingTx, setPendingTx] = React.useState(false);
@@ -113,13 +115,20 @@ const BuyTokenFormInner = ({ contract }: Props) => {
     if (result === true) {
       setAppSuccess(`Token #${tokenId} bought successfully`);
       // reload token
-      loadToken();
+      loadToken()
+        .then(() => {
+          console.log('Token reloaded');
+        })
+        .catch((e) => {
+          console.error(`Failed to reload token: ${e}`);
+          setAppError(`Failed to reload token: ${e}`);
+        });
     } else {
       setAppError(`Failed to buy token: ${result.error}`);
     }
   };
 
-  const loadToken = () => {
+  const loadToken = async () => {
     const deferredClient = new DeferredClient(
       account,
       ethereum,
@@ -131,32 +140,47 @@ const BuyTokenFormInner = ({ contract }: Props) => {
       chainId as ChainId,
     );
 
-    deferredClient
-      .nextTokenIdToBuy(contract.id)
-      .then((id) => {
-        setTokenId(id);
-        setFetchedData(true);
-      })
-      .catch((e) => {
-        console.error(`Failed to load token data: ${e.message}`);
-        setFetchedData(true);
-      });
-    marketplaceClient
-      .tokenPriceForCaller(contract.id)
-      .then(setTokenPriceForCaller)
-      .catch((e) => {
-        console.error(`Failed to load token data: ${e.message}`);
-      });
-    marketplaceClient
-      .tokenPrice(contract.id)
-      .then(setTokenPrice)
-      .catch((e) => {
-        console.error(`Failed to load token data: ${e.message}`);
-      });
+    const gotTokenId = await deferredClient.nextTokenIdToBuy(contract.id);
+    setTokenId(gotTokenId);
+
+    const gotTokenPriceForCaller = await marketplaceClient.tokenPriceForCaller(
+      contract.id,
+    );
+    setTokenPriceForCaller(gotTokenPriceForCaller);
+
+    const gotTokenPrice = await marketplaceClient.tokenPrice(contract.id);
+    setTokenPrice(gotTokenPrice);
+
+    const deferredContract = await deferredClient.getContract(contract.id);
+    const tokenOwner = await deferredClient.ownerOf(gotTokenId);
+    // check whether token is owned by a seller
+    const isSeller = deferredContract.sellers.some(
+      (seller) => seller.seller === tokenOwner,
+    );
+    if (isSeller) {
+      console.log(
+        `Token ${gotTokenId} is currently owned by a seller (${tokenOwner})`,
+      );
+      setReward(deferredContract.ekokeReward);
+    } else {
+      console.log(
+        `Token ${gotTokenId} is not owned by a seller (${tokenOwner})`,
+      );
+      setReward(null);
+    }
+
+    setFetchedData(true);
   };
 
   React.useEffect(() => {
-    loadToken();
+    loadToken()
+      .then(() => {
+        console.log('Token loaded');
+      })
+      .catch((e) => {
+        console.error(`Failed to load token: ${e}`);
+        setAppError(`Failed to load token: ${e}`);
+      });
   }, [contract]);
 
   if (!fetchedData) {
@@ -215,9 +239,20 @@ const BuyTokenFormInner = ({ contract }: Props) => {
           <br /> Original price: {tokenPriceUsdString}
         </Paragraph.Default>
       )}
-      <Button.Primary disabled={pendingTx} onClick={onBuyToken}>
+      <Button.Cta disabled={pendingTx} onClick={onBuyToken}>
         Buy token for {tokenPriceForCallerUsdString}
-      </Button.Primary>
+      </Button.Cta>
+      {reward !== null && (
+        <Paragraph.Default className="!text-center text-text">
+          You will receive a reward of
+          <br />
+          <strong>
+            {convertToHumanReadable(reward, EKOKE_DECIMALS)} EKOKE
+          </strong>
+          <br />
+          for buying this token.
+        </Paragraph.Default>
+      )}
       <TaskList
         run={pendingTx}
         title={`Buying token #${tokenId.toString()}`}

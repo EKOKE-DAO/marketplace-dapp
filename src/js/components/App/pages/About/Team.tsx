@@ -28,8 +28,8 @@ const Team = () => (
       </Member>
       <Member
         image={'http://placekittens.com/150/150'}
-        name={'Michele Sessa'}
-        role={'CTO & Software Engineer'}
+        name={'Chiara Rovis'}
+        role={'Web developer'}
       >
         <Paragraph.Default>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -37,8 +37,8 @@ const Team = () => (
       </Member>
       <Member
         image={'http://placekittens.com/150/150'}
-        name={'Chiara Rovis'}
-        role={'Web developer'}
+        name={'Michele Sessa'}
+        role={'CTO & Software Engineer'}
       >
         <Paragraph.Default>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam

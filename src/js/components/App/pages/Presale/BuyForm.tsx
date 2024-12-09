@@ -171,12 +171,12 @@ const BuyForm = ({ tokenPrice }: Props) => {
             label="You Pay"
             value={usdToPay.toString()}
           />
-          <Button.Primary
+          <Button.Cta
             onClick={onBuyTokens}
             disabled={pendingTx || amountNum === 0}
           >
             Buy {amount} EKOKE for {usdToPay.toString()} USDT
-          </Button.Primary>
+          </Button.Cta>
         </Container.FlexCols>
       </form>
       <hr />

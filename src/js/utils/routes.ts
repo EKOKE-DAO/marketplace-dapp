@@ -2,7 +2,7 @@ export enum Route {
   ABOUT = 'about',
   HOME = 'home',
   MARKETPLACE = 'marketplace',
-  MARKETPLACE_CONTRACT = 'marketplace/real-estate',
+  MARKETPLACE_CONTRACT = 'marketplace/contract',
   PRESALE = 'presale',
   PROFILE = 'profile',
 }
@@ -21,8 +21,8 @@ export namespace Route {
     return isEnumKey(keyOrValue) || isEnumValue(keyOrValue);
   }
 
-  export function marketplaceRealEstateUrl(id: bigint): string {
-    return `/marketplace/real-estate/${id.toString()}`;
+  export function marketplaceContractUrl(id: bigint): string {
+    return `/marketplace/contract/${id.toString()}`;
   }
 }
 

@@ -51,7 +51,7 @@ const Info = () => {
               )}
             </button>
           </Container.FlexRow>
-          <span className="block text-text text-lg">Decimals: 8</span>
+          <span className="block text-text text-lg">Decimals: 9</span>
         </Container.FlexCols>
         <Container.Container>
           <Paragraph.Default>

@@ -24,8 +24,8 @@ const ContractLoader = ({ id }: { id: bigint }) => {
   }, [id]);
 
   return (
-    <a className="block" href={Route.marketplaceRealEstateUrl(id)}>
-      <Container.Card className="bg-white !p-0 transition-transform transform scale-100 hover:scale-105 rounded-lg h-full">
+    <a className="block" href={Route.marketplaceContractUrl(id)}>
+      <Container.Card hoverScale className="bg-white !p-0 rounded-lg h-full">
         {contract ? <Item contract={contract} /> : <SkeletonContract />}
       </Container.Card>
     </a>

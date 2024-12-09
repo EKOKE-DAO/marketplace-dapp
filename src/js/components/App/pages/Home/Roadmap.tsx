@@ -87,7 +87,7 @@ const Milestone = ({
   date: string;
   children: string | React.ReactNode | React.ReactNode[];
 }) => (
-  <Container.Card className="transition-transform transform scale-100 hover:scale-105 text-center flex-1">
+  <Container.Card hoverScale className=" text-center flex-1">
     <Container.FlexCols className="h-full">
       <span className="block text-lg font-bold text-brandRed">{title}</span>
       <span className="block">{date}</span>
