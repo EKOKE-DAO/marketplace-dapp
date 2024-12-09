@@ -2,23 +2,28 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://dapp.ekoketoken.com</loc>
-    <lastmod>2024-08-30</lastmod>
+    <loc>https://ekokedao.com</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://dapp.ekoketoken.com/user-stories</loc>
-    <lastmod>2024-08-30</lastmod>
+    <loc>https://ekokedao.com/marketplace</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://dapp.ekoketoken.com/marketplace</loc>
-    <lastmod>2024-08-30</lastmod>
+    <loc>https://ekokedao.com/presale</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
-    <loc>https://dapp.ekoketoken.com/timeline</loc>
-    <lastmod>2024-08-30</lastmod>
+    <loc>https://ekokedao.com/about</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/guide</loc>
+    <lastmod>2025-01-10</lastmod>
     <priority>1.00</priority>
   </url>
 </urlset>

@@ -81,21 +81,23 @@ const TokenView = ({
   <Container.Card hoverScale className="flex-1">
     <Container.FlexCols className="items-center gap-4">
       <TokenLogo token={token} width={100} height={100} />
-      <Heading.H4>{name}</Heading.H4>
-      <Container.Container className="grid grid-cols-2 gap-2 items-center justify-center px-8 sm:px-2">
+      <Container.Container className="grid grid-cols-2 gap-4 items-center justify-between">
+        <Heading.H4 className="block !mb-0">
+          Name: <strong>{name}</strong>
+        </Heading.H4>
         <span className="block">
           Symbol: <strong>{symbol}</strong>
         </span>
         {address && (
-          <span className="block text-right">
-            Token Address:{' '}
+          <span className="block">
+            Address:{' '}
             <Link.Paragraph href={`https://etherscan.com/address/${address}`}>
               {address}
             </Link.Paragraph>
           </span>
         )}
         {sns && (
-          <span className="block text-right">
+          <span className="block">
             SNS:{' '}
             <Link.Paragraph
               href={`https://nns.ic0.app/project/?project=${sns}`}
