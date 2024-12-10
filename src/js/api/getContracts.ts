@@ -1,8 +1,14 @@
-import sendJsonRequest from './api';
+import sendJsonRequest, { makeQueryArgs } from './api';
 import { mockContractIds } from './mock';
 
-const getContracts = async (): Promise<bigint[]> => {
-  return await sendJsonRequest('GET', '/contracts', mockContractIds());
+interface Filters {
+  seller?: string;
+}
+
+const getContracts = async (filters?: Filters): Promise<bigint[]> => {
+  const url = `/contracts${makeQueryArgs(filters ?? {})}`;
+
+  return await sendJsonRequest('GET', url, mockContractIds());
 };
 
 export default getContracts;

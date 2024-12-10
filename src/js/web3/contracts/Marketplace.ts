@@ -334,5 +334,5 @@ interface ContractAddress {
 
 export const CONTRACT_ADDRESS: ContractAddress = {
   [ChainId.Mainnet]: '',
-  [ChainId.Sepolia]: '0x09BE22BBB90E5A0752B859d863cB8BC40898D234',
+  [ChainId.Sepolia]: '0x72B07118400ea6B4E877f2cBB24D6D7B497Ac151',
 };

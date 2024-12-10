@@ -46,6 +46,10 @@ const RealEstateCard = ({ contract }: Props) => (
             {contract.realEstate.region && `, ${contract.realEstate.region}`}
             {contract.realEstate.country && `, ${contract.realEstate.country}`}
           </Container.Container>
+          <Container.Container className="text-sm text-gray-500">
+            <Icon.FiCalendar size={16} className="inline mr-2" />
+            Expires on {contract.expiration.toLocaleDateString()}
+          </Container.Container>
           <Container.Container className="grid grid-cols-2 sm:grid-cols-1">
             {contract.realEstate.rooms !== undefined && (
               <Container.Container className="text-sm text-gray-500">

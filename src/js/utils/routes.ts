@@ -5,6 +5,8 @@ export enum Route {
   MARKETPLACE_CONTRACT = 'marketplace/contract',
   PRESALE = 'presale',
   PROFILE = 'profile',
+  PROFILE_COLLECTED = 'profile/collected',
+  PROFILE_CONTRACTS = 'profile/contracts',
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace

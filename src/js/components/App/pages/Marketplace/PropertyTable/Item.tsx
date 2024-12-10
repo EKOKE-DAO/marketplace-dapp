@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as Icon from 'react-icons/fi';
+import * as MdIcon from 'react-icons/md';
 
 import { Contract } from '../../../../../data/contract';
 import Container from '../../../../reusable/Container';
@@ -9,13 +10,15 @@ interface Props {
   contract: Contract;
 }
 
-const Item = ({ contract: { price, currency, realEstate } }: Props) => (
+const Item = ({
+  contract: { expiration, price, currency, realEstate },
+}: Props) => (
   <Container.FlexCols className="items-start gap-4">
-    <Container.Container>
+    <Container.Container className="w-full">
       <img
         src={realEstate.image}
         alt={realEstate.name}
-        className="w-full sm:object-cover sm:h-[300px] rounded-t-lg"
+        className="w-full object-cover sm:h-[300px] rounded-t-lg"
         width={300}
         height={200}
       />
@@ -36,11 +39,36 @@ const Item = ({ contract: { price, currency, realEstate } }: Props) => (
         {realEstate.address}
       </span>
       <span className="text-gray-500">
-        <Icon.FiBox size={16} className="text-gray-500 mr-2 inline" />
-        {Math.floor(Math.random() * 6) + 1} Rooms -{' '}
-        {Math.floor(Math.random() * 2) + 1} Bathrooms
+        <Icon.FiCalendar size={16} className="text-gray-500 mr-2 inline" />
+        Expires on {expiration.toLocaleDateString()}
       </span>
-      <Paragraph.Leading>{realEstate.description}</Paragraph.Leading>
+      <Container.FlexCols>
+        {realEstate.rooms !== undefined && (
+          <Container.Container className="text-sm text-gray-500">
+            <MdIcon.MdBedroomParent
+              size={16}
+              className="text-gray-500 mr-2 inline"
+            />
+            {realEstate.rooms} Rooms
+          </Container.Container>
+        )}
+        {realEstate.squareMeters !== undefined && (
+          <Container.Container className="text-sm text-gray-500">
+            <MdIcon.MdSquareFoot
+              size={16}
+              className="text-gray-500 mr-2 inline"
+            />
+            {realEstate.squareMeters} Square Meters
+          </Container.Container>
+        )}
+        {realEstate.bathrooms !== undefined && (
+          <Container.Container className="text-sm text-gray-500">
+            <MdIcon.MdBathtub size={16} className="text-gray-500 mr-2 inline" />
+            {realEstate.bathrooms} Bathrooms
+          </Container.Container>
+        )}
+      </Container.FlexCols>
+      <Paragraph.Default>{realEstate.description}</Paragraph.Default>
     </Container.FlexCols>
   </Container.FlexCols>
 );

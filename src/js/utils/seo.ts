@@ -18,17 +18,29 @@ const PAGE_TITLES: SeoPages = {
       'EKOKE is an innovative tool that aims to revolutionize the real estate industry. The EKOKE-DAO project emerges as the evolutionary response to the traditional real estate landscape',
   },
   '/marketplace': {
-    title: 'EKOKE Token DAO - Marketplace',
+    title: 'EKOKE DAO - Marketplace',
     description: '',
   },
   '/presale': {
-    title: 'EKOKE Token DAO - Presale',
+    title: 'EKOKE DAO - Presale',
     description: 'Join the EKOKE Token DAO presale',
   },
   '/about': {
-    title: 'EKOKE Token DAO - About',
+    title: 'EKOKE DAO - About',
     description:
       'EKOKE is an innovative tool that aims to revolutionize the real estate industry. The EKOKE-DAO project emerges as the evolutionary response to the traditional real estate landscape',
+  },
+  '/profile': {
+    title: 'EKOKE DAO - Profile',
+    description: 'Your EKOKE DAO profile',
+  },
+  '/profile/collected': {
+    title: 'EKOKE DAO - Collected',
+    description: 'Your collected EKOKE DAO items',
+  },
+  '/profile/contracts': {
+    title: 'EKOKE DAO - Contracts',
+    description: 'Your EKOKE DAO contracts',
   },
 };
 
