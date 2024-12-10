@@ -10,7 +10,7 @@ import Presale from './Home/Presale';
 const Home = () => (
   <Container.FlexCols className="gap-8 items-center">
     <Intro />
-    <Container.Container className="w-3/6">
+    <Container.Container className="w-3/6 sm:w-full">
       <Presale />
     </Container.Container>
     <Tokenomics />

@@ -5,6 +5,7 @@ import Container from '../../../reusable/Container';
 import Paragraph from '../../../reusable/Paragraph';
 import Heading from '../../../reusable/Heading';
 import Input from '../../../reusable/Input';
+import YoutubeVideo from '../../../reusable/YoutubeVideo';
 
 const EKOKE_ADDRESS = '0x0';
 
@@ -18,17 +19,7 @@ const Info = () => {
 
   return (
     <Container.Container>
-      <Container.Container>
-        <iframe
-          className="w-full"
-          height={420}
-          src="https://www.youtube.com/embed/R_B4AAOyARI"
-          title="Zelda but Literally EVERYTHING is Randomized (FULL RUN PART 2)"
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-        />
-      </Container.Container>
+      <YoutubeVideo url="https://www.youtube.com/watch?v=R_B4AAOyARI" />
       <Container.FlexCols className="p-4 gap-4 w-full">
         <Container.FlexCols className="text-center">
           <Heading.H2 className="text-center">
@@ -40,7 +31,7 @@ const Info = () => {
               type="text"
               value={EKOKE_ADDRESS}
               readOnly
-              className="!p-2 text-center text-xl"
+              className="!p-2 text-center text-xl sm:text-sm"
               containerClassName="mb-0"
             />
             <button onClick={onAddressCopy}>

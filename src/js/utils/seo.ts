@@ -42,6 +42,42 @@ const PAGE_TITLES: SeoPages = {
     title: 'EKOKE DAO - Contracts',
     description: 'Your EKOKE DAO contracts',
   },
+  '/guide': {
+    title: 'EKOKE DAO - Guide',
+    description: 'EKOKE DAO guide',
+  },
+  '/guide/faq': {
+    title: 'EKOKE DAO - FAQ',
+    description: 'EKOKE DAO FAQ',
+  },
+  '/guide/whitepaper': {
+    title: 'EKOKE DAO - Whitepaper',
+    description: 'EKOKE DAO whitepaper',
+  },
+  '/guide/contracts/deferred': {
+    title: 'EKOKE DAO - Deferred',
+    description: 'EKOKE DAO Deferred contracts',
+  },
+  '/guide/contracts/ekoke': {
+    title: 'EKOKE DAO - EKOKE Docs',
+    description: 'EKOKE DAO EKOKE token docs',
+  },
+  '/guide/contracts/marketplace': {
+    title: 'EKOKE DAO - marketplace Docs',
+    description: 'EKOKE DAO marketplace docs',
+  },
+  '/guide/contracts/reward-pool': {
+    title: 'EKOKE DAO - Reward Pool Docs',
+    description: 'EKOKE Reward Pool docs',
+  },
+  '/guide/canisters/deferred-data': {
+    title: 'EKOKE DAO - Deferred Data Docs',
+    description: 'EKOKE Deferred Data docs',
+  },
+  '/guide/canisters/deferred-minter': {
+    title: 'EKOKE DAO - Deferred Minter Docs',
+    description: 'EKOKE Deferred Minter docs',
+  },
 };
 
 const seoData = (pathname: string | Route): SeoData | undefined => {

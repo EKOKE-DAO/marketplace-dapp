@@ -26,4 +26,44 @@
     <lastmod>2025-01-10</lastmod>
     <priority>1.00</priority>
   </url>
+  <url>
+    <loc>https://ekokedao.com/guide/faq</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/guide/whitepaper</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/guide/canisters/deferred-data</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/guide/canisters/deferred-minter</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/guide/contracts/deferred</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/guide/contracts/ekoke</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/guide/contracts/marketplace</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/guide/contracts/reward-pool</loc>
+    <lastmod>2025-01-10</lastmod>
+    <priority>1.00</priority>
+  </url>
 </urlset>

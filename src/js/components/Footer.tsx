@@ -8,6 +8,7 @@ import X from './svg/X';
 import TikTok from './svg/TikTok';
 import Telegram from './svg/Telegram';
 import { Route } from '../utils/routes';
+import Paragraph from './reusable/Paragraph';
 
 const Footer = () => {
   const year = new Date().getFullYear();
@@ -16,7 +17,7 @@ const Footer = () => {
       <Container.Container className="bg-brandRed text-white m-0 p-8">
         <div className="bg-white content-none h-[1px] mx-auto w-page"></div>
         <Container.FlexResponsiveRow className="justify-between w-page sm:w-full mx-auto">
-          <Container.FlexCols className="gap-4">
+          <Container.FlexCols className="gap-4 flex-1">
             <Heading.H2 className="text-white">EKOKE Token</Heading.H2>
             <Link.Default href={Route.HOME} className="text-white">
               Home
@@ -31,7 +32,7 @@ const Footer = () => {
               About
             </Link.Default>
           </Container.FlexCols>
-          <Container.FlexCols className="gap-4">
+          <Container.FlexCols className="gap-4 flex-1">
             <Heading.H2 className="text-white">Contacts</Heading.H2>
             <Link.Default
               href={'mailto:ekokefly@gmail.com'}
@@ -46,7 +47,7 @@ const Footer = () => {
               Piazzale Brescia, 16, 20149 Milano MI, Italy
             </Link.Default>
           </Container.FlexCols>
-          <Container.FlexCols className="gap-4">
+          <Container.FlexCols className="gap-4 flex-1">
             <Heading.H2 className="text-white">Follow Us On</Heading.H2>
             <Link.IconLink
               href={'https://github.com/EKOKEtoken'}
@@ -96,6 +97,16 @@ const Footer = () => {
               <X />
               <span className="ml-2">X.com</span>
             </Link.IconLink>
+          </Container.FlexCols>
+          <Container.FlexCols className="gap-4 flex-1">
+            <Heading.H2 className="text-white">Disclaimer</Heading.H2>
+            <Paragraph.Default className="text-white">
+              Cryptocurrency may be unregulated in your jurisdiction. The value
+              of cryptocurrencies may go down as well as up. Profits may be
+              subject to capital gains or other taxes applicable in your
+              jurisdiction. It is your responsibility to ensure that you comply
+              with tax and other legal obligations in your jurisdiction.
+            </Paragraph.Default>
           </Container.FlexCols>
         </Container.FlexResponsiveRow>
         <p className="text-xs text-center text-white my-4">

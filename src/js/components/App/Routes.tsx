@@ -23,6 +23,9 @@ const ProfileContracts = React.lazy(
   () => import('./pages/Profile/pages/Contracts'),
 );
 
+// Guide
+const Guide = React.lazy(() => import('./pages/Guide'));
+
 const AppRouter = () => (
   <>
     <SeoEngine />
@@ -51,6 +54,9 @@ const AppRouter = () => (
             path={Route.url(Route.PROFILE_CONTRACTS)}
             element={<ProfileContracts />}
           />
+
+          {/* Guide */}
+          <RouterRoute path={Route.url(Route.GUIDE)} element={<Guide />} />
 
           {/* 404 */}
           <RouterRoute path="*" element={<NotFound />} />

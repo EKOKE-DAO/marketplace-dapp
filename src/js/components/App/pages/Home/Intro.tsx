@@ -28,6 +28,7 @@ const Intro = () => (
         powered <strong>Deferred NFT</strong> system, buyers can pay for their
         homes in manageable installments. Each NFT represents a payment, and
         once all are completed, ownership of the property is fully transferred.
+        {'  '}
         <strong>EKOKE DAO</strong> empowers members to invest in these NFTs,
         earning deflationary <strong>EKOKE</strong> tokens as{' '}
         <strong>rewards</strong> while supporting buyers with transparent and
