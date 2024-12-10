@@ -8,6 +8,7 @@ import Heading from '../../../../../reusable/Heading';
 import Paragraph from '../../../../../reusable/Paragraph';
 import Progress from './RealEstateCard/Progress';
 import YoutubeVideo from '../../../../../reusable/YoutubeVideo';
+import ContractDocuments from './RealEstateCard/ContractDocuments';
 
 interface Props {
   contract: Contract;
@@ -132,6 +133,12 @@ const RealEstateCard = ({ contract }: Props) => (
         <Container.Container className="mx-auto">
           <YoutubeVideo url={contract.realEstate.youtubeUrl} />
         </Container.Container>
+      )}
+      {contract.documents.length > 0 && (
+        <ContractDocuments
+          contract={contract.id}
+          documents={contract.documents}
+        />
       )}
     </Container.FlexCols>
   </Container.Card>

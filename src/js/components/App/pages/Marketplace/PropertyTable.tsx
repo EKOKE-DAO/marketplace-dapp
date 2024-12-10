@@ -5,17 +5,27 @@ import Pagination from '../../../reusable/Pagination';
 import getContracts from '../../../../api/getContracts';
 import { useAppContext } from '../../AppContext';
 import ContractLoader from './PropertyTable/ContractLoader';
+import { IFilters } from '../Marketplace';
 
 const MAX_PROPERTIES_PER_PAGE = 12;
 
-const PropertyTable = () => {
+interface Props {
+  filters: IFilters;
+}
+
+const PropertyTable = ({ filters }: Props) => {
   const { setAppError } = useAppContext();
   const [maxPage, setMaxPage] = React.useState<number>(1);
   const [page, setPage] = React.useState<number>(1);
   const [contracts, setContracts] = React.useState<bigint[]>([]);
 
   React.useEffect(() => {
-    getContracts()
+    getContracts({
+      city: filters.city,
+      country: filters.country,
+      minPrice: filters.minPrice,
+      maxPrice: filters.maxPrice,
+    })
       .then((contractIds) => {
         setMaxPage(Math.ceil(contractIds.length / MAX_PROPERTIES_PER_PAGE));
         // take the first `MAX_PROPERTIES_PER_PAGE` properties from the list after offset
@@ -32,7 +42,7 @@ const PropertyTable = () => {
         setAppError('Failed to load contracts');
         console.error(error);
       });
-  }, [page]);
+  }, [page, filters]);
 
   const minPage = Math.max(1, page - 2);
   const maxPageToPaginate = Math.min(Math.max(4, page + 2), maxPage);

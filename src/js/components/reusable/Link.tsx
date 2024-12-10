@@ -30,7 +30,21 @@ const Default = (props: Props) => (
 const Button = (props: Props) => (
   <a
     href={resolve(props.href)}
-    className={`${props.className} font-medium px-5 py-3 bg-brandBtn text-white hover:underline focus:ring-2 focus:ring-gray-300 rounded-xl text-sm mr-2 mb-2`}
+    className={`${props.className} block font-medium px-5 py-3 bg-brandBtn text-white hover:underline focus:ring-2 focus:ring-gray-300 rounded-xl text-sm mr-2 mb-2`}
+    itemScope={props.itemScope}
+    itemType={props.itemType}
+    itemProp={props.itemProp}
+    target={props.target}
+    onClick={props.onClick}
+  >
+    {props.children}
+  </a>
+);
+
+const Cta = (props: Props) => (
+  <a
+    href={resolve(props.href)}
+    className={`${props.className} block font-medium bg-brandBtn text-white hover:underline focus:ring-2 focus:ring-gray-300 rounded-xl text-lg px-5 py-3 mr-2 mb-2`}
     itemScope={props.itemScope}
     itemType={props.itemType}
     itemProp={props.itemProp}
@@ -71,6 +85,7 @@ const IconLink = (props: Props) => (
 
 export default {
   Button,
+  Cta,
   Default,
   IconLink,
   Paragraph,

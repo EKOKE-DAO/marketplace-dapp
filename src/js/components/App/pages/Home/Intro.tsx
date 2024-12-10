@@ -47,12 +47,12 @@ const Intro = () => (
       </Paragraph.Leading>
     </Container.Container>
     <Container.FlexResponsiveRow className="justify-center items-center gap-4">
-      <Link.Button href={'https://twitter.com/ekoketoken'} target={'_blank'}>
+      <Link.Cta href={'https://twitter.com/ekoketoken'} target={'_blank'}>
         <FaXTwitter className="inline mr-2 text-white" /> X.com
-      </Link.Button>
-      <Link.Button href={'https://t.me/ekokeTOKENgroup'} target={'_blank'}>
+      </Link.Cta>
+      <Link.Cta href={'https://t.me/ekokeTOKENgroup'} target={'_blank'}>
         <Icon.FiSend className="inline mr-2 text-white" /> Telegram
-      </Link.Button>
+      </Link.Cta>
     </Container.FlexResponsiveRow>
   </Container.FlexCols>
 );

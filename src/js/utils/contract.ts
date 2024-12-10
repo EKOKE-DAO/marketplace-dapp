@@ -1,5 +1,5 @@
 import { ContractData } from '../api/getContractById';
-import { Contract } from '../data/contract';
+import { Contract, ContractDocument } from '../data/contract';
 
 /**
  * @description Convert a canister contract to a contract
@@ -20,6 +20,7 @@ export const convertCanisterContractToContract = (
     currency: data.currency,
     agency: data.agency,
     expiration: new Date(data.expiration),
+    documents: getContractDocuments(data),
     realEstate: {
       name: getPropertyText(data, 'contract:name') || '',
       description: getPropertyText(data, 'contract:description') || '',
@@ -46,6 +47,22 @@ export const convertCanisterContractToContract = (
       youtubeUrl: getPropertyText(data, 'contract:youtubeUrl'),
     },
   };
+};
+
+const getContractDocuments = (data: ContractData): ContractDocument[] => {
+  const docs = [];
+
+  for (const item of data.documents) {
+    const id = item[0];
+    docs.push({
+      id,
+      name: item[1].name,
+      mimeType: item[1].mime_type,
+      size: item[1].size,
+    });
+  }
+
+  return docs;
 };
 
 const getPropertyText = (

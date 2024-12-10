@@ -8,12 +8,15 @@ import Alerts from '../../../../reusable/Alerts';
 import getContracts from '../../../../../api/getContracts';
 import ContractCard from './Contracts/ContractCard';
 import Paragraph from '../../../../reusable/Paragraph';
+import { signMessage } from '../../../../../web3/sign';
 
 export const Contracts = () => {
-  const { setAppError } = useAppContext();
-  const { account } = useConnectedMetaMask();
+  const { setAppError, signature, setSignature } = useAppContext();
+  const { account, ethereum } = useConnectedMetaMask();
   const [contracts, setContracts] = React.useState<bigint[]>([]);
   const [loaded, setLoaded] = React.useState<boolean>(false);
+  const [signatureRequested, setSignatureRequested] =
+    React.useState<boolean>(false);
 
   const fetchContracts = async () => {
     // get contracts for user
@@ -25,6 +28,24 @@ export const Contracts = () => {
 
     setLoaded(true);
   };
+
+  // sign
+  React.useEffect(() => {
+    if (!signature && ethereum && !signatureRequested) {
+      setSignatureRequested(true);
+      // sign with metamask
+      signMessage(account, ethereum)
+        .then((signedMsg) => {
+          setSignature(signedMsg);
+          setSignatureRequested(false);
+        })
+        .catch((err) => {
+          setAppError('Failed to sign message. Please try again');
+          console.error(err);
+          setSignatureRequested(false);
+        });
+    }
+  }, [signature, ethereum, signatureRequested]);
 
   React.useEffect(() => {
     fetchContracts().catch((error) => {
@@ -42,9 +63,17 @@ export const Contracts = () => {
         {!loaded && (
           <Alerts.Warning>Loading contracts could take a while</Alerts.Warning>
         )}
-        <Container.Container className="grid grid-cols-4 sm:grid-cols-2 gap-4">
+        {loaded && !signature && (
+          <Alerts.Danger>
+            You need to sign with Metamask in to view your contracts
+          </Alerts.Danger>
+        )}
+        <Container.Container className="grid grid-cols-2 sm:grid-cols-1 gap-4">
           {loaded &&
-            contracts.map((id) => <ContractCard key={id.toString()} id={id} />)}
+            signature &&
+            contracts.map((id) => (
+              <ContractCard key={id.toString()} signature={signature} id={id} />
+            ))}
         </Container.Container>
         {loaded && contracts.length === 0 && (
           <Paragraph.Center>You have no contracts</Paragraph.Center>

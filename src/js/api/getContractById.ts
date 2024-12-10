@@ -1,6 +1,6 @@
 import { Agency, Contract } from '../data/contract';
 import { convertCanisterContractToContract } from '../utils/contract';
-import sendJsonRequest from './api';
+import sendJsonRequest, { makeQueryArgs, Signature } from './api';
 import { mockContract } from './mock';
 
 /**
@@ -46,10 +46,12 @@ export type ContractDocument = [
   {
     access_list: AccessListItem[];
     mime_type: string;
+    name: string;
+    size: number;
   },
 ];
 
-export type AccessListItem = 'Agent' | 'Seller' | 'Buyer';
+export type AccessListItem = 'Agent' | 'Seller' | 'Buyer' | 'Public';
 
 export interface Seller {
   address: string;
@@ -61,12 +63,13 @@ export interface Seller {
  * @param id Contract ID
  * @returns Contract data
  */
-const getContractById = async (id: bigint): Promise<Contract> => {
-  const contractData = await sendJsonRequest(
-    'GET',
-    `/contracts/${id}`,
-    mockContract(id),
-  );
+const getContractById = async (
+  id: bigint,
+  signature?: Signature,
+): Promise<Contract> => {
+  const url = `/contracts/${id}?${makeQueryArgs(signature ?? {})}`;
+
+  const contractData = await sendJsonRequest('GET', url, mockContract(id));
 
   return convertCanisterContractToContract(contractData);
 };

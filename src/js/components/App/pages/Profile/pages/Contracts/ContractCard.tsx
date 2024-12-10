@@ -14,9 +14,13 @@ import Paragraph from '../../../../../reusable/Paragraph';
 import ProgressBar from '../../../../../reusable/ProgressBar';
 import Link from '../../../../../reusable/Link';
 import { Route } from '../../../../../../utils/routes';
+import { Signature } from '../../../../../../api/api';
+import Heading from '../../../../../reusable/Heading';
+import ContractDocuments from './ContractDocuments';
 
 interface Props {
   id: bigint;
+  signature: Signature;
 }
 
 enum ContractActor {
@@ -31,7 +35,7 @@ interface ContractStats {
   progress: number;
 }
 
-const ContractCard = ({ id }: Props) => {
+const ContractCard = ({ id, signature }: Props) => {
   const { setAppError } = useAppContext();
   const { account, ethereum, chainId } = useConnectedMetaMask();
   const [contract, setContract] = React.useState<ContractStats>();
@@ -43,7 +47,7 @@ const ContractCard = ({ id }: Props) => {
       chainId as ChainId,
     );
 
-    const contract = await getContractById(id);
+    const contract = await getContractById(id, signature);
     const deferredContract = await deferredClient.getContract(id);
 
     const isSeller = deferredContract.sellers.some(
@@ -86,21 +90,21 @@ const ContractCard = ({ id }: Props) => {
   } = contract;
 
   return (
-    <Container.Card hoverScale className="!p-0">
-      <Container.FlexCols className="items-start justify-center gap-4 w-full">
+    <Container.Card className="!p-0">
+      <Container.FlexCols className="items-start justify-center gap-8 w-full">
         <Container.Container className="w-full">
           <img
             src={realEstate.image}
             alt={realEstate.name}
             className="w-full object-cover sm:h-[300px] rounded-t-lg"
             width={500}
-            height={200}
+            height={400}
           />
         </Container.Container>
         <Container.FlexCols className="px-4 pb-4 gap-2 justify-between h-full w-full">
-          <span className="block text-brand text-lg font-semibold">
+          <Heading.H2 className="block text-brand text-lg font-semibold">
             {realEstate.name}
-          </span>
+          </Heading.H2>
           <span className="text-gray-500">
             <Icon.FiDollarSign
               size={16}
@@ -189,7 +193,7 @@ const ContractCard = ({ id }: Props) => {
               </Container.Container>
             )}
           </Container.Container>
-          <Container.FlexCols className="w-full items-center justify-center">
+          <Container.FlexCols className="w-full items-center justify-center px-8">
             <span className="text-text">Mortgage payment progress</span>
             <ProgressBar
               bgColor="bg-green-500"
@@ -212,6 +216,13 @@ const ContractCard = ({ id }: Props) => {
               <Icon.FiArrowRight size={24} className="inline ml-2" />
             </Link.Button>
           </Container.FlexCols>
+          <Container.Container>
+            <ContractDocuments
+              contract={id}
+              documents={contract.contract.documents}
+              signature={signature}
+            />
+          </Container.Container>
         </Container.FlexCols>
       </Container.FlexCols>
     </Container.Card>
@@ -220,8 +231,8 @@ const ContractCard = ({ id }: Props) => {
 
 const LoadingContract = () => (
   <Container.Card hoverScale className="!p-0">
-    <Skeleton height={150} />
-    <Skeleton count={5} />
+    <Skeleton height={400} />
+    <Skeleton count={15} />
   </Container.Card>
 );
 
