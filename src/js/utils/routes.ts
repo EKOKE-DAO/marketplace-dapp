@@ -9,6 +9,7 @@ export enum Route {
   GUIDE_CONTRACTS_EKOKE = 'guide/contracts/ekoke',
   GUIDE_CONTRACTS_MARKETPLACE = 'guide/contracts/marketplace',
   GUIDE_CONTRACTS_REWARD_POOL = 'guide/contracts/reward-pool',
+  GUIDE_REWARD = 'guide/reward',
   GUIDE_WHITEPAPER = 'guide/whitepaper',
   HOME = 'home',
   MARKETPLACE = 'marketplace',

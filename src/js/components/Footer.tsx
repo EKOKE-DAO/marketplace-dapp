@@ -13,7 +13,7 @@ import Paragraph from './reusable/Paragraph';
 const Footer = () => {
   const year = new Date().getFullYear();
   return (
-    <footer>
+    <footer className="z-10">
       <Container.Container className="bg-brandRed text-white m-0 p-8">
         <div className="bg-white content-none h-[1px] mx-auto w-page"></div>
         <Container.FlexResponsiveRow className="justify-between w-page sm:w-full mx-auto">

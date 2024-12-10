@@ -78,6 +78,10 @@ const PAGE_TITLES: SeoPages = {
     title: 'EKOKE DAO - Deferred Minter Docs',
     description: 'EKOKE Deferred Minter docs',
   },
+  '/guide/reward': {
+    title: 'EKOKE DAO - Reward Docs',
+    description: 'EKOKE Reward docs',
+  },
 };
 
 const seoData = (pathname: string | Route): SeoData | undefined => {
