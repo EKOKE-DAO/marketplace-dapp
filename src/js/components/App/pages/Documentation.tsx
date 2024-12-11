@@ -1,7 +1,14 @@
 import * as React from 'react';
 
-import Wrapper from './Documentation/Wrapper';
+import Wrapper, { MenuPage } from './Documentation/Wrapper';
+import isMobile from '../../../utils/platform';
 
-const Documentation = () => <Wrapper></Wrapper>;
+const Documentation = () => {
+  if (isMobile()) {
+    return <MenuPage />;
+  }
+
+  return <Wrapper />;
+};
 
 export default Documentation;

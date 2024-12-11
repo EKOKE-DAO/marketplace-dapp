@@ -24,6 +24,9 @@ const ProfileContracts = React.lazy(
   () => import('./pages/Profile/pages/Contracts'),
 );
 
+// giveaway
+const Giveaway = React.lazy(() => import('./pages/Giveaway'));
+
 // Documentation
 const Documentation = React.lazy(() => import('./pages/Documentation'));
 const DocumentationArchitecture = React.lazy(
@@ -130,6 +133,12 @@ const AppRouter = () => (
           <RouterRoute
             path={Route.url(Route.DOCUMENTATION_FAQ)}
             element={<DocumentationFaq />}
+          />
+
+          {/* giveaway */}
+          <RouterRoute
+            path={Route.url(Route.GIVEAWAY)}
+            element={<Giveaway />}
           />
 
           {/* 404 */}

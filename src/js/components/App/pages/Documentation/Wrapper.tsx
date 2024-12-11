@@ -102,6 +102,12 @@ const Wrapper = ({ children }: Props) => (
   </Container.FlexRow>
 );
 
+export const MenuPage = () => (
+  <Container.Container className="py-4">
+    <MenuItems />
+  </Container.Container>
+);
+
 const Menu = () => (
   <>
     <Container.Container className="hidden sm:block">
@@ -148,29 +154,35 @@ const MenuMobile = () => {
   );
 };
 
-const MenuInner = () => {
+const MenuInner = () => (
+  <Container.Container className="min-h-screen h-full relative overflow-visible">
+    <Container.Container className="sticky top-[96px] bottom-0">
+      <MenuItems />
+    </Container.Container>
+  </Container.Container>
+);
+
+const MenuItems = () => {
   const { pathname } = useLocation();
   const current: Item = routeToItems[pathname];
 
   return (
-    <Container.Container className="min-h-screen h-full relative overflow-visible">
-      <Container.FlexCols className="sticky top-[96px] bottom-0 gap-2 border-r-2">
-        {Object.entries(menu).map(([key, value]) => (
-          <Container.Container key={key}>
-            <Link.Default
-              className={`${(key as unknown as Item) === current ? 'block border-b-4 border-brandRed text-brand bg-gray-200 hover:bg-gray-300' : 'text-text border-b-2 border-transparent'}
+    <Container.FlexCols className="gap-2">
+      {Object.entries(menu).map(([key, value]) => (
+        <Container.Container key={key}>
+          <Link.Default
+            className={`${(key as unknown as Item) === current ? 'block border-b-4 border-brandRed text-brand bg-gray-200 hover:bg-gray-300' : 'text-text border-b-2 border-transparent'}
             hover:border-brandRed hover:text-text hover:no-underline flex-1`}
-              href={value.url}
-            >
-              <span className="block text-lg py-3 px-4 hover:bg-gray-300">
-                {value.icon}
-                {value.title}
-              </span>
-            </Link.Default>
-          </Container.Container>
-        ))}
-      </Container.FlexCols>
-    </Container.Container>
+            href={value.url}
+          >
+            <span className="block text-lg py-3 px-4 hover:bg-gray-300">
+              {value.icon}
+              {value.title}
+            </span>
+          </Link.Default>
+        </Container.Container>
+      ))}
+    </Container.FlexCols>
   );
 };
 

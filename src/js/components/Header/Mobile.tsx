@@ -4,6 +4,7 @@ import Container from '../reusable/Container';
 import { MetamaskProfile } from '../MetamaskConnect';
 import TopbarLink from './TopbarLink';
 import { Route } from '../../utils/routes';
+import Link from '../reusable/Link';
 
 import EkokeLogo from '../../../assets/images/ekoke-logo.webp';
 
@@ -14,16 +15,15 @@ const Mobile = () => (
         <Container.FlexRow className="items-center gap-4">
           <img src={EkokeLogo} alt="EKOKE DAO" height={40} width={40} />
           <Container.Container className="border-brandRed border-b-4 py-2">
-            <span className="font-medium text-brand">EKOKE DAO</span>
+            <Link.Default href={Route.HOME}>EKOKE DAO</Link.Default>
           </Container.Container>
         </Container.FlexRow>
       </Container.Container>
       <MetamaskProfile />
     </Container.FlexRow>
     <Container.FlexRow className="h-[60px] w-full items-center justify-center gap-4">
-      <TopbarLink name={'Home'} href={Route.HOME} />
       <TopbarLink name={'Marketplace'} href={Route.MARKETPLACE} />
-      <TopbarLink name={'EKOKE Presale'} href={Route.PRESALE} />
+      <TopbarLink name={'Presale'} href={Route.PRESALE} />
       <TopbarLink name={'About'} href={Route.ABOUT} />
       <TopbarLink name={'Documentation'} href={Route.DOCUMENTATION} />
     </Container.FlexRow>

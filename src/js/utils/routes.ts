@@ -11,6 +11,7 @@ export enum Route {
   DOCUMENTATION_CONTRACTS_REWARD_POOL = 'documentation/contracts/reward-pool',
   DOCUMENTATION_REWARD = 'documentation/reward',
   DOCUMENTATION_WHITEPAPER = 'documentation/whitepaper',
+  GIVEAWAY = 'giveaway',
   HOME = 'home',
   MARKETPLACE = 'marketplace',
   MARKETPLACE_CONTRACT = 'marketplace/contract',

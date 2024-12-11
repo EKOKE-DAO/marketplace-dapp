@@ -60,7 +60,7 @@ const Team = () => (
       <Member
         image={'http://placekittens.com/150/150'}
         name={'Michele Sessa'}
-        role={'Marketing manager & Real Estate Agent'}
+        role={'Sales manager & Real Estate Agent'}
       >
         <Paragraph.Default>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -68,7 +68,7 @@ const Team = () => (
       </Member>
       <Member
         image={'http://placekittens.com/150/150'}
-        name={'Silvia...'}
+        name={'Silvia Giussani'}
         role={'Graphic designer'}
       >
         <Paragraph.Default>
