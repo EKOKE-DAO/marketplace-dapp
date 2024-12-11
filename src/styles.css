@@ -85,3 +85,7 @@ strong {
   all: revert;
   overflow-x: hidden;
 }
+
+.map > * {
+  all: revert;
+}

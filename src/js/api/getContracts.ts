@@ -16,6 +16,7 @@ interface Filters {
   zipCode?: string;
   latitude?: string;
   longitude?: string;
+  radius?: string;
   zone?: string;
   city?: string;
 }

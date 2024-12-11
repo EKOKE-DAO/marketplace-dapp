@@ -139,19 +139,6 @@
   resolved "https://registry.yarnpkg.com/@ethereumjs/rlp/-/rlp-5.0.2.tgz#c89bd82f2f3bec248ab2d517ae25f5bbc4aac842"
   integrity sha512-DziebCdg4JpGlEqEdGgXmjqcFoJi+JGulUXwEjsZGAscAQ7MyD/7LE/GVCP29vEQxKc7AAwjT3A2ywHp2xfoCA==
 
-"@googlemaps/js-api-loader@1.16.8":
-  version "1.16.8"
-  resolved "https://registry.yarnpkg.com/@googlemaps/js-api-loader/-/js-api-loader-1.16.8.tgz#1595a2af80ca07e551fc961d921a2437d1cb3643"
-  integrity sha512-CROqqwfKotdO6EBjZO/gQGVTbeDps5V7Mt9+8+5Q+jTg5CRMi3Ii/L9PmV3USROrt2uWxtGzJHORmByxyo9pSQ==
-
-"@googlemaps/markerclusterer@2.5.3":
-  version "2.5.3"
-  resolved "https://registry.yarnpkg.com/@googlemaps/markerclusterer/-/markerclusterer-2.5.3.tgz#9f891ce7e8e161775f3a3e2c9f66956810284591"
-  integrity sha512-x7lX0R5yYOoiNectr10wLgCBasNcXFHiADIBdmn7jQllF2B5ENQw5XtZK+hIw4xnV0Df0xhN4LN98XqA5jaiOw==
-  dependencies:
-    fast-deep-equal "^3.1.3"
-    supercluster "^8.0.1"
-
 "@graphql-typed-document-node/core@^3.2.0":
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/@graphql-typed-document-node/core/-/core-3.2.0.tgz#5f3d96ec6b2354ad6d8a28bf216a1d97b5426861"
@@ -1219,27 +1206,10 @@
   resolved "https://registry.yarnpkg.com/@pkgjs/parseargs/-/parseargs-0.11.0.tgz#a77ea742fab25775145434eb1d2328cf5013ac33"
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
-"@react-google-maps/api@^2.20.3":
-  version "2.20.3"
-  resolved "https://registry.yarnpkg.com/@react-google-maps/api/-/api-2.20.3.tgz#0d30e6753d7cddc34f2cd9cc7c5a5a7460adb438"
-  integrity sha512-ndXC8nZDPT78nCceZnftGSvA/iVhwx2XhlfEYaoUy2biGelhrE2vDzjyTuZhb4RV+bVYpd4LkIf3hzyxAFd+Qg==
-  dependencies:
-    "@googlemaps/js-api-loader" "1.16.8"
-    "@googlemaps/markerclusterer" "2.5.3"
-    "@react-google-maps/infobox" "2.20.0"
-    "@react-google-maps/marker-clusterer" "2.20.0"
-    "@types/google.maps" "3.58.1"
-    invariant "2.2.4"
-
-"@react-google-maps/infobox@2.20.0":
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/@react-google-maps/infobox/-/infobox-2.20.0.tgz#7c3dd1821c9f1e1e92570f37419b97f6f956c7ee"
-  integrity sha512-03PJHjohhaVLkX6+NHhlr8CIlvUxWaXhryqDjyaZ8iIqqix/nV8GFdz9O3m5OsjtxtNho09F/15j14yV0nuyLQ==
-
-"@react-google-maps/marker-clusterer@2.20.0":
-  version "2.20.0"
-  resolved "https://registry.yarnpkg.com/@react-google-maps/marker-clusterer/-/marker-clusterer-2.20.0.tgz#6b64177843a60c66e0ebaf85037a47ecd07007df"
-  integrity sha512-tieX9Va5w1yP88vMgfH1pHTacDQ9TgDTjox3tLlisKDXRQWdjw+QeVVghhf5XqqIxXHgPdcGwBvKY6UP+SIvLw==
+"@react-leaflet/core@^3.0.0-rc.1":
+  version "3.0.0-rc.2"
+  resolved "https://registry.yarnpkg.com/@react-leaflet/core/-/core-3.0.0-rc.2.tgz#5000770e40d6002298890cb8c31a2b7d83607b20"
+  integrity sha512-x7prjaw6CM999LrQiAGoRc2OYcoC4DcL3iQo6BMOCkQ0S3jrI75e55hg/J5E++sBgFJFl/6DSfwcOWC0NsEBIg==
 
 "@remix-run/router@1.19.1":
   version "1.19.1"
@@ -1478,10 +1448,10 @@
   resolved "https://registry.yarnpkg.com/@types/estree/-/estree-1.0.6.tgz#628effeeae2064a1b4e79f78e81d87b7e5fc7b50"
   integrity sha512-AYnb1nQyY49te+VRAVgmzfcgjYS91mY5P0TKUDCLEM+gNnA+3T6rWITXRLYCpahpqSQbN5cE+gHpnPyXjHWxcw==
 
-"@types/google.maps@3.58.1":
-  version "3.58.1"
-  resolved "https://registry.yarnpkg.com/@types/google.maps/-/google.maps-3.58.1.tgz#71ce3dec44de1452f56641d2c87c7dd8ea964b4d"
-  integrity sha512-X9QTSvGJ0nCfMzYOnaVs/k6/4L+7F5uCS+4iUmkLEls6J9S/Phv+m/i3mDeyc49ZBgwab3EFO1HEoBY7k98EGQ==
+"@types/geojson@*":
+  version "7946.0.15"
+  resolved "https://registry.yarnpkg.com/@types/geojson/-/geojson-7946.0.15.tgz#f9d55fd5a0aa2de9dc80b1b04e437538b7298868"
+  integrity sha512-9oSxFzDCT2Rj6DfcHF8G++jxBKS7mBqXl5xrRW+Kbvjry6Uduya2iiwqHPhVXpasAVMBYKkEPGgKhd3+/HZ6xA==
 
 "@types/hast@^3.0.0":
   version "3.0.4"
@@ -1489,6 +1459,13 @@
   integrity sha512-WPs+bbQw5aCj+x6laNGWLH3wviHtoCv/P3+otBhbOhJgG8qtpdAMlTCxLtsTWA7LH1Oh/bFCHsBn0TPS5m30EQ==
   dependencies:
     "@types/unist" "*"
+
+"@types/leaflet@^1.9.15":
+  version "1.9.15"
+  resolved "https://registry.yarnpkg.com/@types/leaflet/-/leaflet-1.9.15.tgz#5054d3cfe115da79bffb7a3a70acc6b310bd7c60"
+  integrity sha512-7UuggAuAs+mva66gtf2OTB1nEhzU/9JED93TIaOEgvFMvG/dIGQaukHE7izHo1Zd+Ko1L4ETUw7TBc8yUxevpg==
+  dependencies:
+    "@types/geojson" "*"
 
 "@types/mdast@^4.0.0":
   version "4.0.4"
@@ -1797,7 +1774,7 @@ browserslist@^4.6.6:
     node-releases "^2.0.18"
     update-browserslist-db "^1.1.0"
 
-buffer@^5.5.0||^6.0.0:
+buffer@^6.0.0:
   version "6.0.3"
   resolved "https://registry.yarnpkg.com/buffer/-/buffer-6.0.3.tgz#2ace578459cc8fbe2a70aaa8f52ee63b6a74c6c6"
   integrity sha512-FTiCpNxtwiZZHEZbcbTIcZjERVICn9yq/pDFkTl95/AxzD1naBctN7YO68riM/gLSDY7sdrMby8hofADYuuqOA==
@@ -2722,13 +2699,6 @@ inline-style-parser@0.2.4:
   resolved "https://registry.yarnpkg.com/inline-style-parser/-/inline-style-parser-0.2.4.tgz#f4af5fe72e612839fcd453d989a586566d695f22"
   integrity sha512-0aO8FkhNZlj/ZIbNi7Lxxr12obT7cL1moPfE4tg1LkX7LlLfC6DeX4l2ZEud1ukP9jNQyNnfzQVqwbwmAATY4Q==
 
-invariant@2.2.4:
-  version "2.2.4"
-  resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
-  integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
-  dependencies:
-    loose-envify "^1.0.0"
-
 is-alphabetical@^2.0.0:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/is-alphabetical/-/is-alphabetical-2.0.1.tgz#01072053ea7c1036df3c7d19a6daaec7f19e789b"
@@ -2901,17 +2871,17 @@ json5@^2.2.0, json5@^2.2.1:
   resolved "https://registry.yarnpkg.com/json5/-/json5-2.2.3.tgz#78cd6f1a19bdc12b73db5ad0c61efd66c1e29283"
   integrity sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==
 
-kdbush@^4.0.2:
-  version "4.0.2"
-  resolved "https://registry.yarnpkg.com/kdbush/-/kdbush-4.0.2.tgz#2f7b7246328b4657dd122b6c7f025fbc2c868e39"
-  integrity sha512-WbCVYJ27Sz8zi9Q7Q0xHC+05iwkm3Znipc2XTlrnJbsHMYktW4hPhXUE8Ys1engBrvffoSCqbil1JQAa7clRpA==
-
 keyv@^4.5.3:
   version "4.5.4"
   resolved "https://registry.yarnpkg.com/keyv/-/keyv-4.5.4.tgz#a879a99e29452f942439f2a405e3af8b31d4de93"
   integrity sha512-oxVHkHR/EJf2CNXnWxRLW6mg7JyCCUcG0DtEGmL2ctUo1PNTin1PUil+r/+4r5MpVgC/fn1kjsx7mjSujKqIpw==
   dependencies:
     json-buffer "3.0.1"
+
+leaflet@^1.9.4:
+  version "1.9.4"
+  resolved "https://registry.yarnpkg.com/leaflet/-/leaflet-1.9.4.tgz#23fae724e282fa25745aff82ca4d394748db7d8d"
+  integrity sha512-nxS1ynzJOmOlHp+iL3FyWqK89GtNL8U8rvlMOsQdTTssxZwCXh8N2NB3GDQOL+YR3XnWyZAxwQixURb+FA74PA==
 
 levn@^0.4.1:
   version "0.4.1"
@@ -3039,7 +3009,7 @@ longest-streak@^3.0.0:
   resolved "https://registry.yarnpkg.com/longest-streak/-/longest-streak-3.1.0.tgz#62fa67cd958742a1574af9f39866364102d90cd4"
   integrity sha512-9Ri+o0JYgehTaVBBDoMqIl8GXtbWg711O3srftcHhZ0dqnETqLaoIK0x17fUw9rFSlK/0NlsKe0Ahhyl5pXE2g==
 
-loose-envify@^1.0.0, loose-envify@^1.4.0:
+loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha512-lyuxPGr/Wfhrlem2CL/UcnUc1zcqKAImBDzukY7Y5F/yQiNdko6+fRLevlw1HgMySw7f611UIY408EtxRSoK3Q==
@@ -3986,6 +3956,13 @@ react-is@^16.13.1:
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
   integrity sha512-24e6ynE2H+OKt4kqsOvNd8kBpV65zoxbA4BVsEOB3ARVWQki/DHzaUoC5KuON/BiccDaCCTZBuOcfZs70kR8bQ==
 
+react-leaflet@v5.0.0-rc.1:
+  version "5.0.0-rc.1"
+  resolved "https://registry.yarnpkg.com/react-leaflet/-/react-leaflet-5.0.0-rc.1.tgz#a849cc0892236fd080c04f367fe785532d7e4e7d"
+  integrity sha512-pqxGH/rgUQAUuimnIt/6xLeNAcWymM/kxPpm6v1plXMNHd41Iy6i2sYbzsrRVmspXRT0HtuxQc7jWF+FRHyhYg==
+  dependencies:
+    "@react-leaflet/core" "^3.0.0-rc.1"
+
 react-loading-skeleton@^3.5.0:
   version "3.5.0"
   resolved "https://registry.yarnpkg.com/react-loading-skeleton/-/react-loading-skeleton-3.5.0.tgz#da2090355b4dedcad5c53cb3f0ed364e3a76d6ca"
@@ -4314,13 +4291,6 @@ sucrase@^3.32.0:
     mz "^2.7.0"
     pirates "^4.0.1"
     ts-interface-checker "^0.1.9"
-
-supercluster@^8.0.1:
-  version "8.0.1"
-  resolved "https://registry.yarnpkg.com/supercluster/-/supercluster-8.0.1.tgz#9946ba123538e9e9ab15de472531f604e7372df5"
-  integrity sha512-IiOea5kJ9iqzD2t7QJq/cREyLHTtSmUT6gQsweojg9WH2sYJqZK9SswTu6jrscO6D1G5v5vYZ9ru/eq85lXeZQ==
-  dependencies:
-    kdbush "^4.0.2"
 
 supports-color@^5.3.0:
   version "5.5.0"

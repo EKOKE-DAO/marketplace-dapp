@@ -3,7 +3,7 @@ import * as Icon from 'react-icons/fi';
 
 import Container from './Container';
 import Button from './Button';
-import Map, { MapMarker, Position } from './Map/GMap';
+import Map, { MapMarker, Position } from './Map/LeafletMap';
 
 interface Props {
   center?: Position;
@@ -18,8 +18,8 @@ const SeeOnMap = (props: Props) => {
 
   if (revealMap) {
     return (
-      <Container.Container className="w-full my-4">
-        <Map {...props} />
+      <Container.Container className="w-full my-4 min-h-[170px] h-full">
+        <Map className="w-full h-full min-h-[170px]" {...props} />
       </Container.Container>
     );
   }
@@ -62,6 +62,7 @@ const PopupMap = (props: PopupMapProps) => {
 
   React.useEffect(() => {
     if (!props.center) {
+      console.log('center is unset');
       if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition((position) => {
           setCenter({
@@ -72,9 +73,27 @@ const PopupMap = (props: PopupMapProps) => {
             lat: position.coords.latitude,
             lng: position.coords.longitude,
           });
+          props.onReload(
+            position.coords.latitude,
+            position.coords.longitude,
+            40075 / Math.pow(2, zoom),
+          );
         });
+      } else {
+        setCenter({
+          lat: 51.505,
+          lng: -0.09,
+        });
+        setCurrentPosition({
+          lat: 51.505,
+          lng: -0.09,
+        });
+        props.onReload(51.505, -0.09, 40075 / Math.pow(2, zoom));
       }
-    } else {
+    } else if (
+      props.center.lat !== center?.lat ||
+      props.center.lng !== center?.lng
+    ) {
       setCenter(props.center);
       setCurrentPosition(props.center);
     }
@@ -96,22 +115,24 @@ const PopupMap = (props: PopupMapProps) => {
 
   return (
     <Container.FlexCols className="fixed z-50 items-center justify-center bg-gray-700/80 w-full h-full top-0 left-0">
-      <Container.Container className="m-auto bg-brandLight relative">
+      <Container.Container className="m-auto bg-page relative">
         <Container.FlexRow
-          className="justify-center hover:cursor-pointer hover:bg-brandLightDark px-4 items-center z-10 absolute text-brand shadow-lg w-auto h-[48px] top-[-24px] sm:top-[12px] right-[-24px] sm:right-[12px] bg-brandLight"
+          className="z-[1000] justify-center hover:cursor-pointer hover:bg-gray-100 px-4 items-center absolute text-brand shadow-lg w-auto h-[48px] top-[-24px] sm:top-[12px] right-[-24px] sm:right-[12px] bg-page"
           onClick={props.onClose}
         >
-          Chiudi mappa
+          Close map
           <Icon.FiX className="text-brand inline" size={24} />
         </Container.FlexRow>
-        <Map
-          className="w-[80vw] h-[80vh] sm:w-screen sm:h-screen"
-          markers={props.markers}
-          center={center}
-          zoom={zoom}
-          onCenterChange={onPositionChange}
-          onZoomChange={onZoomChange}
-        />
+        {center && (
+          <Map
+            className="w-[80vw] h-[80vh] sm:w-screen sm:h-screen"
+            markers={props.markers}
+            center={center}
+            zoom={zoom}
+            onCenterChange={onPositionChange}
+            onZoomChange={onZoomChange}
+          />
+        )}
       </Container.Container>
     </Container.FlexCols>
   );
