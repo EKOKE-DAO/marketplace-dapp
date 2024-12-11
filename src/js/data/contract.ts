@@ -11,7 +11,15 @@ export interface Contract {
   currency: string;
   agency?: Agency;
   expiration: Date;
+  documents: ContractDocument[];
   realEstate: RealEstate;
+}
+
+export interface ContractDocument {
+  id: bigint;
+  name: string;
+  mimeType: string;
+  size: number;
 }
 
 export interface Agency {

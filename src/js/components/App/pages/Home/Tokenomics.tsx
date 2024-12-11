@@ -59,7 +59,7 @@ const Tokenomics = () => (
           </span>
         </Container.Container>
       </Container.FlexCols>
-      <EkokeTokenomics className="gap-4 flex-1" />
+      <EkokeTokenomics className="sm:items-center sm:justify-center gap-4 flex-1" />
     </Container.FlexResponsiveRow>
   </Container.FlexCols>
 );

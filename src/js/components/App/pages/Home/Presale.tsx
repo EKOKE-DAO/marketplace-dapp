@@ -15,10 +15,10 @@ const Presale = () => (
       </Heading.H2>
     </Container.Container>
     <Container.Container>
-      <Link.Button href={Route.PRESALE}>
+      <Link.Cta href={Route.PRESALE}>
         Join the Presale NOW
         <Icon.FiArrowRight className="inline ml-2" />
-      </Link.Button>
+      </Link.Cta>
     </Container.Container>
   </Container.FlexCols>
 );

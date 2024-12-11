@@ -4,6 +4,7 @@ import { ABI, CONTRACT_ADDRESS } from './contracts/Deferred';
 import { ChainId } from '../components/MetamaskConnect';
 
 interface Contract {
+  contractId: bigint;
   metadataUri: string;
   buyers: string[];
   sellers: {
@@ -54,6 +55,21 @@ export default class DeferredClient {
   async ownerOf(tokenId: bigint): Promise<string> {
     const contract = this.__getContract();
     return contract.methods.ownerOf(tokenId).call();
+  }
+
+  async balanceOf(address: string): Promise<bigint> {
+    const contract = this.__getContract();
+    return contract.methods.balanceOf(address).call();
+  }
+
+  async totalSupply(): Promise<bigint> {
+    const contract = this.__getContract();
+    return contract.methods.totalSupply().call();
+  }
+
+  async tokenContract(tokenId: bigint): Promise<Contract> {
+    const contract = this.__getContract();
+    return contract.methods.tokenContract(tokenId).call();
   }
 
   async getContract(contractId: bigint): Promise<Contract> {

@@ -45,7 +45,26 @@ export const mockContract = (id: bigint): ContractData => {
     },
     expiration: '2050-01-01',
     restricted_properties: [],
-    documents: [],
+    documents: [
+      [
+        1,
+        {
+          access_list: ['Agent', 'Seller', 'Buyer', 'Public'],
+          mime_type: 'application/pdf',
+          name: 'Sell contract',
+          size: 1024,
+        },
+      ],
+      [
+        2,
+        {
+          access_list: ['Agent', 'Seller', 'Buyer', 'Public'],
+          mime_type: 'application/pdf',
+          name: "Property's plan",
+          size: 1024 * 1024 * 4,
+        },
+      ],
+    ],
     properties: [
       [
         'contract:name',
@@ -188,3 +207,8 @@ export const mockContract = (id: bigint): ContractData => {
     ],
   };
 };
+
+export const mockDocumentData = () => ({
+  mimeType: 'application/pdf',
+  data: new Uint8Array([1, 2, 3, 4, 5]),
+});

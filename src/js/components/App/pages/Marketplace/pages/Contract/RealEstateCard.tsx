@@ -8,6 +8,7 @@ import Heading from '../../../../../reusable/Heading';
 import Paragraph from '../../../../../reusable/Paragraph';
 import Progress from './RealEstateCard/Progress';
 import YoutubeVideo from '../../../../../reusable/YoutubeVideo';
+import ContractDocuments from './RealEstateCard/ContractDocuments';
 
 interface Props {
   contract: Contract;
@@ -45,6 +46,10 @@ const RealEstateCard = ({ contract }: Props) => (
             {contract.realEstate.city && `, ${contract.realEstate.city}`}
             {contract.realEstate.region && `, ${contract.realEstate.region}`}
             {contract.realEstate.country && `, ${contract.realEstate.country}`}
+          </Container.Container>
+          <Container.Container className="text-sm text-gray-500">
+            <Icon.FiCalendar size={16} className="inline mr-2" />
+            Expires on {contract.expiration.toLocaleDateString()}
           </Container.Container>
           <Container.Container className="grid grid-cols-2 sm:grid-cols-1">
             {contract.realEstate.rooms !== undefined && (
@@ -126,8 +131,14 @@ const RealEstateCard = ({ contract }: Props) => (
       <Paragraph.Leading>{contract.realEstate.description}</Paragraph.Leading>
       {contract.realEstate.youtubeUrl && (
         <Container.Container className="mx-auto">
-          <YoutubeVideo url={contract.realEstate.youtubeUrl} />
+          <YoutubeVideo width={720} url={contract.realEstate.youtubeUrl} />
         </Container.Container>
+      )}
+      {contract.documents.length > 0 && (
+        <ContractDocuments
+          contract={contract.id}
+          documents={contract.documents}
+        />
       )}
     </Container.FlexCols>
   </Container.Card>

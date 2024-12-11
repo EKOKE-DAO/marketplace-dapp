@@ -35,7 +35,7 @@ const Team = () => (
       <Member
         image={'http://placekittens.com/150/150'}
         name={'Michele Sessa'}
-        role={'CTO & Software Engineer'}
+        role={'Marketing manager'}
       >
         <Paragraph.Default>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam

@@ -52,6 +52,7 @@ const BuyTokenFormInner = ({ contract }: Props) => {
   const [tokenId, setTokenId] = React.useState<bigint | null>(null);
   const [reward, setReward] = React.useState<bigint | null>(null);
   const [fetchedData, setFetchedData] = React.useState(false);
+  const [userIsSeller, setUserIsSeller] = React.useState(false);
 
   const [pendingTx, setPendingTx] = React.useState(false);
 
@@ -154,10 +155,10 @@ const BuyTokenFormInner = ({ contract }: Props) => {
     const deferredContract = await deferredClient.getContract(contract.id);
     const tokenOwner = await deferredClient.ownerOf(gotTokenId);
     // check whether token is owned by a seller
-    const isSeller = deferredContract.sellers.some(
-      (seller) => seller.seller === tokenOwner,
+    const isOwnedBySeller = deferredContract.sellers.some(
+      (seller) => seller.seller.toLowerCase() === tokenOwner.toLowerCase(),
     );
-    if (isSeller) {
+    if (isOwnedBySeller) {
       console.log(
         `Token ${gotTokenId} is currently owned by a seller (${tokenOwner})`,
       );
@@ -168,6 +169,12 @@ const BuyTokenFormInner = ({ contract }: Props) => {
       );
       setReward(null);
     }
+
+    const isUserSeller = deferredContract.sellers.some(
+      (seller) => seller.seller.toLowerCase() === account.toLowerCase(),
+    );
+
+    setUserIsSeller(isUserSeller);
 
     setFetchedData(true);
   };
@@ -198,8 +205,19 @@ const BuyTokenFormInner = ({ contract }: Props) => {
   ) {
     return (
       <Container.FlexCols className="items-center justify-center gap-4 px-4">
-        <Paragraph.Default>
+        <Paragraph.Default className="!text-center">
           All the tokens for this contract have already been sold.
+        </Paragraph.Default>
+      </Container.FlexCols>
+    );
+  }
+
+  if (userIsSeller) {
+    return (
+      <Container.FlexCols className="items-center justify-center gap-4 px-4">
+        <Paragraph.Default className="!text-center">
+          You are the seller of this contract. <br />
+          You cannot buy tokens.
         </Paragraph.Default>
       </Container.FlexCols>
     );

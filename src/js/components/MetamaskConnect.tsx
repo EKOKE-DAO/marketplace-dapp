@@ -6,6 +6,7 @@ import Logo from './MetamaskConnect/Logo';
 import Button from './reusable/Button';
 import { Route } from '../utils/routes';
 import Link from './reusable/Link';
+import Container from './reusable/Container';
 
 export enum ChainId {
   Mainnet = '0x1',
@@ -23,11 +24,15 @@ export const MetamaskProfile = () => {
     switchChain,
   } = useMetaMask();
 
-  const disabled = ['initializing', 'unavailable', 'connecting'].includes(
-    status,
-  );
+  const disabled = ['initializing', 'connecting'].includes(status);
 
   const onClick = () => {
+    if (status === 'unavailable') {
+      // open a new tab to install metamask
+      window.open('https://metamask.io/download/', '_blank');
+      return undefined;
+    }
+
     if (status === 'notConnected') {
       if (DEFAULT_CHAIN_ID !== currentChainId) {
         switchChain(DEFAULT_CHAIN_ID);
@@ -46,7 +51,7 @@ export const MetamaskProfile = () => {
 
   const text = () => {
     if (status === 'initializing') return 'Initializing…';
-    if (status === 'unavailable') return 'MetaMask not available';
+    if (status === 'unavailable') return 'Profile';
     if (status === 'notConnected') return 'Login';
     if (status === 'connecting') return 'Connecting…';
     if (status === 'connected') return 'Profile';
@@ -63,22 +68,26 @@ export const MetamaskProfile = () => {
 
   if (isConnected) {
     return (
-      <Link.Button href={Route.PROFILE} className="my-0 !mb-0 sm:text-xs">
-        <Icon.PiUserCircleFill size={24} className="mr-2 inline" />
-        {text()}
-      </Link.Button>
+      <Container.Container className="w-fit">
+        <Link.Button href={Route.PROFILE} className="my-0 !mb-0 sm:text-xs">
+          <Icon.PiUserCircleFill size={24} className="mr-2 inline" />
+          {text()}
+        </Link.Button>
+      </Container.Container>
     );
   }
 
   return (
-    <Button.Primary
-      className="my-0 !mb-0 sm:text-xs"
-      onClick={onClick}
-      disabled={disabled}
-    >
-      <Icon.PiUserCircleFill size={24} className="mr-2 inline" />
-      {text()}
-    </Button.Primary>
+    <Container.Container className="w-fit">
+      <Button.Primary
+        className="my-0 !mb-0 sm:text-xs"
+        onClick={onClick}
+        disabled={disabled}
+      >
+        <Icon.PiUserCircleFill size={24} className="mr-2 inline" />
+        {text()}
+      </Button.Primary>
+    </Container.Container>
   );
 };
 
@@ -91,14 +100,15 @@ const MetamaskConnect = () => {
     switchChain,
   } = useMetaMask();
 
-  const disabled = [
-    'initializing',
-    'unavailable',
-    'connecting',
-    'connected',
-  ].includes(status);
+  const disabled = ['initializing', 'connecting', 'connected'].includes(status);
 
   const onClick = () => {
+    if (status === 'unavailable') {
+      // open a new tab to install metamask
+      window.open('https://metamask.io/download/', '_blank');
+      return undefined;
+    }
+
     if (status === 'notConnected') {
       if (DEFAULT_CHAIN_ID !== currentChainId) {
         switchChain(DEFAULT_CHAIN_ID);
@@ -116,7 +126,7 @@ const MetamaskConnect = () => {
 
   const text = () => {
     if (status === 'initializing') return 'Initializing…';
-    if (status === 'unavailable') return 'MetaMask not available';
+    if (status === 'unavailable') return 'Click to install MetaMask';
     if (status === 'notConnected') return 'Login';
     if (status === 'connecting') return 'Connecting…';
     if (status === 'connected') return addressText(account);

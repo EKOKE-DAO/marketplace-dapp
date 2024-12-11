@@ -3,6 +3,7 @@ import Container from './Container';
 
 interface Props {
   url: string;
+  width?: number;
 }
 
 const getWindowWidth = () => {
@@ -13,7 +14,7 @@ const getWindowWidth = () => {
   return 0;
 };
 
-const YoutubeVideo = ({ url }: Props) => {
+const YoutubeVideo = ({ width, url }: Props) => {
   const [windowWidth, setWindowWidth] = React.useState(getWindowWidth());
 
   React.useEffect(() => {
@@ -34,11 +35,13 @@ const YoutubeVideo = ({ url }: Props) => {
 
   const videoId = url.split('v=')[1];
 
+  const useWidth = windowWidth < 768 ? '100%' : (width ?? '100%');
+
   return (
     <Container.Container>
       <iframe
-        width={windowWidth < 768 ? '100%' : '560'}
-        height={windowWidth < 768 ? '315' : '315'}
+        width={useWidth}
+        height={windowWidth < 768 ? '315' : '420'}
         src={`https://www.youtube.com/embed/${videoId}`}
         frameBorder="0"
         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"

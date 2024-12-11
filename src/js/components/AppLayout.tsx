@@ -7,16 +7,22 @@ import Footer from './Footer';
 import Routes from './App/Routes';
 import { BrowserRouter } from 'react-router-dom';
 
-const AppLayout = () => (
-  <Page.BlankPage>
-    <Header />
-    <Container.PageContent className="bg-page w-page min-h-[80vh] pb-16 mt-[80px] pt-[20px] sm:pt-[80px]">
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </Container.PageContent>
-    <Footer />
-  </Page.BlankPage>
-);
+const AppLayout = () => {
+  const fullSize = window.location.pathname.startsWith('/guide');
+
+  return (
+    <Page.BlankPage>
+      <Header />
+      <Container.PageContent
+        className={`bg-page ${fullSize ? 'w-screen' : 'w-page pt-[20px] sm:pt-[40px] pb-16'} min-h-[80vh] mt-[80px] sm:mt-[140px]`}
+      >
+        <BrowserRouter>
+          <Routes />
+        </BrowserRouter>
+      </Container.PageContent>
+      <Footer />
+    </Page.BlankPage>
+  );
+};
 
 export default AppLayout;

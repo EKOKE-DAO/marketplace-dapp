@@ -162,3 +162,8 @@ export const makeQueryArgs = <T extends object>(opts: T): string => {
     })
     .join('&');
 };
+
+export interface Signature {
+  message: string;
+  signature: string;
+}

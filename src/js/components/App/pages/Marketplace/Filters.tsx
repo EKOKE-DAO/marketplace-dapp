@@ -6,35 +6,41 @@ import { Map, MapLink } from './Filters/Map';
 import FiltersTab from './Filters/FiltersTab';
 import Button from '../../../reusable/Button';
 import Link from '../../../reusable/Link';
+import { IFilters } from '../Marketplace';
 
-const Filters = () => (
+interface Props {
+  filters: IFilters;
+  setFilters: React.Dispatch<React.SetStateAction<IFilters>>;
+}
+
+const Filters = (props: Props) => (
   <>
     <Container.Container className="block sm:hidden w-2/6 xl:w-3/12">
-      <PostsSidebarDesktop />
+      <PostsSidebarDesktop {...props} />
     </Container.Container>
     <Container.Container className="w-full hidden sm:block">
-      <PostsSidebarMobile />
+      <PostsSidebarMobile {...props} />
     </Container.Container>
   </>
 );
 
-const PostsSidebarDesktop = () => (
+const PostsSidebarDesktop = (props: Props) => (
   <Container.FlexCols className="w-full">
     <Map />
     <Container.Card className="bg-white w-full block">
-      <FiltersTab />
+      <FiltersTab {...props} />
     </Container.Card>
   </Container.FlexCols>
 );
 
-const PostsSidebarMobile = () => (
+const PostsSidebarMobile = (props: Props) => (
   <Container.FlexRow className="justify-around py-2">
     <MapLink />
-    <FiltersOnMobile filters={<FiltersTab />} />
+    <FiltersOnMobile tab={<FiltersTab {...props} />} />
   </Container.FlexRow>
 );
 
-const FiltersOnMobile = ({ filters }: { filters: React.ReactNode }) => {
+const FiltersOnMobile = ({ tab }: { tab: React.ReactNode }) => {
   const [showFilters, setShowFilters] = React.useState<boolean>(false);
 
   const onOpenFilters = () => {
@@ -44,7 +50,7 @@ const FiltersOnMobile = ({ filters }: { filters: React.ReactNode }) => {
   return (
     <>
       {showFilters && (
-        <Container.Container className="bg-white fixed z-50 top-[120px] left-0 w-screen min-h-screen overflow-y-scroll">
+        <Container.Container className="bg-white fixed z-50 top-0 left-0 w-screen min-h-screen overflow-y-scroll">
           <Container.FlexCols className="shadow-md p-1">
             <Icon.FiX
               className="text-brandAlt hover:cursor-pointer"
@@ -52,7 +58,7 @@ const FiltersOnMobile = ({ filters }: { filters: React.ReactNode }) => {
               onClick={() => setShowFilters(false)}
             />
           </Container.FlexCols>
-          <Container.Container className="p-4">{filters}</Container.Container>
+          <Container.Container className="p-4">{tab}</Container.Container>
           <Container.Container className="p-4">
             <Button.Primary onClick={() => setShowFilters(false)}>
               Apply filters

@@ -14,7 +14,9 @@ const Roadmap = () => (
     </Container.Container>
     <Container.FlexCols className="gap-4 w-full">
       <Container.Container>
-        <span className="text-xl font-bold text-brandRed">2025</span>
+        <span className="block sm:text-center text-xl font-bold text-brandRed">
+          2025
+        </span>
         <Container.FlexResponsiveRow className="gap-4">
           <Milestone title="EKOKE Presale" date="Q1">
             EKOKE Presale will be the first step to start the project. The goal
@@ -48,7 +50,9 @@ const Roadmap = () => (
         </Container.FlexResponsiveRow>
       </Container.Container>
       <Container.Container>
-        <span className="text-xl font-bold text-brandRed">2026</span>
+        <span className="block sm:text-center text-xl font-bold text-brandRed">
+          2026
+        </span>
         <Container.FlexResponsiveRow className="gap-4">
           <Milestone title="First EKOKE-DAO partners" date="Q1">
             We aim to start building the real-estate network in the first
