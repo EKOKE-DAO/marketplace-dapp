@@ -20,8 +20,8 @@ const Tokens = () => (
       >
         <Paragraph.Default>
           The <strong>Deferred</strong> token is an ERC721 NFT that represents
-          an installment of the sell contract on the EKOKE DAO. It is used by
-          the community to pay each installment of the sell contract. They can
+          an installment of the sale contract on the EKOKE DAO. It is used by
+          the community to pay each installment of the sale contract. They can
           be bought in the <strong>EKOKE DAO Marketplace</strong> at a fixed
           price with USDT.
         </Paragraph.Default>
