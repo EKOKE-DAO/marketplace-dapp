@@ -62,11 +62,12 @@ const contentByStep = {
       image={'http://placekittens.com/150/150'}
     >
       <Paragraph.Leading>
-        The buyer agrees to buy the property from the seller and contacts the
-        real-estate agency to create the contract. The buyer agrees on the price
-        and the <strong>installments</strong> he will pay to buy the property.
-        He promises to pay the installments each month and within the agreed
-        time.
+        The buyer find a real-estate to buy, once an agreement with the actual
+        owner of the property is found, the real-estate agency has the job to
+        create the contract. after that, they decide on the amount of the{' '}
+        <strong>installments</strong> he will pay in order to buy the property
+        and estinguish the debt. He promises to pay the installments each month
+        and within the agreed time.
       </Paragraph.Leading>
     </Step>
   ),
@@ -74,9 +75,9 @@ const contentByStep = {
     <Step step={BuyerStep.Deposit} image={'http://placekittens.com/150/150'}>
       <Paragraph.Leading>
         The buyer <strong>deposits</strong> a certain amount of money to the
-        real-estate agency as a guarantee that he will pay the installments on
-        time. The buyer will get the money back if he pays all the installments
-        on time.
+        real-estate agency as a guarantee that he will not withdraws from the
+        contract and pay the installments on time. The buyer will get the money
+        back if he pays all the installments on time.
       </Paragraph.Leading>
     </Step>
   ),
@@ -86,7 +87,9 @@ const contentByStep = {
         The buyer starts buying tokens each month from the{' '}
         <strong>EKOKE DAO Marketplace</strong>. Everytime he buys a token before
         any other DAO user, he will receive a reward. This mechanism enforce the
-        buyer to pay the installments on time and quickly.
+        buyer to pay the installments on time and quickly. Ence, The buyer has
+        the option to repay installments before their due date without incurring
+        any additional charges.
       </Paragraph.Leading>
     </Step>
   ),
@@ -110,9 +113,9 @@ const contentByStep = {
       image={'http://placekittens.com/150/150'}
     >
       <Paragraph.Leading>
-        At this point the only thing left for the buyer is to{' '}
+        At this point the only step left for the buyer is to{' '}
         <strong>buy all the remaining tokens</strong> from the marketplace. Once
-        he finishes this step, the <strong>Agency</strong> will close the sell
+        he finishes this, the <strong>Agency</strong> will close the selling
         contract and the NFTs will be burned.
       </Paragraph.Leading>
     </Step>
@@ -123,12 +126,13 @@ const contentByStep = {
       image={'http://placekittens.com/150/150'}
     >
       <Paragraph.Leading>
-        The seller agrees to sell the property to the buyer and contacts the
-        real-estate agency to create the contract. The seller agrees on the
-        price and the <strong>installments</strong> the buyer will pay to buy
-        the property. He is guaranteed to be paid for the installments each
-        month and within the agreed time. The seller will be awared with a
-        reward from the agency for using this system.
+        il titolo dovrebbe essere Creation of the contract The seller agrees to
+        sell the property to the buyer and contacts the real-estate agency to
+        create the selling contract. The seller agrees on the price and the{' '}
+        <strong>installments</strong> the buyer will pay to buy the property. He
+        is guaranteed to be paid for the installments each month and within the
+        agreed time. The seller will be awared with a reward from the agency for
+        using this system.
       </Paragraph.Leading>
     </Step>
   ),
@@ -138,7 +142,7 @@ const contentByStep = {
       image={'http://placekittens.com/150/150'}
     >
       <Paragraph.Leading>
-        Once all the installment tokens are sold, both to the buyer or to the
+        Once all the installment tokens are sold, either by the buyer or to the
         DAO users, the seller will be able to{' '}
         <strong>transfer the ownership</strong> of the property to the buyer.
       </Paragraph.Leading>
@@ -150,11 +154,11 @@ const contentByStep = {
       image={'http://placekittens.com/150/150'}
     >
       <Paragraph.Leading>
-        When a new sell contract is created, DAO members will be able to see the
-        property associated to the contract on the{' '}
+        When a new selling contract is created, DAO members will be able to see
+        the property associated to the contract on the{' '}
         <strong>EKOKE DAO Marketplace</strong>. From the page of the property,
-        members will be able to see the details of the contract and the
-        installments the buyer has to pay.
+        members will be able to see all the details of the contract and the
+        installments the buyer has to pay and token avaiabvle to purchase.
       </Paragraph.Leading>
     </Step>
   ),
@@ -203,14 +207,15 @@ const contentByStep = {
       image={'http://placekittens.com/150/150'}
     >
       <Paragraph.Leading>
-        The agency must take care of monitoring the sell of the property. The
-        agency must be sure that the buyer is paying the installments on time.
-        If it doesn't they must report the buyer to the DAO users. This could
-        lead to a vote to <strong>close the sell contract</strong> to prevent
-        more users to buy the installment tokens. At this point the DAO can vote
-        to <strong>refund</strong> the DAO users that bought the installment
-        tokens using the <strong>DAO funds</strong>, which is in form of USDT
-        paid as interests in the Marketplace.
+        The agency must take care of monitoring the selling process of the
+        property. The agency must be sure that the buyer pays the installments
+        on time. If it doesn't they must report the buyer to the DAO
+        users(community). This could lead to a vote to{' '}
+        <strong>close the sell contract</strong> to prevent more users to buy
+        the installment tokens. At this point the DAO can vote to{' '}
+        <strong>refund</strong> the DAO users that bought the installment tokens
+        using the <strong>DAO funds</strong>, which is in form of USDT paid as
+        interests in the Marketplace.
       </Paragraph.Leading>
     </Step>
   ),

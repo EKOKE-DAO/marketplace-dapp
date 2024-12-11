@@ -5,6 +5,7 @@ import Heading from '../../../reusable/Heading';
 
 import LelioImg from '../../../../../assets/images/team/lelio.webp';
 import VeesoImg from '../../../../../assets/images/team/veeso.webp';
+import ChiaraImg from '../../../../../assets/images/team/chiara.webp';
 import Member from './Team/Member';
 import Paragraph from '../../../reusable/Paragraph';
 
@@ -26,11 +27,7 @@ const Team = () => (
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
         </Paragraph.Default>
       </Member>
-      <Member
-        image={'http://placekittens.com/150/150'}
-        name={'Chiara Rovis'}
-        role={'Web developer'}
-      >
+      <Member image={ChiaraImg} name={'Chiara Rovis'} role={'Web developer'}>
         <Paragraph.Default>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
         </Paragraph.Default>
