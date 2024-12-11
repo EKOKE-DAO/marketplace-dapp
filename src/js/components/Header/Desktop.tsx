@@ -18,9 +18,9 @@ const Desktop = () => (
           <TopbarLink name={'Home'} href={Route.HOME} />
         </Container.FlexRow>
         <TopbarLink name={'Marketplace'} href={Route.MARKETPLACE} />
-        <TopbarLink name={'EKOKE Presale'} href={Route.PRESALE} />
+        <TopbarLink name={'Presale'} href={Route.PRESALE} />
         <TopbarLink name={'About'} href={Route.ABOUT} />
-        <TopbarLink name={'Guide'} href={Route.GUIDE} />
+        <TopbarLink name={'Documentation'} href={Route.DOCUMENTATION} />
       </Container.FlexRow>
       <Container.Flex className="flex-1 justify-end 3xl:justify-start">
         <MetamaskProfile />

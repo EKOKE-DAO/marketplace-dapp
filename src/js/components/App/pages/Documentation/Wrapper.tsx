@@ -9,82 +9,84 @@ import Link from '../../../reusable/Link';
 import Button from '../../../reusable/Button';
 
 enum Item {
-  Architecture = Route.GUIDE_ARCHITECTURE,
-  Faq = Route.GUIDE_FAQ,
-  DeferredData = Route.GUIDE_CANISTERS_DATA,
-  DeferredMinter = Route.GUIDE_CANISTERS_MINTER,
-  DeferredContracts = Route.GUIDE_CONTRACTS_DEFERRED,
-  EkokeContracts = Route.GUIDE_CONTRACTS_EKOKE,
-  MarketplaceContracts = Route.GUIDE_CONTRACTS_MARKETPLACE,
-  RewardPoolContracts = Route.GUIDE_CONTRACTS_REWARD_POOL,
-  Reward = Route.GUIDE_REWARD,
-  Whitepaper = Route.GUIDE_WHITEPAPER,
+  Architecture = Route.DOCUMENTATION_ARCHITECTURE,
+  Faq = Route.DOCUMENTATION_FAQ,
+  DeferredData = Route.DOCUMENTATION_CANISTERS_DATA,
+  DeferredMinter = Route.DOCUMENTATION_CANISTERS_MINTER,
+  DeferredContracts = Route.DOCUMENTATION_CONTRACTS_DEFERRED,
+  EkokeContracts = Route.DOCUMENTATION_CONTRACTS_EKOKE,
+  MarketplaceContracts = Route.DOCUMENTATION_CONTRACTS_MARKETPLACE,
+  RewardPoolContracts = Route.DOCUMENTATION_CONTRACTS_REWARD_POOL,
+  Reward = Route.DOCUMENTATION_REWARD,
+  Whitepaper = Route.DOCUMENTATION_WHITEPAPER,
 }
 
 const menu = {
   [Item.Faq]: {
     title: 'F.A.Q.',
-    url: Route.GUIDE_FAQ,
+    url: Route.DOCUMENTATION_FAQ,
     icon: <IconMd.MdQuestionMark className="inline mr-2" size={24} />,
   },
   [Item.Whitepaper]: {
     title: 'Whitepaper',
-    url: Route.GUIDE_WHITEPAPER,
+    url: Route.DOCUMENTATION_WHITEPAPER,
     icon: <IconMd.MdDescription className="inline mr-2" size={24} />,
   },
   [Item.Reward]: {
     title: 'EKOKE Rewards',
-    url: Route.GUIDE_REWARD,
+    url: Route.DOCUMENTATION_REWARD,
     icon: <IconMd.MdTrendingUp className="inline mr-2" size={24} />,
   },
   [Item.Architecture]: {
     title: 'Architecture',
-    url: Route.GUIDE_ARCHITECTURE,
+    url: Route.DOCUMENTATION_ARCHITECTURE,
     icon: <IconMd.MdAccountTree className="inline mr-2" size={24} />,
   },
   [Item.DeferredData]: {
     title: 'Deferred Data',
-    url: Route.GUIDE_CANISTERS_DATA,
+    url: Route.DOCUMENTATION_CANISTERS_DATA,
     icon: <FaIcon.FaInfinity className="inline mr-2" size={24} />,
   },
   [Item.DeferredMinter]: {
     title: 'Deferred Minter',
-    url: Route.GUIDE_CANISTERS_MINTER,
+    url: Route.DOCUMENTATION_CANISTERS_MINTER,
     icon: <FaIcon.FaInfinity className="inline mr-2" size={24} />,
   },
   [Item.DeferredContracts]: {
     title: 'Deferred Contracts',
-    url: Route.GUIDE_CONTRACTS_DEFERRED,
+    url: Route.DOCUMENTATION_CONTRACTS_DEFERRED,
     icon: <FaIcon.FaEthereum className="inline mr-2" size={24} />,
   },
   [Item.EkokeContracts]: {
     title: 'Ekoke Contracts',
-    url: Route.GUIDE_CONTRACTS_EKOKE,
+    url: Route.DOCUMENTATION_CONTRACTS_EKOKE,
     icon: <FaIcon.FaEthereum className="inline mr-2" size={24} />,
   },
   [Item.MarketplaceContracts]: {
     title: 'Marketplace Contracts',
-    url: Route.GUIDE_CONTRACTS_MARKETPLACE,
+    url: Route.DOCUMENTATION_CONTRACTS_MARKETPLACE,
     icon: <FaIcon.FaEthereum className="inline mr-2" size={24} />,
   },
   [Item.RewardPoolContracts]: {
     title: 'Reward Pool Contracts',
-    url: Route.GUIDE_CONTRACTS_REWARD_POOL,
+    url: Route.DOCUMENTATION_CONTRACTS_REWARD_POOL,
     icon: <FaIcon.FaEthereum className="inline mr-2" size={24} />,
   },
 };
 
 const routeToItems = {
-  [Route.url(Route.GUIDE_FAQ)]: Item.Faq,
-  [Route.url(Route.GUIDE_ARCHITECTURE)]: Item.Architecture,
-  [Route.url(Route.GUIDE_CANISTERS_DATA)]: Item.DeferredData,
-  [Route.url(Route.GUIDE_CANISTERS_MINTER)]: Item.DeferredMinter,
-  [Route.url(Route.GUIDE_CONTRACTS_DEFERRED)]: Item.DeferredContracts,
-  [Route.url(Route.GUIDE_CONTRACTS_EKOKE)]: Item.EkokeContracts,
-  [Route.url(Route.GUIDE_CONTRACTS_MARKETPLACE)]: Item.MarketplaceContracts,
-  [Route.url(Route.GUIDE_CONTRACTS_REWARD_POOL)]: Item.RewardPoolContracts,
-  [Route.url(Route.GUIDE_WHITEPAPER)]: Item.Whitepaper,
-  [Route.url(Route.GUIDE_REWARD)]: Item.Reward,
+  [Route.url(Route.DOCUMENTATION_FAQ)]: Item.Faq,
+  [Route.url(Route.DOCUMENTATION_ARCHITECTURE)]: Item.Architecture,
+  [Route.url(Route.DOCUMENTATION_CANISTERS_DATA)]: Item.DeferredData,
+  [Route.url(Route.DOCUMENTATION_CANISTERS_MINTER)]: Item.DeferredMinter,
+  [Route.url(Route.DOCUMENTATION_CONTRACTS_DEFERRED)]: Item.DeferredContracts,
+  [Route.url(Route.DOCUMENTATION_CONTRACTS_EKOKE)]: Item.EkokeContracts,
+  [Route.url(Route.DOCUMENTATION_CONTRACTS_MARKETPLACE)]:
+    Item.MarketplaceContracts,
+  [Route.url(Route.DOCUMENTATION_CONTRACTS_REWARD_POOL)]:
+    Item.RewardPoolContracts,
+  [Route.url(Route.DOCUMENTATION_WHITEPAPER)]: Item.Whitepaper,
+  [Route.url(Route.DOCUMENTATION_REWARD)]: Item.Reward,
 };
 
 interface Props {

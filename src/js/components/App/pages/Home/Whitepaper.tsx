@@ -8,7 +8,7 @@ import { Route } from '../../../../utils/routes';
 const Whitepaper = () => (
   <Container.FlexCols className="items-center justify-center w-3/6 sm:w-full mx-auto gap-2">
     <Container.Container>
-      <Link.Cta href={Route.GUIDE_WHITEPAPER}>
+      <Link.Cta href={Route.DOCUMENTATION_WHITEPAPER}>
         Read the Whitepaper{' '}
         <Icon.FiExternalLink className="inline mr-2 text-white" />
       </Link.Cta>

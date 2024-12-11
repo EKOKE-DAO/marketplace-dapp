@@ -25,7 +25,7 @@ const Mobile = () => (
       <TopbarLink name={'Marketplace'} href={Route.MARKETPLACE} />
       <TopbarLink name={'EKOKE Presale'} href={Route.PRESALE} />
       <TopbarLink name={'About'} href={Route.ABOUT} />
-      <TopbarLink name={'Guide'} href={Route.GUIDE} />
+      <TopbarLink name={'Documentation'} href={Route.DOCUMENTATION} />
     </Container.FlexRow>
   </div>
 );
