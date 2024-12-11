@@ -1,12 +1,8 @@
 import * as React from 'react';
 import Skeleton from 'react-loading-skeleton';
-import { useConnectedMetaMask } from 'metamask-react';
 
 import Container from '../../reusable/Container';
-import WaitForMetamask from '../../reusable/WaitForMetamask';
 import Heading from '../../reusable/Heading';
-import MetamaskConnect, { ChainId } from '../../MetamaskConnect';
-import EkokePresaleClient from '../../../web3/EkokePresaleClient';
 import { useAppContext } from '../AppContext';
 import {
   convertToHumanReadable,
@@ -15,10 +11,11 @@ import {
 } from '../../../utils/format';
 import PresaleForm from './Presale/PresaleForm';
 import Info from './Presale/Info';
-import Paragraph from '../../reusable/Paragraph';
+import EkokePresalePublicClient from '../../../web3/EkokePresalePublicClient';
 
 const BASE_PRICE = 1_000_000;
 const STEP = 5_000_000_000_000;
+export const PRESALE_END_DATE = new Date('2025-03-31');
 
 const Presale = () => (
   <Container.Container>
@@ -31,26 +28,14 @@ const Presale = () => (
       </Container.Container>
       <Container.Container className="flex-1">
         <Container.Card>
-          <WaitForMetamask otherwise={<LoginWithMetamask />}>
-            <PresaleBody />
-          </WaitForMetamask>
+          <PresaleBody />
         </Container.Card>
       </Container.Container>
     </Container.FlexResponsiveRow>
   </Container.Container>
 );
 
-const LoginWithMetamask = () => (
-  <Container.FlexCols className="items-center">
-    <Paragraph.Default className="!text-center text-lg">
-      Please login with <strong>Metamask</strong> to join the presale.
-    </Paragraph.Default>
-    <MetamaskConnect />
-  </Container.FlexCols>
-);
-
 export interface PresaleStats {
-  balance: string;
   presaleCap: string;
   softCap: string;
   tokensSold: string;
@@ -64,23 +49,13 @@ export interface PresaleStats {
 }
 
 const PresaleBody = () => {
-  const { account, ethereum, chainId } = useConnectedMetaMask();
   const { setAppError } = useAppContext();
 
   const [stats, setStats] = React.useState<PresaleStats | null>(null);
 
   const fetchStats = async (): Promise<PresaleStats> => {
-    const client = new EkokePresaleClient(
-      account,
-      ethereum,
-      chainId as ChainId,
-    );
+    const client = new EkokePresalePublicClient();
 
-    const balance = convertToHumanReadable(
-      await client.ekokeBalance(),
-      EKOKE_DECIMALS,
-      true,
-    );
     const presaleCap = convertToHumanReadable(
       await client.presaleCap(),
       EKOKE_DECIMALS,
@@ -119,7 +94,6 @@ const PresaleBody = () => {
     const step = Math.floor(Number(tokensSoldNum / BigInt(STEP))) + 1;
 
     return {
-      balance,
       presaleCap,
       softCap,
       tokensSold,

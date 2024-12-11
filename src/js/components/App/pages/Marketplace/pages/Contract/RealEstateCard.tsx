@@ -131,7 +131,7 @@ const RealEstateCard = ({ contract }: Props) => (
       <Paragraph.Leading>{contract.realEstate.description}</Paragraph.Leading>
       {contract.realEstate.youtubeUrl && (
         <Container.Container className="mx-auto">
-          <YoutubeVideo url={contract.realEstate.youtubeUrl} />
+          <YoutubeVideo width={720} url={contract.realEstate.youtubeUrl} />
         </Container.Container>
       )}
       {contract.documents.length > 0 && (
