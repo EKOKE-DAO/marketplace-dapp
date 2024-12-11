@@ -42,7 +42,7 @@ const Tokens = () => (
       </TokenView>
       <TokenView
         token={Token.EkokeDAO}
-        sns={'ekokedao'}
+        sns={'Coming soon...'}
         name="EKOKE DAO"
         symbol="EKOKEDAO"
         decimals={8}

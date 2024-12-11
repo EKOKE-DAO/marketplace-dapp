@@ -20,7 +20,9 @@ const Member = ({ name, role, image, children }: Props) => (
     />
     <span className="text-lg block font-bold text-brandRed">{name}</span>
     <span className="text-md block font-bold text-text">{role}</span>
-    <Container.Container>{children}</Container.Container>
+    <Container.Flex className="justify-center xl:w-4/6">
+      {children}
+    </Container.Flex>
   </Container.FlexCols>
 );
 

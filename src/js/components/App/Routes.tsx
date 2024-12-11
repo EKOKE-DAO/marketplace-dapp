@@ -24,30 +24,41 @@ const ProfileContracts = React.lazy(
   () => import('./pages/Profile/pages/Contracts'),
 );
 
-// Guide
-const Guide = React.lazy(() => import('./pages/Guide'));
-const GuideArchitecture = React.lazy(
-  () => import('./pages/Guide/pages/Architecture'),
+// giveaway
+const Giveaway = React.lazy(() => import('./pages/Giveaway'));
+
+// Documentation
+const Documentation = React.lazy(() => import('./pages/Documentation'));
+const DocumentationArchitecture = React.lazy(
+  () => import('./pages/Documentation/pages/Architecture'),
 );
-const GuideDeferredData = React.lazy(
-  () => import('./pages/Guide/pages/DeferredData'),
+const DocumentationDeferredData = React.lazy(
+  () => import('./pages/Documentation/pages/DeferredData'),
 );
-const GuideDeferredMinter = React.lazy(
-  () => import('./pages/Guide/pages/DeferredMinter'),
+const DocumentationDeferredMinter = React.lazy(
+  () => import('./pages/Documentation/pages/DeferredMinter'),
 );
-const GuideDeferred = React.lazy(() => import('./pages/Guide/pages/Deferred'));
-const GuideEkoke = React.lazy(() => import('./pages/Guide/pages/Ekoke'));
-const GuideMarketplace = React.lazy(
-  () => import('./pages/Guide/pages/Marketplace'),
+const DocumentationDeferred = React.lazy(
+  () => import('./pages/Documentation/pages/Deferred'),
 );
-const GuideRewardPool = React.lazy(
-  () => import('./pages/Guide/pages/RewardPool'),
+const DocumentationEkoke = React.lazy(
+  () => import('./pages/Documentation/pages/Ekoke'),
 );
-const GuideReward = React.lazy(() => import('./pages/Guide/pages/Reward'));
-const GuideWhitepaper = React.lazy(
-  () => import('./pages/Guide/pages/Whitepaper'),
+const DocumentationMarketplace = React.lazy(
+  () => import('./pages/Documentation/pages/Marketplace'),
 );
-const GuideFaq = React.lazy(() => import('./pages/Guide/pages/Faq'));
+const DocumentationRewardPool = React.lazy(
+  () => import('./pages/Documentation/pages/RewardPool'),
+);
+const DocumentationReward = React.lazy(
+  () => import('./pages/Documentation/pages/Reward'),
+);
+const DocumentationWhitepaper = React.lazy(
+  () => import('./pages/Documentation/pages/Whitepaper'),
+);
+const DocumentationFaq = React.lazy(
+  () => import('./pages/Documentation/pages/Faq'),
+);
 
 const AppRouter = () => (
   <>
@@ -78,47 +89,56 @@ const AppRouter = () => (
             element={<ProfileContracts />}
           />
 
-          {/* Guide */}
-          <RouterRoute path={Route.url(Route.GUIDE)} element={<Guide />} />
+          {/* Documentation */}
           <RouterRoute
-            path={Route.url(Route.GUIDE_ARCHITECTURE)}
-            element={<GuideArchitecture />}
+            path={Route.url(Route.DOCUMENTATION)}
+            element={<Documentation />}
           />
           <RouterRoute
-            path={Route.url(Route.GUIDE_CANISTERS_DATA)}
-            element={<GuideDeferredData />}
+            path={Route.url(Route.DOCUMENTATION_ARCHITECTURE)}
+            element={<DocumentationArchitecture />}
           />
           <RouterRoute
-            path={Route.url(Route.GUIDE_CANISTERS_MINTER)}
-            element={<GuideDeferredMinter />}
+            path={Route.url(Route.DOCUMENTATION_CANISTERS_DATA)}
+            element={<DocumentationDeferredData />}
           />
           <RouterRoute
-            path={Route.url(Route.GUIDE_CONTRACTS_DEFERRED)}
-            element={<GuideDeferred />}
+            path={Route.url(Route.DOCUMENTATION_CANISTERS_MINTER)}
+            element={<DocumentationDeferredMinter />}
           />
           <RouterRoute
-            path={Route.url(Route.GUIDE_CONTRACTS_EKOKE)}
-            element={<GuideEkoke />}
+            path={Route.url(Route.DOCUMENTATION_CONTRACTS_DEFERRED)}
+            element={<DocumentationDeferred />}
           />
           <RouterRoute
-            path={Route.url(Route.GUIDE_CONTRACTS_MARKETPLACE)}
-            element={<GuideMarketplace />}
+            path={Route.url(Route.DOCUMENTATION_CONTRACTS_EKOKE)}
+            element={<DocumentationEkoke />}
           />
           <RouterRoute
-            path={Route.url(Route.GUIDE_CONTRACTS_REWARD_POOL)}
-            element={<GuideRewardPool />}
+            path={Route.url(Route.DOCUMENTATION_CONTRACTS_MARKETPLACE)}
+            element={<DocumentationMarketplace />}
           />
           <RouterRoute
-            path={Route.url(Route.GUIDE_REWARD)}
-            element={<GuideReward />}
+            path={Route.url(Route.DOCUMENTATION_CONTRACTS_REWARD_POOL)}
+            element={<DocumentationRewardPool />}
           />
           <RouterRoute
-            path={Route.url(Route.GUIDE_WHITEPAPER)}
-            element={<GuideWhitepaper />}
+            path={Route.url(Route.DOCUMENTATION_REWARD)}
+            element={<DocumentationReward />}
           />
           <RouterRoute
-            path={Route.url(Route.GUIDE_FAQ)}
-            element={<GuideFaq />}
+            path={Route.url(Route.DOCUMENTATION_WHITEPAPER)}
+            element={<DocumentationWhitepaper />}
+          />
+          <RouterRoute
+            path={Route.url(Route.DOCUMENTATION_FAQ)}
+            element={<DocumentationFaq />}
+          />
+
+          {/* giveaway */}
+          <RouterRoute
+            path={Route.url(Route.GIVEAWAY)}
+            element={<Giveaway />}
           />
 
           {/* 404 */}

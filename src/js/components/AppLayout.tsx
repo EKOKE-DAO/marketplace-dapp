@@ -8,7 +8,7 @@ import Routes from './App/Routes';
 import { BrowserRouter } from 'react-router-dom';
 
 const AppLayout = () => {
-  const fullSize = window.location.pathname.startsWith('/guide');
+  const fullSize = window.location.pathname.startsWith('/documentation');
 
   return (
     <Page.BlankPage>

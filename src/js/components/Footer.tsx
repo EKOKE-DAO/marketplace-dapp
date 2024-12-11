@@ -26,10 +26,13 @@ const Footer = () => {
               Marketplace
             </Link.Default>
             <Link.Default href={Route.PRESALE} className="text-white">
-              EKOKE Presale
+              Presale
             </Link.Default>
             <Link.Default href={Route.ABOUT} className="text-white">
               About
+            </Link.Default>
+            <Link.Default href={Route.DOCUMENTATION} className="text-white">
+              Documentation
             </Link.Default>
           </Container.FlexCols>
           <Container.FlexCols className="gap-4 flex-1">

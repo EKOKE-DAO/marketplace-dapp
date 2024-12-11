@@ -42,45 +42,50 @@ const PAGE_TITLES: SeoPages = {
     title: 'EKOKE DAO - Contracts',
     description: 'Your EKOKE DAO contracts',
   },
-  '/guide': {
-    title: 'EKOKE DAO - Guide',
-    description: 'EKOKE DAO guide',
+  '/documentation': {
+    title: 'EKOKE DAO - Documentation',
+    description: 'EKOKE DAO documentation',
   },
-  '/guide/faq': {
+  '/documentation/faq': {
     title: 'EKOKE DAO - FAQ',
     description: 'EKOKE DAO FAQ',
   },
-  '/guide/whitepaper': {
+  '/documentation/whitepaper': {
     title: 'EKOKE DAO - Whitepaper',
     description: 'EKOKE DAO whitepaper',
   },
-  '/guide/contracts/deferred': {
+  '/documentation/contracts/deferred': {
     title: 'EKOKE DAO - Deferred',
     description: 'EKOKE DAO Deferred contracts',
   },
-  '/guide/contracts/ekoke': {
+  '/documentation/contracts/ekoke': {
     title: 'EKOKE DAO - EKOKE Docs',
     description: 'EKOKE DAO EKOKE token docs',
   },
-  '/guide/contracts/marketplace': {
+  '/documentation/contracts/marketplace': {
     title: 'EKOKE DAO - marketplace Docs',
     description: 'EKOKE DAO marketplace docs',
   },
-  '/guide/contracts/reward-pool': {
+  '/documentation/contracts/reward-pool': {
     title: 'EKOKE DAO - Reward Pool Docs',
     description: 'EKOKE Reward Pool docs',
   },
-  '/guide/canisters/deferred-data': {
+  '/documentation/canisters/deferred-data': {
     title: 'EKOKE DAO - Deferred Data Docs',
     description: 'EKOKE Deferred Data docs',
   },
-  '/guide/canisters/deferred-minter': {
+  '/documentation/canisters/deferred-minter': {
     title: 'EKOKE DAO - Deferred Minter Docs',
     description: 'EKOKE Deferred Minter docs',
   },
-  '/guide/reward': {
+  '/documentation/reward': {
     title: 'EKOKE DAO - Reward Docs',
     description: 'EKOKE Reward docs',
+  },
+  '/giveaway': {
+    title: 'EKOKE DAO 100 $EKOKE Giveaway - 1$EKOKE = 1$',
+    description:
+      "Since we're going to launch EKOKE DAO on April 1st 2025 and we'll open the Presale on January 10th 2025, we've decided to start a Giveaway where 10 lucky users will be able to win 100$EKOKE which are worth 100$.",
   },
 };
 
