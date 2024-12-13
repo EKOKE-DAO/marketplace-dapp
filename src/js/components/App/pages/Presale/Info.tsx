@@ -8,9 +8,7 @@ import Input from '../../../reusable/Input';
 import YoutubeVideo from '../../../reusable/YoutubeVideo';
 import Link from '../../../reusable/Link';
 import { PRESALE_END_DATE } from '../Presale';
-
-const EKOKE_ADDRESS = '0x0';
-const PRESALE_ADDRESS = '0x0';
+import { EKOKE_ADDRESS, EKOKE_PRESALE_ADDRESS } from '../../../../web3/tokens';
 
 const Info = () => {
   const [copied, setCopied] = React.useState(false);
@@ -70,10 +68,10 @@ const Info = () => {
             The presale will be held on the Ethereum blockchain using our
             Presale smart contract{' '}
             <Link.Paragraph
-              href={`https://etherscan.com/address/${PRESALE_ADDRESS}`}
+              href={`https://etherscan.com/address/${EKOKE_PRESALE_ADDRESS}`}
               target="_blank"
             >
-              {PRESALE_ADDRESS}
+              {EKOKE_PRESALE_ADDRESS}
             </Link.Paragraph>
             . The presale will start with a <strong>soft cap</strong> of{' '}
             <strong>{(50_000).toLocaleString('en-US')} USDT</strong> and a{' '}
@@ -96,10 +94,10 @@ const Info = () => {
             verified at any time on <strong>Etherscan</strong> by visiting the
             smart contract page at{' '}
             <Link.Paragraph
-              href={`https://etherscan.com/address/${PRESALE_ADDRESS}`}
+              href={`https://etherscan.com/address/${EKOKE_PRESALE_ADDRESS}`}
               target="_blank"
             >
-              https://etherscan.com/address/{PRESALE_ADDRESS}
+              https://etherscan.com/address/{EKOKE_PRESALE_ADDRESS}
             </Link.Paragraph>
             .
           </Paragraph.Default>
@@ -113,10 +111,10 @@ const Info = () => {
             smart contract. All these operations can be verified at any time on{' '}
             <strong>Etherscan</strong> by visiting the smart contract page at{' '}
             <Link.Paragraph
-              href={`https://etherscan.com/address/${PRESALE_ADDRESS}`}
+              href={`https://etherscan.com/address/${EKOKE_PRESALE_ADDRESS}`}
               target="_blank"
             >
-              https://etherscan.com/address/{PRESALE_ADDRESS}
+              https://etherscan.com/address/{EKOKE_PRESALE_ADDRESS}
             </Link.Paragraph>
             .
           </Paragraph.Default>

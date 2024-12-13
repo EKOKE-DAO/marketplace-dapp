@@ -1,23 +1,57 @@
-const API_URL = 'https://PRINCIPAL.raw.icp0.io';
+const DEFERRED_DATA_API_URL = 'https://2m6dw-uaaaa-aaaal-arumq-cai.raw.icp0.io';
+const DEFERRED_MINTER_API_URL =
+  'https://2f5ik-ciaaa-aaaal-aruna-cai.raw.icp0.io';
 
 type Method = 'GET' | 'POST' | 'PUT' | 'DELETE';
 
 /**
- * @description Sends a request to the API
+ * @description Sends a request to the deferred-minter API
  * @param method the HTTP method to use
  * @param path the path to the API endpoint
  * @param mock a mock to return in case of no API URL
  * @param onError a callback to call in case of an error
  * @returns
  */
-const sendJsonRequest = async <T>(
+export const deferredMinterRequest = async <T>(
   method: Method,
   path: string,
   mock: T,
   onError?: (statusCode: number, error: any) => void,
-): Promise<T> => __sendJsonRequest(method, path, mock, undefined, onError);
+): Promise<T> =>
+  __sendJsonRequest(
+    DEFERRED_MINTER_API_URL,
+    method,
+    path,
+    mock,
+    undefined,
+    onError,
+  );
+
+/**
+ * @description Sends a request to the deferred-data API
+ * @param method the HTTP method to use
+ * @param path the path to the API endpoint
+ * @param mock a mock to return in case of no API URL
+ * @param onError a callback to call in case of an error
+ * @returns
+ */
+const deferredDataRequest = async <T>(
+  method: Method,
+  path: string,
+  mock: T,
+  onError?: (statusCode: number, error: any) => void,
+): Promise<T> =>
+  __sendJsonRequest(
+    DEFERRED_DATA_API_URL,
+    method,
+    path,
+    mock,
+    undefined,
+    onError,
+  );
 
 const __sendJsonRequest = async <T>(
+  apiUrl: string,
   method: Method,
   path: string,
   mock: T,
@@ -32,7 +66,7 @@ const __sendJsonRequest = async <T>(
     return mock;
   }
 
-  let url = `${API_URL}${path}`;
+  let url = `${apiUrl}${path}`;
   if (path.startsWith('http')) {
     url = path;
   }
@@ -123,7 +157,7 @@ export const sendMultipartFormDataRequest = async <T>(
   throw new Error(error);
 };
 
-export default sendJsonRequest;
+export default deferredDataRequest;
 
 export const makeQueryArgs = <T extends object>(opts: T): string => {
   return Object.keys(opts)

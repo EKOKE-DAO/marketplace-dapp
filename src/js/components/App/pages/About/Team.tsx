@@ -62,18 +62,14 @@ const Team = () => (
         name={'Michele Sessa'}
         role={'Sales manager & Real Estate Agent'}
       >
-        <Paragraph.Default>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-        </Paragraph.Default>
+        <Paragraph.Default></Paragraph.Default>
       </Member>
       <Member
         image={'http://placekittens.com/150/150'}
         name={'Silvia Giussani'}
         role={'Graphic designer'}
       >
-        <Paragraph.Default>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-        </Paragraph.Default>
+        <Paragraph.Default></Paragraph.Default>
       </Member>
     </Container.Container>
   </Container.FlexCols>

@@ -5,6 +5,7 @@ import Heading from '../../../reusable/Heading';
 import TokenLogo, { Token } from '../../../reusable/TokenLogo';
 import Paragraph from '../../../reusable/Paragraph';
 import Link from '../../../reusable/Link';
+import { DEFERRED_ADDRESS, EKOKE_ADDRESS } from '../../../../web3/tokens';
 
 const Tokens = () => (
   <Container.Container>
@@ -16,7 +17,7 @@ const Tokens = () => (
         token={Token.Deferred}
         name="Deferred"
         symbol="DEFERRED"
-        address="0x1234567890"
+        address={DEFERRED_ADDRESS}
       >
         <Paragraph.Default>
           The <strong>Deferred</strong> token is an ERC721 NFT that represents
@@ -30,7 +31,7 @@ const Tokens = () => (
         token={Token.Ekoke}
         name="EKOKE"
         symbol="EKOKE"
-        address="0x1234567890"
+        address={EKOKE_ADDRESS}
         decimals={9}
       >
         <Paragraph.Default>
@@ -88,9 +89,10 @@ const TokenView = ({
         <span className="block">
           Symbol: <strong>{symbol}</strong>
         </span>
+      </Container.Container>
+      <Container.FlexCols className="items-center justify-center gap-4">
         {address && (
           <span className="block">
-            Address:{' '}
             <Link.Paragraph href={`https://etherscan.com/address/${address}`}>
               {address}
             </Link.Paragraph>
@@ -111,7 +113,7 @@ const TokenView = ({
             Decimals: <strong>{decimals}</strong>
           </span>
         )}
-      </Container.Container>
+      </Container.FlexCols>
       <Container.Container>{children}</Container.Container>
     </Container.FlexCols>
   </Container.Card>

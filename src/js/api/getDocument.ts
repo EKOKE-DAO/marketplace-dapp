@@ -1,4 +1,4 @@
-import sendJsonRequest, { makeQueryArgs, Signature } from './api';
+import deferredDataRequest, { makeQueryArgs, Signature } from './api';
 import { mockDocumentData } from './mock';
 
 interface DocumentData {
@@ -13,7 +13,7 @@ const getDocument = async (
 ): Promise<DocumentData> => {
   const url = `/contract/${contractId}/document/${documentId}?${makeQueryArgs(signature ?? {})}`;
 
-  return await sendJsonRequest('GET', url, mockDocumentData());
+  return await deferredDataRequest('GET', url, mockDocumentData());
 };
 
 export default getDocument;

@@ -1,4 +1,4 @@
-import sendJsonRequest, { makeQueryArgs } from './api';
+import deferredDataRequest, { makeQueryArgs } from './api';
 import { mockContractIds } from './mock';
 
 interface Filters {
@@ -24,7 +24,7 @@ interface Filters {
 const getContracts = async (filters?: Filters): Promise<bigint[]> => {
   const url = `/contracts?${makeQueryArgs(filters ?? {})}`;
 
-  return await sendJsonRequest('GET', url, mockContractIds());
+  return await deferredDataRequest('GET', url, mockContractIds());
 };
 
 export default getContracts;

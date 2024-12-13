@@ -1,6 +1,6 @@
 import { Agency, Contract } from '../data/contract';
 import { convertCanisterContractToContract } from '../utils/contract';
-import sendJsonRequest, { makeQueryArgs, Signature } from './api';
+import deferredDataRequest, { makeQueryArgs, Signature } from './api';
 import { mockContract } from './mock';
 
 /**
@@ -69,7 +69,7 @@ const getContractById = async (
 ): Promise<Contract> => {
   const url = `/contracts/${id}?${makeQueryArgs(signature ?? {})}`;
 
-  const contractData = await sendJsonRequest('GET', url, mockContract(id));
+  const contractData = await deferredDataRequest('GET', url, mockContract(id));
 
   return convertCanisterContractToContract(contractData);
 };

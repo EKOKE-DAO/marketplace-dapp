@@ -4,10 +4,10 @@ import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
 import Link from '../../../reusable/Link';
 import EkokeTokenomics from '../../../shared/EkokeTokenomics';
+import { EKOKE_ADDRESS } from '../../../../web3/tokens';
 
 const EKOKE_SUPPLY = 8_880_101.01;
 const EKOKE_DECIMALS = 9;
-const EKOKE_ADDRESS = '0x';
 
 const Tokenomics = () => (
   <Container.FlexCols className="items-center justify-center mx-auto gap-2 w-3/6 sm:w-full">
