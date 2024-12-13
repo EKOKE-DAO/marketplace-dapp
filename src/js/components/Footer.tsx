@@ -18,7 +18,7 @@ const Footer = () => {
         <div className="bg-white content-none h-[1px] mx-auto w-page"></div>
         <Container.FlexResponsiveRow className="justify-between w-page sm:w-full mx-auto">
           <Container.FlexCols className="gap-4 flex-1">
-            <Heading.H2 className="text-white">EKOKE Token</Heading.H2>
+            <Heading.H2 className="text-white">EKOKE DAO</Heading.H2>
             <Link.Default href={Route.HOME} className="text-white">
               Home
             </Link.Default>
@@ -36,21 +36,6 @@ const Footer = () => {
             </Link.Default>
           </Container.FlexCols>
           <Container.FlexCols className="gap-4 flex-1">
-            <Heading.H2 className="text-white">Contacts</Heading.H2>
-            <Link.Default
-              href={'mailto:ekokefly@gmail.com'}
-              className="text-white"
-            >
-              ekokefly@gmail.com
-            </Link.Default>
-            <Link.Default href={'tel:+393335294334'} className="text-white">
-              +39 333 529 4334
-            </Link.Default>
-            <Link.Default className="text-white">
-              Piazzale Brescia, 16, 20149 Milano MI, Italy
-            </Link.Default>
-          </Container.FlexCols>
-          <Container.FlexCols className="gap-4 flex-1">
             <Heading.H2 className="text-white">Follow Us On</Heading.H2>
             <Link.IconLink
               href={'https://github.com/EKOKEtoken'}
@@ -61,7 +46,7 @@ const Footer = () => {
               GitHub
             </Link.IconLink>
             <Link.IconLink
-              href={'https://www.instagram.com/ekoketoken'}
+              href={'https://www.instagram.com/ekokedao'}
               target="_blank"
               className="text-white"
             >
@@ -69,7 +54,7 @@ const Footer = () => {
               Instagram
             </Link.IconLink>
             <Link.IconLink
-              href={'https://www.linkedin.com/company/ekoketoken'}
+              href={'https://www.linkedin.com/company/ekokedao'}
               target="_blank"
               className="text-white"
             >
@@ -85,7 +70,7 @@ const Footer = () => {
               <span className="ml-2">Telegram</span>
             </Link.IconLink>
             <Link.IconLink
-              href={'https://www.tiktok.com/@ekoketoken?lang=en'}
+              href={'https://www.tiktok.com/@ekokedao?lang=en'}
               target="_blank"
               className="text-white"
             >
@@ -113,8 +98,8 @@ const Footer = () => {
           </Container.FlexCols>
         </Container.FlexResponsiveRow>
         <p className="text-xs text-center text-white my-4">
-          Copyright © {year} by ekoke token | Powered and secured by ICP
-          Blockchain
+          Copyright © {year} by EKOKE DAO | Powered and secured by ICP and
+          Ethereum Blockchain
         </p>
       </Container.Container>
     </footer>

@@ -9,6 +9,8 @@ import Paragraph from '../../../../../reusable/Paragraph';
 import Progress from './RealEstateCard/Progress';
 import YoutubeVideo from '../../../../../reusable/YoutubeVideo';
 import ContractDocuments from './RealEstateCard/ContractDocuments';
+import Link from '../../../../../reusable/Link';
+import { Route } from '../../../../../../utils/routes';
 
 interface Props {
   contract: Contract;
@@ -47,6 +49,17 @@ const RealEstateCard = ({ contract }: Props) => (
             {contract.realEstate.region && `, ${contract.realEstate.region}`}
             {contract.realEstate.country && `, ${contract.realEstate.country}`}
           </Container.Container>
+          {contract.agency && (
+            <Container.Container className="text-sm text-gray-500">
+              <Icon.FiSearch size={16} className="text-gray-500 mr-2 inline" />
+              <Link.Default
+                className="text-brand"
+                href={Route.agentUrl(contract.agency.owner)}
+              >
+                {contract.agency.name}
+              </Link.Default>
+            </Container.Container>
+          )}
           <Container.Container className="text-sm text-gray-500">
             <Icon.FiCalendar size={16} className="inline mr-2" />
             Expires on {contract.expiration.toLocaleDateString()}

@@ -1,17 +1,17 @@
 import * as React from 'react';
-import * as Icon from 'react-icons/fi';
-import { FaXTwitter } from 'react-icons/fa6';
+import * as FaIcon from 'react-icons/fa6';
+
+import EkokeLogo from '../../../../../assets/images/ekoke-logo.webp';
 
 import Container from '../../../reusable/Container';
-import Ekoke from '../../../svg/Ekoke';
 import Heading from '../../../reusable/Heading';
 import Paragraph from '../../../reusable/Paragraph';
 import Link from '../../../reusable/Link';
 
 const Intro = () => (
-  <Container.FlexCols className="items-center justify-center w-3/6 sm:w-full mx-auto gap-2">
+  <Container.FlexCols className="items-center justify-center w-full mx-auto gap-2">
     <Container.Container className="rounded-full bg-white p-4 border-gray-200 border">
-      <Ekoke fill="#000000" width={128} height={128} />
+      <img src={EkokeLogo} alt="logo" width={128} height={128} />
     </Container.Container>
     <Container.Container>
       <Heading.H1>
@@ -19,9 +19,14 @@ const Intro = () => (
       </Heading.H1>
     </Container.Container>
     <Container.Container>
+      <Paragraph.Center>
+        Transform Your <strong>Property</strong> into{' '}
+        <strong>Digital Gold</strong>
+      </Paragraph.Center>
       <Paragraph.Leading className="sm:w-5/6 mx-auto">
-        We're revolutionizing home financing by replacing traditional mortgages
-        with a fair, decentralized alternative. Through our{' '}
+        We're <strong>revolutionizing home financing</strong> by replacing
+        traditional mortgages with a fair, decentralized alternative. Through
+        our{' '}
         <Link.Paragraph href={'https://ethereum.org/'} target="_blank">
           Ethereum
         </Link.Paragraph>{' '}
@@ -46,14 +51,104 @@ const Intro = () => (
         blockchains.
       </Paragraph.Leading>
     </Container.Container>
-    <Container.FlexResponsiveRow className="justify-center items-center gap-4">
-      <Link.Button href={'https://twitter.com/ekoketoken'} target={'_blank'}>
-        <FaXTwitter className="inline mr-2 text-white" /> X.com
-      </Link.Button>
-      <Link.Button href={'https://t.me/ekokeTOKENgroup'} target={'_blank'}>
-        <Icon.FiSend className="inline mr-2 text-white" /> Telegram
-      </Link.Button>
-    </Container.FlexResponsiveRow>
+    <Container.Container>
+      <Heading.H2 className="text-center">
+        What makes us <strong>Unique</strong>
+      </Heading.H2>
+      <Container.Container className="grid grid-cols-3 sm:grid-cols-1 items-start justify-between gap-8">
+        <Container.Card hoverScale className="flex-1 h-full">
+          <Heading.H3 className="text-center">
+            <FaIcon.FaHouse className="inline text-brandRed mr-2" />
+            Real Estate focused
+          </Heading.H3>
+          <Paragraph.Center className="!text-sm">
+            We&apos;re dedicated to making home ownership more{' '}
+            <strong>accessible</strong> and <strong>affordable</strong>. Our
+            project is designed to only target the real-estate market, because
+            we're expert in this field and we believe that we can make a
+            difference.
+          </Paragraph.Center>
+        </Container.Card>
+        <Container.Card hoverScale className="flex-1 h-full">
+          <Heading.H3 className="text-center">
+            <FaIcon.FaMoneyBill1Wave className="inline text-brandRed mr-2" />
+            Installments over Mortgages
+          </Heading.H3>
+          <Paragraph.Center className="!text-sm">
+            We're replacing traditional mortgages with unsastainable interest
+            rates with a fair, <strong>decentralized</strong> alternative.
+            Through our Ethereum powered <strong>Deferred NFT system</strong>,
+            buyers can pay for their homes in manageable installments.
+          </Paragraph.Center>
+        </Container.Card>
+        <Container.Card hoverScale className="flex-1 h-full">
+          <Heading.H3 className="text-center">
+            <FaIcon.FaMedal className="inline text-brandRed mr-2" />
+            Win-Win for Buyers, Sellers and Investors
+          </Heading.H3>
+          <Paragraph.Center className="!text-sm">
+            We're creating a win-win situation for everyone involved.
+            <br />
+            <br />
+            <strong>Buyers</strong> can pay for their homes in manageable
+            installments.
+            <br />
+            <strong>Sellers</strong> can sell their properties faster.
+            <br />
+            <strong>Investors</strong> can earn rewards while supporting buyers.
+          </Paragraph.Center>
+        </Container.Card>
+        <Container.Card hoverScale className="flex-1 h-full">
+          <Heading.H3 className="text-center">
+            <FaIcon.FaPeopleGroup className="inline text-brandRed mr-2" />
+            DAO Governance and Community Driven
+          </Heading.H3>
+          <Paragraph.Center className="!text-sm">
+            Our project is <strong>community-driven</strong> and{' '}
+            <strong>decentralized</strong>. We're building a{' '}
+            <strong>DAO</strong> that will be governed by the community. We aim
+            to launch the DAO governance on the{' '}
+            <strong>Internet Computer NNS</strong> in order to make it fully
+            decentralized. On the <strong>NNS</strong> the community will be
+            able to <strong>vote</strong> to manage real estate agencies, ask
+            for refunds in case of frauds, and much more.
+          </Paragraph.Center>
+        </Container.Card>
+        <Container.Card hoverScale className="flex-1 h-full">
+          <Heading.H3 className="text-center">
+            <FaIcon.FaEthereum className="inline text-brandRed mr-2" />
+            Web3 and Blockchain Technology
+          </Heading.H3>
+          <Paragraph.Center className="!text-sm">
+            We're embracing the potential of the <strong>Ethereum</strong> and{' '}
+            <strong>Internet Computer</strong> blockchains. Our project is
+            powered by <strong>smart contracts</strong> and <strong>DAO</strong>{' '}
+            governance. Even our Website is hosted on the{' '}
+            <strong>Internet Computer</strong> blockchain and it's running in a
+            canister. Our infrastructure is <strong>100% decentralized</strong>{' '}
+            and censorship-resistant.
+          </Paragraph.Center>
+        </Container.Card>
+        <Container.Card hoverScale className="flex-1 h-full">
+          <Heading.H3 className="text-center">
+            <FaIcon.FaLeaf className="inline text-brandRed mr-2" />
+            Sustainable, Transparent and Inflation Resistant
+          </Heading.H3>
+          <Paragraph.Center className="!text-sm">
+            Our project is <strong>sustainable</strong>,{' '}
+            <strong>transparent</strong> and{' '}
+            <strong>inflation-resistant</strong>. We're using a{' '}
+            <strong>deflationary</strong> token model for our{' '}
+            <strong>EKOKE</strong> token. The total supply of{' '}
+            <strong>EKOKE</strong> is fixed and the quantity of tokens given as
+            reward will decrease over time. While the traditional mortgage
+            system that is based on inflation and unsastainable interest rates
+            is unsustainable, EKOKE is based on a deflationary model that will
+            make it more valuable over time.
+          </Paragraph.Center>
+        </Container.Card>
+      </Container.Container>
+    </Container.Container>
   </Container.FlexCols>
 );
 

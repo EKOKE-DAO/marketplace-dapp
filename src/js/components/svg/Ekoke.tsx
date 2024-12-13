@@ -3,7 +3,7 @@ import * as React from 'react';
 interface Props
   extends React.JSX.IntrinsicAttributes,
     React.SVGProps<SVGSVGElement> {
-  fill: string;
+  fill?: string;
 }
 
 const Ekoke = (props: Props) => (

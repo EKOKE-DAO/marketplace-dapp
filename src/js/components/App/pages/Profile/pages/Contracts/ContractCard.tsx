@@ -119,6 +119,16 @@ const ContractCard = ({ id, signature }: Props) => {
             <Icon.FiMapPin size={16} className="text-gray-500 mr-2 inline" />
             {realEstate.address}
           </span>
+          {contract.contract.agency && (
+            <span className="text-gray-500">
+              <Icon.FiSearch size={16} className="text-gray-500 mr-2 inline" />
+              <Link.Default
+                href={Route.agentUrl(contract.contract.agency.owner)}
+              >
+                {contract.contract.agency.agent}
+              </Link.Default>
+            </span>
+          )}
           <Container.Container className="grid grid-cols-2 sm:grid-cols-1">
             {realEstate.rooms !== undefined && (
               <Container.Container className="text-sm text-gray-500">

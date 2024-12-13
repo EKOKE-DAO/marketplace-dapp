@@ -7,7 +7,7 @@ import EkokeDAOLogo from '../../../assets/images/token/ekoke-dao.webp';
 export enum Token {
   Deferred = 'Deferred',
   Ekoke = 'Ekoke',
-  EkokeDAO = 'Ekoke DAO',
+  EkoGOV = 'EkoGOV',
 }
 
 interface Props {
@@ -21,7 +21,7 @@ const TokenLogo = ({ token, className, height, width }: Props) => {
   const logos = {
     [Token.Deferred]: DeferredLogo,
     [Token.Ekoke]: EkokeLogo,
-    [Token.EkokeDAO]: EkokeDAOLogo,
+    [Token.EkoGOV]: EkokeDAOLogo,
   };
 
   return (

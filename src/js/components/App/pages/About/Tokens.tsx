@@ -41,10 +41,10 @@ const Tokens = () => (
         </Paragraph.Default>
       </TokenView>
       <TokenView
-        token={Token.EkokeDAO}
+        token={Token.EkoGOV}
         sns={'Coming soon...'}
-        name="EKOKE DAO"
-        symbol="EKOKEDAO"
+        name="EKOGOV"
+        symbol="EKOGOV"
         decimals={8}
       >
         <Paragraph.Default>

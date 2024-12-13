@@ -13,7 +13,7 @@ const Tokenomics = () => (
   <Container.FlexCols className="items-center justify-center mx-auto gap-2 w-3/6 sm:w-full">
     <Container.Container>
       <Heading.H2>
-        <span className="text-brandRed font-bold">EKOKE</span> Tokenomics
+        <span className="text-brandRed font-bold">EKOKE</span>nomics
       </Heading.H2>
     </Container.Container>
     <Container.FlexResponsiveRow className="items-start justify-around sm:justify-center sm:items-center gap-8 sm:gap-4 w-full">
