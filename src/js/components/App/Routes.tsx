@@ -14,6 +14,11 @@ const ContractPage = React.lazy(
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 const Presale = React.lazy(() => import('./pages/Presale'));
 const About = React.lazy(() => import('./pages/About'));
+const Cookies = React.lazy(() => import('./pages/Cookies'));
+const Privacy = React.lazy(() => import('./pages/Privacy'));
+const TermsAndConditions = React.lazy(
+  () => import('./pages/TermsAndConditions'),
+);
 
 // reserved area
 const Profile = React.lazy(() => import('./pages/Profile'));
@@ -77,6 +82,12 @@ const AppRouter = () => (
           />
           <RouterRoute path={Route.url(Route.PRESALE)} element={<Presale />} />
           <RouterRoute path={Route.url(Route.ABOUT)} element={<About />} />
+          <RouterRoute path={Route.url(Route.COOKIES)} element={<Cookies />} />
+          <RouterRoute path={Route.url(Route.PRIVACY)} element={<Privacy />} />
+          <RouterRoute
+            path={Route.url(Route.TERMS_AND_CONDITIONS)}
+            element={<TermsAndConditions />}
+          />
 
           {/* reserved area */}
           <RouterRoute path={Route.url(Route.PROFILE)} element={<Profile />} />

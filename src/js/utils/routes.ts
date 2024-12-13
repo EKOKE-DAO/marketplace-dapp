@@ -1,6 +1,7 @@
 export enum Route {
   ABOUT = 'about',
   AGENCY = 'agents',
+  COOKIES = 'cookies',
   DOCUMENTATION = 'documentation',
   DOCUMENTATION_FAQ = 'documentation/faq',
   DOCUMENTATION_ARCHITECTURE = 'documentation/architecture',
@@ -17,9 +18,11 @@ export enum Route {
   MARKETPLACE = 'marketplace',
   MARKETPLACE_CONTRACT = 'marketplace/contract',
   PRESALE = 'presale',
+  PRIVACY = 'privacy',
   PROFILE = 'profile',
   PROFILE_COLLECTED = 'profile/collected',
   PROFILE_CONTRACTS = 'profile/contracts',
+  TERMS_AND_CONDITIONS = 'terms-and-conditions',
 }
 
 // eslint-disable-next-line @typescript-eslint/no-namespace

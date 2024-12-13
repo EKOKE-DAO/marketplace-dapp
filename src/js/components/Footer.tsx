@@ -36,6 +36,21 @@ const Footer = () => {
             </Link.Default>
           </Container.FlexCols>
           <Container.FlexCols className="gap-4 flex-1">
+            <Heading.H2 className="text-white">Legal</Heading.H2>
+            <Link.Default href={Route.COOKIES} className="text-white">
+              Cookies
+            </Link.Default>
+            <Link.Default
+              href={Route.TERMS_AND_CONDITIONS}
+              className="text-white"
+            >
+              Terms & Conditions
+            </Link.Default>
+            <Link.Default href={Route.PRIVACY} className="text-white">
+              Privacy
+            </Link.Default>
+          </Container.FlexCols>
+          <Container.FlexCols className="gap-4 flex-1">
             <Heading.H2 className="text-white">Follow Us On</Heading.H2>
             <Link.IconLink
               href={'https://github.com/EKOKEtoken'}

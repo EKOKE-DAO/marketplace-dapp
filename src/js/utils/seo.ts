@@ -30,6 +30,18 @@ const PAGE_TITLES: SeoPages = {
     description:
       'EKOKE is an innovative tool that aims to revolutionize the real estate industry. The EKOKE-DAO project emerges as the evolutionary response to the traditional real estate landscape',
   },
+  '/cookies': {
+    title: 'EKOKE DAO - Cookies',
+    description: 'EKOKE DAO cookie policy',
+  },
+  '/privacy': {
+    title: 'EKOKE DAO - Privacy',
+    description: 'EKOKE DAO privacy policy',
+  },
+  '/terms-and-conditions': {
+    title: 'EKOKE DAO - Terms & Conditions',
+    description: 'EKOKE DAO terms and conditions',
+  },
   '/profile': {
     title: 'EKOKE DAO - Profile',
     description: 'Your EKOKE DAO profile',
