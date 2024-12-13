@@ -7,7 +7,7 @@ const Giveaway = () => (
     <Helmet>
       <meta
         property="og:url"
-        content="https://gleam.io/uAEcZ/ekoke-dao-100-ekoke-giveaway-1ekoke-1"
+        content="https://gleam.io/Iu8Ng/ekoke-dao-100-ekoke-giveaway"
       />
       <meta
         property="og:title"
@@ -21,11 +21,11 @@ const Giveaway = () => (
     </Helmet>
     <Container.Container>
       <a
-        className="e-widget no-button"
-        href="https://gleam.io/uAEcZ/ekoke-dao-100-ekoke-giveaway-1ekoke-1"
+        className="e-widget"
+        href="https://gleam.io/Iu8Ng/ekoke-dao-100-ekoke-giveaway"
         rel="nofollow"
       >
-        EKOKE DAO 100 $EKOKE Giveaway - 1$EKOKE = 1$
+        EKOKE DAO 100 $EKOKE Giveaway
       </a>
       <script
         type="text/javascript"
