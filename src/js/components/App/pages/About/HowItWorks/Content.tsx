@@ -4,32 +4,45 @@ import Paragraph from '../../../../reusable/Paragraph';
 import Container from '../../../../reusable/Container';
 import Heading from '../../../../reusable/Heading';
 
+import BuyerOne from '../../../../../../assets/images/howitworks/buyerone.webp';
+import Deposit from '../../../../../../assets/images/howitworks/deposit.webp';
+import BuyToken from '../../../../../../assets/images/howitworks/buyerthree.webp';
+import BuyReward from '../../../../../../assets/images/howitworks/buyerreward.webp';
+import BuyerMove from '../../../../../../assets/images/howitworks/buyermove.webp';
+import SellerOne from '../../../../../../assets/images/howitworks/seller1.webp';
+import TokenAllSold from '../../../../../../assets/images/howitworks/sellersold.webp';
+import DaoOne from '../../../../../../assets/images/howitworks/Dao3.webp';
+import DaoTwo from '../../../../../../assets/images/howitworks/daottoken2.webp';
+import DaoThree from '../../../../../../assets/images/howitworks/Daoreward.webp';
+import RealEstateOne from '../../../../../../assets/images/howitworks/realestate1.webp';
+import RealEstate2 from '../../../../../../assets/images/howitworks/DAO2.webp';
+import CloseContract from '../../../../../../assets/images/howitworks/close.webp';
 interface Props {
   step: BuyerStep | SellerStep | MemberStep | AgentStep;
 }
 
 export enum BuyerStep {
-  CreateSellContract = 'Create a sell contract',
+  CreateSellContract = 'Sale contract',
   Deposit = 'Deposit',
   BuyTokens = 'Buy tokens',
-  MoveToNewHouse = 'Move to new house',
+  MoveToNewHouse = 'Move to the new house',
   BuyAllTokens = 'Buy all tokens',
 }
 
 export enum SellerStep {
-  CreateSellContract = 'Seller creates a sell contract',
+  CreateSellContract = 'Seller creates a sale contract',
   AllTokensAreSold = 'All tokens are sold',
 }
 
 export enum MemberStep {
   ContractIsCreated = 'Contract is created',
-  BuyTokenOnMarketplace = 'Buy token on marketplace',
+  BuyTokenOnMarketplace = 'Purchase token',
   GetsReward = 'Gets reward',
 }
 
 export enum AgentStep {
-  CreateSellContract = 'The agent creates the contract',
-  MonitorSell = 'Monitor sell',
+  CreateSellContract = 'Create contract',
+  MonitorSell = 'Monitor sale',
   CloseContract = 'Close contract',
 }
 
@@ -57,10 +70,7 @@ const Step = ({ image, step, children }: StepProps) => (
 
 const contentByStep = {
   [BuyerStep.CreateSellContract]: (
-    <Step
-      step={BuyerStep.CreateSellContract}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={BuyerStep.CreateSellContract} image={BuyerOne}>
       <Paragraph.Leading>
         The buyer find a real-estate to buy, once an agreement with the actual
         owner of the property is found, the real-estate agency has the job to
@@ -72,7 +82,7 @@ const contentByStep = {
     </Step>
   ),
   [BuyerStep.Deposit]: (
-    <Step step={BuyerStep.Deposit} image={'http://placekittens.com/150/150'}>
+    <Step step={BuyerStep.Deposit} image={Deposit}>
       <Paragraph.Leading>
         The buyer <strong>deposits</strong> a certain amount of money to the
         real-estate agency as a guarantee that he will not withdraws from the
@@ -82,7 +92,7 @@ const contentByStep = {
     </Step>
   ),
   [BuyerStep.BuyTokens]: (
-    <Step step={BuyerStep.BuyTokens} image={'http://placekittens.com/150/150'}>
+    <Step step={BuyerStep.BuyTokens} image={BuyToken}>
       <Paragraph.Leading>
         The buyer starts buying tokens each month from the{' '}
         <strong>EKOKE DAO Marketplace</strong>. Everytime he buys a token before
@@ -94,10 +104,7 @@ const contentByStep = {
     </Step>
   ),
   [BuyerStep.MoveToNewHouse]: (
-    <Step
-      step={BuyerStep.MoveToNewHouse}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={BuyerStep.MoveToNewHouse} image={BuyerMove}>
       <Paragraph.Leading>
         Once the <strong>seller</strong> has sold all the tokens, no matter if
         to the buyer or to the community members, the buyer will be able to{' '}
@@ -108,10 +115,7 @@ const contentByStep = {
     </Step>
   ),
   [BuyerStep.BuyAllTokens]: (
-    <Step
-      step={BuyerStep.BuyAllTokens}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={BuyerStep.BuyAllTokens} image={BuyReward}>
       <Paragraph.Leading>
         At this point the only step left for the buyer is to{' '}
         <strong>buy all the remaining tokens</strong> from the marketplace. Once
@@ -121,10 +125,7 @@ const contentByStep = {
     </Step>
   ),
   [SellerStep.CreateSellContract]: (
-    <Step
-      step={SellerStep.CreateSellContract}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={SellerStep.CreateSellContract} image={SellerOne}>
       <Paragraph.Leading>
         il titolo dovrebbe essere Creation of the contract The seller agrees to
         sell the property to the buyer and contacts the real-estate agency to
@@ -137,10 +138,7 @@ const contentByStep = {
     </Step>
   ),
   [SellerStep.AllTokensAreSold]: (
-    <Step
-      step={SellerStep.AllTokensAreSold}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={SellerStep.AllTokensAreSold} image={TokenAllSold}>
       <Paragraph.Leading>
         Once all the installment tokens are sold, either by the buyer or to the
         DAO users, the seller will be able to{' '}
@@ -149,10 +147,7 @@ const contentByStep = {
     </Step>
   ),
   [MemberStep.ContractIsCreated]: (
-    <Step
-      step={MemberStep.ContractIsCreated}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={MemberStep.ContractIsCreated} image={DaoOne}>
       <Paragraph.Leading>
         When a new selling contract is created, DAO members will be able to see
         the property associated to the contract on the{' '}
@@ -163,10 +158,7 @@ const contentByStep = {
     </Step>
   ),
   [MemberStep.BuyTokenOnMarketplace]: (
-    <Step
-      step={MemberStep.BuyTokenOnMarketplace}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={MemberStep.BuyTokenOnMarketplace} image={DaoTwo}>
       <Paragraph.Leading>
         From the page of the property, members will be{' '}
         <strong>able to buy the installment tokens</strong> from the
@@ -175,10 +167,7 @@ const contentByStep = {
     </Step>
   ),
   [MemberStep.GetsReward]: (
-    <Step
-      step={MemberStep.GetsReward}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={MemberStep.GetsReward} image={DaoThree}>
       <Paragraph.Leading>
         Once the <strong>Deferred NFT</strong> is bought by the member, he will
         receive automatically a <strong>EKOKE Token Reward</strong> from the
@@ -187,10 +176,7 @@ const contentByStep = {
     </Step>
   ),
   [AgentStep.CreateSellContract]: (
-    <Step
-      step={AgentStep.CreateSellContract}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={AgentStep.CreateSellContract} image={RealEstateOne}>
       <Paragraph.Leading>
         The agency finds a buyer for a seller that wants to sell his property
         using the <strong>EKOKE DAO system</strong>. The agency creates the
@@ -202,16 +188,13 @@ const contentByStep = {
     </Step>
   ),
   [AgentStep.MonitorSell]: (
-    <Step
-      step={AgentStep.MonitorSell}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={AgentStep.MonitorSell} image={RealEstate2}>
       <Paragraph.Leading>
         The agency must take care of monitoring the selling process of the
         property. The agency must be sure that the buyer pays the installments
         on time. If it doesn't they must report the buyer to the DAO
         users(community). This could lead to a vote to{' '}
-        <strong>close the sell contract</strong> to prevent more users to buy
+        <strong>close the sale contract</strong> to prevent more users to buy
         the installment tokens. At this point the DAO can vote to{' '}
         <strong>refund</strong> the DAO users that bought the installment tokens
         using the <strong>DAO funds</strong>, which is in form of USDT paid as
@@ -220,12 +203,9 @@ const contentByStep = {
     </Step>
   ),
   [AgentStep.CloseContract]: (
-    <Step
-      step={AgentStep.CloseContract}
-      image={'http://placekittens.com/150/150'}
-    >
+    <Step step={AgentStep.CloseContract} image={CloseContract}>
       <Paragraph.Leading>
-        The agency, once the sell contract has succeeded or failed,{' '}
+        The agency, once the sale contract has succeeded or failed,{' '}
         <strong>must close the contract</strong>. If the contract has failed,
         the agency <strong>may open a vote</strong> on the DAO to{' '}
         <strong>refund</strong> the DAO users that bought the installment

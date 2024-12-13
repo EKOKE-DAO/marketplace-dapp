@@ -51,7 +51,7 @@ export const mockContract = (id: bigint): ContractData => {
         {
           access_list: ['Agent', 'Seller', 'Buyer', 'Public'],
           mime_type: 'application/pdf',
-          name: 'Sell contract',
+          name: 'Sale contract',
           size: 1024,
         },
       ],
