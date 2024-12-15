@@ -2,13 +2,14 @@ import * as React from 'react';
 
 import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
+import Member from './Team/Member';
+import Paragraph from '../../../reusable/Paragraph';
+import Link from '../../../reusable/Link';
 
 import LelioImg from '../../../../../assets/images/team/lelio.webp';
 import VeesoImg from '../../../../../assets/images/team/veeso.webp';
 import ChiaraImg from '../../../../../assets/images/team/chiara.webp';
-import Member from './Team/Member';
-import Paragraph from '../../../reusable/Paragraph';
-import Link from '../../../reusable/Link';
+import SilviaImg from '../../../../../assets/images/team/silvia.webp';
 
 const Team = () => (
   <Container.FlexCols className="justify-center items-center">
@@ -65,11 +66,14 @@ const Team = () => (
         <Paragraph.Default></Paragraph.Default>
       </Member>
       <Member
-        image={'http://placekittens.com/150/150'}
+        image={SilviaImg}
         name={'Silvia Giussani'}
         role={'Graphic designer'}
       >
-        <Paragraph.Default></Paragraph.Default>
+        <Paragraph.Default>
+          I create designs that convey specific messages or ideas through
+          various media.
+        </Paragraph.Default>
       </Member>
     </Container.Container>
   </Container.FlexCols>

@@ -70,6 +70,7 @@ const Info = () => {
             <Link.Paragraph
               href={`https://etherscan.com/address/${EKOKE_PRESALE_ADDRESS}`}
               target="_blank"
+              className="sm:!text-xs"
             >
               {EKOKE_PRESALE_ADDRESS}
             </Link.Paragraph>
@@ -97,7 +98,7 @@ const Info = () => {
               href={`https://etherscan.com/address/${EKOKE_PRESALE_ADDRESS}`}
               target="_blank"
             >
-              https://etherscan.com/address/{EKOKE_PRESALE_ADDRESS}
+              etherscan.com
             </Link.Paragraph>
             .
           </Paragraph.Default>
@@ -114,7 +115,7 @@ const Info = () => {
               href={`https://etherscan.com/address/${EKOKE_PRESALE_ADDRESS}`}
               target="_blank"
             >
-              https://etherscan.com/address/{EKOKE_PRESALE_ADDRESS}
+              etherscan.com
             </Link.Paragraph>
             .
           </Paragraph.Default>

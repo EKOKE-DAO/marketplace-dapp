@@ -6,6 +6,7 @@ import getContracts from '../../../../api/getContracts';
 import { useAppContext } from '../../AppContext';
 import ContractLoader from './PropertyTable/ContractLoader';
 import { IFilters } from '../Marketplace';
+import Paragraph from '../../../reusable/Paragraph';
 
 const MAX_PROPERTIES_PER_PAGE = 12;
 
@@ -17,7 +18,9 @@ const PropertyTable = ({ filters }: Props) => {
   const { setAppError } = useAppContext();
   const [maxPage, setMaxPage] = React.useState<number>(1);
   const [page, setPage] = React.useState<number>(1);
-  const [contracts, setContracts] = React.useState<bigint[]>([]);
+  const [contracts, setContracts] = React.useState<bigint[] | undefined>(
+    undefined,
+  );
 
   React.useEffect(() => {
     getContracts({
@@ -48,20 +51,27 @@ const PropertyTable = ({ filters }: Props) => {
   const maxPageToPaginate = Math.min(Math.max(4, page + 2), maxPage);
 
   return (
-    <Container.FlexCols className="w-full items-center justify-between h-full gap-8">
+    <Container.FlexCols className="w-full items-center h-full gap-8">
       <Container.Container className="grid grid-cols-3 2xl:grid-cols-4 sm:grid-cols-1 gap-4">
-        {contracts.map((contractId) => (
+        {contracts?.map((contractId) => (
           <ContractLoader key={contractId} id={contractId} />
         ))}
       </Container.Container>
-      <Pagination
-        page={page}
-        onChange={setPage}
-        min={minPage}
-        max={maxPageToPaginate}
-        onNext={() => setPage(Math.min(maxPage, page + 1))}
-        onPrev={() => setPage(Math.max(maxPage, page - 1))}
-      />
+      {contracts?.length === 0 && (
+        <Container.Container>
+          <Paragraph.Center>There are no properties to show</Paragraph.Center>
+        </Container.Container>
+      )}
+      {maxPageToPaginate > 1 && (
+        <Pagination
+          page={page}
+          onChange={setPage}
+          min={minPage}
+          max={maxPageToPaginate}
+          onNext={() => setPage(Math.min(maxPage, page + 1))}
+          onPrev={() => setPage(Math.max(maxPage, page - 1))}
+        />
+      )}
     </Container.FlexCols>
   );
 };

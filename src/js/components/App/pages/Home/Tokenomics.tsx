@@ -44,7 +44,7 @@ const Tokenomics = () => (
           </span>
           <span className="block text-center text-xl font-bold text-brandRed">
             <Link.Default
-              className="text-brandRed !font-bold"
+              className="text-brandRed !font-bold sm:text-sm"
               href={`https://etherscan.io/address/${EKOKE_ADDRESS}`}
               target="_blank"
             >

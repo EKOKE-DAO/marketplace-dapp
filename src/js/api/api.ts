@@ -79,7 +79,6 @@ const __sendJsonRequest = async <T>(
     body: body !== undefined ? JSON.stringify(body) : undefined,
     method,
     headers,
-    credentials: 'include',
   });
 
   if (response.ok) {
