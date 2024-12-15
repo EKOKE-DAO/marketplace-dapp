@@ -5,10 +5,11 @@ import Container from '../../../reusable/Container';
 import Paragraph from '../../../reusable/Paragraph';
 import Heading from '../../../reusable/Heading';
 import Input from '../../../reusable/Input';
-import YoutubeVideo from '../../../reusable/YoutubeVideo';
 import Link from '../../../reusable/Link';
 import { PRESALE_END_DATE } from '../Presale';
 import { EKOKE_ADDRESS, EKOKE_PRESALE_ADDRESS } from '../../../../web3/tokens';
+
+import PresaleImg from '../../../../../assets/images/presale.webp';
 
 const Info = () => {
   const [copied, setCopied] = React.useState(false);
@@ -20,7 +21,15 @@ const Info = () => {
 
   return (
     <Container.Container>
-      <YoutubeVideo url="https://www.youtube.com/watch?v=R_B4AAOyARI" />
+      <Container.Container>
+        <img
+          className="object-cover w-full"
+          src={PresaleImg}
+          alt="presale illustration"
+          width={720}
+          height={360}
+        />
+      </Container.Container>
       <Container.FlexCols className="p-4 gap-4 w-full">
         <Container.FlexCols className="text-center">
           <Heading.H2 className="text-center">
@@ -129,7 +138,7 @@ const Info = () => {
               <Link.Button
                 className="w-fit"
                 target="_blank"
-                href={`https://www.google.com/calendar/render?action=TEMPLATE&text=EKOKE%20Presale%20claim&dates=20250331T000000Z/20250331T000000Z&details=Visit+https%3A%2F%2Fekokedao.com%2Fpresale+to+claim+your+tokens&sf=true&output=xml`}
+                href={`https://www.google.com/calendar/render?action=TEMPLATE&text=EKOKE+Presale+claim&dates=20250331T000000Z/20250331T000000Z&details=Visit+https%3A%2F%2Fekokedao.com%2Fpresale+to+claim+your+tokens&sf=true&output=xml`}
               >
                 <Icon.FiBell className="mr-2 inline" />
                 Set a reminder on Google Calendar

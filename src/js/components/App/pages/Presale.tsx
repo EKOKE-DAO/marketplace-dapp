@@ -12,14 +12,18 @@ import {
 import PresaleForm from './Presale/PresaleForm';
 import Info from './Presale/Info';
 import EkokePresalePublicClient from '../../../web3/EkokePresalePublicClient';
+import WaitForPresale from './Presale/WaitForPresale';
 
 const BASE_PRICE = 1_000_000;
 const STEP = 5_000_000_000_000;
 export const PRESALE_END_DATE = new Date('2025-03-31');
+export const PRESALE_START_DATE = new Date('2025-01-15T12:00:00Z');
 
 const Presale = () => (
   <Container.Container>
-    <Heading.H1>EKOKE Presale</Heading.H1>
+    <Heading.H1>
+      <strong>EKOKE</strong> Presale
+    </Heading.H1>
     <Container.FlexResponsiveRow className="gap-4 items-start justify-around w-full">
       <Container.Container className="flex-1">
         <Container.Card className="!p-0">
@@ -118,6 +122,12 @@ const PresaleBody = () => {
 
   if (!stats) {
     return <Skeleton count={5} />;
+  }
+
+  const now = new Date();
+
+  if (now < PRESALE_START_DATE) {
+    return <WaitForPresale />;
   }
 
   return <PresaleForm {...stats} />;
