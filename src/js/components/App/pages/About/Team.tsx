@@ -10,6 +10,7 @@ import LelioImg from '../../../../../assets/images/team/lelio.webp';
 import VeesoImg from '../../../../../assets/images/team/veeso.webp';
 import ChiaraImg from '../../../../../assets/images/team/chiara.webp';
 import SilviaImg from '../../../../../assets/images/team/silvia.webp';
+import MicheleImg from '../../../../../assets/images/team/michele.webp';
 
 const Team = () => (
   <Container.FlexCols className="justify-center items-center">
@@ -19,6 +20,7 @@ const Team = () => (
         image={LelioImg}
         name={'Lelio Pellegrini'}
         role={'Founder & Real Estate Agent'}
+        linkedin="https://www.linkedin.com/in/lelio-pellegrini/"
       >
         <Paragraph.Default
           href={'https://www.milanhouses.com/'}
@@ -42,6 +44,8 @@ const Team = () => (
         image={VeesoImg}
         name={'Christian "veeso" Visintin'}
         role={'CTO & Software Engineer'}
+        github={'https://github.com/veeso'}
+        linkedin={'https://www.linkedin.com/in/christian-visintin/'}
       >
         <Paragraph.Default>
           I am a freelancer and a tech blogger. Throughout my life, I have
@@ -51,7 +55,13 @@ const Team = () => (
           Blockchain applications and embedded systems.
         </Paragraph.Default>
       </Member>
-      <Member image={ChiaraImg} name={'Chiara Rovis'} role={'Web developer'}>
+      <Member
+        image={ChiaraImg}
+        name={'Chiara Rovis'}
+        role={'Web developer'}
+        github={'https://github.com/chiararovis'}
+        linkedin={'https://www.linkedin.com/in/chiara-rovis-data-engineer/'}
+      >
         <Paragraph.Default>
           I am a freelancer Web Developer and Designer based in Udine, Italy. I
           am passionate about web development and design. I have experience in
@@ -59,9 +69,10 @@ const Team = () => (
         </Paragraph.Default>
       </Member>
       <Member
-        image={'http://placekittens.com/150/150'}
+        image={MicheleImg}
         name={'Michele Sessa'}
         role={'Sales manager & Real Estate Agent'}
+        linkedin="https://www.linkedin.com/in/michele-sessa-855a1b39/"
       >
         <Paragraph.Default></Paragraph.Default>
       </Member>
@@ -69,6 +80,7 @@ const Team = () => (
         image={SilviaImg}
         name={'Silvia Giussani'}
         role={'Graphic designer'}
+        linkedin="https://www.linkedin.com/in/silvia-giussani-9ab81a38/"
       >
         <Paragraph.Default>
           I create designs that convey specific messages or ideas through

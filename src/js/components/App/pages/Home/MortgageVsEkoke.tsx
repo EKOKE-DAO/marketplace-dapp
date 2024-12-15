@@ -4,7 +4,7 @@ import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
 
 const MortgageVsEkoke = () => (
-  <Container.Container>
+  <Container.Container className="hidden">
     <Heading.H2 className="text-center">
       Traditional Mortgage vs. <strong>EKOKE DAO</strong>
     </Heading.H2>
