@@ -47,14 +47,17 @@ const PAGE_TITLES: SeoPages = {
   '/profile': {
     title: 'EKOKE DAO | Profile',
     description: 'Your EKOKE DAO profile',
+    noindex: true,
   },
   '/profile/collected': {
     title: 'EKOKE DAO | Collected',
     description: 'Your collected EKOKE DAO items',
+    noindex: true,
   },
   '/profile/contracts': {
     title: 'EKOKE DAO | Contracts',
     description: 'Your EKOKE DAO contracts',
+    noindex: true,
   },
   '/documentation': {
     title: 'EKOKE DAO | Documentation',
@@ -114,9 +117,15 @@ const seoData = (pathname: string | Route): SeoData | undefined => {
   return PAGE_TITLES[url];
 };
 
+export const hasSeoData = (pathname: string | Route): boolean => {
+  return seoData(pathname) !== undefined;
+};
+
 export const pageTitle = (pathname: string | Route): string => {
   const data = seoData(pathname);
-  return data ? data.title : '404 Not found';
+  return data
+    ? data.title
+    : 'EKOKE DAO | Transform Your Property into Digital Gold';
 };
 
 export const pageDescription = (pathname: string | Route): string => {
