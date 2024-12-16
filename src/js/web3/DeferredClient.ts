@@ -26,6 +26,7 @@ export default class DeferredClient {
 
   constructor(address: string, ethereum: any, chainId: ChainId) {
     this.address = address;
+    console.log('ethereum', ethereum);
     this.web3 = new Web3(ethereum);
     this.chainId = chainId;
   }

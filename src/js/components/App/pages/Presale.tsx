@@ -83,10 +83,10 @@ const PresaleBody = () => {
     let tokenPrice: bigint = BigInt(0);
     let isOpen: boolean = false;
     let hasFailed: boolean = false;
-    if (status === 'connected') {
+    if (status === 'connected' && account && ethereum && chainId) {
       const presaleClient = new EkokePresaleClient(
-        ethereum,
         account,
+        ethereum,
         chainId as ChainId,
       );
       presaleCap = await presaleClient.presaleCap();
