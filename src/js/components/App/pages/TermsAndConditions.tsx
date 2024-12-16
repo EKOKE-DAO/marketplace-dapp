@@ -103,23 +103,23 @@ const TermsAndConditions = () => (
     <Paragraph.Default>
       You must not use our Services if you are a Prohibited Person. A Prohibited
       Person is any person who is:
-      <ul>
-        <li>
-          Located, incorporated, or otherwise established in, or a citizen or
-          resident of any jurisdiction in which the provision of our Services is
-          prohibited by law.
-        </li>
-        <li>
-          Identified on any relevant sanctions list, including but not limited
-          to the U.S. Treasury Department’s list of Specially Designated
-          Nationals or the U.S. Department of Commerce Denied Person’s List.
-        </li>
-        <li>
-          Engaged in any activity that is prohibited by law, regulation, or
-          sanctions.
-        </li>
-      </ul>
     </Paragraph.Default>
+    <ul>
+      <li>
+        Located, incorporated, or otherwise established in, or a citizen or
+        resident of any jurisdiction in which the provision of our Services is
+        prohibited by law.
+      </li>
+      <li>
+        Identified on any relevant sanctions list, including but not limited to
+        the U.S. Treasury Department’s list of Specially Designated Nationals or
+        the U.S. Department of Commerce Denied Person’s List.
+      </li>
+      <li>
+        Engaged in any activity that is prohibited by law, regulation, or
+        sanctions.
+      </li>
+    </ul>
     <Heading.H2>Agreeing to Terms</Heading.H2>
     <Paragraph.Default>
       By using our Services, you agree to these Terms. If you do not agree to

@@ -13,6 +13,9 @@ import PresaleForm from './Presale/PresaleForm';
 import Info from './Presale/Info';
 import EkokePresalePublicClient from '../../../web3/EkokePresalePublicClient';
 import WaitForPresale from './Presale/WaitForPresale';
+import { useMetaMask } from 'metamask-react';
+import EkokePresaleClient from '../../../web3/EkokePresaleClient';
+import { ChainId } from '../../MetamaskConnect';
 
 const BASE_PRICE = 1_000_000;
 const STEP = 20_000_000_000_000;
@@ -62,51 +65,65 @@ const tryEthClient = async <T,>(
       return await fn(client);
     } catch (err) {
       console.error(err);
-      await new Promise((resolve) => setTimeout(resolve, 100));
+      await new Promise((resolve) => setTimeout(resolve, 300));
     }
   }
 };
 
 const PresaleBody = () => {
   const { setAppError } = useAppContext();
+  const { account, ethereum, chainId, status } = useMetaMask();
 
   const [stats, setStats] = React.useState<PresaleStats | null>(null);
 
   const fetchStats = async (): Promise<PresaleStats> => {
-    const presaleCap = await tryEthClient(async (client) =>
-      convertToHumanReadable(await client.presaleCap(), EKOKE_DECIMALS, true),
-    );
+    let presaleCap: bigint = BigInt(0);
+    let softCap: bigint = BigInt(0);
+    let tokensSold: bigint = BigInt(0);
+    let tokenPrice: bigint = BigInt(0);
+    let isOpen: boolean = false;
+    let hasFailed: boolean = false;
+    if (status === 'connected') {
+      const presaleClient = new EkokePresaleClient(
+        ethereum,
+        account,
+        chainId as ChainId,
+      );
+      presaleCap = await presaleClient.presaleCap();
+      tokensSold = await presaleClient.tokensSold();
+      softCap = await presaleClient.softCap();
+      tokenPrice = await presaleClient.tokenPrice();
+      isOpen = await presaleClient.isOpen();
+      hasFailed = await presaleClient.hasFailed();
+    } else {
+      presaleCap = await tryEthClient(async (client) => client.presaleCap());
+      tokensSold = await tryEthClient(async (client) => client.tokensSold());
+      softCap = await tryEthClient(async (client) => client.softCap());
+      tokenPrice = await tryEthClient(async (client) => client.tokenPrice());
+      isOpen = await tryEthClient(async (client) => client.isOpen());
+      hasFailed = await tryEthClient(async (client) => client.hasFailed());
+    }
 
-    const tokensSoldNum = await tryEthClient(async (client) =>
-      client.tokensSold(),
+    const presaleCapStr = convertToHumanReadable(
+      presaleCap,
+      EKOKE_DECIMALS,
+      true,
     );
 
     const tokensBeforeNextPriceIncrease = convertToHumanReadable(
-      BigInt(STEP) - (tokensSoldNum % BigInt(STEP)),
+      BigInt(STEP) - (tokensSold % BigInt(STEP)),
       EKOKE_DECIMALS,
       true,
     );
 
-    const tokensSold = convertToHumanReadable(
-      tokensSoldNum,
+    const tokensSoldStr = convertToHumanReadable(
+      tokensSold,
       EKOKE_DECIMALS,
       true,
     );
-    const tokenPrice = await tryEthClient(async (client) =>
-      client.tokenPrice(),
-    );
-    await new Promise((resolve) => setTimeout(resolve, 100));
 
     const nextPrice = tokenPrice + BigInt(BASE_PRICE);
-
-    const softCap = convertToHumanReadable(
-      await tryEthClient(async (client) => client.softCap()),
-      USDT_DECIMALS,
-      true,
-    );
-
-    const isOpen = await tryEthClient(async (client) => client.isOpen());
-    const hasFailed = await tryEthClient(async (client) => client.hasFailed());
+    const softCapStr = convertToHumanReadable(softCap, USDT_DECIMALS, true);
 
     const usdtRaised = Number(
       convertToHumanReadable(
@@ -116,12 +133,12 @@ const PresaleBody = () => {
       ),
     );
 
-    const step = Math.floor(Number(tokensSoldNum / BigInt(STEP))) + 1;
+    const step = Math.floor(Number(tokensSold / BigInt(STEP))) + 1;
 
     return {
-      presaleCap,
-      softCap,
-      tokensSold,
+      presaleCap: presaleCapStr,
+      softCap: softCapStr,
+      tokensSold: tokensSoldStr,
       tokenPrice,
       tokensBeforeNextPriceIncrease,
       nextPrice: convertToHumanReadable(nextPrice, USDT_DECIMALS, true),
@@ -133,13 +150,17 @@ const PresaleBody = () => {
   };
 
   React.useEffect(() => {
+    if (stats !== null) {
+      return;
+    }
+
     fetchStats()
       .then(setStats)
       .catch((err) => {
         setAppError('Failed to fetch presale stats');
         console.error(err);
       });
-  }, []);
+  }, [stats]);
 
   if (!stats) {
     return <Skeleton count={5} />;
