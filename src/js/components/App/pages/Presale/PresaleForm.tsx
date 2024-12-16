@@ -7,47 +7,17 @@ import BuyForm from './BuyForm';
 import WaitForMetamask from '../../../reusable/WaitForMetamask';
 import MetamaskConnect from '../../../MetamaskConnect';
 import Paragraph from '../../../reusable/Paragraph';
-import { PRESALE_END_DATE } from '../Presale';
+import RemainingTime from './PresaleForm/RemainingTime';
 
 const BASE_PRICE_USD = 1;
 
-const formatRemainingTime = (millis: number) => {
-  const seconds = Math.floor((millis / 1000) % 60);
-  const minutes = Math.floor((millis / (1000 * 60)) % 60);
-  const hours = Math.floor((millis / (1000 * 60 * 60)) % 24);
-  const days = Math.floor(millis / (1000 * 60 * 60 * 24));
-
-  return `${days}d ${hours}h ${minutes}m ${seconds}s`;
-};
-
 const PresaleForm = (stats: PresaleStats) => {
-  const [remainingTime, setRemainingTime] = React.useState<number>(0);
-  const [remainingTimeInterval, setRemainingTimeInterval] =
-    React.useState<NodeJS.Timeout>();
-
   const softCap = Number(stats.softCap);
   const usdtRaised = Number(stats.usdtRaised);
   const tokensSold = Number(stats.tokensSold);
   const softCapReached = usdtRaised >= softCap;
   const capToUse = softCapReached ? Number(stats.presaleCap) : softCap;
   const progressToUse = softCapReached ? tokensSold : usdtRaised;
-
-  React.useEffect(() => {
-    if (!remainingTimeInterval) {
-      const interval = setInterval(() => {
-        const remaining = Math.max(0, PRESALE_END_DATE.getTime() - Date.now());
-        setRemainingTime(remaining);
-      }, 1000);
-
-      setRemainingTimeInterval(interval);
-    }
-
-    return () => {
-      if (remainingTimeInterval) {
-        clearInterval(remainingTimeInterval);
-      }
-    };
-  }, []);
 
   const usdtProgress = (
     <>
@@ -86,14 +56,7 @@ const PresaleForm = (stats: PresaleStats) => {
             })}
             )
           </Heading.H2>
-          {remainingTime > 0 && (
-            <Container.Container className="mt-2">
-              <span className="block text-lg">
-                Presale ends in{' '}
-                <strong>{formatRemainingTime(remainingTime)}</strong>
-              </span>
-            </Container.Container>
-          )}
+          <RemainingTime />
         </Container.Container>
         <Container.Container>
           <Container.FlexRow className="gap-2">

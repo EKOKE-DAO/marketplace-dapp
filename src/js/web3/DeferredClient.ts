@@ -1,4 +1,5 @@
-import Web3 from 'web3';
+import { Address, custom, createPublicClient, PublicClient } from 'viem';
+import { mainnet, sepolia } from 'viem/chains';
 
 import { ABI, CONTRACT_ADDRESS } from './contracts/Deferred';
 import { ChainId } from '../components/MetamaskConnect';
@@ -20,65 +21,73 @@ interface Contract {
 }
 
 export default class DeferredClient {
-  private address: string;
-  private web3: Web3;
+  private account: Address;
+  private publicClient: PublicClient;
   private chainId: ChainId;
 
   constructor(address: string, ethereum: any, chainId: ChainId) {
-    this.address = address;
-    console.log('ethereum', ethereum);
-    this.web3 = new Web3(ethereum);
+    this.account = address as unknown as Address;
+    this.publicClient = createPublicClient({
+      chain: chainId === ChainId.Mainnet ? mainnet : sepolia,
+      transport: custom(ethereum),
+    });
     this.chainId = chainId;
   }
 
   async nextTokenIdToBuy(contractId: bigint): Promise<bigint> {
-    const contract = this.__getContract();
-    return contract.methods.nextTokenIdToBuy(contractId).call({
-      from: this.address,
-    });
+    return this.callViewFunction<bigint>('nextTokenIdToBuy', [contractId]);
   }
 
   async contractProgress(contractId: bigint): Promise<bigint> {
-    const contract = this.__getContract();
-    return contract.methods.contractProgress(contractId).call();
+    return this.callViewFunction<bigint>('contractProgress', [contractId]);
   }
 
   async contractCompleted(contractId: bigint): Promise<boolean> {
-    const contract = this.__getContract();
-    return contract.methods.contractCompleted(contractId).call();
+    return this.callViewFunction<boolean>('contractCompleted', [contractId]);
   }
 
   async tokenUri(tokenId: bigint): Promise<string> {
-    const contract = this.__getContract();
-    return contract.methods.tokenUri(tokenId).call();
+    return this.callViewFunction<string>('tokenUri', [tokenId]);
   }
 
   async ownerOf(tokenId: bigint): Promise<string> {
-    const contract = this.__getContract();
-    return contract.methods.ownerOf(tokenId).call();
+    return this.callViewFunction<string>('ownerOf', [tokenId]);
   }
 
   async balanceOf(address: string): Promise<bigint> {
-    const contract = this.__getContract();
-    return contract.methods.balanceOf(address).call();
+    return this.callViewFunction<bigint>('balanceOf', [address]);
   }
 
   async totalSupply(): Promise<bigint> {
-    const contract = this.__getContract();
-    return contract.methods.totalSupply().call();
+    return this.callViewFunction<bigint>('totalSupply');
   }
 
   async tokenContract(tokenId: bigint): Promise<Contract> {
-    const contract = this.__getContract();
-    return contract.methods.tokenContract(tokenId).call();
+    return this.callViewFunction<Contract>('tokenContract', [tokenId]);
   }
 
   async getContract(contractId: bigint): Promise<Contract> {
-    const contract = this.__getContract();
-    return contract.methods.getContract(contractId).call();
+    return this.callViewFunction<Contract>('getContract', [contractId]);
   }
 
-  private __getContract() {
-    return new this.web3.eth.Contract(ABI, CONTRACT_ADDRESS[this.chainId]);
+  async callViewFunction<T>(name: string, args?: any[]): Promise<T> {
+    const result = await this.publicClient.readContract({
+      address: this.getContractAddress(),
+      abi: ABI,
+      functionName: name,
+      args,
+      account: this.account,
+    });
+
+    return result as T;
+  }
+
+  private getContractAddress(): Address {
+    const addr = CONTRACT_ADDRESS[this.chainId];
+    if (addr.startsWith('0x')) {
+      return addr as `0x${string}`;
+    }
+
+    return `0x${addr}`;
   }
 }

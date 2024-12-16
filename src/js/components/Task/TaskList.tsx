@@ -1,4 +1,5 @@
 import * as React from 'react';
+
 import Container from '../reusable/Container';
 import Button from '../reusable/Button';
 import TaskEntry from './Entry';
@@ -30,6 +31,24 @@ const TaskList = ({ onDone, run, tasks, title }: TaskListProps) => {
     tasks.map(() => TaskStatus.Pending),
   );
   const [error, setError] = React.useState<string | null>(null);
+  const hasRun = React.useRef(false);
+
+  React.useEffect(() => {
+    if (!run) {
+      return;
+    }
+    if (hasRun.current) {
+      return;
+    }
+    hasRun.current = true;
+
+    // start first task
+    setTasksStatus((prev) => {
+      const next = [...prev];
+      next[0] = TaskStatus.Running;
+      return next;
+    });
+  }, [run]);
 
   React.useEffect(() => {
     if (!run) {
@@ -84,7 +103,7 @@ const TaskList = ({ onDone, run, tasks, title }: TaskListProps) => {
           return newStates;
         });
       });
-  }, [tasksStatus, run]);
+  }, [tasksStatus]);
 
   React.useEffect(() => {
     setTasksStatus(tasks.map(() => TaskStatus.Pending));

@@ -22,7 +22,7 @@
   "scripts": {
     "build": "yarn clean && parcel build src/index.html --reporter @parcel/reporter-bundle-analyzer && cp sitemap.xml dist/sitemap.xml && cp robots.txt dist/robots.txt",
     "clean": "rm -rf dist/* .parcel-cache/",
-    "dev": "mkdir -p node_modules/web3/dist/ && wget -O node_modules/web3/dist/web3.min.js 'https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js' && parcel src/index.html",
+    "dev": "parcel src/index.html",
     "lint": "eslint . --ext .ts --ext .tsx --max-warnings=0",
     "prettier": "prettier --config .prettierrc --write src/",
     "prettier:check": "prettier --config .prettierrc --check src/"
@@ -45,11 +45,10 @@
     "react-markdown": "^9.0.1",
     "react-router-dom": "^6.26.1",
     "remark-gfm": "^4.0.0",
-    "viem": "^2.21.54",
-    "web3": "^4.16.0"
+    "viem": "^2.21.54"
   },
   "devDependencies": {
-    "@parcel/reporter-bundle-analyzer": "^2.11.0",
+    "@parcel/reporter-bundle-analyzer": "^2.13.0",
     "@parcel/transformer-typescript-tsc": "^2.13.0",
     "@types/byte-size": "^8.1.2",
     "@types/leaflet": "^1.9.15",
