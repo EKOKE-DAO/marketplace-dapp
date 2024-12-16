@@ -72,6 +72,36 @@ const Info = () => {
             real-estate network worldwide, and finally to add liquidity to the{' '}
             <strong>Liquidity Bootstrapping Pool</strong>.
           </Paragraph.Default>
+          <Heading.H2 className="text-center">
+            Presale raised funds destination
+          </Heading.H2>
+          <Paragraph.Default>
+            We have a clear plan on how to use the funds raised during the
+            presale. The funds will be used for the following purposes:
+            <ul className="list-disc mx-12">
+              <li>
+                <strong>20% - Up to 40.000$</strong>: Goes to the team for
+                paying the development costs.
+              </li>
+              <li>
+                <strong>20% - Up to 50.000$</strong>: Will be used for paying a
+                security audit.
+              </li>
+              <li>
+                <strong>20% - Up to 100.000$</strong>: Will be used for
+                marketing and partnerships.
+              </li>
+              <li>
+                <strong>40%</strong>: Will be used to add liquidity to the
+                Liquidity Bootstrapping Pool.
+              </li>
+              <li>
+                <strong>Unused funds</strong> will be used for further
+                development and to reserve even more liquidity for other
+                exchanges.
+              </li>
+            </ul>
+          </Paragraph.Default>
           <Heading.H2 className="text-center">Presale details</Heading.H2>
           <Paragraph.Default>
             The presale will be held on the Ethereum blockchain using our

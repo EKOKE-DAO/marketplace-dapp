@@ -10,11 +10,12 @@ import Button from '../../../reusable/Button';
 
 enum Item {
   Architecture = Route.DOCUMENTATION_ARCHITECTURE,
-  Faq = Route.DOCUMENTATION_FAQ,
+  Dao = Route.DOCUMENTATION_DAO,
   DeferredData = Route.DOCUMENTATION_CANISTERS_DATA,
   DeferredMinter = Route.DOCUMENTATION_CANISTERS_MINTER,
   DeferredContracts = Route.DOCUMENTATION_CONTRACTS_DEFERRED,
   EkokeContracts = Route.DOCUMENTATION_CONTRACTS_EKOKE,
+  Faq = Route.DOCUMENTATION_FAQ,
   MarketplaceContracts = Route.DOCUMENTATION_CONTRACTS_MARKETPLACE,
   RewardPoolContracts = Route.DOCUMENTATION_CONTRACTS_REWARD_POOL,
   Reward = Route.DOCUMENTATION_REWARD,
@@ -26,6 +27,11 @@ const menu = {
     title: 'F.A.Q.',
     url: Route.DOCUMENTATION_FAQ,
     icon: <IconMd.MdQuestionMark className="inline mr-2" size={24} />,
+  },
+  [Item.Dao]: {
+    title: 'DAO',
+    url: Route.DOCUMENTATION_DAO,
+    icon: <IconMd.MdGroups className="inline mr-2" size={24} />,
   },
   [Item.Whitepaper]: {
     title: 'Whitepaper',
@@ -76,6 +82,7 @@ const menu = {
 
 const routeToItems = {
   [Route.url(Route.DOCUMENTATION_FAQ)]: Item.Faq,
+  [Route.url(Route.DOCUMENTATION_DAO)]: Item.Dao,
   [Route.url(Route.DOCUMENTATION_ARCHITECTURE)]: Item.Architecture,
   [Route.url(Route.DOCUMENTATION_CANISTERS_DATA)]: Item.DeferredData,
   [Route.url(Route.DOCUMENTATION_CANISTERS_MINTER)]: Item.DeferredMinter,

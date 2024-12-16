@@ -64,6 +64,9 @@ const DocumentationWhitepaper = React.lazy(
 const DocumentationFaq = React.lazy(
   () => import('./pages/Documentation/pages/Faq'),
 );
+const DocumentationDao = React.lazy(
+  () => import('./pages/Documentation/pages/Dao'),
+);
 
 const AppRouter = () => (
   <>
@@ -132,6 +135,10 @@ const AppRouter = () => (
           <RouterRoute
             path={Route.url(Route.DOCUMENTATION_CONTRACTS_REWARD_POOL)}
             element={<DocumentationRewardPool />}
+          />
+          <RouterRoute
+            path={Route.url(Route.DOCUMENTATION_DAO)}
+            element={<DocumentationDao />}
           />
           <RouterRoute
             path={Route.url(Route.DOCUMENTATION_REWARD)}

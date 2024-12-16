@@ -4,9 +4,10 @@ import Container from '../../../../reusable/Container';
 import Heading from '../../../../reusable/Heading';
 import Accordion from '../../../../reusable/Accordion';
 import Paragraph from '../../../../reusable/Paragraph';
+import Wrapper from '../Wrapper';
 
 const Faq = () => (
-  <Container.PageContent>
+  <Wrapper>
     <Heading.H1>Frequently Asked Questions</Heading.H1>
     <Heading.H2 className="text-center">General</Heading.H2>
 
@@ -20,7 +21,7 @@ const Faq = () => (
         DAO.
       </Paragraph.Default>
     </Question>
-  </Container.PageContent>
+  </Wrapper>
 );
 
 interface QProps {
@@ -29,7 +30,7 @@ interface QProps {
 }
 
 const Question = ({ question, children }: QProps) => (
-  <Container.Card>
+  <Container.Card className="!bg-zinc-50">
     <Accordion title={question}>{children}</Accordion>
   </Container.Card>
 );
