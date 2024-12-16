@@ -83,6 +83,8 @@ export const Collected = () => {
   };
 
   React.useEffect(() => {
+    if (!account || !ethereum || !chainId) return;
+
     const deferredClient = new DeferredClient(
       account,
       ethereum,
@@ -90,7 +92,7 @@ export const Collected = () => {
     );
 
     deferredClient.balanceOf(account).then(setBalance).catch(console.error);
-  });
+  }, [account, ethereum, chainId]);
 
   React.useEffect(() => {
     if (balance === undefined) return;
