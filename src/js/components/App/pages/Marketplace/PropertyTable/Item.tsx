@@ -36,7 +36,10 @@ const Item = ({
       </span>
       <span className="text-gray-500">
         <Icon.FiMapPin size={16} className="text-gray-500 mr-2 inline" />
-        {realEstate.address}
+        {realEstate.address} {realEstate.zone && `, ${realEstate.zone}`}
+        {realEstate.city && `, ${realEstate.city}`}
+        {realEstate.region && `, ${realEstate.region}`}
+        {realEstate.country && `, ${realEstate.country}`}
       </span>
       <span className="text-gray-500">
         <Icon.FiCalendar size={16} className="text-gray-500 mr-2 inline" />

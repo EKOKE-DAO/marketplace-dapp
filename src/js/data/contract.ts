@@ -29,6 +29,8 @@ export interface Agency {
   continent: Continent;
   country: string;
   email: string;
+  lat?: string;
+  lng?: string;
   logo?: string;
   mobile: string;
   name: string;

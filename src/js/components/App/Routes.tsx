@@ -7,10 +7,6 @@ import Container from '../reusable/Container';
 
 // pages
 const Home = React.lazy(() => import('./pages/Home'));
-const Marketplace = React.lazy(() => import('./pages/Marketplace'));
-const ContractPage = React.lazy(
-  () => import('./pages/Marketplace/pages/Contract'),
-);
 const NotFound = React.lazy(() => import('./pages/NotFound'));
 const Presale = React.lazy(() => import('./pages/Presale'));
 const About = React.lazy(() => import('./pages/About'));
@@ -19,6 +15,16 @@ const Privacy = React.lazy(() => import('./pages/Privacy'));
 const TermsAndConditions = React.lazy(
   () => import('./pages/TermsAndConditions'),
 );
+
+// marketplace
+const Marketplace = React.lazy(() => import('./pages/Marketplace'));
+const ContractPage = React.lazy(
+  () => import('./pages/Marketplace/pages/Contract'),
+);
+
+// agencies
+const Agencies = React.lazy(() => import('./pages/Agencies'));
+const Agency = React.lazy(() => import('./pages/Agencies/pages/Agency'));
 
 // reserved area
 const Profile = React.lazy(() => import('./pages/Profile'));
@@ -75,6 +81,16 @@ const AppRouter = () => (
       <React.Suspense fallback={null}>
         <Routes>
           <RouterRoute path={Route.url(Route.HOME)} element={<Home />} />
+          <RouterRoute path={Route.url(Route.PRESALE)} element={<Presale />} />
+          <RouterRoute path={Route.url(Route.ABOUT)} element={<About />} />
+          <RouterRoute path={Route.url(Route.COOKIES)} element={<Cookies />} />
+          <RouterRoute path={Route.url(Route.PRIVACY)} element={<Privacy />} />
+          <RouterRoute
+            path={Route.url(Route.TERMS_AND_CONDITIONS)}
+            element={<TermsAndConditions />}
+          />
+
+          {/* marketplace */}
           <RouterRoute
             path={Route.url(Route.MARKETPLACE)}
             element={<Marketplace />}
@@ -83,13 +99,15 @@ const AppRouter = () => (
             path={`${Route.url(Route.MARKETPLACE_CONTRACT)}/:id`}
             element={<ContractPage />}
           />
-          <RouterRoute path={Route.url(Route.PRESALE)} element={<Presale />} />
-          <RouterRoute path={Route.url(Route.ABOUT)} element={<About />} />
-          <RouterRoute path={Route.url(Route.COOKIES)} element={<Cookies />} />
-          <RouterRoute path={Route.url(Route.PRIVACY)} element={<Privacy />} />
+
+          {/* agencies */}
           <RouterRoute
-            path={Route.url(Route.TERMS_AND_CONDITIONS)}
-            element={<TermsAndConditions />}
+            path={Route.url(Route.AGENCIES)}
+            element={<Agencies />}
+          />
+          <RouterRoute
+            path={`${Route.url(Route.AGENCIES_AGENCY)}/:id`}
+            element={<Agency />}
           />
 
           {/* reserved area */}

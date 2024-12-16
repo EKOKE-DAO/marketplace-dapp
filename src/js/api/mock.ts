@@ -1,5 +1,6 @@
 import { ContractData } from './getContractById';
 import villaLondon from '../../assets/images/case/villa_london.webp';
+import { Agency } from '../data/contract';
 
 const FIRST_CONTRACT_ID = 1;
 
@@ -213,3 +214,44 @@ export const mockDocumentData = () => ({
   mimeType: 'application/pdf',
   data: new Uint8Array([1, 2, 3, 4, 5]),
 });
+
+export const mockAgents = (lat?: string, lng?: string): Agency[] => {
+  return [
+    {
+      address: 'Via Roma 1',
+      name: 'Case de Miriam',
+      agent: 'Miriam',
+      city: 'Milano',
+      continent: 'Europe',
+      country: 'Italy',
+      email: 'miriamlagente@gmail.com',
+      logo: 'https://placecats.com/200/200',
+      mobile: '+39 333 1234567',
+      owner: 'v5vof-zqaaa-aaaal-ai5cq',
+      region: 'Lombardia',
+      vat: 'IT12345678901',
+      website: 'https://www.agency.com',
+      zip_code: '20121',
+      lat: lat || '45.464664',
+      lng: lng || '9.188540',
+    },
+    {
+      address: 'Via Roma 1',
+      name: 'Milan Houses',
+      agent: 'Miriam',
+      city: 'Milano',
+      continent: 'Europe',
+      country: 'Italy',
+      email: 'miriamlagente@gmail.com',
+      logo: 'https://placecats.com/200/200',
+      mobile: '+39 333 1234567',
+      owner: 'qoctq-giaaa-aaaaa-aaaea-cai',
+      region: 'Lombardia',
+      vat: 'IT12345678901',
+      website: 'https://www.agency.com',
+      zip_code: '20121',
+      lat: lat || '45.464664',
+      lng: lng || '9.188540',
+    },
+  ];
+};

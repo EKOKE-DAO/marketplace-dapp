@@ -25,6 +25,9 @@ const Footer = () => {
             <Link.Default href={Route.MARKETPLACE} className="text-white">
               Marketplace
             </Link.Default>
+            <Link.Default href={Route.AGENCIES} className="text-white">
+              Agencies
+            </Link.Default>
             <Link.Default href={Route.PRESALE} className="text-white">
               Presale
             </Link.Default>

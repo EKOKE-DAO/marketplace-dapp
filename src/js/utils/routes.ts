@@ -1,6 +1,7 @@
 export enum Route {
   ABOUT = 'about',
-  AGENCY = 'agents',
+  AGENCIES = 'agencies',
+  AGENCIES_AGENCY = 'agencies/agency',
   COOKIES = 'cookies',
   DOCUMENTATION = 'documentation',
   DOCUMENTATION_FAQ = 'documentation/faq',
@@ -41,11 +42,11 @@ export namespace Route {
   }
 
   export function marketplaceContractUrl(id: bigint): string {
-    return `/marketplace/contract/${id.toString()}`;
+    return `${Route.url(Route.MARKETPLACE_CONTRACT)}/${id.toString()}`;
   }
 
   export function agentUrl(principal: string): string {
-    return `/agents/${principal}`;
+    return `${Route.url(Route.AGENCIES_AGENCY)}/${principal}`;
   }
 }
 
