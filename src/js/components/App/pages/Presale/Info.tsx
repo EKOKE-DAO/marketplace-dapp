@@ -123,7 +123,7 @@ const Info = () => {
             <br />
             The <strong>Base price</strong> will be set at{' '}
             <strong>1 USDT = 1 EKOKE</strong>. The price will increase by 1 USDT
-            each <strong>{(5_000).toLocaleString('en-US')} EKOKE</strong> sold.
+            each <strong>{(20_000).toLocaleString('en-US')} EKOKE</strong> sold.
           </Paragraph.Default>
           <Heading.H2 className="text-center">Claim tokens</Heading.H2>
           <Paragraph.Default>

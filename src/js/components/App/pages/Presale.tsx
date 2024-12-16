@@ -15,7 +15,7 @@ import EkokePresalePublicClient from '../../../web3/EkokePresalePublicClient';
 import WaitForPresale from './Presale/WaitForPresale';
 
 const BASE_PRICE = 1_000_000;
-const STEP = 5_000_000_000_000;
+const STEP = 20_000_000_000_000;
 export const PRESALE_END_DATE = new Date('2025-03-31');
 export const PRESALE_START_DATE = new Date('2025-01-15T12:00:00Z');
 
