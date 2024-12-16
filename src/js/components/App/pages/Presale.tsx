@@ -52,20 +52,34 @@ export interface PresaleStats {
   step: number;
 }
 
+const tryEthClient = async <T,>(
+  fn: (client: EkokePresalePublicClient) => Promise<T>,
+): Promise<T> => {
+  const client = new EkokePresalePublicClient();
+
+  for (;;) {
+    try {
+      return await fn(client);
+    } catch (err) {
+      console.error(err);
+      await new Promise((resolve) => setTimeout(resolve, 100));
+    }
+  }
+};
+
 const PresaleBody = () => {
   const { setAppError } = useAppContext();
 
   const [stats, setStats] = React.useState<PresaleStats | null>(null);
 
   const fetchStats = async (): Promise<PresaleStats> => {
-    const client = new EkokePresalePublicClient();
-
-    const presaleCap = convertToHumanReadable(
-      await client.presaleCap(),
-      EKOKE_DECIMALS,
-      true,
+    const presaleCap = await tryEthClient(async (client) =>
+      convertToHumanReadable(await client.presaleCap(), EKOKE_DECIMALS, true),
     );
-    const tokensSoldNum = await client.tokensSold();
+
+    const tokensSoldNum = await tryEthClient(async (client) =>
+      client.tokensSold(),
+    );
 
     const tokensBeforeNextPriceIncrease = convertToHumanReadable(
       BigInt(STEP) - (tokensSoldNum % BigInt(STEP)),
@@ -78,21 +92,28 @@ const PresaleBody = () => {
       EKOKE_DECIMALS,
       true,
     );
-    const tokenPrice = await client.tokenPrice();
+    const tokenPrice = await tryEthClient(async (client) =>
+      client.tokenPrice(),
+    );
+    await new Promise((resolve) => setTimeout(resolve, 100));
 
     const nextPrice = tokenPrice + BigInt(BASE_PRICE);
 
     const softCap = convertToHumanReadable(
-      await client.softCap(),
+      await tryEthClient(async (client) => client.softCap()),
       USDT_DECIMALS,
       true,
     );
 
-    const isOpen = await client.isOpen();
-    const hasFailed = await client.hasFailed();
+    const isOpen = await tryEthClient(async (client) => client.isOpen());
+    const hasFailed = await tryEthClient(async (client) => client.hasFailed());
 
     const usdtRaised = Number(
-      convertToHumanReadable(await client.usdtRaised(), USDT_DECIMALS, true),
+      convertToHumanReadable(
+        await tryEthClient((client) => client.usdtRaised()),
+        USDT_DECIMALS,
+        true,
+      ),
     );
 
     const step = Math.floor(Number(tokensSoldNum / BigInt(STEP))) + 1;
