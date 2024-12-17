@@ -81,7 +81,7 @@ const Info = () => {
           </Paragraph.Default>
           <ul className="list-disc mx-12">
             <li>
-              <strong>20% - Up to 40.000$</strong>: Goes to the team for paying
+              <strong>20% - Up to 200.000$</strong>: Goes to the team for paying
               the development costs.
             </li>
             <li>
@@ -89,7 +89,7 @@ const Info = () => {
               security audit.
             </li>
             <li>
-              <strong>20% - Up to 100.000$</strong>: Will be used for marketing
+              <strong>20% - Up to 150.000$</strong>: Will be used for marketing
               and partnerships.
             </li>
             <li>
@@ -101,6 +101,20 @@ const Info = () => {
               and to reserve even more liquidity for other exchanges.
             </li>
           </ul>
+          <Paragraph.Default className="!text-xs pt-2">
+            When we say <strong>up to</strong> we mean that we will reserve the{' '}
+            <strong>
+              Minimum value between the percentage and the maximum value
+            </strong>
+            . For instance if we raise 200.000$ we will reserve 40.000$ for the
+            team, 40.000$ for the security audit, 40.000$ for marketing and
+            partnerships and 80.000$ for the Liquidity Bootstrapping Pool.
+            <br />
+            While for instance if we raise 2.000.000$ we will reserve 200.000$
+            for the team, 50.000$ for the security audit, 150.000$ for marketing
+            and partnerships and more than 1.000.000$ for the Liquidity
+            Bootstrapping Pool.
+          </Paragraph.Default>
           <Heading.H2 className="text-center">Presale details</Heading.H2>
           <Paragraph.Default>
             The presale will be held on the Ethereum blockchain using our

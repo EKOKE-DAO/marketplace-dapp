@@ -168,7 +168,7 @@ const PresaleBody = () => {
 
   const now = new Date();
 
-  if (now < PRESALE_START_DATE) {
+  if (now < PRESALE_START_DATE && process.env.NODE_ENV !== 'development') {
     return <WaitForPresale />;
   }
 

@@ -8,6 +8,7 @@ import WaitForMetamask from '../../../reusable/WaitForMetamask';
 import MetamaskConnect from '../../../MetamaskConnect';
 import Paragraph from '../../../reusable/Paragraph';
 import RemainingTime from './PresaleForm/RemainingTime';
+import ClaimForm from './ClaimForm';
 
 const BASE_PRICE_USD = 1;
 
@@ -42,6 +43,32 @@ const PresaleForm = (stats: PresaleStats) => {
   ) : (
     <strong>{usdtProgress}</strong>
   );
+
+  if (!stats.isOpen) {
+    return (
+      <Container.Container>
+        <Heading.H2 className="text-brand font-bold text-center">
+          🎉 Presale has ended 🎉
+        </Heading.H2>
+        <Paragraph.Leading className="!text-center">
+          The presale was a <strong>success</strong>! We've raised a total of{' '}
+          <strong>
+            {stats.usdtRaised.toLocaleString('en-US', {
+              style: 'currency',
+              currency: 'USD',
+            })}
+          </strong>{' '}
+          and sold a total of <strong>{stats.tokensSold} EKOKE</strong> tokens.
+        </Paragraph.Leading>
+        <Paragraph.Leading className="!text-center">
+          You can claim your tokens with the <strong>form below</strong>.
+        </Paragraph.Leading>
+        <WaitForMetamask otherwise={<LoginWithMetamask />}>
+          <ClaimForm />
+        </WaitForMetamask>
+      </Container.Container>
+    );
+  }
 
   return (
     <Container.Container>
