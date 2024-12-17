@@ -64,9 +64,9 @@ const Intro = () => (
           <Paragraph.Center className="!text-sm">
             We&apos;re dedicated to making home ownership more{' '}
             <strong>accessible</strong> and <strong>affordable</strong>. Our
-            project is designed to only target the real-estate market, because
-            we're expert in this field and we believe that we can make a
-            difference.
+            project target the real-estate market, thanks to our long and
+            experience in the field and we believe that we can make a difference
+            in people lives.
           </Paragraph.Center>
         </Container.Card>
         <Container.Card hoverScale className="flex-1 h-full">
