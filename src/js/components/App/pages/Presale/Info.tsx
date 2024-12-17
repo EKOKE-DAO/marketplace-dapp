@@ -120,7 +120,7 @@ const Info = () => {
             The presale will be held on the Ethereum blockchain using our
             Presale smart contract{' '}
             <Link.Paragraph
-              href={`https://etherscan.com/address/${EKOKE_PRESALE_ADDRESS}`}
+              href={`https://etherscan.io/address/${EKOKE_PRESALE_ADDRESS}`}
               target="_blank"
               className="sm:!text-xs"
             >
@@ -147,10 +147,10 @@ const Info = () => {
             verified at any time on <strong>Etherscan</strong> by visiting the
             smart contract page at{' '}
             <Link.Paragraph
-              href={`https://etherscan.com/address/${EKOKE_PRESALE_ADDRESS}`}
+              href={`https://etherscan.io/address/${EKOKE_PRESALE_ADDRESS}`}
               target="_blank"
             >
-              etherscan.com
+              etherscan.io
             </Link.Paragraph>
             .
           </Paragraph.Default>
@@ -164,10 +164,10 @@ const Info = () => {
             smart contract. All these operations can be verified at any time on{' '}
             <strong>Etherscan</strong> by visiting the smart contract page at{' '}
             <Link.Paragraph
-              href={`https://etherscan.com/address/${EKOKE_PRESALE_ADDRESS}`}
+              href={`https://etherscan.io/address/${EKOKE_PRESALE_ADDRESS}`}
               target="_blank"
             >
-              etherscan.com
+              etherscan.io
             </Link.Paragraph>
             .
           </Paragraph.Default>

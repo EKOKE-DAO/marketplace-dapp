@@ -93,7 +93,7 @@ const TokenView = ({
       <Container.FlexCols className="items-center justify-center gap-4">
         {address && (
           <span className="block">
-            <Link.Paragraph href={`https://etherscan.com/address/${address}`}>
+            <Link.Paragraph href={`https://etherscan.io/address/${address}`}>
               {address}
             </Link.Paragraph>
           </span>
