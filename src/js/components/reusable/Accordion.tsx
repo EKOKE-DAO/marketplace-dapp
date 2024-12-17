@@ -32,7 +32,7 @@ const Accordion = ({
         className={`${rowClassName} items-center justify-between cursor-pointer h-auto`}
         onClick={toggleAccordion}
       >
-        {title}
+        <span className="accordion-title">{title}</span>
         {isOpen ? (
           <Icon.FiChevronUp
             className="text-brandGray hover:text-brandAlt"
@@ -50,7 +50,9 @@ const Accordion = ({
           isOpen ? `max-h-[50vh] !overflow-auto` : 'max-h-0'
         }`}
       >
-        {children}
+        <Container.Container className="accordion-content">
+          {children}
+        </Container.Container>
       </Container.Container>
     </Container.FlexCols>
   );

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import * as FiIcon from 'react-icons/fi';
 
 import Container from '../../../../reusable/Container';
 import Heading from '../../../../reusable/Heading';
@@ -7,260 +8,497 @@ import Paragraph from '../../../../reusable/Paragraph';
 import Wrapper from '../Wrapper';
 import Link from '../../../../reusable/Link';
 import { Route } from '../../../../../utils/routes';
+import { EKOKE_ADDRESS } from '../../../../../web3/tokens';
+import Input from '../../../../reusable/Input';
 
-const Faq = () => (
-  <Wrapper>
-    <Heading.H1>Frequently Asked Questions</Heading.H1>
+const Faq = () => {
+  const [search, setSearch] = React.useState('');
 
-    <Heading.H2 className="text-center">General</Heading.H2>
-    <Question question="Which type of token esist inside the Ekoke Project?">
-      <Paragraph.Default>
-        There are 3 different type of Ekoke token. The first one is called Ekoke
-        token and you can get it by doing specific actions, the second is called
-        Deffereal token e non ho capito cosa fa, the third one is called EkoGov
-        and you can use it to partecipate in the decision making processes of
-        the decentralized organization Ekoke.
-      </Paragraph.Default>
-    </Question>
-    <Question question="What is a contract token?">
-      <Paragraph.Default>
-        A contract token represent a share of the debt that the buyer of the
-        house stipulated within the DAO community. It grants you the right to
-        have your investement back. It NOT grant you any right on the real
-        estate.
-      </Paragraph.Default>
-    </Question>
-    <Question question="Which is the difference between a deffereal token and a Ekoke token?">
-      <Paragraph.Default>??????????????</Paragraph.Default>
-    </Question>
-    <Question question="How much a Ekoke token does cost?">
-      <Paragraph.Default>
-        An Ekoke token can be obtained freely by doing actions within the Ekoke
-        project. To learn more about Ekoke distribution you can read this
-        document. <br />
-        You can buy Ekoke tokens also on the secondary market at market rate
-        price.
-      </Paragraph.Default>
-    </Question>
-    <Question question="How can I verify the authenticity of a Ekoke token?">
-      <Paragraph.Default>
-        To verify the authenticity of a Ekoke Token or any other NFT token, you
-        can check our website for the NFT's details or throught a third party
-        app operating as explorer blockchain like Etherscan.
-      </Paragraph.Default>
-    </Question>
-    <Question question="A property to be listed on Ekoke should respect some requirment?">
-      <Paragraph.Default>
-        The only requirment a property have to respect to be tokenized following
-        Ekoke method is to be a real Estate property. There is no minimum or
-        massimum value a property must have.
-      </Paragraph.Default>
-    </Question>
-    <Question question="Is Ekoke legal?">
-      <Paragraph.Default>
-        Yes, all actions undertaken within the project comply with the legal
-        framework of our jurisdiction. However, for tax purposes, we recommend
-        verifying whether you need to take any additional steps in accordance
-        with the laws of your country or region.
-      </Paragraph.Default>
-    </Question>
-    <Heading.H2 className="text-center">Agencies</Heading.H2>
-    <Question question="Where can I register my real estate agency?">
-      <Paragraph.Default>
-        As soon as the presale is over, we'll publish the website for real
-        estate agents where they will be able to register their agencies. Once
-        the agency is registered, the agent will be able to create sale
-        contracts for their customers to start selling properties with EKOKE
-        DAO.
-      </Paragraph.Default>
-    </Question>
-    <Question question="Which requirments should I have to be registered as a real estate agency?">
-      <Paragraph.Default>
-        Within Ekoke project to be registered as a real estate agency you must
-        fulfill all legal and regulatory requirements applicable in the
-        jurisdiction where you conduct business in order to be considered a
-        legit real estate agency.
-      </Paragraph.Default>
-    </Question>
-    <Question question="There is no agency in my area. What can I do?">
-      <Paragraph.Default>
-        In the eventuality there is no real estate that support Ekoke, you can
-        ask us and we will adress you to one of our real estate agency that is
-        willing to help you both to sell or buy your property.
-      </Paragraph.Default>
-    </Question>
-    <Heading.H2 className="text-center">Techinical definition</Heading.H2>
-    <Question question="What is a DAO?">
-      <Paragraph.Default>
-        A DAO (Decentralized Autonomous Organization) is an organization who
-        operate throught a set of rules coded thrught "Smart contract" running
-        of a blockchain. All the decision are collectly taken by its communnity
-        member without the intervene of a central authority.
-      </Paragraph.Default>
-    </Question>
-    <Question question="What is a NFT?">
-      <Paragraph.Default>
-        A NFT (Non-Fungible Token) is a cryptografic token that is running on a
-        blockchain. It rapresent a unique object. NFTs usually represent art
-        works, videos, images or other form of digital media. In the specific
-        case of EKOKE, the NFTs are called "deffereal token" and they represnt a
-        share of real estate ownership.
-      </Paragraph.Default>
-    </Question>
-    <Question question="How NFT works inside a DAO organization?">
-      <Paragraph.Default>
-        The DAO system is able to manage the creation, distribution of NFTs. The
-        member of the DAO have voting power on the decision dealing with the
-        NFTs' management, for example: funds distribution, token distributions
-        and other key decisions.
-      </Paragraph.Default>
-    </Question>
+  // search
+  const onSearchChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setSearch(e.target.value);
+  };
 
-    <Heading.H2 className="text-center">
-      Acquisition and distribution
-    </Heading.H2>
-    <Question question="How can I buy an NFT?">
-      <Paragraph.Default>
-        A DAO (Decentralized Autonomous Organization) is an organization who
-        operates through a set of rules coded through a D-App running of on the
-        blockchain. All the decision are collectly taken by its community member
-        without the intervention of a central authority.
-      </Paragraph.Default>
-    </Question>
-    <Question question="Which requirement I must have in order to buy a contract NFT">
-      <Paragraph.Default>
-        In order to be able to buy a Deferred token (NFT) you must login with
-        your own Ethereum wallet. In order to buy any token within EKOKE
-        organization you must be at least 18 or 21 (based on your jurisdiction).
-        For further details see our{' '}
-        <Link.Paragraph href={Route.TERMS_AND_CONDITIONS}>
-          Terms and conditions
-        </Link.Paragraph>
-        .
-      </Paragraph.Default>
-    </Question>
-    <Question question="Do I have to be an adult to buy a token?">
-      <Paragraph.Default>
-        Yes you do. You must you must be at least 18 or 21 (based on your
-        jurisdiction) to take any action in our DAO. For further details see our{' '}
-        <Link.Paragraph href={Route.TERMS_AND_CONDITIONS}>
-          Terms and conditions
-        </Link.Paragraph>
-      </Paragraph.Default>
-    </Question>
-    <Question question="How can I obtain an EKOKE Token?">
-      <Paragraph.Default>
-        You can obtain EKOKE token thought different actions within the EKOKE
-        organization, you can get them as a reward from selling or buying a
-        property or by buying a contract token. For further detail you can look
-        at this document?????????? .You can buy a EKOKE token also on the
-        secondary market.
-      </Paragraph.Default>
-    </Question>
-    <Question question="How can I obtain an EKOKE Token?">
-      <Paragraph.Default>
-        You can obtain EKOKE token thought different actions within the EKOKE
-        organization, you can get them as a reward from selling or buying a
-        property or by buying a contract token. You can buy a EKOKE token also
-        on the secondary market.
-      </Paragraph.Default>
-    </Question>
-    <Question question="How can I charge my wallet?">
-      <Paragraph.Default>
-        You can use this website: This is the most notorius website but also
-        website that manages wallet are suitable to use on Ekoke. You can
-        download the app on your browser to make things easier.
-      </Paragraph.Default>
-    </Question>
-    <Question question="Where can I check the state of my NFTs?">
-      <Paragraph.Default>
-        You can see the state of your NFTs in your private area.You have to log
-        in inti your account, then click "collect" to see them.
-      </Paragraph.Default>
-    </Question>
-    <Question question="Can I send a message or get to know the identity or personal information of the people who buy the NFTs of my real estate?">
-      <Paragraph.Default>
-        No you can not. The owner (or the seller) of the real estate can not be
-        informed of the personal data of who acquire the NFTs. Blockcahin and
-        ICP techonology are based on decentralization and anonimity of all
-        parties involved. You have to know only the wallet adress to be able to
-        complete the actions provided on Ekoke website. Privacy is important for
-        Ekoke organization and we aim to guarantee it in all ways possible.
-      </Paragraph.Default>
-    </Question>
-    <Heading.H2 className="text-center">Selling of token and NFTs</Heading.H2>
-    <Question question="Can I sell my NFTs">
-      <Paragraph.Default>
-        In the case you changed your mind or you need your investemnt back, you
-        can or cannot???????????????
-      </Paragraph.Default>
-    </Question>
-    <Question question="Can I sell my Ekoke Token?">
-      <Paragraph.Default>
-        Yes you can sell your Ekoke token when you prefer on the secondary
-        market.
-      </Paragraph.Default>
-    </Question>
-    <Question question="Can I sell my deffereal token">
-      <Paragraph.Default>
-        Yes you can sell your deffereal token but the person who will acquire
-        them will not receive any Ekoke Token as reward.
-      </Paragraph.Default>
-    </Question>
-    <Question question="What does happen if I lost the log in credential of my wallet? ">
-      <Paragraph.Default>
-        In the case the access credential for a NFT wallet that contain Ekoke
-        token get lost there is nothing we can do. Our advise is to always
-        storage in a safe place all of your credential an consider also the use
-        of a hardware wallet to store them with additional safety.
-      </Paragraph.Default>
-    </Question>
-    <Heading.H2 className="text-center">
-      DAO management and partecipation
-    </Heading.H2>
-    <Question question="Can I join EKOKE DAO">
-      <Paragraph.Default>
-        Yes you can. In order to enter EKOKE DAO you must own one or more
-        EkoGov. You can by them here:
-      </Paragraph.Default>
-    </Question>
-    <Question question="What is a Voting">
-      <Paragraph.Default>
-        A "Votazione" or "voting" is a proposal to modify the code governing the
-        functioning of NFTs and Smart Contracts. Therefore, the proposal would
-        impact the operation of the entire project. For the proposal to become
-        effective, it must be approved by a majority (50% +1) of the voters.
-      </Paragraph.Default>
-    </Question>
-    <Question question="How am I notified that a vote is in progress?">
-      <Paragraph.Default>
-        You can check the proposals related to our project, Ekoke-token, on the
-        NNS website every week. Alternatively, you can subscribe to our Telegram
-        channel, where you will receive messages about all project updates,
-        including voting proposals submitted by other users.????????????
-      </Paragraph.Default>
-    </Question>
-    <Question question="How can I exercise my voting power?">
-      <Paragraph.Default>
-        You can vote after you have logged in into the NSS website, then find
-        Ekoke-token project, selct the voting proposal and send your vote.
-        ???????
-      </Paragraph.Default>
-    </Question>
-    <Question question="Who can set a propoal">
-      <Paragraph.Default>
-        A proposal can be set by anyone, there is no need to own any NFTs or
-        special requirement.
-      </Paragraph.Default>
-    </Question>
-    <Question question="Who vote for a propoal">
-      <Paragraph.Default>
-        Anyone who own at least one EkoGov token can partecipate in the voting
-        proportionally to the token owned.
-      </Paragraph.Default>
-    </Question>
-  </Wrapper>
-);
+  React.useEffect(() => {
+    if (search.length > 0) {
+      // search into the page for the question or answer
+      const elements = document.querySelectorAll('#faq .accordion');
+      elements.forEach((element) => {
+        const title = element.querySelector('.accordion-title')?.textContent;
+        const content =
+          element.querySelector('.accordion-content')?.textContent;
+
+        if (
+          title?.toLowerCase().includes(search.toLowerCase()) ||
+          content?.toLowerCase().includes(search.toLowerCase())
+        ) {
+          element.classList.remove('hidden');
+        } else {
+          element.classList.add('hidden');
+        }
+      });
+    } else {
+      // show all elements
+      const elements = document.querySelectorAll('#faq .accordion');
+      elements.forEach((element) => {
+        element.classList.remove('hidden');
+      });
+    }
+  }, [search]);
+
+  return (
+    <Wrapper>
+      <Heading.H1>Frequently Asked Questions</Heading.H1>
+      <Container.FlexCols className="justify-center items-center gap-2">
+        <Input.IconInput
+          containerClassName="w-fit"
+          id="faq-search"
+          type="text"
+          label="Search for a question or answer"
+          placeholder="Search"
+          value={search}
+          onChange={onSearchChange}
+          icon={<FiIcon.FiSearch className="inline mr-2 text-text" />}
+        />
+      </Container.FlexCols>
+      <Container.Container id="faq">
+        <Heading.H2 className="text-center">General</Heading.H2>
+        <Question question="Which type of tokens exist in the EKOKE DAO?">
+          <Paragraph.Default>
+            There are 3 different tokens. The first one is called{' '}
+            <strong>EKOKE</strong>, an ERC20 token used as a form of reward for
+            users for paying for the installments on the marketplace. The second
+            one is called <strong>Deferred</strong>, an ERC721 token (NFT) which
+            represents an installment of the payment of a property. The third
+            and final one is called <strong>EKOGOV</strong> and you can use it
+            to partecipate in the governance of the decentralized organization
+            (DAO).
+          </Paragraph.Default>
+        </Question>
+        <Question question="What is Deferred?">
+          <Paragraph.Default>
+            Deferred is the name of our ERC721 token which represents an{' '}
+            <strong>
+              installment of the total amount that the buyer of the house owes
+              to the property's seller
+            </strong>
+            . All the{' '}
+            <strong>
+              Deferred token has a fixed price at their creation expressed in
+              Dollars
+            </strong>
+            , they can't be exchanged with other users. Each user can buy a
+            Deferred token from the property seller and each token can be bought
+            by the property buyer.{' '}
+            <strong>
+              Owning a Deferred token does NOT grant you any right on the real
+              estate ownership
+            </strong>
+            .
+          </Paragraph.Default>
+        </Question>
+        <Question question="Why should I pay an installment of another's house?">
+          <Paragraph.Default>
+            By buying an installment of a property you are helping the property
+            owner to sell his property faster. The property owner can sell the
+            property in a shorter time and the buyer can buy the property by
+            paying it in installments. By doing that you will receive a reward
+            in EKOKE tokens, which is deflationary and its value is supposed to
+            go up over time. The more people buy Deferred tokens, the more the
+            EKOKE token becomes scarce and its may value increase.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Which is the difference between a Deferred token and an EKOKE token?">
+          <Paragraph.Default>
+            The main difference between a Deferred token and an EKOKE token is
+            that the first one represents an installment of the payment of a
+            property while the second one is a reward token that is given away
+            when a user buys a Deferred token. The use of the EKOKE token is to
+            serve as a form of installment as its value is supposed to go up
+            over time.
+          </Paragraph.Default>
+        </Question>
+
+        <Question question="Should a property respect some requirements to be listed on EKOKE DAO?">
+          <Paragraph.Default>
+            The only requirements a property has to respect to be tokenized
+            following the EKOKE DAO method is to be a real Estate property.
+            There is no minimum or maximum value a property must have.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Is EKOKE legal?">
+          <Paragraph.Default>
+            Yes, all actions undertaken within the project comply with the legal
+            framework of our jurisdiction. However, for tax purposes, we
+            recommend verifying whether you need to take any additional steps in
+            accordance with the laws of your country or region. For more
+            information check our{' '}
+            <Link.Paragraph href={Route.TERMS_AND_CONDITIONS}>
+              Terms and conditions
+            </Link.Paragraph>
+            .
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">EKOKE Token</Heading.H2>
+        <Question question="By what is the EKOKE token backed?">
+          <Paragraph.Default>
+            We have a liquidity pool that is funded by the property buyer with
+            the interests. In average the 10% of the total amount of the
+            property is locked in the liquidity pool. The EKOKE token is backed
+            by the <strong>liquidity pool</strong>.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What is the total supply of EKOKE tokens?">
+          <Paragraph.Default>
+            The total supply of EKOKE tokens is set to{' '}
+            <strong>8,880,101.01</strong> tokens.
+          </Paragraph.Default>
+        </Question>
+        <Question question="How much an EKOKE token does cost?">
+          <Paragraph.Default>
+            An EKOKE token can be obtained freely by doing actions within the
+            EKOKE project, such as by selling a property by using the EKOKE DAO,
+            or by joining as an agency in our environment. The price of the
+            EKOKE token is not fixed and can vary over time, based on the market
+            demand.
+          </Paragraph.Default>
+        </Question>
+        <Question question="How can I verify the authenticity of an EKOKE token?">
+          <Paragraph.Default>
+            Only the EKOKE tokens that belongs to the official EKOKE ERC20
+            contract at {EKOKE_ADDRESS} are considered authentic. You can check
+            the contract address on Etherscan or on our website.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">Reward Pool</Heading.H2>
+        <Question question="What is the reward Pool?">
+          <Paragraph.Default>
+            The reward pool is the pool of EKOKE tokens that are given away to
+            the users that buy Deferred tokens. The reward pool is set to{' '}
+            <strong>66%</strong> of the total supply of EKOKE tokens.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Why is the balance of the reward pool 0?">
+          <Paragraph.Default>
+            The reward pool doesn't have a balance because the EKOKE tokens are
+            minted on the fly when a user buys a Deferred token. The EKOKE
+            tokens allows minting up to the 66% of the total supply of EKOKE
+            tokens if the minter is the reward pool contract.
+          </Paragraph.Default>
+        </Question>
+        <Question question="How can I get EKOKE tokens from the reward pool?">
+          <Paragraph.Default>
+            You can get EKOKE tokens from the reward pool by buying Deferred
+            tokens from the EKOKE DAO marketplace.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What happens when the reward pool runs out of mintable tokens?">
+          <Paragraph.Default>
+            We have explained that in details in our{' '}
+            <Link.Paragraph href={Route.DOCUMENTATION_REWARD}>
+              Rewards documentation
+            </Link.Paragraph>
+            . Basically when the reward pool runs out of mintable tokens, the
+            Buyer or the seller of the property will have to burn some EKOKE
+            tokens make them mintable again by the reward pool. At this point
+            the system could even become more competitive, because the higher
+            the reward, the faster that sale contract will be sold to the
+            community.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">Presale</Heading.H2>
+        <Question question="What is the presale?">
+          <Paragraph.Default>
+            The presale is the first phase of the EKOKE DAO project where the
+            EKOKE token is sold to the public at a discounted price. The presale
+            is limited in time and in quantity of tokens available. The limit of
+            the presale is set to <strong>444,005 EKOKE</strong> tokens.
+          </Paragraph.Default>
+        </Question>
+        <Question question="When will the presale end?">
+          <Paragraph.Default>
+            The presale will end on March 31, 2025, or when the limit of{' '}
+            <strong>444,005 EKOKE</strong> tokens is reached.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Is there any minimum amount of tokens I have to buy?">
+          <Paragraph.Default>
+            The minimum amount of tokens is set to 1 EKOKE token. You can buy as
+            many tokens as you want.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What is the base price?">
+          <Paragraph.Default>
+            The base price of the EKOKE token is set to 1$.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Will the price increase over time?">
+          <Paragraph.Default>
+            The price of a token will increase by 1$ each 20,000 tokens sold.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What is the minimum amount to be raised?">
+          <Paragraph.Default>
+            We have set a minimum amount of 50,000$ to be raised during the
+            presale.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What happens if the presale fails?">
+          <Paragraph.Default>
+            You will be able to claim a refund of your investment. The refund
+            will be available from the same wallet you used to buy the tokens
+            and from the same page you used to buy them, which is our{' '}
+            <Link.Paragraph href={Route.PRESALE}>Presale page</Link.Paragraph>.
+          </Paragraph.Default>
+        </Question>
+        <Question question="When I will receive my tokens?">
+          <Paragraph.Default>
+            You will receive your tokens as soon as the presale ends. The tokens
+            must be claimed from the same page you used to buy them, which is
+            our{' '}
+            <Link.Paragraph href={Route.PRESALE}>Presale page</Link.Paragraph>.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">Agencies</Heading.H2>
+        <Question question="Where can I register my real estate agency?">
+          <Paragraph.Default>
+            As soon as the presale is over, we'll publish the website for real
+            estate agents where they will be able to register their agencies.
+            Once the agency is registered, the agent will be able to create sale
+            contracts for their customers to start selling properties with EKOKE
+            DAO.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Which requirments should I have to be registered as a real estate agency?">
+          <Paragraph.Default>
+            Within the EKOKE DAO project to be registered as a real estate
+            agency you must fulfill all legal and regulatory requirements
+            applicable in the jurisdiction where you conduct business in order
+            to be considered a legit real estate agency. All real estate
+            agencies MUST be approved by a vote on the DAO.
+          </Paragraph.Default>
+        </Question>
+        <Question question="There is no agency in my area. What can I do?">
+          <Paragraph.Default>
+            In the eventuality there is no real estate that support EKOKE, you
+            can ask us and we will adress you to one of our real estate agency
+            that is willing to help you both to sell or buy your property. You
+            can check agencies at any time by going to our{' '}
+            <Link.Paragraph href={Route.AGENCIES}>Agencies page</Link.Paragraph>
+            .
+          </Paragraph.Default>
+        </Question>
+        <Question question="Is there any advantage to join EKOKE DAO as an agency?">
+          <Paragraph.Default>
+            Yes, the first <strong>100 agencies that join the EKOKE DAO</strong>{' '}
+            will receive a bonus of <strong>1000 EKOKE token</strong>. Further
+            bonus will be defined in the future by the DAO.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">Technical definitions</Heading.H2>
+        <Question question="What is a DAO?">
+          <Paragraph.Default>
+            A DAO (Decentralized Autonomous Organization) is an organization who
+            operate throught a set of rules coded thrught "Smart contract"
+            running of a blockchain. All the decision are collectly taken by its
+            communnity member without the intervene of a central authority.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What is an NFT?">
+          <Paragraph.Default>
+            A NFT (Non-Fungible Token) is a cryptografic token that is running
+            on a blockchain. It rapresent a unique object. NFTs usually
+            represent art works, videos, images or other form of digital media.
+            In the specific case of EKOKE DAO, the NFTs are called "Deferred
+            token" and they represents an installment of the payment of a
+            property.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">
+          Acquisition and distribution
+        </Heading.H2>
+        <Question question="How can I buy a Deferred NFT?">
+          <Paragraph.Default>
+            You can buy a Deferred token by going to the EKOKE DAO website and
+            selecting a property you want to pay an installment for and then
+            from its page you can buy the next token. Tokens must be paid with{' '}
+            <strong>USDT (Thether USDt)</strong>, so this means you must be
+            connected to the EKOKE DAO website with your Wallet and own some
+            USDT. Once you click on the <strong>Buy token</strong> button you
+            will be prompted to <strong>approve</strong> the transaction and
+            then you can buy the token. The properties are listed on our{' '}
+            <Link.Paragraph href={Route.MARKETPLACE}>
+              Marketplace page
+            </Link.Paragraph>
+            .
+          </Paragraph.Default>
+        </Question>
+        <Question question="Which requirements I must have in order to buy a Deferred NFT">
+          <Paragraph.Default>
+            In order to be able to buy a Deferred token (NFT) you must login
+            with your own Ethereum wallet clicking on <strong>Login</strong>.
+            You also need to own at least an amount of{' '}
+            <strong>USDT (Thether USDt)</strong> equal to the price of the
+            installment on your wallet. In order to buy any token within EKOKE
+            organization you must be at least 18 or 21 (based on your
+            jurisdiction). For further details see our{' '}
+            <Link.Paragraph href={Route.TERMS_AND_CONDITIONS}>
+              Terms and conditions
+            </Link.Paragraph>
+            .
+          </Paragraph.Default>
+        </Question>
+        <Question question="Do I have to be an adult to buy a token?">
+          <Paragraph.Default>
+            Yes you do. You must you must be at least 18 or 21 (based on your
+            jurisdiction) to take any action in our DAO. For further details see
+            our{' '}
+            <Link.Paragraph href={Route.TERMS_AND_CONDITIONS}>
+              Terms and conditions
+            </Link.Paragraph>
+          </Paragraph.Default>
+        </Question>
+        <Question question="Where can I get USDt?">
+          <Paragraph.Default>
+            You can get USDT from any exchange that supports it. There are many
+            of them, such as Binance, Kraken, Bitfinex, and many others, where
+            you can buy USDt by exchanging them with credit on your credit card.
+            You can also get USDT from a friend or from a USDT ATM.
+          </Paragraph.Default>
+        </Question>
+        <Question question="How do I get a Wallet?">
+          <Paragraph.Default>
+            On EKOKE DAO users must have an Ethereum Wallet to be able to buy
+            tokens. We suggest you to opt for <strong>Metamask</strong>, a
+            browser extension that allows you to interact with the Ethereum
+            blockchain. You can download it from the official website. You can
+            also use other wallets such as Trust Wallet, Coinbase Wallet, or any
+            other wallet that supports ERC20 tokens.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Where can I check the state of my NFTs?">
+          <Paragraph.Default>
+            You can see the state of your NFTs in your private area. You have to
+            log in into your account by clicking on{' '}
+            <strong>Login (or profile)</strong> from the Topbar, then by
+            clicking on <strong>collected</strong> to see them.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Can I send a message or get to know the identity or personal information of the people who buy the NFTs of my real estate?">
+          <Paragraph.Default>
+            No you can not. The owner (or the seller) of the real estate can not
+            be informed of the personal data of who acquire the NFTs. Blockcahin
+            and ICP techonology are based on decentralization and anonimity of
+            all parties involved. You can get to know only the wallet address to
+            be able to complete the actions provided on EKOKE website. Privacy
+            is important for the EKOKE organization and we aim to guarantee it
+            in all ways possible.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">
+          Selling of tokens and NFTs
+        </Heading.H2>
+        <Question question="Can I sell my Deferred NFT?">
+          <Paragraph.Default>
+            No, once you've bought a Deferred token you can't sell it to other
+            users. The only way to get your money back is to wait for the
+            property buyer to pay the installment. This could also take years to
+            happen.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Can I sell my EKOKE Token?">
+          <Paragraph.Default>
+            Yes you can sell your EKOKE token when you prefer on any exchange
+            that supports it. You can check the list of the exchanges that
+            support EKOKE token on our website.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What does happen if I lost the credentials of my wallet? ">
+          <Paragraph.Default>
+            If you have lost the credentials of your wallet, you can't recover
+            them. This is because the wallet is decentralized and there is no
+            central authority that can help you recover your password. We
+            suggest you to write down your password on a piece of paper and keep
+            it in a safe place.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">
+          DAO management and partecipation
+        </Heading.H2>
+        <Question question="How can I join EKOKE DAO?">
+          <Paragraph.Default>
+            Joining the EKOKE DAO is very simple, and there are actually two
+            different ways you can join it: the first one is by buying a
+            Deferred, so you contribute to accelerate the process of the
+            property selling. The second one is by buying an{' '}
+            <strong>EKOGOV</strong> token, so you can partecipate in the
+            governance of the DAO. Mind that the <strong>EKOGOV</strong> token
+            will be launched later after the presale.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What is a Voting">
+          <Paragraph.Default>
+            A "Votazione" or "voting" is a proposal to modify the code governing
+            the functioning of NFTs and Smart Contracts. Therefore, the proposal
+            would impact the operation of the entire project. For the proposal
+            to become effective, it must be approved by a majority (50% +1) of
+            the voters.
+          </Paragraph.Default>
+        </Question>
+        <Question question="How am I notified that a vote is in progress?">
+          <Paragraph.Default>
+            You can check the proposals related to our project, EKOKE DAO, on
+            the NNS website every week. Alternatively, you can subscribe to our
+            Telegram channel, where you will receive messages about all project
+            updates, including voting proposals submitted by other users.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Who can make a proposal?">
+          <Paragraph.Default>
+            In order to set a proposal, you must own at least (TBD) EKOGOV
+            tokens. The proposal must be approved by the majority of the voters
+            to be accepted.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Who can vote for a proposal?">
+          <Paragraph.Default>
+            Anyone who owns at least one EKOGOV token can vote for a proposal.
+            The proposal must be approved by the majority of the voters to be
+            accepted. The impact of a vote depends on the number of EKOGOV
+            tokens owned by the voter.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What kind of proposals can be made?">
+          <Paragraph.Default>
+            We'll have basically these types of proposals:
+          </Paragraph.Default>
+          <ul>
+            <li>
+              <Paragraph.Default>
+                <strong>Technical proposals</strong>: proposals that aim to
+                modify the code governing the functioning of NFTs and Smart
+                Contracts.
+              </Paragraph.Default>
+            </li>
+            <li>
+              <Paragraph.Default>
+                <strong>Agency proposals</strong>: proposal where a real estate
+                agency can propose themselves to be approved by the DAO to be
+                allowed to issue sale contracts.
+              </Paragraph.Default>
+            </li>
+            <li>
+              <Paragraph.Default>
+                <strong>Refund proposals</strong>: proposal that aim to refund
+                victims of fraud/failed sales on the EKOKE DAO.
+              </Paragraph.Default>
+            </li>
+          </ul>
+        </Question>
+      </Container.Container>
+    </Wrapper>
+  );
+};
 
 interface QProps {
   question: string;
@@ -268,7 +506,7 @@ interface QProps {
 }
 
 const Question = ({ question, children }: QProps) => (
-  <Container.Card className="!bg-zinc-50">
+  <Container.Card className="accordion !bg-zinc-50">
     <Accordion title={question}>{children}</Accordion>
   </Container.Card>
 );
