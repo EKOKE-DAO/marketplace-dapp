@@ -8,7 +8,7 @@ import Paragraph from '../../../../reusable/Paragraph';
 import Wrapper from '../Wrapper';
 import Link from '../../../../reusable/Link';
 import { Route } from '../../../../../utils/routes';
-import { EKOKE_ADDRESS } from '../../../../../web3/tokens';
+import { EKOKE_ADDRESS, MARKETPLACE_ADDRESS } from '../../../../../web3/tokens';
 import Input from '../../../../reusable/Input';
 
 const Faq = () => {
@@ -118,7 +118,6 @@ const Faq = () => {
             over time.
           </Paragraph.Default>
         </Question>
-
         <Question question="Should a property respect some requirements to be listed on EKOKE DAO?">
           <Paragraph.Default>
             The only requirements a property has to respect to be tokenized
@@ -204,6 +203,125 @@ const Faq = () => {
             the system could even become more competitive, because the higher
             the reward, the faster that sale contract will be sold to the
             community.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">Marketplace</Heading.H2>
+        <Question question="Where is the Marketplace located?">
+          <Paragraph.Default>
+            The marketplace is located on the EKOKE DAO website. You can access
+            it by going to the{' '}
+            <Link.Paragraph href={Route.MARKETPLACE}>
+              Marketplace page
+            </Link.Paragraph>
+            . The marketplace is completely decentralized and it is managed by a
+            smart contract on the Ethereum blockchain. The address of the
+            Marketplace is <strong>{MARKETPLACE_ADDRESS}</strong>.
+          </Paragraph.Default>
+        </Question>
+        <Question question="How can I buy a Deferred NFT?">
+          <Paragraph.Default>
+            You can buy a Deferred token by going to the EKOKE DAO website and
+            selecting a property you want to pay an installment for and then
+            from its page you can buy the next token. Tokens must be paid with{' '}
+            <strong>USDT (Thether USDt)</strong>, so this means you must be
+            connected to the EKOKE DAO website with your Wallet and own some
+            USDT. Once you click on the <strong>Buy token</strong> button you
+            will be prompted to <strong>approve</strong> the transaction and
+            then you can buy the token. The properties are listed on our{' '}
+            <Link.Paragraph href={Route.MARKETPLACE}>
+              Marketplace page
+            </Link.Paragraph>
+            .
+          </Paragraph.Default>
+        </Question>
+        <Question question="How can I list a Deferred NFT?">
+          <Paragraph.Default>
+            If you have bought a Deferred NFT{' '}
+            <strong>you don't have to list it</strong> anywhere. The token is
+            already available for the property buyer to be bought directly from
+            the marketplace. The property buyer can buy the token by going to
+            the property page and clicking on the <strong>Buy token</strong>{' '}
+            button.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Can I set the price for a Deferred NFT?">
+          <Paragraph.Default>
+            No, the Deferred token represents an installment of the payment of a
+            property and its price is fixed at the creation of the token. The
+            price is expressed in Dollars and it is set by the property seller.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Can I transfer or sell the token on another market, such as OpenSea?">
+          <Paragraph.Default>
+            No, it is not possible to perform any action on the Deferred token
+            that consists in transferring or selling it to another user. The
+            Deferred token is a token that is created by the property seller and
+            it can be bought only by the property buyer. The token is not
+            transferable and it can't be sold to other users. The only smart
+            contract that can operate on the property of the token is the{' '}
+            <strong>Marketplace contract</strong>.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Which requirements I must have in order to buy a Deferred NFT">
+          <Paragraph.Default>
+            In order to be able to buy a Deferred token (NFT) you must login
+            with your own Ethereum wallet clicking on <strong>Login</strong>.
+            You also need to own at least an amount of{' '}
+            <strong>USDT (Thether USDt)</strong> equal to the price of the
+            installment on your wallet. In order to buy any token within EKOKE
+            organization you must be at least 18 or 21 (based on your
+            jurisdiction). For further details see our{' '}
+            <Link.Paragraph href={Route.TERMS_AND_CONDITIONS}>
+              Terms and conditions
+            </Link.Paragraph>
+            .
+          </Paragraph.Default>
+        </Question>
+        <Question question="Do I have to be an adult to buy a Deferred token?">
+          <Paragraph.Default>
+            Yes you do. You must you must be at least 18 or 21 (based on your
+            jurisdiction) to take any action in our DAO. For further details see
+            our{' '}
+            <Link.Paragraph href={Route.TERMS_AND_CONDITIONS}>
+              Terms and conditions
+            </Link.Paragraph>
+          </Paragraph.Default>
+        </Question>
+        <Question question="Where can I get USDt?">
+          <Paragraph.Default>
+            You can get USDT from any exchange that supports it. There are many
+            of them, such as Binance, Kraken, Bitfinex, and many others, where
+            you can buy USDt by exchanging them with credit on your credit card.
+            You can also get USDT from a friend or from a USDT ATM.
+          </Paragraph.Default>
+        </Question>
+        <Question question="How do I get a Wallet?">
+          <Paragraph.Default>
+            On EKOKE DAO users must have an Ethereum Wallet to be able to buy
+            tokens. We suggest you to opt for <strong>Metamask</strong>, a
+            browser extension that allows you to interact with the Ethereum
+            blockchain. You can download it from the official website. You can
+            also use other wallets such as Trust Wallet, Coinbase Wallet, or any
+            other wallet that supports ERC20 tokens.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Where can I check the state of my NFTs?">
+          <Paragraph.Default>
+            You can see the state of your NFTs in your private area. You have to
+            log in into your account by clicking on{' '}
+            <strong>Login (or profile)</strong> from the Topbar, then by
+            clicking on <strong>collected</strong> to see them.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Can I send a message or get to know the identity or any piece of personal information of the person who bought the NFTs of my real estate?">
+          <Paragraph.Default>
+            No you can not. The owner (or the seller) of the real estate can not
+            be informed of the personal data of who acquire the NFTs. Blockcahin
+            and ICP techonology are based on decentralization and anonimity of
+            all parties involved. You can get to know only the wallet address to
+            be able to complete the actions provided on EKOKE website. Privacy
+            is important for the EKOKE organization and we aim to guarantee it
+            in all ways possible.
           </Paragraph.Default>
         </Question>
         <Heading.H2 className="text-center">Presale</Heading.H2>
@@ -314,87 +432,7 @@ const Faq = () => {
             property.
           </Paragraph.Default>
         </Question>
-        <Heading.H2 className="text-center">
-          Acquisition and distribution
-        </Heading.H2>
-        <Question question="How can I buy a Deferred NFT?">
-          <Paragraph.Default>
-            You can buy a Deferred token by going to the EKOKE DAO website and
-            selecting a property you want to pay an installment for and then
-            from its page you can buy the next token. Tokens must be paid with{' '}
-            <strong>USDT (Thether USDt)</strong>, so this means you must be
-            connected to the EKOKE DAO website with your Wallet and own some
-            USDT. Once you click on the <strong>Buy token</strong> button you
-            will be prompted to <strong>approve</strong> the transaction and
-            then you can buy the token. The properties are listed on our{' '}
-            <Link.Paragraph href={Route.MARKETPLACE}>
-              Marketplace page
-            </Link.Paragraph>
-            .
-          </Paragraph.Default>
-        </Question>
-        <Question question="Which requirements I must have in order to buy a Deferred NFT">
-          <Paragraph.Default>
-            In order to be able to buy a Deferred token (NFT) you must login
-            with your own Ethereum wallet clicking on <strong>Login</strong>.
-            You also need to own at least an amount of{' '}
-            <strong>USDT (Thether USDt)</strong> equal to the price of the
-            installment on your wallet. In order to buy any token within EKOKE
-            organization you must be at least 18 or 21 (based on your
-            jurisdiction). For further details see our{' '}
-            <Link.Paragraph href={Route.TERMS_AND_CONDITIONS}>
-              Terms and conditions
-            </Link.Paragraph>
-            .
-          </Paragraph.Default>
-        </Question>
-        <Question question="Do I have to be an adult to buy a token?">
-          <Paragraph.Default>
-            Yes you do. You must you must be at least 18 or 21 (based on your
-            jurisdiction) to take any action in our DAO. For further details see
-            our{' '}
-            <Link.Paragraph href={Route.TERMS_AND_CONDITIONS}>
-              Terms and conditions
-            </Link.Paragraph>
-          </Paragraph.Default>
-        </Question>
-        <Question question="Where can I get USDt?">
-          <Paragraph.Default>
-            You can get USDT from any exchange that supports it. There are many
-            of them, such as Binance, Kraken, Bitfinex, and many others, where
-            you can buy USDt by exchanging them with credit on your credit card.
-            You can also get USDT from a friend or from a USDT ATM.
-          </Paragraph.Default>
-        </Question>
-        <Question question="How do I get a Wallet?">
-          <Paragraph.Default>
-            On EKOKE DAO users must have an Ethereum Wallet to be able to buy
-            tokens. We suggest you to opt for <strong>Metamask</strong>, a
-            browser extension that allows you to interact with the Ethereum
-            blockchain. You can download it from the official website. You can
-            also use other wallets such as Trust Wallet, Coinbase Wallet, or any
-            other wallet that supports ERC20 tokens.
-          </Paragraph.Default>
-        </Question>
-        <Question question="Where can I check the state of my NFTs?">
-          <Paragraph.Default>
-            You can see the state of your NFTs in your private area. You have to
-            log in into your account by clicking on{' '}
-            <strong>Login (or profile)</strong> from the Topbar, then by
-            clicking on <strong>collected</strong> to see them.
-          </Paragraph.Default>
-        </Question>
-        <Question question="Can I send a message or get to know the identity or personal information of the people who buy the NFTs of my real estate?">
-          <Paragraph.Default>
-            No you can not. The owner (or the seller) of the real estate can not
-            be informed of the personal data of who acquire the NFTs. Blockcahin
-            and ICP techonology are based on decentralization and anonimity of
-            all parties involved. You can get to know only the wallet address to
-            be able to complete the actions provided on EKOKE website. Privacy
-            is important for the EKOKE organization and we aim to guarantee it
-            in all ways possible.
-          </Paragraph.Default>
-        </Question>
+
         <Heading.H2 className="text-center">
           Selling of tokens and NFTs
         </Heading.H2>
@@ -420,6 +458,78 @@ const Faq = () => {
             central authority that can help you recover your password. We
             suggest you to write down your password on a piece of paper and keep
             it in a safe place.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">Sale process</Heading.H2>
+        <Question question="Can someone create a sale contract without going through an agency?">
+          <Paragraph.Default>
+            No, the sale contract can be created only by an agency that has been
+            approved by the DAO. The agency can create a sale contract by
+            calling the smart contract of the EKOKE DAO. That's because the
+            agency must be qualified and trained to create and manage sale
+            contracts on the EKOKE DAO. Also we need to trust the creator of the
+            sale contract, and we can't trust a random user.
+          </Paragraph.Default>
+        </Question>
+        <Question question="When can the buyer move into the house?">
+          <Paragraph.Default>
+            The buyer can move the house as soon as the last installment is
+            bought from the <strong>seller</strong>. This means that the buyer
+            can move before he has paid for all the installments, but the only
+            thing that matter is that the seller has received all the
+            installments.
+          </Paragraph.Default>
+        </Question>
+        <Question question="Could the buyer just wait for the installments to be paid by the others and then stop paying for the property?">
+          <Paragraph.Default>
+            No, because the buyer is legally bound to pay the installments. If
+            the buyer stops paying the installments, the DAO can take legal
+            action against him to get the property back.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What happens if the buyer stops paying the installments?">
+          <Paragraph.Default>
+            If the buyer stops paying the installments, the DAO can take legal
+            action against him to get the property back. The property will be
+            sold again to another buyer.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What happens if the property value changes during the sale process?">
+          <Paragraph.Default>
+            The property value can change during the sale process. If the value
+            of the property goes up, the seller may decide to increase the price
+            of the installments. If the value of the property goes down, the
+            seller may decide to decrease the price of the installments. This
+            won't change the current sale contract, but it will cause an
+            additional contract to be created with the price difference. If the
+            buyer rejects the new contract, the property will be sold again to
+            another buyer.
+          </Paragraph.Default>
+        </Question>
+        <Heading.H2 className="text-center">
+          Frauds and Scam protection
+        </Heading.H2>
+        <Question question="Could a malicious agency create a fake contract to get a lot of EKOKE in rewards?">
+          <Paragraph.Default>
+            Yes and no. Theorically it could be possible, but this would also
+            mean that the agency would have to pay real money to get the
+            rewards. If the installment price is set to 1$ for instance, the
+            reward amount will be proportional to the price. So even if it's
+            possible, there absolutely no interest or advantage in doing that.
+            Also, the agency may get banned from the DAO.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What happens if the agency is a scammer?">
+          <Paragraph.Default>
+            If the agency is a scammer, the DAO can take legal action against it
+            to get the property back. The agency will also be banned from the
+            DAO.
+          </Paragraph.Default>
+        </Question>
+        <Question question="What happens if the seller/buyer is a scammer?">
+          <Paragraph.Default>
+            If the seller/buyer is a scammer, the DAO and the agency can take
+            legal action against him to get the property back.
           </Paragraph.Default>
         </Question>
         <Heading.H2 className="text-center">
