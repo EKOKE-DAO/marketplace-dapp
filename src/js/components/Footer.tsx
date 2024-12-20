@@ -56,7 +56,7 @@ const Footer = () => {
           <Container.FlexCols className="gap-4 flex-1">
             <Heading.H2 className="text-white">Follow Us On</Heading.H2>
             <Link.IconLink
-              href={'https://github.com/EKOKEtoken'}
+              href={'https://github.com/EKOKE-DAO'}
               target="_blank"
               className="text-white"
             >
@@ -96,7 +96,7 @@ const Footer = () => {
               <span className="ml-2">TikTok</span>
             </Link.IconLink>
             <Link.IconLink
-              href={'https://x.com/ekoketoken'}
+              href={'https://x.com/ekokedao'}
               target="_blank"
               className="text-white"
             >

@@ -5,9 +5,9 @@ import MdPage from '../MdPage';
 const Whitepaper = () => (
   <MdPage
     url={
-      'https://raw.githubusercontent.com/EKOKEtoken/ekoke/refs/heads/main/docs/whitepaper.md'
+      'https://raw.githubusercontent.com/EKOKE-DAO/ekoke/refs/heads/main/docs/whitepaper.md'
     }
-    githubUrl="https://github.com/EKOKEtoken/ekoke/blob/main/docs/whitepaper.md"
+    githubUrl="https://github.com/EKOKE-DAO/ekoke/blob/main/docs/whitepaper.md"
   />
 );
 
