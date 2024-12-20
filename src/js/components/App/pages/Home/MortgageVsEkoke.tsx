@@ -4,9 +4,9 @@ import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
 
 const MortgageVsEkoke = () => (
-  <Container.Container className="hidden">
+  <Container.Container>
     <Heading.H2 className="text-center">
-      Traditional Mortgage vs. <strong>EKOKE DAO</strong>
+      <strong>EKOKE DAO</strong> Vs. Bank Mortgage
     </Heading.H2>
     <table className="block border border-collapse border-gray-300 bg-white sm:!text-xs">
       <thead>
@@ -20,6 +20,21 @@ const MortgageVsEkoke = () => (
       </thead>
       <tbody>
         <tr>
+          <td className="border border-gray-300 px-4 py-2">Loan Principal</td>
+          <td className="border border-gray-300 px-4 py-2">
+            {(200_000).toLocaleString('en-US', {
+              style: 'currency',
+              currency: 'USD',
+            })}
+          </td>
+          <td className="border border-gray-300 px-4 py-2">
+            {(200_000).toLocaleString('en-US', {
+              style: 'currency',
+              currency: 'USD',
+            })}
+          </td>
+        </tr>
+        <tr>
           <td className="border border-gray-300 px-4 py-2">Formula</td>
           <td className="border border-gray-300 px-4 py-2">
             Simple Interest Loan (10%)
@@ -27,28 +42,6 @@ const MortgageVsEkoke = () => (
           <td className="border border-gray-300 px-4 py-2">
             Compound Interest Loan (5%)
           </td>
-        </tr>
-        <tr>
-          <td className="border border-gray-300 px-4 py-2">Loan Principal</td>
-          <td className="border border-gray-300 px-4 py-2">
-            {(300_000).toLocaleString('en-US', {
-              style: 'currency',
-              currency: 'USD',
-            })}
-          </td>
-          <td className="border border-gray-300 px-4 py-2">
-            {(300_000).toLocaleString('en-US', {
-              style: 'currency',
-              currency: 'USD',
-            })}
-          </td>
-        </tr>
-        <tr>
-          <td className="border border-gray-300 px-4 py-2">
-            Annual Interest Rate
-          </td>
-          <td className="border border-gray-300 px-4 py-2">0.3%</td>
-          <td className="border border-gray-300 px-4 py-2">5.00%</td>
         </tr>
         <tr>
           <td className="border border-gray-300 px-4 py-2">
@@ -60,13 +53,13 @@ const MortgageVsEkoke = () => (
         <tr>
           <td className="border border-gray-300 px-4 py-2">Monthly Payment</td>
           <td className="border border-gray-300 px-4 py-2">
-            {(2_500).toLocaleString('en-US', {
+            {(611.11).toLocaleString('en-US', {
               style: 'currency',
               currency: 'USD',
             })}
           </td>
           <td className="border border-gray-300 px-4 py-2">
-            {(3_723.12).toLocaleString('en-US', {
+            {(1073.64).toLocaleString('en-US', {
               style: 'currency',
               currency: 'USD',
             })}
@@ -77,13 +70,15 @@ const MortgageVsEkoke = () => (
             Total Payment Over Loan Period
           </td>
           <td className="border border-gray-300 px-4 py-2">
-            {(1_200_000.0).toLocaleString('en-US', {
-              style: 'currency',
-              currency: 'USD',
-            })}
+            <strong>
+              {(220_000.0).toLocaleString('en-US', {
+                style: 'currency',
+                currency: 'USD',
+              })}
+            </strong>
           </td>
           <td className="border border-gray-300 px-4 py-2">
-            {(1_340_323.29).toLocaleString('en-US', {
+            {(386_511.57).toLocaleString('en-US', {
               style: 'currency',
               currency: 'USD',
             })}

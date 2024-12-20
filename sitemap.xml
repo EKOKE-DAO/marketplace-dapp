@@ -3,87 +3,97 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://ekokedao.com</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/marketplace</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/agencies</loc>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/presale</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://ekokedao.com/giveaway</loc>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/about</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/privacy</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/cookies</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/terms-and-conditions</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation/faq</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation/whitepaper</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation/canisters/deferred-data</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation/canisters/deferred-minter</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation/contracts/deferred</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation/contracts/ekoke</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation/contracts/marketplace</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation/contracts/reward-pool</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
   <url>
     <loc>https://ekokedao.com/documentation/reward</loc>
-    <lastmod>2025-01-10</lastmod>
+    <lastmod>2024-12-20</lastmod>
     <priority>1.00</priority>
   </url>
 </urlset>

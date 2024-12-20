@@ -75,7 +75,7 @@ const Intro = () => (
             Installments over Mortgages
           </Heading.H3>
           <Paragraph.Center className="!text-sm">
-            We're replacing traditional mortgages with unsastainable interest
+            We're replacing traditional mortgages with unsustainable interest
             rates with a fair, <strong>decentralized</strong> alternative.
             Through our Ethereum powered <strong>Deferred NFT system</strong>,
             buyers can pay for their homes in manageable installments.
@@ -142,7 +142,7 @@ const Intro = () => (
             <strong>EKOKE</strong> token. The total supply of{' '}
             <strong>EKOKE</strong> is fixed and the quantity of tokens given as
             reward will decrease over time. While the traditional mortgage
-            system that is based on inflation and unsastainable interest rates
+            system that is based on inflation and unsustainable interest rates
             is unsustainable, EKOKE is based on a deflationary model that will
             make it more valuable over time.
           </Paragraph.Center>
