@@ -129,9 +129,7 @@ const Info = () => {
             . The presale will start with a <strong>soft cap</strong> of{' '}
             <strong>{(50_000).toLocaleString('en-US')} USDT</strong> and a{' '}
             <strong>hard cap</strong> of{' '}
-            <strong>
-              {(444_005_050_500_000).toLocaleString('en-US')} EKOKE
-            </strong>
+            <strong>{(444_005.05).toLocaleString('en-US')} EKOKE</strong>
             .
             <br />
             The <strong>Base price</strong> will be set at{' '}

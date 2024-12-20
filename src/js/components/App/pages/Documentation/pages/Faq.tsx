@@ -118,7 +118,7 @@ const Faq = () => {
             over time.
           </Paragraph.Default>
         </Question>
-        <Question question="Should a property respect some requirements to be listed on EKOKE DAO?">
+        <Question question="What requirements a property have to satisfy in order to be listed on EKOKE DAO?">
           <Paragraph.Default>
             The only requirements a property has to respect to be tokenized
             following the EKOKE DAO method is to be a real Estate property.
@@ -477,7 +477,9 @@ const Faq = () => {
             bought from the <strong>seller</strong>. This means that the buyer
             can move before he has paid for all the installments, but the only
             thing that matter is that the seller has received all the
-            installments.
+            installments. This is the standard procedure, but the two parties
+            could agree to anticipate the move-in date, for example when the 50%
+            of the total amount has been paid etc.
           </Paragraph.Default>
         </Question>
         <Question question="Could the buyer just wait for the installments to be paid by the others and then stop paying for the property?">
@@ -548,8 +550,8 @@ const Faq = () => {
         </Question>
         <Question question="What is a Voting">
           <Paragraph.Default>
-            A "Votazione" or "voting" is a proposal to modify the code governing
-            the functioning of NFTs and Smart Contracts. Therefore, the proposal
+            Voting consists in a proposal to modify the code governing the
+            functioning of NFTs and Smart Contracts. Therefore, the proposal
             would impact the operation of the entire project. For the proposal
             to become effective, it must be approved by a majority (50% +1) of
             the voters.
