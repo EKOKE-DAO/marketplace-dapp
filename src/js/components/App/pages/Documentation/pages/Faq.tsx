@@ -64,6 +64,12 @@ const Faq = () => {
       </Container.FlexCols>
       <Container.Container id="faq">
         <Heading.H2 className="text-center">General</Heading.H2>
+        <Question question="What's the correct pronunciation for EKOKE?">
+          <Paragraph.Default>
+            The correct pronunciation for EKOKE is <strong>a-koh-ka</strong>, or
+            with the IPA notation <strong>/əˈkoʊkɛ/</strong>.
+          </Paragraph.Default>
+        </Question>
         <Question question="Which type of tokens exist in the EKOKE DAO?">
           <Paragraph.Default>
             There are 3 different tokens. The first one is called{' '}
