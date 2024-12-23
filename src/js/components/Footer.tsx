@@ -1,12 +1,10 @@
 import * as React from 'react';
-import * as Icon from 'react-icons/fi';
+import * as Icon from 'react-icons/fa6';
+import * as SiIcon from 'react-icons/si';
 
 import Container from './reusable/Container';
 import Heading from './reusable/Heading';
 import Link from './reusable/Link';
-import X from './svg/X';
-import TikTok from './svg/TikTok';
-import Telegram from './svg/Telegram';
 import { Route } from '../utils/routes';
 import Paragraph from './reusable/Paragraph';
 
@@ -56,11 +54,27 @@ const Footer = () => {
           <Container.FlexCols className="gap-4 flex-1">
             <Heading.H2 className="text-white">Follow Us On</Heading.H2>
             <Link.IconLink
+              href={'https://linktr.ee/ekokedao'}
+              target="_blank"
+              className="text-white"
+            >
+              <SiIcon.SiLinktree className="mr-2 inline text-white" />
+              <span className="ml-2">Linktree</span>
+            </Link.IconLink>
+            <Link.IconLink
+              href={'https://discord.gg/AuWa2JATYf'}
+              target="_blank"
+              className="text-white"
+            >
+              <Icon.FaDiscord className="mr-2 inline text-white" />
+              <span className="ml-2">Discord</span>
+            </Link.IconLink>
+            <Link.IconLink
               href={'https://github.com/EKOKE-DAO'}
               target="_blank"
               className="text-white"
             >
-              <Icon.FiGithub className="mr-2 inline text-white" />
+              <Icon.FaGithub className="mr-2 inline text-white" />
               GitHub
             </Link.IconLink>
             <Link.IconLink
@@ -68,7 +82,7 @@ const Footer = () => {
               target="_blank"
               className="text-white"
             >
-              <Icon.FiInstagram className="mr-2 inline text-white" />
+              <Icon.FaInstagram className="mr-2 inline text-white" />
               Instagram
             </Link.IconLink>
             <Link.IconLink
@@ -76,7 +90,7 @@ const Footer = () => {
               target="_blank"
               className="text-white"
             >
-              <Icon.FiLinkedin className="mr-2 inline text-white" />
+              <Icon.FaLinkedin className="mr-2 inline text-white" />
               LinkedIn
             </Link.IconLink>
             <Link.IconLink
@@ -84,7 +98,7 @@ const Footer = () => {
               target="_blank"
               className="text-white"
             >
-              <Telegram fill="#ffffff" />
+              <Icon.FaTelegram className="mr-2 inline text-white" />
               <span className="ml-2">Telegram</span>
             </Link.IconLink>
             <Link.IconLink
@@ -92,7 +106,7 @@ const Footer = () => {
               target="_blank"
               className="text-white"
             >
-              <TikTok fill="#ffffff" />
+              <Icon.FaTiktok className="mr-2 inline text-white" />
               <span className="ml-2">TikTok</span>
             </Link.IconLink>
             <Link.IconLink
@@ -100,7 +114,7 @@ const Footer = () => {
               target="_blank"
               className="text-white"
             >
-              <X />
+              <Icon.FaXTwitter className="mr-2 inline text-white" />
               <span className="ml-2">X.com</span>
             </Link.IconLink>
           </Container.FlexCols>

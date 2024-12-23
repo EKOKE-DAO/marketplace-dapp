@@ -65,7 +65,7 @@ const tryEthClient = async <T,>(
       return await fn(client);
     } catch (err) {
       console.error(err);
-      await new Promise((resolve) => setTimeout(resolve, 300));
+      await new Promise((resolve) => setTimeout(resolve, 1_000));
     }
   }
 };
@@ -83,7 +83,14 @@ const PresaleBody = () => {
     let tokenPrice: bigint = BigInt(0);
     let isOpen: boolean = false;
     let hasFailed: boolean = false;
-    if (status === 'connected' && account && ethereum && chainId) {
+    if (status === 'connected') {
+      console.log(
+        'using metamask to fetch stats',
+        status,
+        account,
+        ethereum,
+        chainId,
+      );
       const presaleClient = new EkokePresaleClient(
         account,
         ethereum,
@@ -96,6 +103,7 @@ const PresaleBody = () => {
       isOpen = await presaleClient.isOpen();
       hasFailed = await presaleClient.hasFailed();
     } else {
+      console.log('using public client to fetch stats');
       presaleCap = await tryEthClient(async (client) => client.presaleCap());
       tokensSold = await tryEthClient(async (client) => client.tokensSold());
       softCap = await tryEthClient(async (client) => client.softCap());

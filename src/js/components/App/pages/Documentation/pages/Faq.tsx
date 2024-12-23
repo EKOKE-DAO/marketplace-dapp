@@ -1,5 +1,6 @@
 import * as React from 'react';
 import * as FiIcon from 'react-icons/fi';
+import * as FaIcon from 'react-icons/fa6';
 
 import Container from '../../../../reusable/Container';
 import Heading from '../../../../reusable/Heading';
@@ -608,6 +609,13 @@ const Faq = () => {
           </ul>
         </Question>
       </Container.Container>
+      <Container.FlexCols className="justify-center items-center gap-2">
+        <Heading.H2>Do you have any other question?</Heading.H2>
+        <Link.Button href={'https://discord.gg/AuWa2JATYf'}>
+          <FaIcon.FaDiscord className="inline mr-2" />
+          Join our Discord server
+        </Link.Button>
+      </Container.FlexCols>
     </Wrapper>
   );
 };
