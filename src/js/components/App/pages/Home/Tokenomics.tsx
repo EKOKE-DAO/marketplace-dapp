@@ -63,11 +63,11 @@ const Tokenomics = () => (
           <Link.Paragraph
             target="_blank"
             href={
-              'https://gopluslabs.io/token-security/1/0x92fBA9067844A419A1C394197aE406768555F71b'
+              'https://solidityscan.com/quickscan/0x92fBA9067844A419A1C394197aE406768555F71b/etherscan/mainnet'
             }
             className="block text-center text-xl font-bold text-brandRed"
           >
-            GoPlusLabs.io
+            solidityscan.com
           </Link.Paragraph>
         </Container.Container>
       </Container.FlexCols>
