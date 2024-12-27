@@ -58,6 +58,18 @@ const Tokenomics = () => (
             {EKOKE_DECIMALS}
           </span>
         </Container.Container>
+        <Container.Container>
+          <span className="block text-center text-xl">Audit</span>
+          <Link.Paragraph
+            target="_blank"
+            href={
+              'https://gopluslabs.io/token-security/1/0x92fBA9067844A419A1C394197aE406768555F71b'
+            }
+            className="block text-center text-xl font-bold text-brandRed"
+          >
+            GoPlusLabs.io
+          </Link.Paragraph>
+        </Container.Container>
       </Container.FlexCols>
       <EkokeTokenomics className="sm:items-center sm:justify-center gap-4 flex-1" />
     </Container.FlexResponsiveRow>
