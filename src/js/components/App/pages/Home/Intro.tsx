@@ -19,10 +19,9 @@ const Intro = () => (
       </Heading.H1>
     </Container.Container>
     <Container.Container>
-      <Paragraph.Center>
-        Transform Your <strong>Property</strong> into{' '}
-        <strong>Digital Gold</strong>
-      </Paragraph.Center>
+      <Heading.H2 className="text-center">
+        Simple <strong>Mortgages</strong> on the <strong>Blockchain</strong>
+      </Heading.H2>
       <Paragraph.Leading className="sm:w-5/6 mx-auto">
         We're <strong>revolutionizing home financing</strong> by replacing
         traditional mortgages with a fair, decentralized alternative. Through

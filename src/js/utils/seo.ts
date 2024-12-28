@@ -13,7 +13,7 @@ interface SeoData {
 
 const PAGE_TITLES: SeoPages = {
   '/': {
-    title: 'EKOKE DAO | Transform Your Property into Digital Gold',
+    title: 'EKOKE DAO | Simple Mortgages on the Blockchain',
     description:
       'EKOKE is an innovative tool that aims to revolutionize the real estate industry. We give you a tool to tokenize the payment of your property to give you a sustainable replacement for the traditional mortgage',
   },
@@ -123,9 +123,7 @@ export const hasSeoData = (pathname: string | Route): boolean => {
 
 export const pageTitle = (pathname: string | Route): string => {
   const data = seoData(pathname);
-  return data
-    ? data.title
-    : 'EKOKE DAO | Transform Your Property into Digital Gold';
+  return data ? data.title : 'EKOKE DAO | Simple Mortgages on the Blockchain';
 };
 
 export const pageDescription = (pathname: string | Route): string => {
