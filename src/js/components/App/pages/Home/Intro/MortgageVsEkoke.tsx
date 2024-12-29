@@ -1,13 +1,13 @@
 import * as React from 'react';
 
-import Container from '../../../reusable/Container';
-import Heading from '../../../reusable/Heading';
+import Container from '../../../../reusable/Container';
+import Heading from '../../../../reusable/Heading';
 
 const MortgageVsEkoke = () => (
-  <Container.Container>
-    <Heading.H2 className="text-center">
+  <Container.FlexCols className="items-center justify-center mx-auto gap-2 w-3/6 sm:w-full mb-4">
+    <Heading.H3 className="text-center">
       <strong>EKOKE DAO</strong> Vs. Bank Mortgage
-    </Heading.H2>
+    </Heading.H3>
     <table className="block border border-collapse border-gray-300 bg-white sm:!text-xs">
       <thead>
         <tr>
@@ -86,7 +86,7 @@ const MortgageVsEkoke = () => (
         </tr>
       </tbody>
     </table>
-  </Container.Container>
+  </Container.FlexCols>
 );
 
 export default MortgageVsEkoke;

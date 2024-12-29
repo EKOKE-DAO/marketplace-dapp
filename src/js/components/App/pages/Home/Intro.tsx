@@ -7,6 +7,7 @@ import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
 import Paragraph from '../../../reusable/Paragraph';
 import Link from '../../../reusable/Link';
+import MortgageVsEkoke from './Intro/MortgageVsEkoke';
 
 const Intro = () => (
   <Container.FlexCols className="items-center justify-center w-full mx-auto gap-2">
@@ -50,6 +51,7 @@ const Intro = () => (
         blockchains.
       </Paragraph.Leading>
     </Container.Container>
+    <MortgageVsEkoke />
     <Container.Container>
       <Heading.H2 className="text-center">
         What makes us <strong>Unique</strong>
