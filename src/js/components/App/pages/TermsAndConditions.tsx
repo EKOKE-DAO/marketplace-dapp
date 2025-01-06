@@ -64,34 +64,32 @@ const TermsAndConditions = () => (
       associated with us.
     </Paragraph.Default>
     <Heading.H2>Rules of Use</Heading.H2>
-    <Paragraph.Default>
-      <ul>
-        <li>Do not engage in personal attacks on other individuals.</li>
-        <li>
-          Do not use the Services to promote or engage in any illegal activity.
-        </li>
-        <li>
-          Do not use the Services to promote or engage in any activity that is
-          harmful to others.
-        </li>
-        <li>
-          Do not use the Services to promote or engage in any activity that is
-          harmful to us.
-        </li>
-        <li>
-          Do not violate the intellectual property or privacy rights of any
-          third party.
-        </li>
-        <li>Do not impersonate others or misrepresent your identity.</li>
-        <li>
-          Do not engage in spamming, trolling, or other antisocial behavior.
-        </li>
-        <li>
-          Do not promote or generate money for yourself or a third party without
-          permission.
-        </li>
-      </ul>
-    </Paragraph.Default>
+    <ul className="list-disc list-inside">
+      <li>Do not engage in personal attacks on other individuals.</li>
+      <li>
+        Do not use the Services to promote or engage in any illegal activity.
+      </li>
+      <li>
+        Do not use the Services to promote or engage in any activity that is
+        harmful to others.
+      </li>
+      <li>
+        Do not use the Services to promote or engage in any activity that is
+        harmful to us.
+      </li>
+      <li>
+        Do not violate the intellectual property or privacy rights of any third
+        party.
+      </li>
+      <li>Do not impersonate others or misrepresent your identity.</li>
+      <li>
+        Do not engage in spamming, trolling, or other antisocial behavior.
+      </li>
+      <li>
+        Do not promote or generate money for yourself or a third party without
+        permission.
+      </li>
+    </ul>
     <Heading.H2>Service Interruption</Heading.H2>
     <Paragraph.Default>
       We will do our best to provide continuous, uninterrupted access to our
@@ -104,7 +102,7 @@ const TermsAndConditions = () => (
       You must not use our Services if you are a Prohibited Person. A Prohibited
       Person is any person who is:
     </Paragraph.Default>
-    <ul>
+    <ul className="list-disc list-inside">
       <li>
         Located, incorporated, or otherwise established in, or a citizen or
         resident of any jurisdiction in which the provision of our Services is

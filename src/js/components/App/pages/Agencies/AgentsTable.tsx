@@ -8,6 +8,7 @@ import Paragraph from '../../../reusable/Paragraph';
 import { getAgents } from '../../../../api/getAgents';
 import { Agency } from '../../../../data/contract';
 import AgencyView from './AgentsTable/Agency';
+import Heading from '../../../reusable/Heading';
 
 const MAX_AGENCIES_PER_PAGE = 12;
 
@@ -49,16 +50,26 @@ const AgentsTable = ({ filters }: Props) => {
 
   return (
     <Container.FlexCols className="w-full items-center h-full gap-8">
+      <Container.FlexCols className="w-full items-start">
+        <Heading.H1>Real estate agencies on EKOKE DAO</Heading.H1>
+        {agencies?.length === 0 && (
+          <Container.Container>
+            <Paragraph.Center>There are no agencies to show</Paragraph.Center>
+          </Container.Container>
+        )}
+        {agencies !== undefined && agencies.length > 0 && (
+          <Container.Container>
+            <Paragraph.Center>
+              {agencies?.length} agencies found
+            </Paragraph.Center>
+          </Container.Container>
+        )}
+      </Container.FlexCols>
       <Container.Container className="grid grid-cols-3 2xl:grid-cols-4 sm:grid-cols-1 gap-4">
         {agencies?.map((agency) => (
           <AgencyView key={agency.owner} agency={agency} />
         ))}
       </Container.Container>
-      {agencies?.length === 0 && (
-        <Container.Container>
-          <Paragraph.Center>There are no agencies to show</Paragraph.Center>
-        </Container.Container>
-      )}
       {maxPageToPaginate > 1 && (
         <Pagination
           page={page}

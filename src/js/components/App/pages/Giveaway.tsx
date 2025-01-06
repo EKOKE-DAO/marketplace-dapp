@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Container from '../../reusable/Container';
 import { Helmet } from 'react-helmet';
+import Heading from '../../reusable/Heading';
 
 const PREVIEW_URL =
   'https://raw.githubusercontent.com/EKOKE-DAO/static/804d557a33ce354ecbb0fb87b4ca6931ce0a6067/giveaway/media1.png';
@@ -43,6 +44,7 @@ const Giveaway = () => (
       />
     </Helmet>
     <Container.Container>
+      <Heading.H1>EKOKE DAO 100 $EKOKE Giveaway - 1$EKOKE = 1$</Heading.H1>
       <a
         className="e-widget"
         href="https://gleam.io/Iu8Ng/ekoke-dao-100-ekoke-giveaway"

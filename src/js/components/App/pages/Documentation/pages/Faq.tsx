@@ -591,7 +591,7 @@ const Faq = () => {
           <Paragraph.Default>
             We'll have basically these types of proposals:
           </Paragraph.Default>
-          <ul>
+          <ul className="list-disc list-inside">
             <li>
               <Paragraph.Default>
                 <strong>Technical proposals</strong>: proposals that aim to

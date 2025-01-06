@@ -7,6 +7,7 @@ import { useAppContext } from '../../AppContext';
 import ContractLoader from './PropertyTable/ContractLoader';
 import { IFilters } from '../Marketplace';
 import Paragraph from '../../../reusable/Paragraph';
+import Heading from '../../../reusable/Heading';
 
 const MAX_PROPERTIES_PER_PAGE = 12;
 
@@ -52,16 +53,26 @@ const PropertyTable = ({ filters }: Props) => {
 
   return (
     <Container.FlexCols className="w-full items-center h-full gap-8">
+      <Container.FlexCols className="w-full items-start">
+        <Heading.H1>Properties on sale</Heading.H1>
+        {contracts?.length === 0 && (
+          <Container.Container>
+            <Paragraph.Center>There are no properties to show</Paragraph.Center>
+          </Container.Container>
+        )}
+        {contracts !== undefined && contracts.length > 0 && (
+          <Container.Container>
+            <Paragraph.Center>
+              {contracts?.length} properties found
+            </Paragraph.Center>
+          </Container.Container>
+        )}
+      </Container.FlexCols>
       <Container.Container className="grid grid-cols-3 2xl:grid-cols-4 sm:grid-cols-1 gap-4">
         {contracts?.map((contractId) => (
           <ContractLoader key={contractId} id={contractId} />
         ))}
       </Container.Container>
-      {contracts?.length === 0 && (
-        <Container.Container>
-          <Paragraph.Center>There are no properties to show</Paragraph.Center>
-        </Container.Container>
-      )}
       {maxPageToPaginate > 1 && (
         <Pagination
           page={page}
