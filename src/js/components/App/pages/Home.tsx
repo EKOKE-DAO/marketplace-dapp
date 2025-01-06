@@ -7,7 +7,6 @@ import Roadmap from './Home/Roadmap';
 import Whitepaper from './Home/Whitepaper';
 import Presale from './Home/Presale';
 import Giveaway from './Home/Giveaway';
-import MortgageVsEkoke from './Home/MortgageVsEkoke';
 
 const Home = () => (
   <Container.FlexCols className="gap-8 items-center">
@@ -16,7 +15,6 @@ const Home = () => (
       <Giveaway />
       <Presale />
     </Container.FlexResponsiveRow>
-    <MortgageVsEkoke />
     <Tokenomics />
     <Roadmap />
     <Whitepaper />

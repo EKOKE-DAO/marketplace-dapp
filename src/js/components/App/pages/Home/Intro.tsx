@@ -7,6 +7,7 @@ import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
 import Paragraph from '../../../reusable/Paragraph';
 import Link from '../../../reusable/Link';
+import MortgageVsEkoke from './Intro/MortgageVsEkoke';
 
 const Intro = () => (
   <Container.FlexCols className="items-center justify-center w-full mx-auto gap-2">
@@ -19,10 +20,9 @@ const Intro = () => (
       </Heading.H1>
     </Container.Container>
     <Container.Container>
-      <Paragraph.Center>
-        Transform Your <strong>Property</strong> into{' '}
-        <strong>Digital Gold</strong>
-      </Paragraph.Center>
+      <Heading.H2 className="text-center">
+        Simple <strong>Mortgages</strong> on the <strong>Blockchain</strong>
+      </Heading.H2>
       <Paragraph.Leading className="sm:w-5/6 mx-auto">
         We're <strong>revolutionizing home financing</strong> by replacing
         traditional mortgages with a fair, decentralized alternative. Through
@@ -51,6 +51,7 @@ const Intro = () => (
         blockchains.
       </Paragraph.Leading>
     </Container.Container>
+    <MortgageVsEkoke />
     <Container.Container>
       <Heading.H2 className="text-center">
         What makes us <strong>Unique</strong>
