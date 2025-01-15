@@ -12,7 +12,7 @@ const Giveaway = () => (
       <title>EKOKE DAO 100 $EKOKE Giveaway - 1$EKOKE = 1$</title>
       <meta
         name="description"
-        content="Since we're going to launch EKOKE DAO on April 1st 2025 and we'll open the Presale on January 10th 2025, we've decided to start a Giveaway where 10 lucky users will be able to win 100$EKOKE which are worth 100$."
+        content="Since we're going to launch EKOKE DAO on April 1st 2025 and we'll open the Presale on March 1st 2025, we've decided to start a Giveaway where 10 lucky users will be able to win 100$EKOKE which are worth 100$."
       />
       <meta
         property="og:url"
@@ -25,7 +25,7 @@ const Giveaway = () => (
       <meta property="twitter:card" content="summary" />
       <meta
         property="og:description"
-        content="Since we're going to launch EKOKE DAO on April 1st 2025 and we'll open the Presale on January 10th 2025, we've decided to start a Giveaway where 10 lucky users will be able to win 100$EKOKE which are worth 100$."
+        content="Since we're going to launch EKOKE DAO on April 1st 2025 and we'll open the Presale on March 1st 2025, we've decided to start a Giveaway where 10 lucky users will be able to win 100$EKOKE which are worth 100$."
       />
       <meta property="og:image" content={PREVIEW_URL} />
       <meta property="og:image:width" content="1200" />
@@ -40,7 +40,7 @@ const Giveaway = () => (
       />
       <meta
         property="twitter:description"
-        content="Since we're going to launch EKOKE DAO on April 1st 2025 and we'll open the Presale on January 10th 2025, we've decided to start a Giveaway where 10 lucky users will be able to win 100$EKOKE which are worth 100$."
+        content="Since we're going to launch EKOKE DAO on April 1st 2025 and we'll open the Presale on March 1st 2025, we've decided to start a Giveaway where 10 lucky users will be able to win 100$EKOKE which are worth 100$."
       />
     </Helmet>
     <Container.Container>

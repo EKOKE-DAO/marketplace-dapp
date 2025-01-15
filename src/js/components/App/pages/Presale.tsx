@@ -20,7 +20,7 @@ import { ChainId } from '../../MetamaskConnect';
 const BASE_PRICE = 1_000_000;
 const STEP = 20_000_000_000_000;
 export const PRESALE_END_DATE = new Date('2025-03-31');
-export const PRESALE_START_DATE = new Date('2025-01-15T12:00:00Z');
+export const PRESALE_START_DATE = new Date('2025-03-01T12:00:00Z');
 
 const Presale = () => (
   <Container.Container>

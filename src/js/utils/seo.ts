@@ -25,7 +25,7 @@ const PAGE_TITLES: SeoPages = {
   '/presale': {
     title: 'EKOKE DAO | Presale',
     description:
-      'Join the EKOKE Token DAO presale. The presale will start on January 15th 2025 and will end on March 31st 2025. 1$EKOKE = 1$. Only 450,000 $EKOKE will be available for the presale',
+      'Join the EKOKE Token DAO presale. The presale will start on March 1st 2025 and will end on March 31st 2025. 1$EKOKE = 1$. Only 450,000 $EKOKE will be available for the presale',
   },
   '/about': {
     title: 'EKOKE DAO | About',
@@ -103,7 +103,7 @@ const PAGE_TITLES: SeoPages = {
   '/giveaway': {
     title: 'EKOKE DAO 100 $EKOKE Giveaway - 1$EKOKE = 1$',
     description:
-      "Since we're going to launch EKOKE DAO on April 1st 2025 and we'll open the Presale on January 10th 2025, we've decided to start a Giveaway where 50 lucky users will be able to win 100$EKOKE which are worth 100$.",
+      "Since we're going to launch EKOKE DAO on April 1st 2025 and we'll open the Presale on March 1st 2025, we've decided to start a Giveaway where 50 lucky users will be able to win 100$EKOKE which are worth 100$.",
   },
 };
 

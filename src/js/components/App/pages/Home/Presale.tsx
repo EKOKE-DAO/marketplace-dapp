@@ -16,7 +16,7 @@ const Presale = () => (
     </Container.Container>
     <Container.Container>
       <Link.Cta href={Route.PRESALE}>
-        Coming soon (January 15th 2025)
+        Coming soon (March 1st 2025)
         <Icon.FiArrowRight className="inline ml-2" />
       </Link.Cta>
     </Container.Container>
