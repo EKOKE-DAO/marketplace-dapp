@@ -9,7 +9,7 @@ import {
   pageTitle,
 } from '../utils/seo';
 
-const SITE_URL = 'https://dapp.ekoketoken.com';
+const SITE_URL = 'https://ekokedao.com';
 
 const SeoEngine = () => {
   const { pathname } = useLocation();
