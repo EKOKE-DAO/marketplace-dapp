@@ -4,6 +4,7 @@ import { Route as RouterRoute, Routes } from 'react-router-dom';
 import { Route } from '../../utils/routes';
 import SeoEngine from '../SeoEngine';
 import Container from '../reusable/Container';
+import CookieBar from '../CookieBar';
 
 // pages
 const Home = React.lazy(() => import('./pages/Home'));
@@ -181,6 +182,7 @@ const AppRouter = () => (
           <RouterRoute path="*" element={<NotFound />} />
         </Routes>
       </React.Suspense>
+      <CookieBar />
     </Container.Container>
   </>
 );

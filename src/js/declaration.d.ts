@@ -12,3 +12,8 @@ declare module '*.gif' {
   const value: any;
   export = value;
 }
+
+interface Window {
+  dataLayer: any[];
+  gtag?: (...args: any[]) => void;
+}

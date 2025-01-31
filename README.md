@@ -9,6 +9,8 @@
 
 Powered by **Internet Computer**
 
+GA TAG G-3SYTZ509HY
+
 ---
 
 - [Marketplace D-App](#marketplace-d-app)
