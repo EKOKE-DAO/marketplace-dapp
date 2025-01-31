@@ -18,6 +18,13 @@ export const acceptGa4 = () => {
     personalization_storage: 'granted',
   });
   gtag('config', 'G-3SYTZ509HY');
+
+  // Google Analytics 4
+  gtag('event', 'page_view', {
+    page_location: window.location.href,
+    page_path: window.location.pathname,
+    page_title: document.title,
+  });
 };
 
 export const rejectGa4 = () => {
