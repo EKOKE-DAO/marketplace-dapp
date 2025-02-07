@@ -1,6 +1,10 @@
 import * as React from 'react';
 
-import { hasCookiePreferences, acceptAllCookies } from '../utils/cookies';
+import {
+  hasCookiePreferences,
+  acceptAllCookies,
+  isAnalyticsCookiesConsentGiven,
+} from '../utils/cookies';
 import { Route } from '../utils/routes';
 import Container from './reusable/Container';
 import Heading from './reusable/Heading';
@@ -28,8 +32,8 @@ const CookieBar = () => {
 
   // init GA consent
   React.useEffect(() => {
-    initGa4();
     setTimeout(() => {
+      initGa4(isAnalyticsCookiesConsentGiven());
       setHasCookieBar(!hasCookiePreferences());
     }, 1000);
   }, []);
