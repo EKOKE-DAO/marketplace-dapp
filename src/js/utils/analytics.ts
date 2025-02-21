@@ -1,9 +1,9 @@
 export const initGa4 = (analyticsConsentGiven: boolean) => {
   window.dataLayer = window.dataLayer || [];
 
-  gtag('js', new Date());
+  //gtag('js', new Date());
   if (analyticsConsentGiven) {
-    gtag('config', 'G-3SYTZ509HY');
+    //gtag('config', 'G-3SYTZ509HY');
     gtag('consent', 'default', {
       ad_storage: 'granted',
       analytics_storage: 'granted',
@@ -28,7 +28,7 @@ export const acceptGa4 = () => {
     analytics_storage: 'granted',
     personalization_storage: 'granted',
   });
-  gtag('config', 'G-3SYTZ509HY');
+  //gtag('config', 'G-3SYTZ509HY');
 
   // Google Analytics 4
   gtag('event', 'page_view', {
