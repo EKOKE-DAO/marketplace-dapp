@@ -13,6 +13,16 @@ declare module '*.gif' {
   export = value;
 }
 
+declare module '*.png' {
+  const value: any;
+  export = value;
+}
+
+declare module '*.css' {
+  const value: any;
+  export = value;
+}
+
 interface Window {
   dataLayer: any[];
   gtag?: (...args: any[]) => void;
