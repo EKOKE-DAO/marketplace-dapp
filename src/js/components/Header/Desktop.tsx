@@ -15,8 +15,6 @@ const Desktop = () => (
         <TopbarLink name={'Home'} href={Route.HOME} />
         <TopbarLink name={'Marketplace'} href={Route.MARKETPLACE} />
         <TopbarLink name={'Agencies'} href={Route.AGENCIES} />
-        <TopbarLink name={'Presale'} href={Route.PRESALE} />
-        <TopbarLink name={'Giveaway'} href={Route.GIVEAWAY} />
         <TopbarLink name={'About'} href={Route.ABOUT} />
         <TopbarLink name={'Documentation'} href={Route.DOCUMENTATION} />
       </Container.FlexRow>

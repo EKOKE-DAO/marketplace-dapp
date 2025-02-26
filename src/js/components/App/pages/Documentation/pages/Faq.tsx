@@ -331,59 +331,7 @@ const Faq = () => {
             in all ways possible.
           </Paragraph.Default>
         </Question>
-        <Heading.H2 className="text-center">Presale</Heading.H2>
-        <Question question="What is the presale?">
-          <Paragraph.Default>
-            The presale is the first phase of the EKOKE DAO project where the
-            EKOKE token is sold to the public at a discounted price. The presale
-            is limited in time and in quantity of tokens available. The limit of
-            the presale is set to <strong>444,005 EKOKE</strong> tokens.
-          </Paragraph.Default>
-        </Question>
-        <Question question="When will the presale end?">
-          <Paragraph.Default>
-            The presale will end on March 31, 2025, or when the limit of{' '}
-            <strong>444,005 EKOKE</strong> tokens is reached.
-          </Paragraph.Default>
-        </Question>
-        <Question question="Is there any minimum amount of tokens I have to buy?">
-          <Paragraph.Default>
-            The minimum amount of tokens is set to 1 EKOKE token. You can buy as
-            many tokens as you want.
-          </Paragraph.Default>
-        </Question>
-        <Question question="What is the base price?">
-          <Paragraph.Default>
-            The base price of the EKOKE token is set to 1$.
-          </Paragraph.Default>
-        </Question>
-        <Question question="Will the price increase over time?">
-          <Paragraph.Default>
-            The price of a token will increase by 1$ each 20,000 tokens sold.
-          </Paragraph.Default>
-        </Question>
-        <Question question="What is the minimum amount to be raised?">
-          <Paragraph.Default>
-            We have set a minimum amount of 50,000$ to be raised during the
-            presale.
-          </Paragraph.Default>
-        </Question>
-        <Question question="What happens if the presale fails?">
-          <Paragraph.Default>
-            You will be able to claim a refund of your investment. The refund
-            will be available from the same wallet you used to buy the tokens
-            and from the same page you used to buy them, which is our{' '}
-            <Link.Paragraph href={Route.PRESALE}>Presale page</Link.Paragraph>.
-          </Paragraph.Default>
-        </Question>
-        <Question question="When I will receive my tokens?">
-          <Paragraph.Default>
-            You will receive your tokens as soon as the presale ends. The tokens
-            must be claimed from the same page you used to buy them, which is
-            our{' '}
-            <Link.Paragraph href={Route.PRESALE}>Presale page</Link.Paragraph>.
-          </Paragraph.Default>
-        </Question>
+
         <Heading.H2 className="text-center">Agencies</Heading.H2>
         <Question question="Where can I register my real estate agency?">
           <Paragraph.Default>

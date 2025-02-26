@@ -25,9 +25,6 @@ const Footer = () => {
             <Link.Default href={Route.AGENCIES} className="text-white">
               Agencies
             </Link.Default>
-            <Link.Default href={Route.PRESALE} className="text-white">
-              Presale
-            </Link.Default>
             <Link.Default href={Route.ABOUT} className="text-white">
               About
             </Link.Default>
