@@ -1,4 +1,4 @@
-import { Agency } from '../data/contract';
+import { Agency } from '../data/agency';
 import { deferredMinterRequest, makeQueryArgs } from './api';
 import { mockAgents } from './mock';
 

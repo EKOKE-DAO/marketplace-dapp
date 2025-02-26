@@ -1,4 +1,4 @@
-import { Agency } from '../../../../../../data/contract';
+import { Agency } from '../../../../../../data/agency';
 import Container from '../../../../../reusable/Container';
 import { SeeOnMap } from '../../../../../reusable/Map';
 

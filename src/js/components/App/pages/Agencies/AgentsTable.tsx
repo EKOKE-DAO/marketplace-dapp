@@ -6,7 +6,7 @@ import { useAppContext } from '../../AppContext';
 import { IFilters } from '../Agencies';
 import Paragraph from '../../../reusable/Paragraph';
 import { getAgents } from '../../../../api/getAgents';
-import { Agency } from '../../../../data/contract';
+import { Agency } from '../../../../data/agency';
 import AgencyView from './AgentsTable/Agency';
 import Heading from '../../../reusable/Heading';
 

@@ -1,3 +1,4 @@
+import { Agency } from './agency';
 import { RealEstate } from './real_estate';
 
 export interface Contract {
@@ -9,7 +10,7 @@ export interface Contract {
   price: number;
   deposit: number;
   currency: string;
-  agency?: Agency;
+  agency: Agency;
   expiration: Date;
   documents: ContractDocument[];
   realEstate: RealEstate;
@@ -20,25 +21,6 @@ export interface ContractDocument {
   name: string;
   mimeType: string;
   size: number;
-}
-
-export interface Agency {
-  address: string;
-  agent: string;
-  city: string;
-  continent: Continent;
-  country: string;
-  email: string;
-  lat?: string;
-  lng?: string;
-  logo?: string;
-  mobile: string;
-  name: string;
-  owner: string;
-  region: string;
-  vat: string;
-  website: string;
-  zip_code: string;
 }
 
 export type Continent =

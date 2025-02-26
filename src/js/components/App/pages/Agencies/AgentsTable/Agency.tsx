@@ -1,6 +1,6 @@
 import * as Icon from 'react-icons/fi';
 
-import { Agency } from '../../../../../data/contract';
+import { Agency } from '../../../../../data/agency';
 import Container from '../../../../reusable/Container';
 import { Route } from '../../../../../utils/routes';
 

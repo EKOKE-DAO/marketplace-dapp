@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
 
-import { Agency } from '../../../../../data/contract';
+import { Agency } from '../../../../../data/agency';
 import Container from '../../../../reusable/Container';
 import { useAppContext } from '../../../AppContext';
 import { getAgentByPrincipal } from '../../../../../api/getAgent';

@@ -7,7 +7,7 @@ import Link from '../../../../reusable/Link';
 import { getAgents } from '../../../../../api/getAgents';
 import { useAppContext } from '../../../AppContext';
 import { PopupMap } from '../../../../reusable/Map';
-import { Agency } from '../../../../../data/contract';
+import { Agency } from '../../../../../data/agency';
 import { Route } from '../../../../../utils/routes';
 
 const Map = () => {

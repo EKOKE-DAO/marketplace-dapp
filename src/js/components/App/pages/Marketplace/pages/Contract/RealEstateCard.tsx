@@ -91,6 +91,24 @@ const RealEstateCard = ({ contract }: Props) => (
                 {contract.realEstate.bathrooms} Bathrooms
               </Container.Container>
             )}
+            {contract.realEstate.bedrooms !== undefined && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdBedroomParent
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                {contract.realEstate.bedrooms} Bedrooms
+              </Container.Container>
+            )}
+            {contract.realEstate.yearOfConstruction !== undefined && (
+              <Container.Container className="text-sm text-gray-500">
+                <MdIcon.MdCalendarToday
+                  size={16}
+                  className="text-gray-500 mr-2 inline"
+                />
+                {contract.realEstate.yearOfConstruction}
+              </Container.Container>
+            )}
             {contract.realEstate.balconies !== undefined && (
               <Container.Container className="text-sm text-gray-500">
                 <MdIcon.MdBalcony

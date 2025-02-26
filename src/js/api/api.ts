@@ -62,7 +62,7 @@ const __sendJsonRequest = async <T>(
   if (development) {
     console.log('MOCK', method, path);
     // simulate a delay
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    await new Promise((resolve) => setTimeout(resolve, 200));
     return mock;
   }
 

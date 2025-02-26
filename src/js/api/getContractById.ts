@@ -1,6 +1,8 @@
-import { Agency, Contract } from '../data/contract';
+import { Contract } from '../data/contract';
 import { convertCanisterContractToContract } from '../utils/contract';
 import deferredDataRequest, { makeQueryArgs, Signature } from './api';
+import { getAgentByPrincipal } from './getAgent';
+import getRealEstate from './getRealEstate';
 import { mockContract } from './mock';
 
 /**
@@ -18,7 +20,8 @@ export interface ContractData {
   properties: ContractProperty[];
   restricted_properties: RestrictedContractProperty[];
   documents: ContractDocument[];
-  agency?: Agency;
+  agency: string;
+  real_estate: bigint;
   expiration: string;
 }
 
@@ -71,7 +74,12 @@ const getContractById = async (
 
   const contractData = await deferredDataRequest('GET', url, mockContract(id));
 
-  return convertCanisterContractToContract(contractData);
+  // get agency
+  const agency = await getAgentByPrincipal(contractData.agency);
+  // get real estate
+  const realEstate = await getRealEstate(contractData.real_estate);
+
+  return convertCanisterContractToContract(contractData, agency, realEstate);
 };
 
 export default getContractById;

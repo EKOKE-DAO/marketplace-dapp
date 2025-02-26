@@ -1,7 +1,7 @@
 import * as Icon from 'react-icons/fi';
 import * as FaIcon from 'react-icons/fa6';
 
-import { Agency } from '../../../../../../data/contract';
+import { Agency } from '../../../../../../data/agency';
 import Container from '../../../../../reusable/Container';
 import Heading from '../../../../../reusable/Heading';
 import Link from '../../../../../reusable/Link';

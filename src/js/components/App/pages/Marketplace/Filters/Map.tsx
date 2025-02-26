@@ -88,8 +88,8 @@ const MapRender = ({ open, onClose }: RenderProps) => {
   const markers = contracts.map((contract) => ({
     link: Route.marketplaceContractUrl(contract.id),
     position: {
-      lat: Number(contract.realEstate.latitude),
-      lng: Number(contract.realEstate.longitude),
+      lat: contract.realEstate.latitude ?? 0,
+      lng: contract.realEstate.longitude ?? 0,
     },
     markerChild: (
       <Container.FlexCols className="items-center gap-2">

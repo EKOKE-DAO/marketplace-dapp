@@ -12,14 +12,14 @@ const Sidebar = ({ contract }: Props) => (
     {contract.realEstate.latitude && contract.realEstate.longitude && (
       <SeeOnMap
         center={{
-          lat: Number(contract.realEstate.latitude),
-          lng: Number(contract.realEstate.longitude),
+          lat: contract.realEstate.latitude,
+          lng: contract.realEstate.longitude,
         }}
         markers={[
           {
             position: {
-              lat: Number(contract.realEstate.latitude),
-              lng: Number(contract.realEstate.longitude),
+              lat: contract.realEstate.latitude,
+              lng: contract.realEstate.longitude,
             },
           },
         ]}
