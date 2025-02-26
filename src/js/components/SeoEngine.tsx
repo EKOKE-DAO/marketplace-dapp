@@ -9,6 +9,7 @@ import {
   pageDescription,
   pageOgSiteName,
   pageTitle,
+  noIndex as isNoIndex,
 } from '../utils/seo';
 
 const SITE_URL = 'https://ekokedao.com';
@@ -22,6 +23,7 @@ const SeoEngine = () => {
   );
   const [ogSiteName, setOgSiteName] = React.useState(pageDescription(pathname));
   const [seoDataSet, setSeoDataSet] = React.useState(false);
+  const [noIndex, setNoIndex] = React.useState(false);
 
   const canonicalUrl = `${SITE_URL}${pathname}`;
 
@@ -30,6 +32,7 @@ const SeoEngine = () => {
     setDescription(pageDescription(pathname));
     setOgSiteName(pageOgSiteName(pathname));
     setSeoDataSet(hasSeoData(pathname));
+    setNoIndex(isNoIndex(pathname));
   }, [pathname]);
 
   return (
@@ -42,6 +45,7 @@ const SeoEngine = () => {
       {seoDataSet && <meta property="og:description" content={description} />}
       {seoDataSet && <meta property="og:type" content={'website'} />}
       {seoDataSet && <meta property="og:url" content={canonicalUrl} />}
+      {noIndex && <meta name="robots" content="noindex" />}
       <meta property="og:site_name" content={ogSiteName} />
       <meta property="og:locale" content={'en_US'} />
     </Helmet>
