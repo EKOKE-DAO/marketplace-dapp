@@ -1,4 +1,3 @@
-import * as React from 'react';
 import * as FaIcon from 'react-icons/fa6';
 
 import EkokeLogo from '../../../../../assets/images/ekoke-logo.webp';

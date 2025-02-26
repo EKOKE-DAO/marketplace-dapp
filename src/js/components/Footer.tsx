@@ -1,4 +1,3 @@
-import * as React from 'react';
 import * as Icon from 'react-icons/fa6';
 import * as SiIcon from 'react-icons/si';
 

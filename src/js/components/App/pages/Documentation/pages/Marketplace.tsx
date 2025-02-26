@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import MdPage from '../MdPage';
 
 const Marketplace = () => (

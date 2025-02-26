@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { Contract } from '../../../../../../data/contract';
 import Container from '../../../../../reusable/Container';
 import { SeeOnMap } from '../../../../../reusable/Map';

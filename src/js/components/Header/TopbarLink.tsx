@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import { Route } from '../../utils/routes';
 import Container from '../reusable/Container';
 import Link from '../reusable/Link';

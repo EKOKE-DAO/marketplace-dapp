@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import Container from '../../../reusable/Container';
 import Heading from '../../../reusable/Heading';
 import Member from './Team/Member';

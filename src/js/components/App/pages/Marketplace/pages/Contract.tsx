@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 
 import { Contract } from '../../../../../data/contract';
 import Container from '../../../../reusable/Container';
@@ -8,6 +7,7 @@ import RealEstateCard from './Contract/RealEstateCard';
 import getContractById from '../../../../../api/getContractById';
 import { useAppContext } from '../../../AppContext';
 import Sidebar from './Contract/Sidebar';
+import { Helmet } from '../../../../SeoEngine';
 
 const ContractPage = () => {
   const { setAppError } = useAppContext();

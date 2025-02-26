@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { PresaleStats } from '../Presale';
 import Container from '../../../reusable/Container';
 import ProgressBar from '../../../reusable/ProgressBar';

@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import Container from '../../reusable/Container';
 import Intro from './Home/Intro';
 import Tokenomics from './Home/Tokenomics';

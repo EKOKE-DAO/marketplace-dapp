@@ -1,4 +1,3 @@
-import * as React from 'react';
 import * as Icon from 'react-icons/md';
 import byteSize from 'byte-size';
 

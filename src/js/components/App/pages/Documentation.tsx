@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import Wrapper, { MenuPage } from './Documentation/Wrapper';
 import isMobile from '../../../utils/platform';
 import Heading from '../../reusable/Heading';

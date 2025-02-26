@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 interface Props<T> {
   value: T;
   options: { [key: string]: T };

@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useParams } from 'react-router-dom';
-import { Helmet } from 'react-helmet';
 
 import { Agency } from '../../../../../data/contract';
 import Container from '../../../../reusable/Container';
@@ -8,6 +7,7 @@ import { useAppContext } from '../../../AppContext';
 import { getAgentByPrincipal } from '../../../../../api/getAgent';
 import AgencyCard from './Agency/AgencyCard';
 import Sidebar from './Agency/Sidebar';
+import { Helmet } from '../../../../SeoEngine';
 
 const AgencyPage = () => {
   const { setAppError } = useAppContext();

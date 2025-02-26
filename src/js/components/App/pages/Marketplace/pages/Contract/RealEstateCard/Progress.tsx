@@ -1,5 +1,6 @@
-import { useConnectedMetaMask } from 'metamask-react';
 import * as React from 'react';
+import { useConnectedMetaMask } from 'metamask-react';
+
 import WaitForMetamask from '../../../../../../reusable/WaitForMetamask';
 import DeferredClient from '../../../../../../../web3/DeferredClient';
 import { ChainId } from '../../../../../../MetamaskConnect';

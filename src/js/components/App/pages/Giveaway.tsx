@@ -1,7 +1,6 @@
-import * as React from 'react';
 import Container from '../../reusable/Container';
-import { Helmet } from 'react-helmet';
 import Heading from '../../reusable/Heading';
+import { Helmet } from '../../SeoEngine';
 
 const PREVIEW_URL =
   'https://raw.githubusercontent.com/EKOKE-DAO/static/804d557a33ce354ecbb0fb87b4ca6931ce0a6067/giveaway/media1.png';

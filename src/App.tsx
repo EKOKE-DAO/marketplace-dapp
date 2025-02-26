@@ -1,4 +1,3 @@
-import * as React from 'react';
 import { MetaMaskProvider } from 'metamask-react';
 import 'react-loading-skeleton/dist/skeleton.css';
 

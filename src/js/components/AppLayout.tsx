@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import Container from './reusable/Container';
 import Page from './reusable/Page';
 import Header from './Header';

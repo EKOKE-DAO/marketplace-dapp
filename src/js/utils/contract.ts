@@ -50,12 +50,12 @@ export const convertCanisterContractToContract = (
 };
 
 const getContractDocuments = (data: ContractData): ContractDocument[] => {
-  const docs = [];
+  const docs: ContractDocument[] = [];
 
   for (const item of data.documents) {
     const id = item[0];
     docs.push({
-      id,
+      id: BigInt(id),
       name: item[1].name,
       mimeType: item[1].mime_type,
       size: item[1].size,

@@ -1,9 +1,8 @@
-import * as React from 'react';
-import { Helmet } from 'react-helmet';
 import Container from '../../reusable/Container';
 import Heading from '../../reusable/Heading';
 import Link from '../../reusable/Link';
 import { Route } from '../../../utils/routes';
+import { Helmet } from '../../SeoEngine';
 
 const NotFound = () => (
   <>

@@ -1,5 +1,3 @@
-import * as React from 'react';
-
 import DeferredLogo from '../../../assets/images/token/deferred.webp';
 import EkokeLogo from '../../../assets/images/token/ekoke.webp';
 import EkokeDAOLogo from '../../../assets/images/token/ekoke-dao.webp';
