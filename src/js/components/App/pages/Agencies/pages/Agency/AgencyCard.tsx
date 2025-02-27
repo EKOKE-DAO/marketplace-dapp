@@ -21,7 +21,7 @@ const AgencyCard = ({ agency }: Props) => (
           <img
             src={agency.logo ?? AgencyPlaceholder}
             alt={agency.name}
-            className="w-full sm:object-cover sm:h-[300px] rounded-lg"
+            className="sm:object-cover w-auto h-[300px] rounded-lg"
             width={300}
             height={300}
           />
