@@ -139,13 +139,13 @@ const ContractCard = ({ id, signature }: Props) => {
                 {realEstate.rooms} Rooms
               </Container.Container>
             )}
-            {realEstate.squareMeters !== undefined && (
+            {realEstate.square_meters !== undefined && (
               <Container.Container className="text-sm text-gray-500">
                 <MdIcon.MdSquareFoot
                   size={16}
                   className="text-gray-500 mr-2 inline"
                 />
-                {realEstate.squareMeters} Square Meters
+                {realEstate.square_meters} Square Meters
               </Container.Container>
             )}
             {realEstate.bathrooms !== undefined && (

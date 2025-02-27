@@ -12,7 +12,7 @@ const AppLayout = () => {
     <Page.BlankPage>
       <Header />
       <Container.PageContent
-        className={`bg-page ${fullSize ? 'w-screen' : 'w-page pt-[20px] sm:pt-[40px] pb-16'} min-h-[80vh] mt-[80px] sm:mt-[140px]`}
+        className={`bg-page ${fullSize ? 'w-screen' : 'w-page pt-[20px] sm:pt-[40px] pb-16'} min-h-[80vh] mt-[80px] sm:mt-[160px]`}
       >
         <BrowserRouter>
           <Routes />

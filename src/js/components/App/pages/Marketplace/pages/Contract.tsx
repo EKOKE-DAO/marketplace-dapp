@@ -33,12 +33,18 @@ const ContractPage = () => {
   return (
     <>
       <Helmet>
-        <title>{contract.realEstate.name}</title>
-        <meta name="description" content={contract.realEstate.description} />
-        <meta property="og:title" content={contract.realEstate.name} />
+        <title>{`${contract.realEstate.name} - Real estate on sale on Ethereum`}</title>
+        <meta
+          name="description"
+          content={`Buy real estate with Ethereum - ${contract.realEstate.description}`}
+        />
+        <meta
+          property="og:title"
+          content={`${contract.realEstate.name} - Real estate on sale on Ethereum`}
+        />
         <meta
           property="og:description"
-          content={contract.realEstate.description}
+          content={`Buy real estate with Ethereum - ${contract.realEstate.description}`}
         />
       </Helmet>
       <Container.Container>

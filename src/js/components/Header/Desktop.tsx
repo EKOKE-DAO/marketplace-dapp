@@ -14,6 +14,7 @@ const Desktop = () => (
         <img src={EkokeLogo} alt="EKOKE DAO" height={40} width={40} />
         <TopbarLink name={'Home'} href={Route.HOME} />
         <TopbarLink name={'Marketplace'} href={Route.MARKETPLACE} />
+        <TopbarLink name={'Real Estate'} href={Route.REAL_ESTATE} />
         <TopbarLink name={'Agencies'} href={Route.AGENCIES} />
         <TopbarLink name={'About'} href={Route.ABOUT} />
         <TopbarLink name={'Documentation'} href={Route.DOCUMENTATION} />

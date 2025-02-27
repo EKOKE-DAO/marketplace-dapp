@@ -1,17 +1,15 @@
 import * as Icon from 'react-icons/fi';
 import * as MdIcon from 'react-icons/md';
 
-import { Contract } from '../../../../../data/contract';
 import Container from '../../../../reusable/Container';
 import Paragraph from '../../../../reusable/Paragraph';
+import { RealEstate } from '../../../../../data/real_estate';
 
 interface Props {
-  contract: Contract;
+  realEstate: RealEstate;
 }
 
-const Item = ({
-  contract: { expiration, price, currency, realEstate },
-}: Props) => (
+const Item = ({ realEstate }: Props) => (
   <Container.FlexCols className="items-start gap-4">
     <Container.Container className="w-full">
       <img
@@ -27,23 +25,13 @@ const Item = ({
         {realEstate.name}
       </span>
       <span className="text-gray-500">
-        <Icon.FiDollarSign size={16} className="text-gray-500 mr-2 inline" />
-        {price.toLocaleString('en-US', {
-          style: 'currency',
-          currency,
-        })}
-      </span>
-      <span className="text-gray-500">
         <Icon.FiMapPin size={16} className="text-gray-500 mr-2 inline" />
         {realEstate.address} {realEstate.zone && `, ${realEstate.zone}`}
         {realEstate.city && `, ${realEstate.city}`}
         {realEstate.region && `, ${realEstate.region}`}
         {realEstate.country && `, ${realEstate.country}`}
       </span>
-      <span className="text-gray-500">
-        <Icon.FiCalendar size={16} className="text-gray-500 mr-2 inline" />
-        Expires on {expiration.toLocaleDateString()}
-      </span>
+
       <Container.FlexCols>
         {realEstate.rooms !== undefined && (
           <Container.Container className="text-sm text-gray-500">

@@ -1,6 +1,7 @@
 export interface RealEstate {
   name: string;
   description: string;
+  agency: string;
   image?: string;
   address?: string;
   country?: string;

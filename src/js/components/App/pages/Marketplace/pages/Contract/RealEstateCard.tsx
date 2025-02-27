@@ -73,13 +73,13 @@ const RealEstateCard = ({ contract }: Props) => (
                 {contract.realEstate.rooms} Rooms
               </Container.Container>
             )}
-            {contract.realEstate.squareMeters !== undefined && (
+            {contract.realEstate.square_meters !== undefined && (
               <Container.Container className="text-sm text-gray-500">
                 <MdIcon.MdSquareFoot
                   size={16}
                   className="text-gray-500 mr-2 inline"
                 />
-                {contract.realEstate.squareMeters} Square Meters
+                {contract.realEstate.square_meters} Square Meters
               </Container.Container>
             )}
             {contract.realEstate.bathrooms !== undefined && (
@@ -100,13 +100,13 @@ const RealEstateCard = ({ contract }: Props) => (
                 {contract.realEstate.bedrooms} Bedrooms
               </Container.Container>
             )}
-            {contract.realEstate.yearOfConstruction !== undefined && (
+            {contract.realEstate.year_of_construction !== undefined && (
               <Container.Container className="text-sm text-gray-500">
                 <MdIcon.MdCalendarToday
                   size={16}
                   className="text-gray-500 mr-2 inline"
                 />
-                {contract.realEstate.yearOfConstruction}
+                {contract.realEstate.year_of_construction}
               </Container.Container>
             )}
             {contract.realEstate.balconies !== undefined && (
@@ -159,9 +159,9 @@ const RealEstateCard = ({ contract }: Props) => (
       </Container.FlexResponsiveRow>
       <Progress contractId={contract.id} installments={contract.installments} />
       <Paragraph.Leading>{contract.realEstate.description}</Paragraph.Leading>
-      {contract.realEstate.youtubeUrl && (
+      {contract.realEstate.youtube && (
         <Container.Container className="mx-auto">
-          <YoutubeVideo width={720} url={contract.realEstate.youtubeUrl} />
+          <YoutubeVideo width={720} url={contract.realEstate.youtube} />
         </Container.Container>
       )}
       {contract.documents.length > 0 && (

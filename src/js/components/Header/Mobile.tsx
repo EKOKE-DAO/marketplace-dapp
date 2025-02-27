@@ -19,8 +19,12 @@ const Mobile = () => (
       </Container.Container>
       <MetamaskProfile />
     </Container.FlexRow>
-    <Container.FlexRow className="h-[60px] w-full items-center justify-center gap-4">
+    <Container.FlexRow className="h-[40px] w-full items-center justify-center gap-4">
       <TopbarLink name={'Marketplace'} href={Route.MARKETPLACE} />
+      <TopbarLink name={'Real Estate'} href={Route.REAL_ESTATE} />
+      <TopbarLink name={'Agencies'} href={Route.AGENCIES} />
+    </Container.FlexRow>
+    <Container.FlexRow className="h-[40px] w-full items-center justify-center gap-4">
       <TopbarLink name={'About'} href={Route.ABOUT} />
       <TopbarLink name={'Documentation'} href={Route.DOCUMENTATION} />
     </Container.FlexRow>

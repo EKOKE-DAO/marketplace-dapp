@@ -1,7 +1,7 @@
 export enum Route {
   ABOUT = 'about',
   AGENCIES = 'agencies',
-  AGENCIES_AGENCY = 'agencies/agency',
+  AGENCIES_AGENCY = 'agencies/agency/:id',
   COOKIES = 'cookies',
   DOCUMENTATION = 'documentation',
   DOCUMENTATION_FAQ = 'documentation/faq',
@@ -18,12 +18,14 @@ export enum Route {
   GIVEAWAY = 'giveaway',
   HOME = 'home',
   MARKETPLACE = 'marketplace',
-  MARKETPLACE_CONTRACT = 'marketplace/contract',
+  MARKETPLACE_CONTRACT = 'marketplace/contract/:id',
   PRESALE = 'presale',
   PRIVACY = 'privacy',
   PROFILE = 'profile',
   PROFILE_COLLECTED = 'profile/collected',
   PROFILE_CONTRACTS = 'profile/contracts',
+  REAL_ESTATE = 'real-estate',
+  REAL_ESTATE_PROPERTY = 'real-estate/:id',
   TERMS_AND_CONDITIONS = 'terms-and-conditions',
 }
 
@@ -42,11 +44,15 @@ export namespace Route {
   }
 
   export function marketplaceContractUrl(id: bigint): string {
-    return `${Route.url(Route.MARKETPLACE_CONTRACT)}/${id.toString()}`;
+    return `marketplace/contract/${id.toString()}`;
   }
 
   export function agentUrl(principal: string): string {
-    return `${Route.url(Route.AGENCIES_AGENCY)}/${principal}`;
+    return `agencies/agency/${principal}`;
+  }
+
+  export function realEstateUrl(id: bigint): string {
+    return `real-estate/${id.toString()}`;
   }
 }
 

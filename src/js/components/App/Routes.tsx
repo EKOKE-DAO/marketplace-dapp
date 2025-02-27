@@ -27,6 +27,12 @@ const ContractPage = React.lazy(
 const Agencies = React.lazy(() => import('./pages/Agencies'));
 const Agency = React.lazy(() => import('./pages/Agencies/pages/Agency'));
 
+// real estate
+const RealEstate = React.lazy(() => import('./pages/RealEstate'));
+const RealEstateProperty = React.lazy(
+  () => import('./pages/RealEstate/pages/RealEstateProperty'),
+);
+
 // reserved area
 const Profile = React.lazy(() => import('./pages/Profile'));
 const ProfileCollected = React.lazy(
@@ -97,7 +103,7 @@ const AppRouter = () => (
             element={<Marketplace />}
           />
           <RouterRoute
-            path={`${Route.url(Route.MARKETPLACE_CONTRACT)}/:id`}
+            path={Route.url(Route.MARKETPLACE_CONTRACT)}
             element={<ContractPage />}
           />
 
@@ -107,8 +113,18 @@ const AppRouter = () => (
             element={<Agencies />}
           />
           <RouterRoute
-            path={`${Route.url(Route.AGENCIES_AGENCY)}/:id`}
+            path={Route.url(Route.AGENCIES_AGENCY)}
             element={<Agency />}
+          />
+
+          {/* real estate */}
+          <RouterRoute
+            path={Route.url(Route.REAL_ESTATE)}
+            element={<RealEstate />}
+          />
+          <RouterRoute
+            path={Route.url(Route.REAL_ESTATE_PROPERTY)}
+            element={<RealEstateProperty />}
           />
 
           {/* reserved area */}
