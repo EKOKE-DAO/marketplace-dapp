@@ -2,7 +2,7 @@
   "canisters": {
     "marketplace-dapp": {
       "frontend": {
-        "entrypoint": "src/index.html"
+        "entrypoint": "./index.html"
       },
       "source": ["dist"],
       "type": "assets"
