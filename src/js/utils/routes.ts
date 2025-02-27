@@ -44,15 +44,15 @@ export namespace Route {
   }
 
   export function marketplaceContractUrl(id: bigint): string {
-    return `marketplace/contract/${id.toString()}`;
+    return `/marketplace/contract/${id.toString()}`;
   }
 
   export function agentUrl(principal: string): string {
-    return `agencies/agency/${principal}`;
+    return `/agencies/agency/${principal}`;
   }
 
   export function realEstateUrl(id: bigint): string {
-    return `real-estate/${id.toString()}`;
+    return `/real-estate/${id.toString()}`;
   }
 }
 
