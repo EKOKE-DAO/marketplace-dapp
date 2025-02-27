@@ -34,12 +34,11 @@ export const mockAgency = (owner: string): Agency => {
   };
 };
 
-export const mockRealEstate = (id: bigint): RealEstate => {
+export const mockRealEstate = (): RealEstate => {
   return {
-    id,
     name: 'Villa in the heart of London',
     description: 'A beautiful villa in the heart of London',
-    image: villaLondon,
+    image: 'https://placecats.com/300/300',
     address: 'Via Roma 1',
     country: 'Italy',
     continent: 'Europe',
@@ -48,7 +47,7 @@ export const mockRealEstate = (id: bigint): RealEstate => {
     latitude: 45.464664,
     longitude: 9.18854,
     zone: 'City Center',
-    squareMeters: 200,
+    square_meters: 200,
     rooms: 4,
     bathrooms: 2,
     bedrooms: 2,
@@ -58,9 +57,10 @@ export const mockRealEstate = (id: bigint): RealEstate => {
     garage: true,
     pool: false,
     parking: false,
-    yearOfConstruction: 2017,
-    energyClass: 'A',
-    youtubeUrl: 'https://www.youtube.com/watch?v=DHaeadPJoJY',
+    elevator: true,
+    year_of_construction: 2017,
+    energy_class: 'A',
+    youtube: 'https://www.youtube.com/watch?v=DHaeadPJoJY',
   };
 };
 
