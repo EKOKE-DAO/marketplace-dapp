@@ -31,7 +31,7 @@ const RealEstateCard = ({ property }: Props) => {
             <img
               src={property.image}
               alt={property.name}
-              className="w-full sm:object-cover sm:h-[300px] rounded-lg"
+              className="sm:object-cover sm:h-[300px] rounded-lg w-[300px] h-auto"
               width={300}
               height={300}
             />

@@ -39,7 +39,8 @@ export const mockRealEstate = (): RealEstate => {
     name: 'Villa in the heart of London',
     agency: 'v5vof-zqaaa-aaaal-ai5cq',
     description: 'A beautiful villa in the heart of London',
-    image: 'https://placecats.com/300/300',
+    image:
+      'https://www.friulioggi.it/wp-content/uploads/2022/08/valigia-udine-allarme-bomba-1024x768.jpg',
     address: 'Via Roma 1',
     country: 'Italy',
     continent: 'Europe',

@@ -23,7 +23,7 @@ const RealEstateCard = ({ contract }: Props) => (
           <img
             src={contract.realEstate.image}
             alt={contract.realEstate.name}
-            className="w-full sm:object-cover sm:h-[300px] rounded-lg"
+            className="w-[300px] sm:object-cover h-auto rounded-lg"
             width={300}
             height={300}
           />
