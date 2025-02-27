@@ -37,6 +37,7 @@ export const mockAgency = (owner: string): Agency => {
 export const mockRealEstate = (): RealEstate => {
   return {
     name: 'Villa in the heart of London',
+    agency: 'v5vof-zqaaa-aaaal-ai5cq',
     description: 'A beautiful villa in the heart of London',
     image: 'https://placecats.com/300/300',
     address: 'Via Roma 1',
