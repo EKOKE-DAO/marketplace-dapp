@@ -49,6 +49,7 @@ export const mockRealEstate = (): RealEstate => {
     latitude: 45.464664,
     longitude: 9.18854,
     zone: 'City Center',
+    city: 'Milano',
     square_meters: 200,
     rooms: 4,
     bathrooms: 2,
