@@ -65,7 +65,7 @@ const AgentsTable = ({ filters }: Props) => {
           </Container.Container>
         )}
       </Container.FlexCols>
-      <Container.Container className="grid grid-cols-3 2xl:grid-cols-4 sm:grid-cols-1 gap-4">
+      <Container.Container className="grid grid-cols-3 sm:grid-cols-1 gap-4">
         {agencies?.map((agency) => (
           <AgencyView key={agency.owner} agency={agency} />
         ))}

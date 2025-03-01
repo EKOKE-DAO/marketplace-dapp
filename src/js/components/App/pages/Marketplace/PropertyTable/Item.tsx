@@ -5,6 +5,9 @@ import { Contract } from '../../../../../data/contract';
 import Container from '../../../../reusable/Container';
 import Paragraph from '../../../../reusable/Paragraph';
 
+import PropertyPlaceholder from '../../../../../../assets/images/property-placeholder.webp';
+import { elide } from '../../../../../utils/text';
+
 interface Props {
   contract: Contract;
 }
@@ -15,7 +18,7 @@ const Item = ({
   <Container.FlexCols className="items-start gap-4">
     <Container.Container className="w-full">
       <img
-        src={realEstate.image}
+        src={realEstate.image ?? PropertyPlaceholder}
         alt={realEstate.name}
         className="w-full object-cover sm:h-[300px] rounded-t-lg"
         width={300}
@@ -70,7 +73,9 @@ const Item = ({
           </Container.Container>
         )}
       </Container.FlexCols>
-      <Paragraph.Default>{realEstate.description}</Paragraph.Default>
+      <Paragraph.Default>
+        {elide(realEstate.description, 200)}
+      </Paragraph.Default>
     </Container.FlexCols>
   </Container.FlexCols>
 );

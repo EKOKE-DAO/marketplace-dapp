@@ -14,6 +14,18 @@ const getWindowWidth = () => {
   return 0;
 };
 
+const getVideoId = (url: string) => {
+  if (url.includes('v=')) {
+    return url.split('v=')[1];
+  }
+
+  if (url.startsWith('https://youtu.be/')) {
+    return url.split('https://youtu.be/')[1];
+  }
+
+  return '';
+};
+
 const YoutubeVideo = ({ width, url }: Props) => {
   const [windowWidth, setWindowWidth] = React.useState(getWindowWidth());
 
@@ -33,7 +45,7 @@ const YoutubeVideo = ({ width, url }: Props) => {
     };
   }, []);
 
-  const videoId = url.split('v=')[1];
+  const videoId = getVideoId(url);
 
   const useWidth = windowWidth < 768 ? '100%' : (width ?? '100%');
 

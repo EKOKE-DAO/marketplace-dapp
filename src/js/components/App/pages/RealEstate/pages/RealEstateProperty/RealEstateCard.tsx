@@ -12,6 +12,8 @@ import { RealEstate } from '../../../../../../data/real_estate';
 import { Agency } from '../../../../../../data/agency';
 import { getAgentByPrincipal } from '../../../../../../api/getAgent';
 
+import PropertyPlaceholder from '../../../../../../../assets/images/property-placeholder.webp';
+
 interface Props {
   property: RealEstate;
 }
@@ -29,11 +31,11 @@ const RealEstateCard = ({ property }: Props) => {
         <Container.FlexResponsiveRow className="gap-4">
           <Container.Container>
             <img
-              src={property.image}
+              src={property.image ?? PropertyPlaceholder}
               alt={property.name}
-              className="sm:object-cover sm:h-[300px] rounded-lg w-[300px] h-auto"
+              className="sm:object-cover sm:h-auto rounded-lg w-[300px] h-auto"
               width={300}
-              height={300}
+              height={200}
             />
           </Container.Container>
           <Container.FlexCols className="gap-2">

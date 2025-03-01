@@ -18,6 +18,8 @@ import { Signature } from '../../../../../../api/api';
 import Heading from '../../../../../reusable/Heading';
 import ContractDocuments from './ContractDocuments';
 
+import PropertyPlaceholder from '../../../../../../../assets/images/property-placeholder.webp';
+
 interface Props {
   id: bigint;
   signature: Signature;
@@ -94,7 +96,7 @@ const ContractCard = ({ id, signature }: Props) => {
       <Container.FlexCols className="items-start justify-center gap-8 w-full">
         <Container.Container className="w-full">
           <img
-            src={realEstate.image}
+            src={realEstate.image ?? PropertyPlaceholder}
             alt={realEstate.name}
             className="w-full object-cover sm:h-[300px] rounded-t-lg"
             width={500}

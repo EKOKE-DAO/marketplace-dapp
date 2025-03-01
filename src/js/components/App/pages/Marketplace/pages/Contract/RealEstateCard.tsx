@@ -11,6 +11,8 @@ import ContractDocuments from './RealEstateCard/ContractDocuments';
 import Link from '../../../../../reusable/Link';
 import { Route } from '../../../../../../utils/routes';
 
+import PropertyPlaceholder from '../../../../../../../assets/images/property-placeholder.webp';
+
 interface Props {
   contract: Contract;
 }
@@ -21,7 +23,7 @@ const RealEstateCard = ({ contract }: Props) => (
       <Container.FlexResponsiveRow className="gap-4">
         <Container.Container>
           <img
-            src={contract.realEstate.image}
+            src={contract.realEstate.image ?? PropertyPlaceholder}
             alt={contract.realEstate.name}
             className="w-[300px] sm:object-cover h-auto rounded-lg"
             width={300}
