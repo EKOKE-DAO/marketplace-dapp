@@ -4,12 +4,17 @@ import * as Icon from 'react-icons/fi';
 import Container from '../../../../reusable/Container';
 import Button from '../../../../reusable/Button';
 import Link from '../../../../reusable/Link';
-import getContracts from '../../../../../api/getContracts';
+import getRealEstates from '../../../../../api/getRealEstates';
 import { useAppContext } from '../../../AppContext';
 import { PopupMap } from '../../../../reusable/Map';
-import { Contract } from '../../../../../data/contract';
-import getContractById from '../../../../../api/getContractById';
 import { Route } from '../../../../../utils/routes';
+import getRealEstate from '../../../../../api/getRealEstate';
+import { RealEstate } from '../../../../../data/real_estate';
+
+interface RealEstateWithId {
+  id: bigint;
+  realEstate: RealEstate;
+}
 
 const Map = () => {
   const [mapOpen, setMapOpen] = React.useState<boolean>(false);
@@ -56,7 +61,7 @@ interface RenderProps {
 const MapRender = ({ open, onClose }: RenderProps) => {
   const { setAppError } = useAppContext();
 
-  const [contracts, setContracts] = React.useState<Contract[]>([]);
+  const [realEstate, setRealEstate] = React.useState<RealEstateWithId[]>([]);
   const [radius, setRadius] = React.useState<number>(100);
 
   const reloadContracts = async (
@@ -67,17 +72,20 @@ const MapRender = ({ open, onClose }: RenderProps) => {
     if (newRadius !== radius) setRadius(newRadius);
 
     try {
-      const contractIds = await getContracts({
+      const contractIds = await getRealEstates({
         latitude: `${lat}`,
         longitude: `${lng}`,
         radius: `${newRadius}`,
       });
 
       const fetchedContracts = await Promise.all(
-        contractIds.map((contractId) => getContractById(contractId)),
+        contractIds.map(async (contractId) => {
+          const data = await getRealEstate(contractId);
+          return { id: contractId, realEstate: data };
+        }),
       );
 
-      setContracts(fetchedContracts);
+      setRealEstate(fetchedContracts);
     } catch (error) {
       console.error('Error getting contracts:', error);
       setAppError('Error getting contracts by position');
@@ -85,29 +93,23 @@ const MapRender = ({ open, onClose }: RenderProps) => {
   };
 
   // make markers
-  const markers = contracts.map((contract) => ({
-    link: Route.marketplaceContractUrl(contract.id),
+  const markers = realEstate.map((data) => ({
+    link: Route.realEstateUrl(data.id),
     position: {
-      lat: contract.realEstate.latitude ?? 0,
-      lng: contract.realEstate.longitude ?? 0,
+      lat: data.realEstate.latitude ?? 0,
+      lng: data.realEstate.longitude ?? 0,
     },
     markerChild: (
       <Container.FlexCols className="items-center gap-2">
-        {contract.realEstate.image && (
+        {data.realEstate.image && (
           <img
-            src={contract.realEstate.image}
-            alt={contract.realEstate.name}
+            src={data.realEstate.image}
+            alt={data.realEstate.name}
             width={150}
             height={150}
           />
         )}
-        <span className="block text-lg">{contract.realEstate.name}</span>
-        <span className="block text-sm text-text">
-          {contract.price.toLocaleString('en-US', {
-            style: 'currency',
-            currency: contract.currency,
-          })}{' '}
-        </span>
+        <span className="block text-lg">{data.realEstate.name}</span>
       </Container.FlexCols>
     ),
   }));
